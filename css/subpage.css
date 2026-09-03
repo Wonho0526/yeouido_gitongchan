@@ -1,0 +1,764 @@
+.subpage-main {
+  color: var(--color-ink);
+  background: #fffefd;
+}
+
+.subpage-main section {
+  height: auto;
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+}
+
+.sub-hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden;
+  padding: 92px 0;
+  background:
+    linear-gradient(110deg, rgba(247, 244, 238, 0.98), rgba(255, 254, 251, 0.92)),
+    #f7f4ee;
+}
+
+.sub-hero::after {
+  position: absolute;
+  right: -5vw;
+  bottom: -10vw;
+  width: min(46vw, 620px);
+  height: min(46vw, 620px);
+  background: url("../img/logo_back.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.08;
+}
+
+.sub-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+  align-items: center;
+  gap: clamp(44px, 6vw, 92px);
+}
+
+.sub-hero-category {
+  margin: 0 0 20px;
+  color: var(--color-accent);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sub-hero h1 {
+  margin: 0;
+  color: #2f2924;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.sub-hero-desc {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: #625a53;
+  font-size: clamp(18px, 1.55vw, 23px);
+  font-weight: 500;
+  line-height: 1.78;
+}
+
+.sub-image-frame {
+  min-height: 280px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 80, 69, 0.14);
+  border-radius: 8px;
+  background: #e9e4dc;
+}
+
+.sub-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.84) contrast(0.98);
+}
+
+.sub-hero-visual {
+  height: min(50vw, 520px);
+  min-height: 420px;
+  box-shadow: 0 28px 80px rgba(47, 41, 36, 0.12);
+}
+
+.sub-hero-visual.is-contain img,
+.sub-equipment-image img {
+  object-fit: contain;
+  padding: 28px;
+}
+
+.sub-image-placeholder {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 248, 234, 0.94);
+  font-size: 17px;
+  font-weight: 800;
+  background:
+    linear-gradient(135deg, rgba(116, 108, 99, 0.72), rgba(63, 61, 57, 0.92)),
+    #706960;
+}
+
+.sub-section {
+  padding: 110px 0;
+}
+
+.sub-section:nth-of-type(even) {
+  background: #f8f6f2;
+}
+
+.sub-centered-copy {
+  text-align: center;
+}
+
+.sub-logo-mark {
+  width: min(430px, 70vw);
+  height: auto;
+  margin-bottom: 26px;
+}
+
+.sub-centered-copy p,
+.sub-copy-stack p {
+  margin: 12px 0 0;
+  color: #5f5851;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.84;
+}
+
+.sub-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 56px auto 0;
+}
+
+.sub-vision-card {
+  min-height: 178px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 34px;
+  border: 1px solid rgba(93, 81, 71, 0.18);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sub-vision-card span,
+.sub-count,
+.sub-value-card > span,
+.sub-point-card > span,
+.sub-equipment-card > span {
+  color: var(--color-accent);
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.sub-vision-card strong {
+  color: #332e2a;
+  font-family: "Noto Serif KR", serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.sub-split {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(42px, 6vw, 92px);
+}
+
+.sub-copy-stack h2 {
+  margin-bottom: 24px;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(31px, 3vw, 46px);
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.sub-tall-visual {
+  min-height: 520px;
+}
+
+.sub-doctor-layout {
+  grid-template-columns: minmax(320px, 0.74fr) minmax(0, 1.26fr);
+}
+
+.sub-doctor-photo {
+  min-height: 640px;
+  background: #f0ebe4;
+}
+
+.sub-doctor-photo img {
+  object-fit: contain;
+  object-position: bottom center;
+  padding: 28px 22px 0;
+}
+
+.sub-large-text {
+  color: #39332e !important;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(23px, 2.1vw, 32px) !important;
+  line-height: 1.58 !important;
+}
+
+blockquote {
+  margin: 34px 0 0;
+  padding-left: 24px;
+  border-left: 3px solid var(--color-accent);
+  color: #5d5147;
+  font-family: "Noto Serif KR", serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.sub-profile-box {
+  margin-top: 38px;
+  padding: 38px;
+  border: 1px solid rgba(93, 81, 71, 0.18);
+  border-radius: 8px;
+  color: #746c63;
+  background: #f8f6f2;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sub-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.sub-value-card,
+.sub-point-card,
+.sub-feature-card,
+.sub-simple-card,
+.sub-guide-card,
+.sub-equipment-card,
+.sub-condition-card {
+  border: 1px solid rgba(93, 81, 71, 0.16);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sub-value-card {
+  padding: 34px;
+}
+
+.sub-value-card h3 {
+  margin: 18px 0 16px;
+  color: #312c28;
+  font-family: "Noto Serif KR", serif;
+  font-size: 31px;
+  font-weight: 700;
+}
+
+.sub-value-card h3 small {
+  display: block;
+  margin-top: 8px;
+  color: #94897e;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sub-value-card strong,
+.sub-value-card em {
+  display: block;
+  color: #4f463e;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.sub-value-card em {
+  margin-top: 16px;
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.sub-value-card p,
+.sub-point-card p,
+.sub-feature-card p,
+.sub-simple-card p,
+.sub-equipment-card li {
+  margin: 18px 0 0;
+  color: #625a53;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.78;
+}
+
+.sub-promise-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(38px, 6vw, 86px);
+  align-items: center;
+}
+
+.sub-wide-photo {
+  min-height: 390px;
+  margin-top: 30px;
+}
+
+.sub-promise-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-promise-list li {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(93, 81, 71, 0.16);
+}
+
+.sub-promise-list span {
+  color: var(--color-accent);
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sub-promise-list strong {
+  color: #332e2a;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(22px, 2vw, 31px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.sub-location-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  gap: 36px;
+}
+
+.sub-map-frame {
+  min-height: 620px;
+}
+
+.sub-guide-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.sub-guide-card {
+  padding: 34px;
+}
+
+.sub-guide-card h2 {
+  margin-bottom: 18px;
+  color: #332e2a;
+  font-family: "Noto Serif KR", serif;
+  font-size: 28px;
+}
+
+.sub-guide-card dl {
+  margin: 0;
+}
+
+.sub-guide-card dl div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  color: #625a53;
+  font-size: 17px;
+}
+
+.sub-guide-card dt {
+  color: #3f3934;
+  font-weight: 800;
+}
+
+.sub-guide-card dd {
+  margin: 0;
+}
+
+.sub-guide-card p {
+  margin: 8px 0 0;
+  color: #625a53;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.sub-guide-card strong {
+  display: block;
+  margin-top: 22px;
+  color: #3f3934;
+}
+
+.sub-guide-call > a {
+  display: inline-block;
+  color: var(--color-primary-dark);
+  font-family: "Noto Serif KR", serif;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.sub-action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.sub-action-row a,
+.sub-simple-card a {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 4px;
+  color: var(--color-on-dark);
+  background: var(--color-primary-dark);
+  font-weight: 800;
+}
+
+.sub-condition-list {
+  display: grid;
+  gap: 34px;
+}
+
+.sub-condition-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 34px;
+  padding: clamp(30px, 4vw, 56px);
+}
+
+.sub-condition-copy h2 {
+  margin: 16px 0 18px;
+  color: #312c28;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(28px, 2.6vw, 42px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.sub-condition-copy p {
+  margin: 0;
+  color: #625a53;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.78;
+}
+
+.sub-condition-copy h3 {
+  margin: 26px 0 14px;
+  color: #3f3934;
+  font-size: 18px;
+}
+
+.sub-symptom-box {
+  margin-top: 28px;
+  padding: 26px 0 0;
+  border-top: 1px solid rgba(93, 81, 71, 0.16);
+}
+
+.sub-symptom-box h3 {
+  margin-top: 0;
+}
+
+.sub-tag-list,
+.sub-disease-list,
+.sub-equipment-desc {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-tag-list li,
+.sub-disease-list li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(165, 133, 98, 0.34);
+  border-radius: 4px;
+  color: #5d5147;
+  background: #faf7f0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sub-condition-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.sub-condition-media .sub-image-frame {
+  min-height: 100%;
+}
+
+.sub-therapy-note {
+  grid-column: 1 / -1;
+  padding-top: 30px;
+  border-top: 1px solid rgba(93, 81, 71, 0.16);
+}
+
+.sub-therapy-note strong {
+  color: var(--color-accent);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.sub-therapy-note h3 {
+  margin: 10px 0 12px;
+  color: #332e2a;
+  font-family: "Noto Serif KR", serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.sub-therapy-note p {
+  margin: 7px 0 0;
+  color: #625a53;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.sub-point-section {
+  background: #f8f6f2;
+}
+
+.sub-point-grid,
+.sub-feature-grid,
+.sub-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.sub-point-card,
+.sub-feature-card,
+.sub-simple-card {
+  padding: 34px;
+}
+
+.sub-point-card h3,
+.sub-feature-card h3,
+.sub-simple-card h2 {
+  margin: 16px 0 0;
+  color: #302b27;
+  font-family: "Noto Serif KR", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sub-care-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 34px;
+  align-items: start;
+}
+
+.sub-feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.sub-disease-box {
+  padding: 34px;
+  border-radius: 8px;
+  color: var(--color-on-dark);
+  background: #3f3d39;
+}
+
+.sub-disease-box h2 {
+  margin-bottom: 24px;
+  color: #fff8ea;
+  font-family: "Noto Serif KR", serif;
+  font-size: 28px;
+}
+
+.sub-disease-box .clinic-kicker {
+  color: rgba(255, 248, 234, 0.72);
+}
+
+.sub-disease-list li {
+  width: 100%;
+  min-height: auto;
+  justify-content: flex-start;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 248, 234, 0.18);
+  border-radius: 0;
+  color: rgba(255, 248, 234, 0.92);
+  background: transparent;
+  line-height: 1.55;
+}
+
+.sub-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.sub-equipment-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sub-equipment-image {
+  min-height: 230px;
+  margin-bottom: 22px;
+  background: #f4f1eb;
+}
+
+.sub-equipment-card h3 {
+  margin: 8px 0 10px;
+  color: #302b27;
+  font-family: "Noto Serif KR", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.sub-equipment-card strong {
+  color: #5d5147;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.sub-equipment-desc {
+  display: block;
+  margin-top: 14px;
+}
+
+.sub-equipment-desc li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.sub-equipment-desc li::before {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.sub-simple-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sub-simple-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sub-simple-card a {
+  margin-top: auto;
+}
+
+@media (max-width: 920px) {
+  .sub-hero-inner,
+  .sub-split,
+  .sub-doctor-layout,
+  .sub-promise-layout,
+  .sub-location-layout,
+  .sub-condition-card,
+  .sub-care-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-hero {
+    min-height: auto;
+  }
+
+  .sub-value-grid,
+  .sub-point-grid,
+  .sub-equipment-grid,
+  .sub-simple-grid,
+  .sub-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 640px) {
+  .sub-hero {
+    padding: 64px 0;
+  }
+
+  .sub-hero-inner {
+    gap: 28px;
+  }
+
+  .sub-hero h1 {
+    font-size: 36px;
+  }
+
+  .sub-hero-desc,
+  .sub-centered-copy p,
+  .sub-copy-stack p {
+    font-size: 16px;
+  }
+
+  .sub-hero-visual,
+  .sub-tall-visual,
+  .sub-doctor-photo,
+  .sub-map-frame {
+    min-height: 320px;
+    height: auto;
+  }
+
+  .sub-section {
+    padding: 68px 0;
+  }
+
+  .sub-vision-grid,
+  .sub-value-grid,
+  .sub-point-grid,
+  .sub-feature-grid,
+  .sub-equipment-grid,
+  .sub-simple-grid,
+  .sub-condition-media {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-condition-card,
+  .sub-point-card,
+  .sub-feature-card,
+  .sub-simple-card,
+  .sub-guide-card,
+  .sub-value-card {
+    padding: 24px;
+  }
+
+  .sub-promise-list li {
+    grid-template-columns: 42px 1fr;
+    padding: 22px 0;
+  }
+}
