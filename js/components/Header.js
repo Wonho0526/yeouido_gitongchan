@@ -53,9 +53,16 @@
   const navHref = (item) => item.external ? item.href : `${subPrefix}${item.href}`;
 
   function Header() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
     return h(
       "header",
-      { className: "site-header" },
+      {
+        className: [
+          "site-header",
+          isSubPage && isMobileMenuOpen ? "is-mobile-menu-open" : "",
+        ].filter(Boolean).join(" "),
+      },
       h(
         "div",
         { className: "inner header-inner" },
@@ -68,9 +75,28 @@
             className: "header-logo",
           })
         ),
+        isSubPage && h(
+          "button",
+          {
+            type: "button",
+            className: "subpage-mobile-menu-toggle",
+            onClick: () => setIsMobileMenuOpen((isOpen) => !isOpen),
+            "aria-controls": "subpage-main-nav",
+            "aria-expanded": isMobileMenuOpen ? "true" : "false",
+            "aria-label": isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기",
+            title: isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기",
+          },
+          h("span", { "aria-hidden": "true" }),
+          h("span", { "aria-hidden": "true" }),
+          h("span", { "aria-hidden": "true" })
+        ),
         h(
           "nav",
-          { className: "main-nav", "aria-label": "주요 메뉴" },
+          {
+            id: isSubPage ? "subpage-main-nav" : undefined,
+            className: "main-nav",
+            "aria-label": "주요 메뉴",
+          },
           h(
             "ul",
             { className: "main-nav-list" },
