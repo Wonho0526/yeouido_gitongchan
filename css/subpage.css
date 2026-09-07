@@ -874,9 +874,7 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-hero-eyebrow,
-.sub-section-kicker,
-.sub-local-nav-title,
-.sub-context-bar span {
+.sub-section-kicker {
   margin: 0;
   color: var(--sub-muted);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -929,37 +927,6 @@ body[data-page] .phone-cta strong {
   line-height: 1.78;
 }
 
-.sub-context-bar {
-  color: #fff;
-  background: var(--sub-gold);
-}
-
-.sub-context-bar-inner {
-  min-height: 52px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.sub-context-bar span {
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 10px;
-}
-
-.sub-context-bar p,
-.sub-context-bar strong {
-  margin: 0;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-.sub-context-bar strong {
-  padding-left: 14px;
-  border-left: 1px solid rgba(255, 255, 255, 0.52);
-}
-
 .sub-local-nav {
   border-bottom: 1px solid var(--sub-line);
   background: #fff;
@@ -969,12 +936,7 @@ body[data-page] .phone-cta strong {
   min-height: 76px;
   display: flex;
   align-items: center;
-  gap: 34px;
-}
-
-.sub-local-nav-title {
-  flex: 0 0 auto;
-  color: var(--sub-navy);
+  justify-content: center;
 }
 
 .sub-local-nav ul {
@@ -1722,17 +1684,15 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-care-detail {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 56px;
-  align-items: start;
+  display: block;
 }
 
 .sub-feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: 0;
   margin: 0;
+  border-top: 1px solid var(--sub-line);
 }
 
 .sub-feature-list .sub-section-heading {
@@ -1740,16 +1700,21 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-feature-card {
-  min-height: 250px;
-  padding: 30px;
-  border: 1px solid var(--sub-line);
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 64px minmax(220px, 0.85fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: start;
+  padding: 30px 0;
+  border: 0;
+  border-bottom: 1px solid var(--sub-line);
   border-radius: 0;
   background: #fff;
 }
 
 .sub-feature-card > span {
   display: block;
-  margin-bottom: 18px;
+  margin: 5px 0 0;
   color: var(--sub-gold);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-size: 12px;
@@ -1767,47 +1732,75 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-feature-card p {
-  margin-top: 18px;
+  margin: 0;
 }
 
-.sub-disease-box {
-  padding: 34px;
-  border: 0;
-  border-radius: 8px;
-  color: #fff;
-  background: var(--sub-navy);
+.sub-disease-section {
+  margin-top: 104px;
 }
 
-.sub-disease-box .sub-section-kicker {
-  display: block;
-  margin-bottom: 12px;
-  color: #f3d37d;
+.sub-disease-section .sub-section-heading {
+  margin-bottom: 30px;
 }
 
-.sub-disease-box h2 {
-  margin: 0 0 22px;
-  color: #fff;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
+.sub-disease-slider {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
 }
 
-.sub-disease-list {
-  display: block;
-}
-
-.sub-disease-list li {
-  min-height: auto;
-  display: block;
-  padding: 16px 0;
-  border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+.sub-disease-slide-card {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--sub-line);
   border-radius: 0;
-  color: rgba(255, 255, 255, 0.88);
-  background: transparent;
+  background: #fff;
+}
+
+.sub-disease-slide-image {
+  aspect-ratio: 4 / 3;
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0;
+  background: #e9e4dc;
+}
+
+.sub-disease-slide-copy {
+  min-height: 226px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 25px 24px 24px;
+  border-top: 1px solid var(--sub-line);
+}
+
+.sub-disease-slide-count {
+  margin: 0 0 12px;
+  color: var(--sub-gold);
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.sub-disease-slide-copy h3 {
+  margin: 0;
+  color: var(--sub-ink);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sub-disease-slide-copy > p:not(.sub-disease-slide-count) {
+  margin: 16px 0 0;
+  color: var(--sub-muted);
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 .sub-equipment-section {
@@ -1936,15 +1929,6 @@ body[data-page] .phone-cta strong {
   margin-top: auto;
 }
 
-body[data-page] .footer-contact {
-  padding: 84px 0;
-  background: #f8edd5;
-}
-
-body[data-page] .footer-business {
-  background: var(--sub-navy);
-}
-
 @media (max-width: 1320px) {
   body[data-page] .header-inner {
     grid-template-columns: 174px minmax(0, 1fr);
@@ -2023,6 +2007,15 @@ body[data-page] .footer-business {
   .sub-promise-layout {
     grid-template-columns: 1fr;
     gap: 46px;
+  }
+
+  .sub-feature-card {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 12px 24px;
+  }
+
+  .sub-feature-card p {
+    grid-column: 2;
   }
 
   .sub-map-frame {
@@ -2139,33 +2132,10 @@ body[data-page] .footer-business {
     font-size: 16px;
   }
 
-  .sub-context-bar-inner {
-    min-height: 0;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 6px 10px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .sub-context-bar p,
-  .sub-context-bar strong {
-    font-size: 13px;
-  }
-
-  .sub-context-bar strong {
-    padding-left: 10px;
-  }
-
   .sub-local-nav-inner {
     min-height: 0;
     display: block;
-    padding-top: 15px;
-  }
-
-  .sub-local-nav-title {
-    display: block;
-    margin-bottom: 11px;
+    padding-top: 0;
   }
 
   .sub-local-nav ul {
@@ -2275,20 +2245,71 @@ body[data-page] .footer-business {
     gap: 34px;
   }
 
-  body[data-page] .footer-contact {
-    padding: 58px 0;
+  .sub-feature-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    padding: 24px 0;
   }
+
+  .sub-feature-card > span {
+    margin-top: 4px;
+  }
+
+  .sub-feature-card h3 {
+    font-size: 20px;
+  }
+
+  .sub-feature-card p {
+    grid-column: 1 / -1;
+  }
+
+  .sub-disease-section {
+    margin-top: 76px;
+  }
+
+  .sub-disease-slider {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .sub-disease-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sub-disease-slide-card {
+    height: auto;
+    flex: 0 0 84vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  .sub-disease-slide-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .sub-disease-slide-copy {
+    min-height: 226px;
+    padding: 25px 20px 22px;
+  }
+
+  .sub-disease-slide-copy h3 {
+    font-size: 21px;
+  }
+
+  .sub-disease-slide-copy > p:not(.sub-disease-slide-count) {
+    font-size: 15px;
+  }
+
 }
 
 @media (max-width: 420px) {
   .sub-hero h1 {
     font-size: 38px;
-  }
-
-  .sub-context-bar strong {
-    width: 100%;
-    padding-left: 0;
-    border-left: 0;
   }
 
   .sub-action-row {

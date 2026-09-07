@@ -96,17 +96,6 @@
           h("h1", null, page.title),
           h("p", { className: "sub-hero-desc" }, page.subtitle)
         )
-      ),
-      h(
-        "div",
-        { className: "sub-context-bar" },
-        h(
-          "div",
-          { className: "inner sub-context-bar-inner" },
-          h("span", null, "SUB PAGE"),
-          h("p", null, page.category),
-          h("strong", null, page.title)
-        )
       )
     );
   }
@@ -122,7 +111,6 @@
       h(
         "div",
         { className: "inner sub-local-nav-inner" },
-        h("span", { className: "sub-local-nav-title" }, page.category),
         h(
           "ul",
           null,
@@ -473,6 +461,36 @@
     ];
   }
 
+  function DiseaseSlider({ diseases }) {
+    if (!diseases || !diseases.length) {
+      return null;
+    }
+
+    return h(
+      "div",
+      { className: "sub-disease-slider", role: "list", "aria-label": "주요 적용 질환" },
+      diseases.map((disease, index) =>
+        h(
+          "article",
+          { className: "sub-disease-slide-card", key: disease.title, role: "listitem" },
+          h(ImageFrame, {
+            image: disease.image,
+            label: disease.title,
+            alt: `${disease.title} 관련 진료`,
+            className: "sub-disease-slide-image",
+          }),
+          h(
+            "div",
+            { className: "sub-disease-slide-copy" },
+            h("p", { className: "sub-disease-slide-count" }, String(index + 1).padStart(2, "0")),
+            h("h3", null, disease.title),
+            h("p", null, disease.body)
+          )
+        )
+      )
+    );
+  }
+
   function CarePage() {
     return [
       h(
@@ -539,11 +557,14 @@
             )
           ),
           h(
-            "aside",
-            { className: "sub-disease-box" },
-            h("span", { className: "sub-section-kicker" }, "INDICATION"),
-            h("h2", null, "주요 적용 질환"),
-            list(page.diseases, "sub-disease-list")
+            "section",
+            { className: "sub-disease-section" },
+            h(SectionHeading, {
+              eyebrow: "INDICATION",
+              title: "주요 적용 질환",
+              description: "질환별 특성과 치료가 필요한 부위를 사진과 함께 살펴보세요.",
+            }),
+            h(DiseaseSlider, { diseases: page.diseases })
           )
         )
       ),
