@@ -13,6 +13,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/subpage.css">
 </head>
@@ -40,23 +41,32 @@
           </header>
           <figure class="sub-image-frame sub-map-frame"><img src="../img/map_holder.png" alt="여의도기통찬의원 위치 지도" loading="lazy"></figure>
           <div class="sub-guide-grid">
-            <article class="sub-guide-card">
+            <article class="sub-guide-card clinic-hours">
               <span>01</span>
               <h2>진료시간</h2>
               <dl>
                 <div>
-                  <dt>평일</dt>
-                  <dd>09:00 - 18:30</dd>
+                  <dt>월 화 목 금</dt>
+                  <dd><span>09:00 ~ 20:00</span><span class="clinic-hours-badge clinic-hours-badge--night">야간진료</span></dd>
+                </div>
+                <div>
+                  <dt>수요일</dt>
+                  <dd><span>09:00 ~ 19:00</span></dd>
                 </div>
                 <div>
                   <dt>토요일</dt>
-                  <dd>09:00 - 13:00</dd>
+                  <dd><span>09:00 ~ 14:00</span><span class="clinic-hours-badge clinic-hours-badge--short">단축진료</span></dd>
                 </div>
                 <div>
                   <dt>점심시간</dt>
-                  <dd>13:00 - 14:00</dd>
+                  <dd><span>14:00 ~ 15:00</span></dd>
                 </div>
               </dl>
+              <ul class="clinic-hours-notes" aria-label="진료 안내">
+                <li>진료 종료 30분 전 접수 마감입니다.</li>
+                <li>일요일 · 일반 공휴일 휴진입니다.</li>
+                <li>토요일 점심시간 없이 진료합니다.</li>
+              </ul>
             </article>
             <article class="sub-guide-card">
               <span>02</span>

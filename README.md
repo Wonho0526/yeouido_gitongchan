@@ -17,6 +17,7 @@
 ## 공통 모듈
 
 - `js/components/Header.js`: 전체 메뉴와 헤더
+- 메인과 서브페이지는 `css/header.css`의 동일한 헤더를 사용합니다. 1100px 이하에서는 메뉴 버튼으로 전체 메뉴를 열고, 1차 메뉴를 눌러 2차 메뉴를 펼칩니다. 반응형 기준을 변경할 때는 `Header.js`의 `matchMedia` 값도 함께 변경합니다.
 - `js/components/Footer.js`: 진료안내, 지도, 사업자 정보와 푸터
 - `js/components/LocalNavigation.js`: 서브페이지 하위 메뉴
 - `js/layout.js`: 공통 모듈을 각 페이지의 지정 영역에 표시
@@ -30,5 +31,6 @@
 ## 스타일
 
 - `css/reset.css`, `css/common.css`: 공통 기본 스타일
-- `css/style.css`: 메인 페이지와 헤더·푸터 스타일
+- `css/header.css`: 전체 페이지의 공통 헤더와 반응형 메뉴
+- `css/style.css`: 메인 페이지와 푸터 스타일
 - `css/subpage.css`: 서브페이지 레이아웃과 반응형 스타일

@@ -53,14 +53,69 @@
   const navHref = (item) => item.external ? item.href : `${subPrefix}${item.href}`;
 
   function Header() {
+    const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1100px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const [openSubmenu, setOpenSubmenu] = React.useState(null);
+    const headerRef = React.useRef(null);
+    const menuButtonRef = React.useRef(null);
+    const navRef = React.useRef(null);
+
+    const closeMenus = () => {
+      setIsMobileMenuOpen(false);
+      setOpenSubmenu(null);
+    };
+
+    React.useEffect(() => {
+      const media = window.matchMedia("(max-width: 1100px)");
+      const onChange = (event) => {
+        setIsCompact(event.matches);
+        setIsMobileMenuOpen(false);
+        setOpenSubmenu(null);
+      };
+      media.addEventListener("change", onChange);
+      return () => media.removeEventListener("change", onChange);
+    }, []);
+
+    React.useEffect(() => {
+      const onPointerDown = (event) => {
+        if (headerRef.current && !headerRef.current.contains(event.target)) {
+          setIsMobileMenuOpen(false);
+          setOpenSubmenu(null);
+        }
+      };
+      document.addEventListener("pointerdown", onPointerDown);
+      return () => document.removeEventListener("pointerdown", onPointerDown);
+    }, []);
+
+    React.useEffect(() => {
+      if (isMobileMenuOpen && navRef.current) {
+        navRef.current.scrollTop = 0;
+      }
+    }, [isMobileMenuOpen]);
+
+    const onKeyDown = (event) => {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (openSubmenu !== null) {
+        event.preventDefault();
+        headerRef.current.querySelector(`#site-nav-trigger-${openSubmenu}`).focus();
+        setOpenSubmenu(null);
+      } else if (isMobileMenuOpen) {
+        event.preventDefault();
+        setIsMobileMenuOpen(false);
+        menuButtonRef.current.focus();
+      }
+    };
 
     return h(
       "header",
       {
+        ref: headerRef,
+        onKeyDown,
         className: [
           "site-header",
-          isSubPage && isMobileMenuOpen ? "is-mobile-menu-open" : "",
+          isMobileMenuOpen ? "is-mobile-menu-open" : "",
         ].filter(Boolean).join(" "),
       },
       h(
@@ -75,13 +130,17 @@
             className: "header-logo",
           })
         ),
-        isSubPage && h(
+        h(
           "button",
           {
+            ref: menuButtonRef,
             type: "button",
-            className: "subpage-mobile-menu-toggle",
-            onClick: () => setIsMobileMenuOpen((isOpen) => !isOpen),
-            "aria-controls": "subpage-main-nav",
+            className: "mobile-menu-toggle",
+            onClick: () => {
+              setIsMobileMenuOpen((isOpen) => !isOpen);
+              setOpenSubmenu(null);
+            },
+            "aria-controls": "site-main-nav",
             "aria-expanded": isMobileMenuOpen ? "true" : "false",
             "aria-label": isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기",
             title: isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기",
@@ -93,37 +152,70 @@
         h(
           "nav",
           {
-            id: isSubPage ? "subpage-main-nav" : undefined,
+            ref: navRef,
+            id: "site-main-nav",
             className: "main-nav",
             "aria-label": "주요 메뉴",
           },
           h(
             "ul",
             { className: "main-nav-list" },
-            navItems.map((item) =>
+            navItems.map((item, index) =>
               h(
                 "li",
                 {
-                  key: item.href,
+                  key: item.label,
+                  onMouseEnter: () => {
+                    if (!isCompact && item.children) {
+                      setOpenSubmenu(index);
+                    }
+                  },
+                  onMouseLeave: (event) => {
+                    if (!isCompact && !event.currentTarget.contains(document.activeElement)) {
+                      setOpenSubmenu((open) => open === index ? null : open);
+                    }
+                  },
+                  onFocusCapture: () => {
+                    if (!isCompact && item.children) {
+                      setOpenSubmenu(index);
+                    }
+                  },
+                  onBlurCapture: (event) => {
+                    if (!isCompact && !event.currentTarget.contains(event.relatedTarget)) {
+                      setOpenSubmenu((open) => open === index ? null : open);
+                    }
+                  },
                   className: [
                     "main-nav-item",
                     item.children ? "has-children" : "",
                     isActive(item) ? "is-active" : "",
+                    openSubmenu === index ? "is-submenu-open" : "",
                   ].filter(Boolean).join(" "),
                 },
                 h(
-                  "a",
+                  isCompact && item.children ? "button" : "a",
                   {
-                    href: navHref(item),
+                    id: `site-nav-trigger-${index}`,
+                    type: isCompact && item.children ? "button" : undefined,
+                    href: isCompact && item.children ? undefined : navHref(item),
                     className: "main-nav-link",
-                    "aria-haspopup": item.children ? "true" : undefined,
+                    "aria-controls": item.children ? `site-sub-nav-${index}` : undefined,
+                    "aria-expanded": item.children ? openSubmenu === index : undefined,
+                    "aria-current": !item.children && currentPage === item.href ? "page" : undefined,
+                    onClick: isCompact && item.children
+                      ? () => setOpenSubmenu((open) => open === index ? null : index)
+                      : closeMenus,
                   },
                   item.label
                 ),
                 item.children &&
                   h(
                     "div",
-                    { className: "sub-nav-panel" },
+                    {
+                      id: `site-sub-nav-${index}`,
+                      className: "sub-nav-panel",
+                      hidden: isCompact && openSubmenu !== index,
+                    },
                     h(
                       "ul",
                       { className: "sub-nav-list" },
@@ -136,6 +228,8 @@
                             {
                               href: navHref(child),
                               className: currentPage === child.href ? "sub-nav-link is-active" : "sub-nav-link",
+                              "aria-current": currentPage === child.href ? "page" : undefined,
+                              onClick: closeMenus,
                             },
                             child.label
                           )

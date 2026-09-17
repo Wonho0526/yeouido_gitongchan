@@ -816,44 +816,6 @@ body[data-page] {
   --sub-line: #d9d2c6;
 }
 
-body[data-page] .site-header {
-  border-bottom: 1px solid rgba(37, 37, 37, 0.1);
-  background: rgba(255, 254, 250, 0.97);
-}
-
-body[data-page] .header-inner {
-  min-height: 72px;
-  grid-template-columns: 174px minmax(0, 1fr) 132px;
-  gap: 22px;
-}
-
-body[data-page] .header-logo {
-  width: 174px;
-}
-
-body[data-page] .subpage-mobile-menu-toggle {
-  display: none;
-}
-
-body[data-page] .main-nav-list {
-  gap: 0 14px;
-}
-
-body[data-page] .main-nav-link {
-  min-height: 72px;
-  font-size: 13px;
-}
-
-body[data-page] .phone-cta {
-  min-width: 132px;
-  min-height: 46px;
-  padding: 0 14px;
-}
-
-body[data-page] .phone-cta strong {
-  font-size: 14px;
-}
-
 body[data-page="location"] .footer-contact {
   display: none;
 }
@@ -1966,47 +1928,7 @@ body[data-page="location"] .footer-contact {
   margin-top: auto;
 }
 
-@media (max-width: 1320px) {
-  body[data-page] .header-inner {
-    grid-template-columns: 174px minmax(0, 1fr);
-  }
-
-  body[data-page] .phone-cta {
-    display: none;
-  }
-}
-
 @media (max-width: 1040px) {
-  body[data-page] .header-inner {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding-top: 12px;
-    padding-bottom: 10px;
-  }
-
-  body[data-page] .brand {
-    width: fit-content;
-  }
-
-  body[data-page] .main-nav {
-    order: initial;
-    grid-column: 1;
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  body[data-page] .main-nav-list {
-    width: max-content;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 0 18px;
-  }
-
-  body[data-page] .main-nav-link {
-    min-height: 38px;
-  }
-
   .sub-editorial-split,
   .sub-doctor-layout,
   .sub-care-intro-grid,
@@ -2054,95 +1976,6 @@ body[data-page="location"] .footer-contact {
 }
 
 @media (max-width: 720px) {
-  body[data-page] .header-inner {
-    grid-template-columns: minmax(0, 1fr) 42px;
-    align-items: center;
-    gap: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  body[data-page] .header-logo {
-    width: 142px;
-  }
-
-  body[data-page] .subpage-mobile-menu-toggle {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: auto;
-    padding: 0;
-    border: 1px solid var(--sub-line);
-    border-radius: 0;
-    background: #fff;
-    color: var(--sub-navy);
-  }
-
-  body[data-page] .subpage-mobile-menu-toggle span {
-    width: 16px;
-    height: 1px;
-    display: block;
-    background: currentColor;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  body[data-page] .site-header.is-mobile-menu-open .subpage-mobile-menu-toggle span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  body[data-page] .site-header.is-mobile-menu-open .subpage-mobile-menu-toggle span:nth-child(2) {
-    opacity: 0;
-  }
-
-  body[data-page] .site-header.is-mobile-menu-open .subpage-mobile-menu-toggle span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
-  body[data-page] .main-nav {
-    display: none;
-    grid-column: 1 / -1;
-    width: 100%;
-    margin-top: 12px;
-    overflow: visible;
-  }
-
-  body[data-page] .site-header.is-mobile-menu-open .main-nav {
-    display: block;
-  }
-
-  body[data-page] .main-nav-list {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    border-top: 1px solid var(--sub-line);
-    border-left: 1px solid var(--sub-line);
-  }
-
-  body[data-page] .main-nav-item {
-    min-width: 0;
-    border-right: 1px solid var(--sub-line);
-    border-bottom: 1px solid var(--sub-line);
-  }
-
-  body[data-page] .main-nav-link {
-    width: 100%;
-    min-height: 50px;
-    justify-content: flex-start;
-    padding: 8px 10px;
-    font-size: 13px;
-    line-height: 1.35;
-    white-space: normal;
-  }
-
-  body[data-page] .main-nav-item.has-children>.main-nav-link::after {
-    margin-left: 6px;
-  }
-
   .subpage-main .sub-hero {
     min-height: 480px;
     padding: 76px 0;

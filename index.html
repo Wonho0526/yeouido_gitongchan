@@ -13,6 +13,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -50,7 +51,7 @@
           <p>그 마음을 '여의도기통찬의원'이라는 이름에 담았습니다.</p>
         </div>
         <div class="section-more">
-          <button type="button" class="view-more-btn">VIEW MORE</button>
+          <a href="sub/about.html" class="view-more-btn" aria-label="병원 소개 자세히 보기">VIEW MORE</a>
         </div>
       </div>
     </section>
@@ -100,7 +101,7 @@
           </li>
         </ol>
         <div class="section-more">
-          <button type="button" class="view-more-btn">VIEW MORE</button>
+          <a href="sub/values.html" class="view-more-btn" aria-label="진료 원칙 자세히 보기">VIEW MORE</a>
         </div>
       </div>
     </section>
@@ -117,7 +118,7 @@
             <p>“환자의 이야기를 듣고, 통증의 원인을 찾을 때만큼은 누구보다 집요합니다.” </p>
             <strong>이동현 대표원장</strong>
             <div class="section-more">
-              <button type="button" class="view-more-btn">VIEW MORE</button>
+              <a href="sub/doctor.html" class="view-more-btn" aria-label="의료진 소개 자세히 보기">VIEW MORE</a>
             </div>
           </div>
           <div class="director-photo">
@@ -318,7 +319,7 @@
               <strong>정확한 진단과 안전한 치료를 위한 첨단의료장비</strong>
             </h2>
             <div class="section-more">
-              <button type="button" class="view-more-btn">VIEW MORE</button>
+              <a href="sub/equipment.html" class="view-more-btn" aria-label="의료 장비 자세히 보기">VIEW MORE</a>
             </div>
           </div>
 
@@ -342,13 +343,13 @@
       </div>
 
       <div class="inner facility-gallery" aria-label="여의도기통찬의원 시설 이미지">
-        <div class="facility-controls" aria-hidden="true">
-          <span>←</span>
-          <i></i>
-          <span>→</span>
+        <div class="facility-controls" hidden>
+          <button type="button" class="facility-arrow" data-facility-prev aria-label="이전 시설 사진" title="이전 시설 사진" aria-controls="facility-track">&#8592;</button>
+          <i aria-hidden="true"></i>
+          <button type="button" class="facility-arrow" data-facility-next aria-label="다음 시설 사진" title="다음 시설 사진" aria-controls="facility-track">&#8594;</button>
         </div>
 
-        <div class="facility-track">
+        <div class="facility-track" id="facility-track" tabindex="0" role="region" aria-label="시설 사진">
           <figure class="facility-slide">
             <img src="img/editorial/facility-carm-room-natural-v2.webp" alt="영상 장비와 치료 베드가 있는 진료 공간" loading="lazy">
           </figure>

@@ -233,3 +233,38 @@
     button.addEventListener("click", () => renderSlide(index));
   });
 })();
+
+(() => {
+  const track = document.querySelector(".facility-track");
+  const controls = document.querySelector(".facility-controls");
+  const prev = document.querySelector("[data-facility-prev]");
+  const next = document.querySelector("[data-facility-next]");
+  if (!track || !controls || !prev || !next) {
+    return;
+  }
+
+  const syncControls = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    controls.hidden = maxScroll <= 1;
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= maxScroll - 1;
+  };
+
+  const move = (direction) => {
+    const slide = track.querySelector(".facility-slide");
+    if (!slide) {
+      return;
+    }
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.scrollBy({
+      left: direction * (slide.getBoundingClientRect().width + gap),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  };
+
+  prev.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  track.addEventListener("scroll", syncControls, { passive: true });
+  window.addEventListener("resize", syncControls);
+  syncControls();
+})();

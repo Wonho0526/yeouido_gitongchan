@@ -8,9 +8,16 @@
   const rootPrefix = isSubPage ? "../" : "";
 
   const hours = [
-    { term: "월 ~ 금", desc: "09:00 - 18:30" },
-    { term: "토요일", desc: "09:00 - 13:00" },
-    { term: "점심시간", desc: "13:00 - 14:00" },
+    { term: "월 화 목 금", desc: "09:00 ~ 20:00", badge: "야간진료", badgeType: "night" },
+    { term: "수요일", desc: "09:00 ~ 19:00" },
+    { term: "토요일", desc: "09:00 ~ 14:00", badge: "단축진료", badgeType: "short" },
+    { term: "점심시간", desc: "14:00 ~ 15:00" },
+  ];
+
+  const hoursNotes = [
+    "진료 종료 30분 전 접수 마감입니다.",
+    "일요일 · 일반 공휴일 휴진입니다.",
+    "토요일 점심시간 없이 진료합니다.",
   ];
 
   const location = [
@@ -24,11 +31,16 @@
         "div",
         { key: item.term },
         h("dt", null, item.term),
-        h("dd", null, item.desc)
+        h(
+          "dd",
+          null,
+          h("span", null, item.desc),
+          item.badge && h("span", { className: `clinic-hours-badge clinic-hours-badge--${item.badgeType}` }, item.badge)
+        )
       )
     );
 
-  function FooterInfoBlock({ id, title, items, className = "" }) {
+  function FooterInfoBlock({ id, title, items, className = "", notes = [] }) {
     return h(
       "div",
       {
@@ -36,7 +48,12 @@
         "aria-labelledby": id,
       },
       h("h3", { id }, title),
-      h("dl", null, h(DefinitionRows, { items }))
+      h("dl", null, h(DefinitionRows, { items })),
+      notes.length > 0 && h(
+        "ul",
+        { className: "clinic-hours-notes", "aria-label": "진료 안내" },
+        notes.map((note) => h("li", { key: note }, note))
+      )
     );
   }
 
@@ -59,6 +76,8 @@
               id: "footer-hours-title",
               title: "진료시간",
               items: hours,
+              className: "clinic-hours",
+              notes: hoursNotes,
             }),
             h(FooterInfoBlock, {
               id: "footer-location-title",
