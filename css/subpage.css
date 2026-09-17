@@ -12,25 +12,28 @@
 
 .sub-hero {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
-  display: flex !important;
-  align-items: center !important;
+  isolation: isolate;
   overflow: hidden;
-  padding: 92px 0;
-  background:
-    linear-gradient(110deg, rgba(247, 244, 238, 0.98), rgba(255, 254, 251, 0.92)),
-    #f7f4ee;
 }
 
-.sub-hero::after {
+.sub-hero::before {
   position: absolute;
-  right: -5vw;
-  bottom: -10vw;
-  width: min(46vw, 620px);
-  height: min(46vw, 620px);
-  background: url("../img/logo_back.png") center / contain no-repeat;
+  inset: 0;
+  z-index: 1;
+  background: rgba(18, 22, 24, 0.64);
   content: "";
-  opacity: 0.08;
+  pointer-events: none;
+}
+
+.sub-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-image-position, center);
+  pointer-events: none;
 }
 
 .sub-hero-inner {
@@ -80,7 +83,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.84) contrast(0.98);
 }
 
 .sub-hero-visual {
@@ -155,9 +157,9 @@
 
 .sub-vision-card span,
 .sub-count,
-.sub-value-card > span,
-.sub-point-card > span,
-.sub-equipment-card > span {
+.sub-value-card>span,
+.sub-point-card>span,
+.sub-equipment-card>span {
   color: var(--color-accent);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-size: 13px;
@@ -193,18 +195,18 @@
 }
 
 .sub-doctor-layout {
-  grid-template-columns: minmax(320px, 0.74fr) minmax(0, 1.26fr);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .sub-doctor-photo {
   min-height: 640px;
-  background: #f0ebe4;
+  height: 100%;
 }
 
 .sub-doctor-photo img {
-  object-fit: contain;
-  object-position: bottom center;
-  padding: 28px 22px 0;
+  width: 100%;
+  object-fit: cover;
 }
 
 .sub-large-text {
@@ -409,7 +411,7 @@ blockquote {
   color: #3f3934;
 }
 
-.sub-guide-call > a {
+.sub-guide-call>a {
   display: inline-block;
   color: var(--color-primary-dark);
   font-family: "Noto Serif KR", serif;
@@ -720,6 +722,7 @@ blockquote {
 }
 
 @media (max-width: 920px) {
+
   .sub-hero-inner,
   .sub-split,
   .sub-doctor-layout,
@@ -851,26 +854,30 @@ body[data-page] .phone-cta strong {
   font-size: 14px;
 }
 
+body[data-page="location"] .footer-contact {
+  display: none;
+}
+
 .subpage-main {
   color: var(--sub-ink);
   background: var(--sub-paper);
 }
 
 .subpage-main .sub-hero {
-  min-height: 390px;
-  display: block !important;
+  min-height: min(640px, calc(100svh - 180px));
+  display: flex !important;
+  align-items: center;
   overflow: hidden;
-  padding: 94px 0 86px;
-  background: var(--sub-cream);
-}
-
-.subpage-main .sub-hero::after {
-  display: none;
+  padding: 96px 0;
+  background: #252a2c;
 }
 
 .subpage-main .sub-hero-inner {
+  z-index: 2;
   display: block;
   max-width: 1120px;
+  text-align: center;
+  color: #fff;
 }
 
 .sub-hero-eyebrow,
@@ -884,9 +891,16 @@ body[data-page] .phone-cta strong {
   line-height: 1.3;
 }
 
+.sub-hero-eyebrow {
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
 .sub-hero-series {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0 14px;
   margin: 18px 0 12px;
   font-family: "Noto Sans KR", sans-serif;
@@ -895,22 +909,16 @@ body[data-page] .phone-cta strong {
   line-height: 1.35;
 }
 
-.sub-hero-series .tone-1 {
-  color: var(--sub-gold);
-}
-
-.sub-hero-series .tone-2 {
-  color: var(--sub-navy);
-}
-
+.sub-hero-series .tone-1,
+.sub-hero-series .tone-2,
 .sub-hero-series .tone-3 {
-  color: #73747a;
+  color: #fff;
 }
 
 .sub-hero h1 {
   max-width: 920px;
-  margin: 0;
-  color: var(--sub-ink);
+  margin: 0 auto;
+  color: #fff;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 66px;
   font-weight: 700;
@@ -920,8 +928,8 @@ body[data-page] .phone-cta strong {
 
 .sub-hero-desc {
   max-width: 690px;
-  margin: 24px 0 0;
-  color: #53565a;
+  margin: 30px auto 0;
+  color: #fff;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.78;
@@ -988,6 +996,10 @@ body[data-page] .phone-cta strong {
 .sub-section-heading {
   max-width: 780px;
   margin: 0 0 44px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
 }
 
 .sub-section-heading.is-centered {
@@ -1059,9 +1071,8 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-about-statement p,
-.sub-copy-stack p,
-.sub-condition-overview-copy > p,
-.sub-condition-story > p,
+.sub-condition-overview-copy>p,
+.sub-condition-story>p,
 .sub-feature-card p,
 .sub-guide-card p,
 .sub-simple-card p {
@@ -1072,7 +1083,14 @@ body[data-page] .phone-cta strong {
   line-height: 1.85;
 }
 
-.sub-about-statement p + p {
+.sub-copy-stack p {
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+.sub-about-statement p+p {
   margin-top: 12px;
 }
 
@@ -1105,11 +1123,11 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-vision-card span,
-.sub-value-card > span,
-.sub-point-card > span,
-.sub-equipment-card > span,
-.sub-simple-card > span,
-.sub-guide-card > span,
+.sub-value-card>span,
+.sub-point-card>span,
+.sub-equipment-card>span,
+.sub-simple-card>span,
+.sub-guide-card>span,
 .sub-count {
   color: var(--sub-gold);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
@@ -1135,7 +1153,6 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-editorial-split,
-.sub-doctor-layout,
 .sub-care-intro-grid,
 .sub-simple-intro {
   display: grid;
@@ -1144,9 +1161,7 @@ body[data-page] .phone-cta strong {
   gap: 72px;
 }
 
-.sub-copy-stack .sub-section-kicker,
-.sub-promise-intro .sub-section-kicker,
-.sub-condition-overview-copy .sub-section-kicker {
+.sub-section-kicker {
   display: block;
   margin-bottom: 14px;
   color: var(--sub-gold);
@@ -1158,8 +1173,8 @@ body[data-page] .phone-cta strong {
   margin-bottom: 24px;
 }
 
-.sub-copy-stack p + p {
-  margin-top: 14px;
+.sub-copy-stack p+p {
+  margin-top: 10px;
 }
 
 .sub-about-image {
@@ -1170,23 +1185,32 @@ body[data-page] .phone-cta strong {
   background: #fff !important;
 }
 
-.sub-doctor-layout {
-  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+.sub-image-frame.sub-doctor-photo {
+  overflow: visible;
 }
 
 .sub-doctor-photo {
   min-height: 640px;
-  background: var(--sub-cream);
+  background: transparent;
 }
 
 .sub-doctor-photo img {
-  object-fit: contain;
-  object-position: bottom center;
-  padding: 18px 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sub-doctor-main {
+  text-align: center;
+  font-size: 20px;
+  padding: 50px 0 100px;
 }
 
 .sub-doctor-copy {
   padding-right: 4%;
+}
+
+.sub-doctor-copy p {
+  margin-top: 4px !important;
 }
 
 .sub-large-text {
@@ -1215,10 +1239,10 @@ body[data-page] .phone-cta strong {
 .sub-profile-note {
   margin: 34px 0 0;
   padding-top: 18px;
-  border-top: 1px solid var(--sub-line);
+  border-bottom: 2px solid var(--sub-line);
   color: var(--sub-muted);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 20px !important;
+  font-weight: 7900;
 }
 
 .sub-values-section {
@@ -1399,7 +1423,7 @@ body[data-page] .phone-cta strong {
   font-weight: 700;
 }
 
-.sub-guide-call > a {
+.sub-guide-call>a {
   color: var(--sub-navy);
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   font-size: 30px;
@@ -1452,11 +1476,11 @@ body[data-page] .phone-cta strong {
   aspect-ratio: 16 / 9;
 }
 
-.sub-condition-overview-copy > p {
+.sub-condition-overview-copy>p {
   max-width: 560px;
 }
 
-.sub-condition-overview-copy > p + p {
+.sub-condition-overview-copy>p+p {
   margin-top: 16px;
 }
 
@@ -1478,10 +1502,8 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-condition-card {
-  display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
-  gap: 20px;
-  padding: 54px 0;
+  display: block;
+  padding: 120px 0;
   border: 0;
   border-bottom: 1px solid var(--sub-line);
   border-radius: 0;
@@ -1489,10 +1511,14 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-count {
-  padding-top: 7px;
+  display: block;
+  margin-bottom: 12px;
+  padding: 0;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
-.sub-condition-main > h3 {
+.sub-condition-story>h3 {
   margin: 0 0 28px;
   color: var(--sub-ink);
   font-family: "Noto Sans KR", sans-serif;
@@ -1503,8 +1529,24 @@ body[data-page] .phone-cta strong {
 
 .sub-condition-detail-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.96fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
   gap: 44px;
+}
+
+.sub-condition-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  background: #f0f1f2;
+}
+
+.sub-condition-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sub-symptom-box {
@@ -1529,18 +1571,6 @@ body[data-page] .phone-cta strong {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.75;
-}
-
-.sub-condition-therapy {
-  padding-left: 38px;
-  border-left: 1px solid var(--sub-line);
-}
-
-.sub-treatment-label {
-  margin: 0 0 12px;
-  color: var(--sub-navy);
-  font-size: 16px;
-  font-weight: 700;
 }
 
 .sub-tag-list,
@@ -1658,7 +1688,7 @@ body[data-page] .phone-cta strong {
   background: var(--sub-navy);
 }
 
-.sub-point-card > span {
+.sub-point-card>span {
   color: #f3d37d;
 }
 
@@ -1712,7 +1742,7 @@ body[data-page] .phone-cta strong {
   background: #fff;
 }
 
-.sub-feature-card > span {
+.sub-feature-card>span {
   display: block;
   margin: 5px 0 0;
   color: var(--sub-gold);
@@ -1795,7 +1825,7 @@ body[data-page] .phone-cta strong {
   line-height: 1.4;
 }
 
-.sub-disease-slide-copy > p:not(.sub-disease-slide-count) {
+.sub-disease-slide-copy>p:not(.sub-disease-slide-count) {
   margin: 16px 0 0;
   color: var(--sub-muted);
   font-size: 15px;
@@ -1824,18 +1854,25 @@ body[data-page] .phone-cta strong {
 }
 
 .sub-equipment-image {
+  position: relative;
+  flex: none;
+  width: 100%;
   aspect-ratio: 4 / 3;
   min-height: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
   background: #eeece7;
 }
 
 .sub-equipment-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   padding: 18px;
 }
 
-.sub-equipment-card > span {
+.sub-equipment-card>span {
   color: var(--sub-gold);
 }
 
@@ -1989,13 +2026,6 @@ body[data-page] .phone-cta strong {
     gap: 28px;
   }
 
-  .sub-condition-therapy {
-    padding-top: 26px;
-    padding-left: 0;
-    border-top: 1px solid var(--sub-line);
-    border-left: 0;
-  }
-
   .sub-value-grid,
   .sub-point-grid,
   .sub-guide-grid,
@@ -2109,13 +2139,13 @@ body[data-page] .phone-cta strong {
     white-space: normal;
   }
 
-  body[data-page] .main-nav-item.has-children > .main-nav-link::after {
+  body[data-page] .main-nav-item.has-children>.main-nav-link::after {
     margin-left: 6px;
   }
 
   .subpage-main .sub-hero {
-    min-height: 0;
-    padding: 72px 0 66px;
+    min-height: 480px;
+    padding: 76px 0;
   }
 
   .sub-hero-series {
@@ -2212,13 +2242,7 @@ body[data-page] .phone-cta strong {
     min-height: 0;
   }
 
-  .sub-condition-card {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 38px 0;
-  }
-
-  .sub-condition-main > h3 {
+  .sub-condition-story>h3 {
     margin-bottom: 22px;
     font-size: 28px;
   }
@@ -2251,7 +2275,7 @@ body[data-page] .phone-cta strong {
     padding: 24px 0;
   }
 
-  .sub-feature-card > span {
+  .sub-feature-card>span {
     margin-top: 4px;
   }
 
@@ -2301,7 +2325,7 @@ body[data-page] .phone-cta strong {
     font-size: 21px;
   }
 
-  .sub-disease-slide-copy > p:not(.sub-disease-slide-count) {
+  .sub-disease-slide-copy>p:not(.sub-disease-slide-count) {
     font-size: 15px;
   }
 

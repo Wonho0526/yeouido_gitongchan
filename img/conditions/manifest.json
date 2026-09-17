@@ -1,0 +1,303 @@
+{
+  "generationMode": "Built-in image_gen; one independently generated image per condition",
+  "purpose": "AI-generated illustrative editorial photos, not photographs of actual clinic staff or patients, not diagnostic images or instructions for self-testing.",
+  "assets": [
+    {
+      "page": "neck-shoulder",
+      "id": "cervical-disc",
+      "title": "목디스크",
+      "alt": "옆모습으로 목덜미에 손을 얹고 쉬는 성인",
+      "file": "cervical-disc-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-f8a164ca-a21e-4f93-8b19-37e86fb6bbc1.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium close side-back view of a middle-aged adult seated comfortably in a plain muted sage cotton top. One hand rests gently on the side of the nape, with the neck, shoulder and upper arm visible. Slight natural head turn, no extreme neck movement. Bright ordinary home workspace subtly visible behind, no screen text."
+    },
+    {
+      "page": "neck-shoulder",
+      "id": "forward-head-posture",
+      "title": "거북목·일자목 증후군",
+      "alt": "책상에서 작업하는 성인의 목과 어깨 옆모습",
+      "file": "forward-head-posture-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-2d884fec-4e90-445b-9f24-82348f861122.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Side profile from shoulders to waist of an adult in a light gray casual shirt sitting at a simple desk and viewing a laptop with a modest forward head position, not exaggerated or deformed. Neck contour and shoulder alignment clearly visible, arms naturally supported on desk. Daylit room, blurred small green houseplant at edge. Laptop screen turned away with no text."
+    },
+    {
+      "page": "neck-shoulder",
+      "id": "frozen-shoulder",
+      "title": "오십견",
+      "alt": "팔의 움직임을 살펴보는 어깨 진료 장면",
+      "file": "frozen-shoulder-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-99586dda-f9d3-4115-8f0d-1014ef9468b6.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium view in a modest clinical room, an adult woman age about55 in a lavender short-sleeved t-shirt gently lifting one forearm forwards with elbow bent, a clinician's two hands lightly supporting elbow and wrist. Shoulder remains relaxed, small comfortable range of motion, no forceful manipulation. Frame upper torso and both hands without faces."
+    },
+    {
+      "page": "neck-shoulder",
+      "id": "rotator-cuff",
+      "title": "회전근개 질환",
+      "alt": "어깨 바깥쪽을 가볍게 확인하는 진료 장면",
+      "file": "rotator-cuff-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-e42350f8-74ef-42d3-99a3-ae96aa469f6f.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close-up shoulder assessment. Seated adult in a pale blue short-sleeved shirt, one upper arm by the body with elbow bent and forearm resting on thigh. A white-coated clinician gently palpates the outer shoulder through the thin sleeve with a single hand. Three-quarter view focused on shoulder and upper arm, face cropped. Plain light gray outpatient room."
+    },
+    {
+      "page": "neck-shoulder",
+      "id": "calcific-tendinitis",
+      "title": "석회성건염",
+      "alt": "어깨 부위를 초음파로 확인하는 진료 장면",
+      "file": "calcific-tendinitis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-621a909d-54cd-4370-8bbd-dfb9aadae930.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close clinical photograph of a non-invasive shoulder ultrasound assessment: a clinician holding a standard plain ultrasound probe against the exposed top-lateral shoulder of an adult patient wearing a modest sleeveless gray shirt. The actual scanner screen is completely out of view. Tiny clear gel glint only. Shoulder skin, hand and probe are sharp, background neutral white treatment room. No needles."
+    },
+    {
+      "page": "neck-shoulder",
+      "id": "shoulder-impingement",
+      "title": "어깨 충돌증후군",
+      "alt": "팔을 들어 어깨 움직임을 확인하는 성인",
+      "file": "shoulder-impingement-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-acabd5b7-9779-4ba1-a8b3-7c2e28078809.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Natural medium side view of an adult man in a soft blue casual t-shirt standing near a pale wall and slowly reaching one arm forwards to shoulder height. The elbow is slightly bent and his other arm rests at his side. Frame chest, shoulder and arm without face. Ordinary daylit rehabilitation room, no exercise diagrams or visible equipment branding."
+    },
+    {
+      "page": "spine-joint",
+      "id": "lumbar-disc",
+      "title": "허리디스크",
+      "alt": "허리 아래쪽에 손을 얹고 선 성인",
+      "file": "lumbar-disc-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-583f5a58-708c-45c0-8a21-e9210c5a4188.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium rear three-quarter view of an adult wearing a muted green cotton shirt and charcoal trousers, standing beside an examination couch with one palm resting on the lower back at belt level. Natural neutral standing posture, no bending or grimace. Crop shoulders to upper thighs, face absent, naturally lit light clinical room."
+    },
+    {
+      "page": "spine-joint",
+      "id": "spinal-stenosis",
+      "title": "척추관 협착증",
+      "alt": "잠시 앉아 쉬는 중장년 성인의 모습",
+      "file": "spinal-stenosis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-adf27c2c-0f77-4b49-b34a-c2d0d267fabb.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: An older adult age65 in a pale blue cardigan and dark trousers pausing on a simple park bench after a walk, leaning slightly forwards with both forearms resting on thighs. Side view from shoulders down shows natural sitting posture and legs, no face, walking shoes. Quiet green park in soft natural morning light, no overly saturated colors."
+    },
+    {
+      "page": "spine-joint",
+      "id": "lumbar-strain",
+      "title": "급·만성 요통 및 요추 염좌",
+      "alt": "오랜 작업 후 허리 주변을 가볍게 짚는 성인",
+      "file": "lumbar-strain-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-d5e88b0e-d303-46f1-ad96-975c9932c6d4.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Side-back medium view of an adult standing up next to an office chair after desk work, one hand gently resting at the lower back over a light gray shirt, other hand on chair back. Small ordinary movement with no dramatic bending. Frame shoulders to knees, calm daylight office with a closed laptop in background."
+    },
+    {
+      "page": "spine-joint",
+      "id": "facet-joint",
+      "title": "척추후관절 증후군",
+      "alt": "허리 주변의 압통 위치를 살펴보는 진료 장면",
+      "file": "facet-joint-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-84270c18-9c46-433f-86a1-d9bc553df4ec.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close-up non-invasive low-back assessment: adult seated upright sideways on an examination couch wearing a thin pale blue shirt and dark trousers. A clinician's single hand gently checking the paraspinal area just to one side of the lower back, through the shirt. Crop mid back to hips; no faces, no bare back, neutral clinic light."
+    },
+    {
+      "page": "spine-joint",
+      "id": "sciatica",
+      "title": "좌골신경통",
+      "alt": "허벅지 뒤쪽을 가볍게 받치며 앉아 있는 성인",
+      "file": "sciatica-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-e1ec2915-6c42-40e6-bd4c-3bf3344fc2de.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Side view of an adult seated on the edge of a simple examination couch wearing a light gray t-shirt and loose dark cropped trousers. One leg extends gently forwards, heel on floor, and one hand rests on the back-outer thigh above the knee. Show hip through lower legs, clear natural anatomical positioning, no treatment being performed, quiet daylit room."
+    },
+    {
+      "page": "hand-wrist",
+      "id": "carpal-tunnel",
+      "title": "손목터널증후군",
+      "alt": "손바닥 쪽 손목을 가볍게 감싸는 손",
+      "file": "carpal-tunnel-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-cdcc5517-9c3f-4e70-a643-b1d934730307.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close-up of an adult's hands resting on a clean light gray desk. One hand palm facing upwards, wrist relaxed, the other hand lightly cradles the palm-side wrist. A simple keyboard out of focus well behind, no text. Center the wrist crease and palm; five anatomically correct fingers per hand, no jewelry, daylight."
+    },
+    {
+      "page": "hand-wrist",
+      "id": "de-quervain",
+      "title": "손목건초염",
+      "alt": "엄지손가락 쪽 손목을 가볍게 짚는 손",
+      "file": "de-quervain-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-7434bb62-0098-4499-9422-73a487047916.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Detailed side view of one adult hand resting thumb-up on a neutral gray fabric cushion, fingers loosely curled, another hand lightly touching the thumb-side of the wrist just below the base of the thumb. Focus radial wrist and thumb base, no forced stretch. Realistic skin and hand anatomy, calm natural clinical photograph."
+    },
+    {
+      "page": "hand-wrist",
+      "id": "trigger-finger",
+      "title": "방아쇠수지",
+      "alt": "손바닥과 손가락 뿌리 부분이 보이는 손",
+      "file": "trigger-finger-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-5bec5fc2-294a-4c9c-80c0-be636344471d.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: A simple documentary close-up of ONE adult right hand resting palm-up on a plain light gray examination cushion, wrist and all fingers fully in frame. Exactly five digits total: one thumb on the left side of the palm and four gently separated, nearly straight fingers pointing to the right. No other hands, no bent or duplicated fingers, no pointing gesture. Relaxed natural finger posture, clear palm creases and finger bases, no deformity. The image accompanies a trigger-finger description but does not attempt to show a deformity. Natural daylight, pale gray cotton sleeve at wrist, sharp hand, neutral background."
+    },
+    {
+      "page": "hand-wrist",
+      "id": "elbow-tendinopathy",
+      "title": "테니스 엘보 / 골프 엘보",
+      "alt": "팔꿈치 주변을 가볍게 확인하는 모습",
+      "file": "elbow-tendinopathy-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-67263eb0-d3de-4707-84a3-67b5c0a38c15.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close view of an adult's bare elbow and proximal forearm with a soft green short sleeve. Elbow naturally bent about90degrees while the opposite hand gently rests at the outside of the elbow. No tennis racket or golf equipment necessary. Frame upper arm through hand, neutral light interior, crisp natural skin detail."
+    },
+    {
+      "page": "knee",
+      "id": "knee-osteoarthritis",
+      "title": "퇴행성 관절염",
+      "alt": "앉아서 무릎에 손을 얹고 쉬는 중장년 성인",
+      "file": "knee-osteoarthritis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-8f28ab6a-231d-4037-850e-cd55ccce348c.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Older adult age65 seated on a plain chair wearing a light blue shirt and knee-length gray shorts, both feet naturally resting on the floor. One hand rests gently over one knee. Frame waist down with natural age-related skin texture, no dramatic joint swelling or pain grimace. Daylit modest consultation room, clear knee focus."
+    },
+    {
+      "page": "knee",
+      "id": "meniscus",
+      "title": "반월상연골판 손상",
+      "alt": "무릎 옆 관절선을 살펴보는 진료 장면",
+      "file": "meniscus-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-92bc03df-ac1e-43c4-be8c-491b88aed03d.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close non-invasive knee examination with an adult seated on an examination couch wearing dark athletic shorts. Knee bent naturally, clinician's single hand lightly palpates the medial joint line beside the kneecap. Another limb visible only naturally, no twisting or forceful test. Clear intact knee skin, plain white daylight clinic."
+    },
+    {
+      "page": "knee",
+      "id": "patellar-tendinitis",
+      "title": "슬개건염",
+      "alt": "무릎 앞쪽 아래 부위를 가볍게 짚는 성인",
+      "file": "patellar-tendinitis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-d379ef63-d730-4da2-b905-57d55b42727a.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: A recreational adult runner seated on a low bench in simple dark shorts and a gray athletic top, one index fingertip gently touching the area just below the kneecap at the front of a relaxed bent knee. Frame mid-thigh to upper shin, a second hand relaxed on opposite thigh. Normal natural skin, quiet daylight, no red effect."
+    },
+    {
+      "page": "knee",
+      "id": "patellofemoral-pain",
+      "title": "슬개대퇴통증증후군",
+      "alt": "낮은 계단에서 무릎 앞쪽을 확인하는 성인",
+      "file": "patellofemoral-pain-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-cea61aa0-82b8-4578-8dfa-e1f83e2f00cd.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium close side view of adult in simple dark shorts with one foot resting on a low indoor step, bent knee comfortably positioned above the foot. One hand rests lightly around the front of the kneecap without obscuring it. Frame hips to shoes, white wall and gray stair tread, ordinary daylight, no exercise instruction or forceful pose."
+    },
+    {
+      "page": "foot-heel",
+      "id": "plantar-fasciitis",
+      "title": "족저근막염",
+      "alt": "발바닥 뒤꿈치 주변을 가볍게 확인하는 손",
+      "file": "plantar-fasciitis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-cc48a71e-2405-43fb-b662-50052728bdce.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close-up of an adult seated with one bare foot crossed over the other knee, sole partly facing camera. One hand gently supports the heel and a fingertip of the other hand lightly indicates the underside of the heel near the arch. The whole foot has five natural toes, heel and arch clearly visible. Gray trousers, clean daylit neutral background."
+    },
+    {
+      "page": "foot-heel",
+      "id": "achilles-tendinitis",
+      "title": "아킬레스건염",
+      "alt": "발뒤꿈치 위 아킬레스건 주변을 확인하는 모습",
+      "file": "achilles-tendinitis-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-dbcd9671-4128-4343-aaa8-69d1c72d3f18.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close rear three-quarter view of an adult bare lower leg and heel resting naturally with foot on floor. One hand gently touches the Achilles tendon just above the back of the heel. Tendon contour clearly visible, anatomically correct ankle and foot. Light gray floor, a plain athletic shoe softly out of focus at edge, natural daylight."
+    },
+    {
+      "page": "foot-heel",
+      "id": "ankle-instability",
+      "title": "만성 발목 염좌 및 발목 관절 불안정증",
+      "alt": "발목 바깥쪽을 가볍게 감싸는 손",
+      "file": "ankle-instability-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-3e449355-e722-47d1-bef0-87dc278a4779.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close natural photograph of an adult seated on a bench with a bare foot lifted slightly onto a low stool. One hand lightly cups the outside of the ankle around the lateral ankle bone without covering the whole foot. Foot in neutral comfortable position, intact skin, no dramatic swelling. Dark cropped trousers, simple white daylight room."
+    },
+    {
+      "page": "foot-heel",
+      "id": "mortons-neuroma",
+      "title": "지간신경종",
+      "alt": "발바닥 앞쪽과 발가락 아래를 살펴보는 손",
+      "file": "mortons-neuroma-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-dbb40a6b-6a63-440a-8d7d-62cefd0ac660.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Close-up adult bare foot with sole facing diagonally towards camera, one hand supporting the heel and another index fingertip gently indicating the ball of the foot beneath the third and fourth toes. Five naturally shaped toes, relaxed pose, no visible lesion. Frame the whole forefoot and arch, neutral soft gray cloth and daylight."
+    },
+    {
+      "page": "neuralgia",
+      "id": "occipital-neuralgia",
+      "title": "후두신경통",
+      "alt": "뒤통수 아래와 목덜미를 가볍게 짚는 성인",
+      "file": "occipital-neuralgia-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-b70358eb-f63d-4e7c-a64a-9163e0a80f87.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Rear three-quarter close view of an adult with short dark hair, fingertips of one hand resting gently at the base of the skull just behind the ear near the upper nape. Plain light blue cotton top. Head naturally upright, no dramatic expression, face mostly turned away. Daylit quiet interior, clear nape and hand."
+    },
+    {
+      "page": "neuralgia",
+      "id": "tension-headache",
+      "title": "만성 긴장성 두통",
+      "alt": "관자놀이에 손을 얹고 잠시 쉬는 성인",
+      "file": "tension-headache-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-0076dbbe-52e6-422b-8d76-4eb6b7602557.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Quiet editorial photograph of an adult at a desk pausing from work, one hand resting gently at a temple and elbow supported on the desk. Frame upper torso and partial side face with eyes outside or barely in crop; calm tired posture, not dramatic pain. Soft lavender shirt, neutral daylight, blurred closed laptop in background, no brand cues."
+    },
+    {
+      "page": "neuralgia",
+      "id": "autonomic-dizziness",
+      "title": "자율신경 관련 통증 및 어지럼증",
+      "alt": "의자에 앉아 안정을 취하는 성인",
+      "file": "autonomic-dizziness-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-72d2bf3c-dee1-44ec-9442-b8ef56c12291.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium side view of an adult seated upright on a simple chair by a window, hands resting naturally on thighs, feet firmly on floor, pausing calmly. Face outside frame, light gray shirt and muted green trousers. A small plain clear water glass on side table. Everyday quiet recovery moment, not implying a specific diagnosis or treatment."
+    },
+    {
+      "page": "neuralgia",
+      "id": "intercostal-neuralgia",
+      "title": "늑간신경통",
+      "alt": "몸통 옆 갈비뼈 부근에 손을 얹은 성인",
+      "file": "intercostal-neuralgia-natural-v1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "exec-b8b80e09-ca5e-4ab8-9350-a9364fde0044.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: inline editorial photograph accompanying a condition description on a Korean clinic website.\nCreate ONE natural realistic photograph, landscape 1536x1024. Show the described body area or everyday clinical context clearly, without claiming to visualize an internal diagnosis. Soft window daylight, neutral accurate white balance, natural skin and cotton texture, ordinary restrained setting. Adult Korean subjects, faces mostly outside frame and no resemblance to any specific real person. Quiet documentary feeling, not a staged advertisement. Anatomically correct limbs and hands with five digits; relaxed plausible poses. The important subject should fit inside the central 80% and remain legible in a 3:2 crop.\nAvoid text, letters, labels, diagrams, watermarks, logos, borders, collages, split panels, glowing red pain patches, anatomy overlays, CGI, dramatic distress, staged smiles, needles, invasive procedures, branded equipment, gold/sepia grading, teal/navy grading or deliberately matching a brand palette. Real naturally varied subdued colors, not a monochrome brand scene.\nScene: Medium close side view of an adult in a plain pale blue t-shirt with one open hand resting gently along the lower lateral ribcage just below the armpit level, other arm naturally down. Crop shoulders to hips, head outside frame. Normal upright posture, not clutching central chest, no emergency or distress scene. Neutral naturally lit interior."
+    }
+  ]
+}

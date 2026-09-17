@@ -17,17 +17,88 @@
   <link rel="stylesheet" href="../css/subpage.css">
 </head>
 
-<body data-page="doctor">
+<body data-page="doctor" data-layout="doctor">
   <div id="site-header-root"></div>
-  <main id="subpage-root" class="subpage-main"></main>
+  <main id="main-content" class="subpage-main">
+    <section class="sub-hero">
+      <img class="sub-hero-background" src="../img/heroes/doctor-natural-v1.webp" width="1536" height="1024" alt=""
+        aria-hidden="true" fetchpriority="high">
+      <div class="inner sub-hero-inner">
+        <p class="sub-hero-eyebrow">MEDICAL TEAM</p>
+        <p class="sub-hero-series" aria-label="여의도기통찬 소개"><span class="tone-1">여의도</span><span
+            class="tone-2">기통찬</span><span class="tone-3">소개</span></p>
+        <h1>기통찬 의료진 소개</h1>
+        <p class="sub-hero-desc">환자분에게 해가 되지 않는 치료, 내 가족에게도 제안할 수 있는 치료만을 고집합니다.</p>
+      </div>
+    </section>
+    <div id="site-local-nav-root" data-nav-group="intro"></div>
+    <div class="subpage-content subpage-content--doctor">
+      <section class="sub-section sub-doctor-section">
+        <div class="sub-doctor-main">
+          <span class="sub-section-kicker">DOCTOR MESSAGE</span>
+          <p>“내 가족에게도 권할 수 있는 치료를 원칙으로,<br>
+            작은 불편함도 세심하게 살피며<br>기통찬 일상을 함께 만들어가겠습니다.” </p>
+        </div>
+        <div class="inner sub-split sub-doctor-layout">
+          <figure class="sub-image-frame sub-doctor-photo"><img src="../img/doctor_profile.png" alt="이동현 대표원장"
+              loading="lazy"></figure>
+          <div class="sub-copy-stack sub-doctor-copy">
+            <h2>이동현 대표원장</h2>
+            <blockquote>"작은 불편함도 세심하게 살피며, 기통찬 일상을 함께 만들어가겠습니다."</blockquote>
+            <p class="sub-profile-note">경력</p>
+            <p>현) 여의도기통찬의원 대표원장</p>
+            <p>현) 성정원 통사 아카데미 정강사</p>
+            <p>삼성의료원 수석 전공의 수료 및 전문의 취득</p>
+            <p>강북삼성병원 외래교수</p>
+            <p>서울대학교병원 연수</p>
+            <p>정선군 보건소 공중보건의사 대표 역임</p>
+            <p>코로나19 대응 공로 강원도지사 표창</p>
+            <p>전) 성정원통사의원 원장</p>
+            <p>전) 배곧정형외과의원 원장</p>
+            <p>전) 연세근본마취통증의학과의원 원장</p>
+            <p>전) 불광고려마취통증의학과의원 원장</p>
+            <p class="sub-profile-note">약력 및 학회활동</p>
+            <p>성정원 통사 아카데미 수료 및 정강사 과정 수료</p>
+            <p>대한근골격계초음파학회 전문가 과정 수료</p>
+            <p>대한정형통증의학회 TPI 과정 수료</p>
+            <p>대한정형통증의학회 정회원</p>
+            <p>대한척추통증의학회 정회원</p>
+            <p>대한임상통증학회 정회원</p>
+            <p>통증기능분석학회 정회원</p>
+            <p>대한도수의학회 정회원</p>
+            <p>대한충격파재생의학회 정회원</p>
+            <p>대한스포츠의학회 평생회원</p>
+          </div>
+        </div>
+      </section>
+      <section class="sub-section sub-doctor-section">
+        <div class="sub-doctor-main">
+          <span class="sub-section-kicker">DOCTOR MESSAGE</span>
+          <p>"치료를 잘하는 의사는 많지만, 의사를 가르치는 의사는 흔치 않습니다." </p>
+
+        </div>
+        <div class="inner sub-split sub-doctor-layout">
+          <figure class="sub-image-frame sub-doctor-photo"><img src="../img/heroes/values-natural-v1.webp"
+              alt="정강사 강의 사진" loading="lazy"></figure>
+          <div class="sub-copy-stack sub-doctor-copy">
+            <p>통증학 교육 과정과 학회에서 강의하며</p>
+            <p>동료 의료진들에게 최신 시술 노하우와 수술 기법을 전수하고 있습니다.</p>
+            <p>끊임없이 배우고 연구하여 환자분들에게</p>
+            <p>가장 안전화고 고도화된 의료 서비스를 제공할
+              것을 약속드립니다.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
   <div id="site-footer-root"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="../js/components/Header.js"></script>
   <script src="../js/components/Footer.js"></script>
+  <script src="../js/components/LocalNavigation.js"></script>
   <script src="../js/layout.js"></script>
-  <script src="../js/subpage-data.js"></script>
   <script src="../js/subpage.js"></script>
 </body>
 

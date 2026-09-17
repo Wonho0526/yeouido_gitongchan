@@ -17,17 +17,74 @@
   <link rel="stylesheet" href="../css/subpage.css">
 </head>
 
-<body data-page="about">
+<body data-page="about" data-layout="about">
   <div id="site-header-root"></div>
-  <main id="subpage-root" class="subpage-main"></main>
+  <main id="main-content" class="subpage-main">
+    <section class="sub-hero">
+      <img class="sub-hero-background" src="../img/heroes/about-natural-v1.webp" width="1536" height="1024" alt=""
+        aria-hidden="true" fetchpriority="high">
+      <div class="inner sub-hero-inner">
+        <p class="sub-hero-eyebrow">YEOUIDO GITONG CHAN</p>
+        <p class="sub-hero-series" aria-label="여의도기통찬 소개"><span class="tone-1">여의도</span><span
+            class="tone-2">기통찬</span><span class="tone-3">소개</span></p>
+        <h1>기통찬 뜻 &amp; 미션 비전</h1>
+        <p class="sub-hero-desc">막힌 통증의 흐름을 트이게 하고, 다시 삶이 빛나도록 돕겠습니다.</p>
+      </div>
+    </section>
+    <div id="site-local-nav-root" data-nav-group="intro"></div>
+    <div class="subpage-content subpage-content--about">
+      <section class="sub-section sub-about-meaning">
+        <div class="inner">
+          <header class="sub-section-heading is-centered">
+            <p class="sub-section-kicker">THE MEANING OF GITONGCHAN</p>
+            <h2>'기통찬'의 뜻</h2>
+          </header>
+          <div class="sub-about-statement">
+            <p class="is-lead">'기(氣)가 통(通)하면 찬(燦) 밝아진다'</p>
+            <p class="">환자의 신체와 삶이 다시 활력을 찾아 빛나게 한다는 의미를 담았습니다.</p>
+            <p class="">겉으로 드러난 통증만 바라보지 않고, 그 뒤에 숨어 있는 원인까지 세심하게 살펴 필요한 치료로 이어가겠습니다.</p>
+            <p>내 가족에게도 권할 수 있는 치료를 원칙으로, 통증이라는 ‘경보’만 끄는 것이 아닌 원인이 되는 ‘불’을 찾아 끄는 진료를 약속합니다.</p>
+          </div>
+          <div class="sub-vision-grid">
+            <article class="sub-vision-card"><span>Vision 1.</span><strong>환자의 이야기에 귀 기울이고,<br> 통증의 원인을 끝까지 찾아가는
+                병원</strong>
+            </article>
+            <article class="sub-vision-card"><span>Vision 2.</span><strong>환자가 충분히 이해하고,<br>믿고 맡길 수 있는 병원</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sub-section sub-about-mission">
+        <div class="inner sub-editorial-split">
+          <div class="sub-copy-stack">
+            <span class="sub-section-kicker">MISSION &amp; VISION</span>
+            <h2>왜 '여의도기통찬의원'일까요?</h2>
+            <p>통증은 검사에서 보이는 구조적인 문제만으로</p>
+            <p>모두 설명되지 않을 때가 있습니다.</p>
+            <p>검사 결과에만 머물지 않고,</p>
+            <p>실제로 통증을 일으키는 원인까지 살펴야 하는 이유입니다.</p>
+            <p>어디가 아픈지만 보는 것이 아니라, 왜 아픈지 끝까지 파고드는 것.</p>
+            <p>겉으로 드러난 증상 너머의 원인을 찾고,</p>
+            <p>환자의 몸과 일상이 다시 제자리로 돌아갈 수 있도록</p>
+            <p>필요한 치료를 고민하겠습니다.</p>
+            <p>그것이 ‘기통찬’이라는 이름에 담긴</p>
+            <p>여의도기통찬의원의 진료 철학입니다.</p>
+
+          </div>
+          <figure class="sub-image-frame sub-about-image"><img src="../img/hero.jpg" alt="상담 중인 의료진" loading="lazy">
+          </figure>
+        </div>
+      </section>
+    </div>
+  </main>
   <div id="site-footer-root"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="../js/components/Header.js"></script>
   <script src="../js/components/Footer.js"></script>
+  <script src="../js/components/LocalNavigation.js"></script>
   <script src="../js/layout.js"></script>
-  <script src="../js/subpage-data.js"></script>
   <script src="../js/subpage.js"></script>
 </body>
 

@@ -1,0 +1,99 @@
+{
+  "generationMode": "Built-in image_gen; newly generated individual photos",
+  "purpose": "Natural editorial replacements for the older generated clinic and facility imagery. These are AI-generated illustrative scenes, NOT photographs of the actual clinic, staff, patients, or exact equipment installation.",
+  "preserved": "Existing natural-v1 hero and condition images, doctor profile, original photography, device product cutouts, logos and map.",
+  "assets": [
+    {
+      "id": "clinic-spine-joint",
+      "file": "clinic-spine-joint-natural-v2.webp",
+      "replaces": [
+        "clinic-spine-joint.png",
+        "spine_cover.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-cb7ecc72-5c98-4253-ba61-0f30491445f6.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: A standing Korean adult in an ordinary soft gray cotton t-shirt and dark trousers, seen from the rear at three-quarter angle, with one relaxed palm resting at the lumbar waist area. Crop shoulders to upper thighs. The LOWER BACK and gently resting hand sit near the center of the image. Modest real examination room with off-white wall and a light neutral examination couch at edge. Normal natural posture, no dramatic bend. No exposed spine or skin diagram. Daylight, subtle fabric texture."
+    },
+    {
+      "id": "clinic-neck-shoulder",
+      "file": "clinic-neck-shoulder-natural-v2.webp",
+      "replaces": [
+        "clinic-neck-shoulder.png",
+        "shoulder_cover.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-b134c21b-867b-4103-a01d-39bf8acd17e1.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: A seated Korean adult in a muted plum short-sleeve cotton top, viewed from the back and slightly to the side. One hand resting lightly at the upper shoulder near the neck. Neck and shoulder are unobstructed near frame center. Crop out the identifiable face and keep the posture ordinary. Simple bright outpatient room, neutral cool gray upholstery, soft clear window daylight. No examination graphics."
+    },
+    {
+      "id": "clinic-foot-heel",
+      "file": "clinic-foot-heel-natural-v2.webp",
+      "replaces": [
+        "clinic-foot-heel.png",
+        "foot_cover.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-3e2f51ef-790d-4ba0-9d38-7515cea5b2bf.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: Close low camera view of a seated adult's bare ankle and heel on a clean soft-gray footrest, one natural hand gently supporting the heel. Lower leg, ankle, heel and part of arch clearly visible in the center of the frame, all five toes naturally present if visible. Dark rolled trouser cuff. Simple real clinical room, off-white wall, neutral daylight and lifelike skin. No bones overlay, no swelling, no staged pain pose."
+    },
+    {
+      "id": "clinic-hand-wrist",
+      "file": "clinic-hand-wrist-natural-v2.webp",
+      "replaces": [
+        "clinic-hand-wrist.png",
+        "arm_cover.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-2ba06954-b1c6-4816-81c4-eea69e1e90f9.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: Close natural photograph of two adult hands, one open palm and wrist resting comfortably on a light gray treatment cushion while the other hand lightly supports the wrist from below. One thumb and four fingers anatomically correct on each hand; hands relaxed. Center the WRIST AND PALM in the middle third of the image. Muted blue-gray cotton sleeve, ordinary clean daylight consultation room. No skeletal overlay and no red pain marker."
+    },
+    {
+      "id": "facility-carm-room",
+      "file": "facility-carm-room-natural-v2.webp",
+      "replaces": [
+        "facility-carm-room.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-61683060-f25a-42a7-b06c-94f7ce2e08f6.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: An unoccupied modest outpatient procedure room photographed at human eye height. One generic unbranded white mobile C-arm fluoroscopy unit with a physically plausible C-shaped arc and its two opposed detector/source heads stands centered beside a simple narrow flat charcoal-gray radiolucent procedure table. The C-arm and central portion of the bed are framed together compactly in the central half of the image. Smooth off-white walls, light gray seamless hospital flooring, practical closed white cabinets, a little indirect daylight. No windows or plants inside a radiation work area, no luxury wood paneling, no decorative strip lights, no oversized suite, no text on screens; screen off. Detailed functional ordinary medical space."
+    },
+    {
+      "id": "facility-xray-room",
+      "file": "facility-xray-room-natural-v2.webp",
+      "replaces": [
+        "facility-xray-room.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-425778a0-6938-40a6-9ae9-4b7ae7c38970.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: An unoccupied compact diagnostic X-ray room, documentary eye-level photograph. A generic white upright wall detector and adjacent simple white radiography table with a dark gray top and suspended X-ray tube unit. Equipment concentrated in the central half, clearly plausible matched components, clean off-white walls and neutral gray clinical vinyl floor. Normal bright broad overhead light with neutral white balance, not warm atmospheric mood lighting. No people, no readable display, no branding, no hospital signage, no exterior windows, no luxury interior design."
+    },
+    {
+      "id": "facility-therapy-bed",
+      "file": "facility-therapy-bed-natural-v2.webp",
+      "replaces": [
+        "facility-therapy-bed.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-3eebabcc-9403-47dc-a028-588e3afd363c.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: A quiet ordinary physiotherapy treatment room with a single practical light gray upholstered adjustable therapy couch, including a modest oval face opening and plain white metal base, centered lengthwise diagonally from foreground to background. A neatly folded white towel at one end, simple white privacy curtain and a small stool at the edge. Off-white walls and cool light gray floor, gentle window daylight. Compact functional room, no wood feature wall, no gold lighting, no flower vase, no spa atmosphere, no cinematic shadows. The treatment bed must remain clearly visible in a central portrait crop."
+    },
+    {
+      "id": "facility-treatment-room",
+      "file": "facility-treatment-room-natural-v2.webp",
+      "replaces": [
+        "facility-treatment-room.png"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "source": "exec-d432f513-be48-4c69-b6bc-ad65aa57c20a.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: editorial photographic asset for a Korean outpatient clinic website, replacing an older heavily color-graded AI image.\nCreate ONE realistic daylight photograph, landscape 1536x1024. Normal optical camera perspective, honest exposure, neutral white balance, realistic skin and material texture, clear readable subject. Candid calm everyday healthcare context, not a luxury advertisement or architectural CGI. Naturally varied colors with white, light gray, real skin and occasional ordinary clothing colors; never style the scene around a brand palette.\nNo beige/tan/gold monochrome styling, no sepia filter, no brown mood lighting, no blue/teal cinematic cast, no fake sunset light, no dramatic chiaroscuro. No anatomical superimposition, glowing bones, pain highlights, transparent body parts, diagrams, text, logo, watermark, captions or borders. No distressed expressions, posed smiles, needles or invasive procedures.\nThis is an illustrative fictional editorial scene, not a documentary photograph of a specific real clinic or its staff. Do not invent branding or readable product labels. Keep the essential body area/equipment in the central 45% of the horizontal frame so it remains legible in a center-cropped portrait thumbnail, with simple visual breathing room on either side.\nScene: A practical clean outpatient treatment area with TWO simple examination beds, white metal frames and light gray mattresses, separated by plain pale cool-gray fabric privacy curtains on ceiling tracks. One bed centered in front, the other slightly behind to the side. Off-white walls, neutral light gray floor, small simple rolling stool and closed white supply cabinet. Broad soft daylight and normal clinic lighting. Not luxurious, no marble, no wood trim, no decorative gold strip lights, no symmetrical staged resort scene. Real lived-in but meticulously tidy clinical space.\nCritical requirement: This is an EMPTY, UNOCCUPIED interior photograph. Absolutely NO people, NO clinicians, NO patients, NO human figures, NO faces, NO limbs. Show only the empty treatment beds, curtains, floor, walls, stool and cabinet. No treatment happening. Both empty beds must be fully unoccupied and neatly prepared."
+    }
+  ]
+}

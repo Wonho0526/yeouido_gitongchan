@@ -17,17 +17,82 @@
   <link rel="stylesheet" href="../css/subpage.css">
 </head>
 
-<body data-page="values">
+<body data-page="values" data-layout="values">
   <div id="site-header-root"></div>
-  <main id="subpage-root" class="subpage-main"></main>
+  <main id="main-content" class="subpage-main">
+    <section class="sub-hero">
+      <img class="sub-hero-background" src="../img/heroes/values-natural-v1.webp" width="1536" height="1024" alt=""
+        aria-hidden="true" fetchpriority="high">
+      <div class="inner sub-hero-inner">
+        <p class="sub-hero-eyebrow">CORE VALUE</p>
+        <p class="sub-hero-series" aria-label="여의도기통찬 소개"><span class="tone-1">여의도</span><span
+            class="tone-2">기통찬</span><span class="tone-3">소개</span></p>
+        <h1>핵심가치 &amp; 약속</h1>
+        <p class="sub-hero-desc">처음 다짐했던 그 마음 그대로, 진료의 원칙을 지키겠습니다.</p>
+      </div>
+    </section>
+    <div id="site-local-nav-root" data-nav-group="intro"></div>
+    <div class="subpage-content subpage-content--values">
+      <section class="sub-section">
+        <div class="inner">
+          <header class="sub-section-heading is-centered">
+            <p class="sub-section-kicker">CORE VALUE</p>
+            <h2>여의도 기통찬의 핵심가치</h2>
+            <p class="sub-section-desc">진료의 출발점과 판단의 기준을 한결같이 지키겠습니다.</p>
+          </header>
+          <div class="sub-value-grid">
+            <article class="sub-value-card">
+              <span>01</span>
+              <h3>진심<small>Empathy</small></h3>
+              <strong>이 환자가 내 가족이라면</strong>
+              <em>가족을 대하는 마음의 진료</em>
+              <p>‘내 가족이라면 어떻게 할까’라는 마음에서 진료를 시작합니다.작은 불편함도 가볍게 넘기지 않고 정성을 다해 살피며,내 가족에게도 권할 수 있는 안전한 치료를 하겠습니다.</p>
+            </article>
+            <article class="sub-value-card">
+              <span>02</span>
+              <h3>집요함<small>Persistency</small></h3>
+              <strong>통증의 근본 원인까지</strong>
+              <em>눈에 보이지 않는 원인까지 추적</em>
+              <p>눈앞의 증상이나 검사 결과에만 머물지 않습니다. 왜 아픈지 끝까지 파고들어 통증의 근본 원인을 찾고, 그 원인을 바로잡는 치료를 고민하겠습니다.</p>
+            </article>
+            <article class="sub-value-card">
+              <span>03</span>
+              <h3>정직<small>Integrity</small></h3>
+              <strong>이해하고 납득할 수 있는 진료</strong>
+              <em>환자가 스스로 납득할 수 있는 정직한 소통</em>
+              <p>어떠한 상황에서도 의료인으로서의 원칙만큼은 타협하지 않습니다. 어려운 의학 용어 대신 현재 상태와 통증이 발생한 이유를 정성껏 설명하여, 환자가 치료 과정을 납득하고 신뢰할 수 있도록
+                돕습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sub-section sub-promise-section">
+        <div class="inner sub-promise-layout">
+          <div class="sub-promise-intro">
+            <span class="sub-section-kicker">OUR PROMISE</span>
+            <h2>여의도 기통찬의 약속</h2>
+            <figure class="sub-image-frame sub-wide-photo"><img src="../img/doctor.jpg" alt="진료 중인 의료진" loading="lazy">
+            </figure>
+          </div>
+          <ol class="sub-promise-list">
+            <li><span>01</span><strong>내 가족을 치료하는 마음으로 정성을 다하겠습니다.</strong></li>
+            <li><span>02</span><strong>통증이라는 '경보'만 끄지 않고, 원인이 되는 '불'을 끄겠습니다.</strong></li>
+            <li><span>03</span><strong>작은 목소리도 흘려듣지 않고 끝까지 경청하겠습니다.</strong></li>
+            <li><span>04</span><strong>몸에 무리가 가지 않는 안전한 비수술 치료를 우선하겠습니다.</strong></li>
+            <li><span>05</span><strong>어떠한 상황에서도 치료의 원칙만큼은 타협하지 않겠습니다.</strong></li>
+          </ol>
+        </div>
+      </section>
+    </div>
+  </main>
   <div id="site-footer-root"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="../js/components/Header.js"></script>
   <script src="../js/components/Footer.js"></script>
+  <script src="../js/components/LocalNavigation.js"></script>
   <script src="../js/layout.js"></script>
-  <script src="../js/subpage-data.js"></script>
   <script src="../js/subpage.js"></script>
 </body>
 

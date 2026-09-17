@@ -666,7 +666,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.76) brightness(0.78);
+  filter: none;
   transition: filter 0.24s ease, transform 0.24s ease;
 }
 
@@ -676,8 +676,8 @@
   z-index: 1;
   content: "";
   background:
-    linear-gradient(180deg, rgba(36, 31, 27, 0.05), rgba(36, 31, 27, 0.44)),
-    linear-gradient(90deg, rgba(36, 31, 27, 0.18), rgba(36, 31, 27, 0.02));
+    linear-gradient(180deg, rgba(20, 22, 24, 0.05), rgba(20, 22, 24, 0.44)),
+    linear-gradient(90deg, rgba(20, 22, 24, 0.18), rgba(20, 22, 24, 0.02));
 }
 
 .clinic-preview span {
@@ -722,7 +722,7 @@
 .clinic-preview:hover img,
 .clinic-preview:focus-visible img,
 .clinic-preview.is-active img {
-  filter: saturate(0.92) brightness(0.92);
+  filter: none;
   transform: scale(1.035);
 }
 
@@ -915,7 +915,7 @@
   aspect-ratio: 3 / 4;
   height: auto;
   object-fit: cover;
-  filter: saturate(0.86) contrast(0.98);
+  filter: none;
 }
 
 .site-footer {

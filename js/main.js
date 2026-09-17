@@ -12,6 +12,7 @@
   const title = slider.querySelector("[data-clinic-title]");
   const subtitle = slider.querySelector("[data-clinic-subtitle]");
   const desc = slider.querySelector("[data-clinic-desc]");
+  const more = slider.querySelector("[data-clinic-more]");
   const slideInfo = slider.querySelector(".clinic-slide-info");
   const previewTrack = slider.querySelector("[data-clinic-track]");
   const prev = slider.querySelector("[data-clinic-prev]");
@@ -70,6 +71,10 @@
       title.textContent = slide.dataset.title;
       subtitle.textContent = slide.dataset.subtitle;
       desc.textContent = slide.dataset.desc;
+      if (more && slide.dataset.href) {
+        more.href = slide.dataset.href;
+        more.setAttribute("aria-label", `${slide.dataset.title} 자세히 보기`);
+      }
     };
 
     if (shouldAnimate) {
