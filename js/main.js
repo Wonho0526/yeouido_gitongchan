@@ -61,6 +61,47 @@
     return sample.offsetWidth + gap;
   };
 
+  const syncContentHeights = () => {
+    const width = slideInfo.getBoundingClientRect().width;
+    if (!width) {
+      return;
+    }
+
+    // Reserve each text field's tallest slide at the current width and font.
+    const measurement = slideInfo.cloneNode(true);
+    measurement.classList.remove("is-changing");
+    measurement.setAttribute("aria-hidden", "true");
+    measurement.inert = true;
+    measurement.style.cssText = `position: absolute; top: 0; left: 0; width: ${width}px; visibility: hidden; pointer-events: none; transition: none; transform: none;`;
+    slideInfo.parentElement.appendChild(measurement);
+
+    const fields = ["title", "subtitle", "desc"].map((name) => ({
+      name,
+      element: measurement.querySelector(`[data-clinic-${name}]`),
+      height: 0,
+    }));
+
+    slides.forEach((slide) => {
+      fields.forEach((field) => {
+        field.element.textContent = slide.dataset[field.name];
+      });
+      fields.forEach((field) => {
+        field.height = Math.max(field.height, Math.ceil(field.element.getBoundingClientRect().height));
+      });
+    });
+
+    measurement.remove();
+    fields.forEach((field) => {
+      slideInfo.style.setProperty(`--clinic-${field.name}-height`, `${field.height}px`);
+    });
+  };
+
+  let heightSyncFrame = 0;
+  const scheduleHeightSync = () => {
+    window.cancelAnimationFrame(heightSyncFrame);
+    heightSyncFrame = window.requestAnimationFrame(syncContentHeights);
+  };
+
   const updateContent = (targetIndex, shouldAnimate = true) => {
     const slide = slides[targetIndex];
 
@@ -175,8 +216,15 @@
 
   total.textContent = String(slides.length).padStart(2, "0");
   updateContent(activeIndex, false);
+  syncContentHeights();
   setPreviewState();
   resetPreviewTrack();
+
+  window.addEventListener("resize", scheduleHeightSync);
+  if (document.fonts) {
+    document.fonts.ready.then(scheduleHeightSync);
+    document.fonts.addEventListener("loadingdone", scheduleHeightSync);
+  }
 
   prev.addEventListener("click", () => renderSlide(activeIndex - 1));
   next.addEventListener("click", () => renderSlide(activeIndex + 1));
