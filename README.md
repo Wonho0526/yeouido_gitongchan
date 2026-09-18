@@ -17,7 +17,7 @@
 ## 공통 모듈
 
 - `js/components/Header.js`: 전체 메뉴와 헤더
-- 메인과 서브페이지는 `css/header.css`의 동일한 헤더를 사용합니다. 1100px 이하에서는 메뉴 버튼으로 전체 메뉴를 열고, 1차 메뉴를 눌러 2차 메뉴를 펼칩니다. 반응형 기준을 변경할 때는 `Header.js`의 `matchMedia` 값도 함께 변경합니다.
+- 메인과 서브페이지는 `css/header.css`의 동일한 150px 높이의 고정 헤더를 사용합니다. 최대 너비 제한 없이 좌우 여백은 각각 40px이며, PC에서는 투명 배경, 모바일 메뉴 형태에서는 흰색 배경입니다. 로고 너비는 PC 240px, 모바일 최대 200px입니다. 1440px 이하에서는 메뉴 버튼으로 전체 메뉴를 열고, 1차 메뉴를 눌러 2차 메뉴를 펼칩니다. 반응형 기준을 변경할 때는 `Header.js`의 `matchMedia` 값도 함께 변경합니다.
 - `js/components/Footer.js`: 진료안내, 지도, 사업자 정보와 푸터
 - `js/components/LocalNavigation.js`: 서브페이지 하위 메뉴
 - `js/layout.js`: 공통 모듈을 각 페이지의 지정 영역에 표시
@@ -34,3 +34,10 @@
 - `css/header.css`: 전체 페이지의 공통 헤더와 반응형 메뉴
 - `css/style.css`: 메인 페이지와 푸터 스타일
 - `css/subpage.css`: 서브페이지 레이아웃과 반응형 스타일
+
+## 글꼴
+
+- 전체 페이지는 로컬에 포함된 Pretendard Variable v1.3.9를 사용합니다.
+- 글꼴 파일과 SIL Open Font License는 `fonts/pretendard/`에 있습니다.
+- 공식 배포처: https://github.com/orioncactus/pretendard
+- `css/reset.css`에서 글꼴을 불러오고 `css/common.css`의 `--font-family`에서 공통 글꼴을 지정합니다.

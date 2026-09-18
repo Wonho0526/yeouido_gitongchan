@@ -53,9 +53,10 @@
   const navHref = (item) => item.external ? item.href : `${subPrefix}${item.href}`;
 
   function Header() {
-    const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1100px)").matches);
+    const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1440px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openSubmenu, setOpenSubmenu] = React.useState(null);
+    const [isOverDark, setIsOverDark] = React.useState(true);
     const headerRef = React.useRef(null);
     const menuButtonRef = React.useRef(null);
     const navRef = React.useRef(null);
@@ -66,7 +67,41 @@
     };
 
     React.useEffect(() => {
-      const media = window.matchMedia("(max-width: 1100px)");
+      let frame = 0;
+      const updateContrast = () => {
+        const bar = headerRef.current?.querySelector(".header-inner");
+        if (!bar) return;
+        const sampleY = bar.getBoundingClientRect().height / 2;
+        const coversBar = (element) => {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= sampleY && rect.bottom > sampleY;
+        };
+        const darkSections = document.querySelectorAll(".hero, .sub-hero, .director-section, .night-care-section, .footer-business");
+        const overDark = Array.from(darkSections).some((section) => {
+          if (!coversBar(section)) return false;
+          const photo = section.querySelector(".director-photo");
+          return !(photo && window.matchMedia("(max-width: 920px)").matches && coversBar(photo));
+        });
+        setIsOverDark(overDark);
+      };
+      const scheduleUpdate = () => {
+        window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(updateContrast);
+      };
+      updateContrast();
+      window.addEventListener("scroll", scheduleUpdate, { passive: true });
+      window.addEventListener("resize", scheduleUpdate);
+      window.addEventListener("load", scheduleUpdate);
+      return () => {
+        window.cancelAnimationFrame(frame);
+        window.removeEventListener("scroll", scheduleUpdate);
+        window.removeEventListener("resize", scheduleUpdate);
+        window.removeEventListener("load", scheduleUpdate);
+      };
+    }, []);
+
+    React.useEffect(() => {
+      const media = window.matchMedia("(max-width: 1440px)");
       const onChange = (event) => {
         setIsCompact(event.matches);
         setIsMobileMenuOpen(false);
@@ -115,6 +150,7 @@
         onKeyDown,
         className: [
           "site-header",
+          isOverDark ? "is-over-dark" : "",
           isMobileMenuOpen ? "is-mobile-menu-open" : "",
         ].filter(Boolean).join(" "),
       },

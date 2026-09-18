@@ -4,6 +4,15 @@
   "preserved": "Existing natural-v1 hero and condition images, doctor profile, original photography, device product cutouts, logos and map.",
   "assets": [
     {
+      "id": "night-care-city",
+      "file": "night-care-city-natural-v1.webp",
+      "width": 2172,
+      "height": 724,
+      "source": "exec-a92ecd78-003a-4fc5-9a82-f53184add750.png",
+      "purpose": "Decorative AI-generated night skyline; not an actual view of or from the clinic.",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-width background photo for a Korean clinic's evening-hours website section, not an image of the actual clinic. Create a wide panoramic 3:1 natural editorial night photograph of a Seoul-inspired riverside business-district skyline from across the river. Realistic varied office buildings with small softly illuminated windows, restrained natural city lights, subtle water reflections along the bottom. Skyline mainly in the lower half, quiet charcoal evening sky with ample uncluttered negative space across the central upper half for separately coded white text. Natural neutral color balance, understated atmosphere, believable photographic detail, no orange/brown color wash, no brand-matched color grading, no purple neon, no dramatic cinematic effects, no giant moon, no bokeh, no exaggerated glowing lights, no people, no readable signs, no text, no logos, no buttons or UI. Landscape composition that also works cropped centrally on a phone. The image is a decorative generated city scene, not a claim of a specific view from a real clinic."
+    },
+    {
       "id": "clinic-spine-joint",
       "file": "clinic-spine-joint-natural-v2.webp",
       "replaces": [

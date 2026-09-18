@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/pretendard/PretendardVariable.woff2") format("woff2");
+}
+
 *,
 *::before,
 *::after {
@@ -6,13 +14,15 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   color: var(--color-ink);
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: var(--font-family);
+  font-size: 18px;
   letter-spacing: 0;
   line-height: 1.6;
   background: var(--color-bg);

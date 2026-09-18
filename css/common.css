@@ -1,4 +1,5 @@
 :root {
+  --font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --color-ink: #27221f;
   --color-muted: #746c63;
   --color-line: #d8cfc2;
@@ -8,7 +9,7 @@
   --color-primary: #5d5147;
   --color-primary-dark: #2f2924;
   --color-accent: #a58562;
-  --header-height: 84px;
+  --header-height: 150px;
   --container: 1440px;
 }
 
@@ -34,7 +35,7 @@ section {
 .eyebrow {
   display: inline-block;
   margin-bottom: 18px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -42,7 +43,7 @@ section {
 
 h2 {
   margin: 0 0 30px;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -93,7 +94,7 @@ h2 span {
   border-radius: 4px;
   background: #fff;
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.12em;
   line-height: 1;
@@ -116,17 +117,7 @@ h2 span {
   background: var(--color-primary-dark);
 }
 
-@media (max-width: 920px) {
-  :root {
-    --header-height: 136px;
-  }
-}
-
 @media (max-width: 640px) {
-  :root {
-    --header-height: 132px;
-  }
-
   .inner,
   .container {
     width: min(100% - 28px, var(--container));
