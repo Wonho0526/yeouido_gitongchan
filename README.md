@@ -35,6 +35,10 @@
 - `css/style.css`: 메인 페이지와 푸터 스타일
 - `css/subpage.css`: 서브페이지 레이아웃과 반응형 스타일
 
+## 아이콘
+
+통증관리 단계의 인라인 SVG는 Lucide의 `syringe`, `person-standing`, `shield-check` 아이콘을 사용합니다. 출처는 https://github.com/lucide-icons/lucide 이며 라이선스는 `img/icons/LICENSE-lucide.txt`에 있습니다.
+
 ## 글꼴
 
 - 전체 페이지는 로컬에 포함된 Pretendard Variable v1.3.9를 사용합니다.
