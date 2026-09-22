@@ -285,7 +285,13 @@
         h(
           "div",
           { className: "inner-fluid footer-contact-inner" },
-          h("h2", null, "여의도기통찬의원", h("br"), h("span", null, "진료안내")),
+          h("h2", null, "여의도기통찬의원", h("br"), h("span", null, "진료시간 및 오시는 길")),
+          h(
+            "p",
+            { className: "footer-contact-desc" },
+            h("span", null, "오시는 길부터 부담 없도록, 지하철과 버스로 닿기 쉬운 여의도 중심에 자리했습니다."),
+            h("span", null, "차로 오시는 분들도 건물 내 주차장을 편하게 이용하실 수 있습니다.")
+          ),
           h("div", { className: "footer-map", "aria-label": "네이버 지도 영역" }),
           h(
             "div",

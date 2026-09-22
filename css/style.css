@@ -1473,7 +1473,23 @@ html:not(.aos-enabled) main [data-aos] {
 
 .footer-contact h2 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 22px;
+}
+
+/* .inner-fluid has no side gutter, so the copy sets its own width. */
+.footer-contact-desc {
+  width: min(100% - 40px, 760px);
+  margin: 0 auto 50px;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.footer-contact-desc span {
+  display: block;
+  text-wrap: balance;
 }
 
 .footer-map {
@@ -2224,6 +2240,13 @@ html:not(.aos-enabled) main [data-aos] {
 
   .footer-contact {
     padding: 44px 0 28px;
+  }
+
+  .footer-contact-desc {
+    width: min(100% - 28px, 760px);
+    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .footer-map {
