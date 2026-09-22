@@ -4,8 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="지역 주민의 통증 치료와 회복을 돕는 여의도기통찬의원 홈페이지 시안입니다.">
-  <title>여의도기통찬의원 | 병원 홈페이지 시안</title>
+  <meta name="description" content="지역 주민의 통증 치료와 회복을 돕는 여의도기통찬의원입니다.">
+  <title>여의도기통찬의원</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
@@ -18,20 +22,78 @@
   <div id="site-header-root"></div>
 
   <main>
-    <section class="hero">
-      <div class="hero-backdrop">
-        <div class="inner hero-grid">
-          <div class="hero-copy" data-aos="fade-up" data-aos-offset="0">
-            <h1>
-              <span>처음 다짐했던 그 마음 그대로</span>
-              <span>정성껏, 그리고 진심을 다해</span>
-              <span>진료하겠습니다.</span>
-            </h1>
-            <p class="hero-message">
-              <strong>어떠한 상황에서도 환자를 위한</strong>
-              <strong>치료의 원칙만큼은 타협하지 않겠습니다.</strong>
-            </p>
+    <section class="hero" data-hero-slider aria-roledescription="캐러셀" aria-label="메인 비주얼">
+      <article class="hero-slide is-active" data-hero-slide aria-roledescription="슬라이드" aria-label="1 / 3">
+        <!-- 영상으로 교체할 때는 아래 img를 video로 바꾸면 됩니다.
+             <video src="img/hero.mp4" poster="img/hero.jpg" autoplay muted loop playsinline></video> -->
+        <div class="hero-media">
+          <img src="img/hero.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+        </div>
+        <div class="hero-backdrop">
+          <div class="inner hero-grid">
+            <div class="hero-copy">
+              <h1>
+                <span>처음 다짐했던 그 마음 그대로</span>
+                <span>정성껏, 그리고 진심을 다해</span>
+                <span>진료하겠습니다.</span>
+              </h1>
+              <p class="hero-message">
+                <strong>어떠한 상황에서도 환자를 위한</strong>
+                <strong>치료의 원칙만큼은 타협하지 않겠습니다.</strong>
+              </p>
+            </div>
           </div>
+        </div>
+      </article>
+
+      <article class="hero-slide" data-hero-slide aria-roledescription="슬라이드" aria-label="2 / 3">
+        <div class="hero-media">
+          <img src="img/editorial/facility-therapy-bed-natural-v2.webp" alt="" width="1536" height="1024"
+            loading="lazy">
+        </div>
+        <div class="hero-backdrop">
+          <div class="inner hero-grid">
+            <div class="hero-copy">
+              <p class="hero-headline">
+                <span>아픈 몸을 이끌고 찾아오신 만큼,</span>
+                <span>머무는 동안 가장 편안하게</span>
+                <span>쉬어갈 수 있도록</span>
+              </p>
+              <p class="hero-message">
+                <strong>바쁜 일상 속 잠시 몸과 마음을 내려놓을 수 있는</strong>
+                <strong>편안한 쉼터가 되겠습니다.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide" data-hero-slide aria-roledescription="슬라이드" aria-label="3 / 3">
+        <div class="hero-media">
+          <img src="img/editorial/facility-xray-room-natural-v2.webp" alt="" width="1536" height="1024" loading="lazy">
+        </div>
+        <div class="hero-backdrop">
+          <div class="inner hero-grid">
+            <div class="hero-copy">
+              <p class="hero-headline">
+                <span>보이지 않는 부분까지</span>
+                <span>세심하게 살피는</span>
+                <span>기통찬 정밀 진단 시스템</span>
+              </p>
+              <p class="hero-message">
+                <strong>검증된 의료장비를 바탕으로</strong>
+                <strong>더 안전하고 정확한 진단과 치료를 약속합니다.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="hero-controls">
+        <div class="inner hero-controls-inner">
+          <button type="button" class="hero-arrow" aria-label="이전 슬라이드" data-hero-prev>&lsaquo;</button>
+          <div class="hero-dots" role="group" aria-label="슬라이드 선택" data-hero-dots></div>
+          <button type="button" class="hero-arrow" aria-label="다음 슬라이드" data-hero-next>&rsaquo;</button>
         </div>
       </div>
     </section>
@@ -128,11 +190,12 @@
     <section class="pain-system-section" id="pain-system" aria-labelledby="pain-system-title">
       <div class="inner">
         <div class="pain-system-heading" data-aos="fade-up">
-          <h2 id="pain-system-title">여의도기통찬의<br><span>3단계 통증관리 시스템</span></h2>
+          <p class="pain-system-kicker">Pain Management System</p>
+          <h2 id="pain-system-title">여의도기통찬의원<br><span>3단계 통증관리 시스템</span></h2>
           <p class="pain-system-intro">통증 완화를 넘어<br><strong>다시 아프지 않는 몸을</strong><br>목표로 합니다.</p>
         </div>
 
-        <ol class="pain-system-steps" aria-label="3단계 통증관리 과정">
+        <ol class="pain-system-steps" aria-label="3단계 통증관리 과정" data-aos="pain-rail">
           <li class="pain-system-step" data-aos="fade-up">
             <p class="pain-system-number">STEP <span>01</span></p>
             <svg class="pain-system-icon" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -355,7 +418,7 @@
         width="2172" height="724" loading="lazy" decoding="async">
       <div class="inner night-care-inner" data-aos="fade-up">
         <p class="night-care-kicker">Night Care System</p>
-        <h2 id="night-care-title"><span>월 · 화 · 목 · 금</span> 평일에도 야간진료</h2>
+        <h2 id="night-care-title"><span>월 · 화 · 목 · 금</span> 야간진료</h2>
         <p class="night-care-wednesday">수요일은 저녁 7시까지 진료</p>
         <p class="night-care-message">바쁜 일상 속 통증, 미루지 마세요<br>필요한 순간, 늘 곁에 있는 진료</p>
         <p class="night-care-hours">저녁 <strong>8시</strong>까지 야간진료</p>

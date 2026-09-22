@@ -25,6 +25,112 @@
     { term: "주차안내", desc: "호정빌딩 지하주차장 이용" },
   ];
 
+  const patientRights = [
+    "① 환자는 인간으로서의 존엄과 가치를 바탕으로 인격을 존중 받을 권리가 있다.",
+    "② 환자는 국적, 성별, 연령, 종교, 경제·사회적 지위, 질병의 종류 등 어떤 이유로도 차별 받지 않으며, 평등한 의료 서비스를 받을 권리가 있다.",
+    "③ 환자는 최선의 진료를 위하여 지정의 및 의료기관을 선택할 권리가 있다.",
+    "④ 환자는 적법한 자격을 갖춘 의료인으로부터 의료행위를 제공받을 권리가 있다.",
+    "⑤ 환자 및 보호자는 환자의 진료기록에 관한 정보 및 기록을 요구할 권리가 있다.",
+    "⑥ 환자 및 보호자는 환자의 질병상태 및 치료 행위의 목적, 방법, 내용과 그 결과에 대해 설명을 듣고, 치료 방법 또는 치료 거부에 대해 선택할 권리가 있다.",
+    "⑦ 환자 및 보호자는 의료행위와 관련된 문서에 서명하기 전에 그 내용에 대해 설명을 들을 권리가 있다.",
+    "⑧ 환자 및 보호자는 의료행위에 소요된 의료비 내역에 대해 알 권리가 있다.",
+    "⑨ 환자는 질병. 치료에 관련된 정보 및 사생활에 관한 모든 비밀을 침해 받지 않을 권리가 있다.",
+    "⑩ 환자 및 보호자는 병원 내 의료서비스를 포함한 기타 사항에 대해 불만이 있을 경우, 의견을 표현하고 그에 대하여 답변을 들을 권리가 있다.",
+  ];
+
+  const patientResponsibilities = [
+    "① 환자는 현재 증상, 과거 병력, 약물 치료 및 기타 기록 등 진료에 관련된 사안을 직접 또는 법적 대리인을 통해 의료진에게 제공할 책임이 있다.",
+    "② 본인의 치료와 관련해 모르는 점이 있을 때, 확인 할 책임이 있다.",
+    "③ 환자는 의료진이 권장한 치료 계획에 참여하고, 치료에 협력할 책임이 있다.",
+    "④ 환자는 치료 계획 불응 시 발생한 결과에 대한 책임이 있다.",
+    "⑤ 환자는 다른 환자 및 의료진을 존중하며, 병원의 자산을 중요시 할 책임이 있다.",
+    "⑥ 환자는 치료와 관련된 재정적 의무를 다할 책임이 있다.",
+    "⑦ 환자는 병원의 규칙 및 규정에 따를 책임이 있다.",
+  ];
+
+  function PatientRightsModal({ onClose }) {
+    const dialogRef = React.useRef(null);
+
+    React.useEffect(() => {
+      const previouslyFocused = document.activeElement;
+      dialogRef.current && dialogRef.current.focus();
+      document.body.classList.add("modal-open");
+
+      const handleKeyDown = (event) => {
+        if (event.key === "Escape") {
+          onClose();
+        }
+      };
+      document.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        document.body.classList.remove("modal-open");
+        previouslyFocused && previouslyFocused.focus && previouslyFocused.focus();
+      };
+    }, [onClose]);
+
+    return h(
+      "div",
+      {
+        className: "modal-overlay",
+        onMouseDown: (event) => {
+          if (event.target === event.currentTarget) {
+            // Keep the default focus shift from clobbering the focus we restore on unmount.
+            event.preventDefault();
+            onClose();
+          }
+        },
+      },
+      h(
+        "div",
+        {
+          className: "modal-dialog",
+          role: "dialog",
+          "aria-modal": "true",
+          "aria-labelledby": "patient-rights-title",
+          tabIndex: -1,
+          ref: dialogRef,
+        },
+        h(
+          "button",
+          { type: "button", className: "modal-close", "aria-label": "닫기", onClick: onClose },
+          "×"
+        ),
+        h("h2", { id: "patient-rights-title", className: "modal-title" }, "환자 권리장전"),
+        h(
+          "p",
+          { className: "modal-lead" },
+          "모든 환자는 인간으로서 존엄과 가치를 지니고, 건강한 삶을 영위하기 위해 다음과 같은 권리를 가지며 이에 따른 책임과 의무를 가진다."
+        ),
+        h(
+          "div",
+          { className: "modal-body" },
+          h(
+            "div",
+            { className: "modal-section" },
+            h("h3", null, "환자의 권리"),
+            h(
+              "ul",
+              { className: "modal-list" },
+              patientRights.map((item) => h("li", { key: item }, item))
+            )
+          ),
+          h(
+            "div",
+            { className: "modal-section" },
+            h("h3", null, "환자의 책임"),
+            h(
+              "ul",
+              { className: "modal-list" },
+              patientResponsibilities.map((item) => h("li", { key: item }, item))
+            )
+          )
+        )
+      )
+    );
+  }
+
   const DefinitionRows = ({ items }) =>
     items.map((item) =>
       h(
@@ -58,6 +164,8 @@
   }
 
   function Footer() {
+    const [isRightsModalOpen, setRightsModalOpen] = React.useState(false);
+
     return h(
       "footer",
       { className: "site-footer" },
@@ -131,10 +239,15 @@
             { className: "footer-policy-links" },
             h("a", { href: "#" }, "비급여항목"),
             h("span", null, "|"),
-            h("a", { href: "#" }, "환자권리장전")
+            h(
+              "button",
+              { type: "button", className: "footer-policy-link", onClick: () => setRightsModalOpen(true) },
+              "환자권리장전"
+            )
           )
         )
-      )
+      ),
+      isRightsModalOpen && h(PatientRightsModal, { onClose: () => setRightsModalOpen(false) })
     );
   }
 

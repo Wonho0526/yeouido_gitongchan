@@ -1,4 +1,117 @@
 (() => {
+  const slider = document.querySelector("[data-hero-slider]");
+
+  if (!slider) {
+    return;
+  }
+
+  const slides = Array.from(slider.querySelectorAll("[data-hero-slide]"));
+  const dotsWrap = slider.querySelector("[data-hero-dots]");
+  const prev = slider.querySelector("[data-hero-prev]");
+  const next = slider.querySelector("[data-hero-next]");
+
+  if (slides.length < 2 || !dotsWrap || !prev || !next) {
+    return;
+  }
+
+  const INTERVAL = 6000;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeIndex = 0;
+  let timer = 0;
+  let hovered = false;
+  let focused = false;
+
+  const render = () => {
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    dots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", String(isActive));
+    });
+  };
+
+  const goTo = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    render();
+  };
+
+  const stop = () => {
+    window.clearInterval(timer);
+    timer = 0;
+  };
+
+  // Hovering or focusing the hero is the only pause affordance, so it outranks any restart request.
+  const start = () => {
+    stop();
+
+    if (reducedMotion.matches || hovered || focused) {
+      return;
+    }
+
+    timer = window.setInterval(() => goTo(activeIndex + 1), INTERVAL);
+  };
+
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "hero-dot";
+    dot.setAttribute("aria-label", `${index + 1}번 슬라이드 보기`);
+    dot.addEventListener("click", () => {
+      goTo(index);
+      start();
+    });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  prev.addEventListener("click", () => {
+    goTo(activeIndex - 1);
+    start();
+  });
+
+  next.addEventListener("click", () => {
+    goTo(activeIndex + 1);
+    start();
+  });
+
+  slider.addEventListener("mouseenter", () => {
+    hovered = true;
+    stop();
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    hovered = false;
+    start();
+  });
+
+  // Only keyboard focus holds the slider; a mouse click leaves focus on the button it hit,
+  // which would otherwise freeze autoplay until the visitor clicked somewhere else.
+  slider.addEventListener("focusin", (event) => {
+    focused = event.target.matches(":focus-visible");
+
+    if (focused) {
+      stop();
+    }
+  });
+
+  slider.addEventListener("focusout", () => {
+    focused = false;
+    start();
+  });
+  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+  reducedMotion.addEventListener("change", start);
+
+  slider.classList.add("is-ready");
+  render();
+  start();
+})();
+
+(() => {
   const slider = document.querySelector("[data-clinic-slider]");
 
   if (!slider) {

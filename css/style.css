@@ -23,13 +23,46 @@ html:not(.aos-enabled) main [data-aos] {
 
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  background: url(../img/hero.jpg) no-repeat center / cover;
+  display: grid;
+  /* Overrides the global `section` centring, which would otherwise shrink-wrap the stacked slides. */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
   overflow: hidden;
 }
 
+/* Slides share one grid cell so the section still sizes to the tallest copy block. */
+.hero-slide {
+  grid-area: 1 / 1;
+  position: relative;
+  min-height: inherit;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.9s ease, visibility 0s linear 0.9s;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.9s ease, visibility 0s;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Sized so an <img> today and a <video> later behave identically. */
+.hero-media > img,
+.hero-media > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-backdrop {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   padding-top: var(--header-height);
@@ -52,22 +85,43 @@ html:not(.aos-enabled) main [data-aos] {
   color: #fff8ea;
 }
 
-.hero h1 {
+.hero h1,
+.hero-copy .hero-headline {
   margin: 0;
-  line-height: 1.3;
-}
-
-.hero h1 {
   max-width: 700px;
   font-family: var(--font-family);
   font-size: calc(clamp(38px, 4vw, 48px) + 2px);
   font-weight: 600;
+  line-height: 1.3;
   letter-spacing: 0;
+  word-break: keep-all;
 }
 
 .hero h1 span,
+.hero-headline span,
 .hero-message strong {
   display: block;
+}
+
+.hero-copy h1,
+.hero-copy .hero-headline,
+.hero-copy .hero-message {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-slide.is-active .hero-copy h1,
+.hero-slide.is-active .hero-copy .hero-headline {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.25s;
+}
+
+.hero-slide.is-active .hero-copy .hero-message {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.45s;
 }
 
 .hero-copy p {
@@ -87,6 +141,89 @@ html:not(.aos-enabled) main [data-aos] {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 42px;
+}
+
+/* Controls do nothing without the slider script, so they stay hidden until it initialises. */
+.hero-controls {
+  grid-area: 1 / 1;
+  z-index: 2;
+  align-self: end;
+  display: none;
+  width: 100%;
+  padding-bottom: 56px;
+}
+
+.hero.is-ready .hero-controls {
+  display: block;
+}
+
+.hero-controls-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-arrow {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255, 248, 234, 0.45);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.24);
+  color: #fff8ea;
+  font-size: 26px;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-arrow:hover,
+.hero-arrow:focus-visible {
+  border-color: #fff8ea;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 6px;
+}
+
+.hero-dot {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  transition: width 0.3s ease;
+}
+
+.hero-dot::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.45);
+  transition: width 0.3s ease, background 0.2s ease;
+  content: "";
+}
+
+.hero-dot:hover::before {
+  background: rgba(255, 248, 234, 0.75);
+}
+
+.hero-dot.is-active {
+  width: 44px;
+}
+
+.hero-dot.is-active::before {
+  width: 28px;
+  background: #fff8ea;
 }
 
 .brand-intro {
@@ -368,34 +505,47 @@ html:not(.aos-enabled) main [data-aos] {
 
 
 .pain-system-section {
+  --pain-system-bg: #fff;
   height: auto;
-  padding: 112px 0 120px;
-  background: #fff;
+  padding: 120px 0 128px;
+  background: var(--pain-system-bg);
 }
 
 .pain-system-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  align-items: center;
-  gap: 48px;
-  margin-bottom: 60px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: 24px 64px;
+  margin-bottom: 76px;
+}
+
+.pain-system-kicker {
+  grid-column: 1 / -1;
+  margin: 0 0 18px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .pain-system-heading h2 {
   margin: 0;
   font-size: 46px;
-  line-height: 1.4;
+  line-height: 1.34;
+  letter-spacing: -0.01em;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 
 .pain-system-intro {
-  margin: 0;
-  padding-left: 28px;
+  margin: 0 0 6px;
+  padding-left: 26px;
   border-left: 2px solid var(--color-accent);
   color: var(--color-muted);
-  font-size: 22px;
-  line-height: 1.75;
+  font-size: 20px;
+  line-height: 1.8;
   word-break: keep-all;
 }
 
@@ -404,131 +554,195 @@ html:not(.aos-enabled) main [data-aos] {
   font-weight: 600;
 }
 
+/* The rail behind the step numbers is what makes the three columns read as one sequence. */
 .pain-system-steps {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 48px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* 22px lines the rail up with the optical centre of the numerals, not their line box. */
+.pain-system-steps::before {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-line) 86%, transparent 100%);
+  content: "";
+}
+
+/* Drawn only once AOS is running; without it the rail stays put rather than never appearing. */
+.pain-system-steps.aos-init::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Transition lives on the entering state only, so initialising does not animate the rail away. */
+.pain-system-steps.aos-animate::before {
+  transform: scaleX(1);
+  transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s;
+}
+
 .pain-system-step {
   --step-accent: #143766;
+  --step-tint: rgba(20, 55, 102, 0.08);
+  position: relative;
   min-width: 0;
-  padding-top: 24px;
-  border-top: 3px solid var(--step-accent);
 }
 
 .pain-system-step:nth-child(2) {
   --step-accent: var(--color-primary);
+  --step-tint: rgba(93, 81, 71, 0.09);
 }
 
 .pain-system-step:nth-child(3) {
-  --step-accent: #92704b;
+  --step-accent: var(--color-accent);
+  --step-tint: rgba(165, 133, 98, 0.14);
 }
 
 .pain-system-number {
-  display: flex;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
   align-items: baseline;
-  gap: 8px;
-  margin: 0 0 20px;
+  gap: 10px;
+  margin: 0 0 30px;
+  padding-right: 18px;
+  background: var(--pain-system-bg);
   color: var(--step-accent);
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.2;
+  letter-spacing: 0.18em;
+  line-height: 1;
 }
 
 .pain-system-number span {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 .pain-system-icon {
+  width: 30px;
+  height: 30px;
   display: block;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
+  padding: 17px;
+  border-radius: 50%;
+  background: var(--step-tint);
+  box-shadow: inset 0 0 0 1px var(--step-tint);
+  box-sizing: content-box;
   color: var(--step-accent);
+  stroke-width: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pain-system-icon {
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease;
+  }
+
+  .pain-system-step:hover .pain-system-icon {
+    transform: translateY(-3px);
+    box-shadow: inset 0 0 0 1px var(--step-accent);
+  }
 }
 
 .pain-system-step h3 {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  align-content: start;
-  gap: 4px 10px;
-  min-height: 60px;
-  margin: 0 0 20px;
-  color: var(--color-primary-dark);
+  margin: 0 0 22px;
   font-size: 24px;
-  line-height: 1.5;
+  font-weight: 700;
+  line-height: 1.45;
   word-break: keep-all;
-  overflow-wrap: anywhere;
 }
 
 .pain-system-treatment {
-  color: var(--step-accent);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.5;
-  white-space: nowrap;
+  display: block;
+  color: var(--color-primary-dark);
 }
 
 .pain-system-caption {
-  color: var(--color-muted);
-  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+  color: var(--step-accent);
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.5;
-  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .pain-system-details {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   margin: 0;
-  padding-left: 20px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--color-line);
   color: #5e5954;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.75;
-  list-style: disc;
+  list-style: none;
   word-break: keep-all;
-  overflow-wrap: anywhere;
 }
 
-.pain-system-details li::marker {
-  color: var(--step-accent);
+.pain-system-details li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.pain-system-details li::before {
+  position: absolute;
+  top: 0.86em;
+  left: 0;
+  width: 8px;
+  height: 1px;
+  background: var(--step-accent);
+  content: "";
 }
 
 @media (max-width: 1100px) {
   .pain-system-steps {
-    gap: 24px;
+    gap: 32px;
   }
 
   .pain-system-heading h2 {
     font-size: 38px;
   }
 
+  .pain-system-step h3 {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 920px) {
   .pain-system-section {
-    padding: 80px 0;
+    padding: 84px 0;
   }
 
   .pain-system-heading {
     grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 44px;
+    align-items: start;
+    gap: 26px;
+    margin-bottom: 52px;
   }
 
   .pain-system-steps {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 44px;
   }
 
-  .pain-system-step h3 {
-    min-height: 0;
+  /* One column reads top-to-bottom, so the horizontal rail no longer describes the sequence. */
+  .pain-system-steps::before,
+  .pain-system-steps.aos-init::before {
+    display: none;
+  }
+
+  .pain-system-number {
+    padding-right: 0;
+    margin-bottom: 22px;
   }
 }
 
@@ -543,15 +757,35 @@ html:not(.aos-enabled) main [data-aos] {
 
   .pain-system-intro {
     padding-left: 20px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  .pain-system-treatment {
-    font-size: 22px;
+  .pain-system-number span {
+    font-size: 34px;
   }
 
-  .pain-system-caption {
-    font-size: 13px;
+  .pain-system-icon {
+    width: 26px;
+    height: 26px;
+    padding: 15px;
+    margin-bottom: 22px;
+  }
+
+  .pain-system-step h3 {
+    font-size: 21px;
+  }
+
+  .pain-system-details {
+    font-size: 16px;
+  }
+}
+
+/* The global reduced-motion rule targets [data-aos] elements, not this pseudo-element. */
+@media (prefers-reduced-motion: reduce) {
+  .pain-system-steps.aos-init::before,
+  .pain-system-steps.aos-animate::before {
+    transform: none;
+    transition: none;
   }
 }
 
@@ -740,12 +974,16 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .clinic-badge-logo {
+  /* The background crop is tied to this size, so resizing the badge logo only needs this value. */
+  --badge-logo-size: 230px;
   position: relative;
   z-index: 1;
   display: block;
-  width: 150px;
-  height: 150px;
-  background: url("../img/logo.png") center 5px / 365px auto no-repeat;
+  width: var(--badge-logo-size);
+  height: var(--badge-logo-size);
+  background: url("../img/logo.png")
+    center calc(var(--badge-logo-size) * 0.0333) /
+    calc(var(--badge-logo-size) * 2.4333) auto no-repeat;
 }
 
 @keyframes clinic-badge-spin {
@@ -1429,7 +1667,11 @@ html:not(.aos-enabled) main [data-aos] {
   .hero-backdrop {
     height: auto;
     min-height: inherit;
-    padding: calc(var(--header-height) + 16px) 0 72px;
+    padding: calc(var(--header-height) + 16px) 0 128px;
+  }
+
+  .hero-controls {
+    padding-bottom: 40px;
   }
 
   .hero-copy,
@@ -1831,10 +2073,7 @@ html:not(.aos-enabled) main [data-aos] {
   }
 
   .clinic-badge-logo {
-    width: 36px;
-    height: 36px;
-    background-size: 88px auto;
-    background-position: center 2px;
+    --badge-logo-size: 50px;
   }
 
   .clinic-slider-body {
@@ -2054,5 +2293,9 @@ html:not(.aos-enabled) main [data-aos] {
   .clinic-badge-text span {
     font-size: 7px;
     transform: rotate(calc(var(--i) * 5.454545deg)) translateY(-32px);
+  }
+
+  .clinic-badge-logo {
+    --badge-logo-size: 42px;
   }
 }
