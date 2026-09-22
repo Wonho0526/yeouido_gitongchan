@@ -53,12 +53,13 @@
   const itemPages = (item) => [item.href].concat((item.children || []).map((child) => child.href));
   const isActive = (item) => itemPages(item).includes(currentPage);
   const navHref = (item) => item.external ? item.href : `${subPrefix}${item.href}`;
+  const findHero = () => document.querySelector("main > .hero, main > .sub-hero");
 
   function Header() {
     const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1440px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openSubmenu, setOpenSubmenu] = React.useState(null);
-    const [isOverDark, setIsOverDark] = React.useState(() => !isSubPage && window.scrollY === 0);
+    const [isOverDark, setIsOverDark] = React.useState(() => Boolean(findHero()) && window.scrollY === 0);
     const headerRef = React.useRef(null);
     const menuButtonRef = React.useRef(null);
     const navRef = React.useRef(null);
@@ -73,7 +74,7 @@
       const updateContrast = () => {
         const bar = headerRef.current?.querySelector(".header-inner");
         if (!bar) return;
-        const hero = !isSubPage && document.querySelector("main > .hero");
+        const hero = findHero();
         setIsOverDark(Boolean(hero && hero.getBoundingClientRect().bottom > bar.getBoundingClientRect().height));
       };
       const scheduleUpdate = () => {
