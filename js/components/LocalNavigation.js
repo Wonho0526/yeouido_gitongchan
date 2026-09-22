@@ -8,9 +8,9 @@
     intro: {
       label: "여의도기통찬 소개",
       items: [
-        { href: "about.html", label: "기통찬 뜻 & 비전" },
-        { href: "doctor.html", label: "기통찬 의료진 소개" },
-        { href: "values.html", label: "핵심가치 & 약속" },
+        { href: "about.html", label: "기통찬 스토리" },
+        { href: "doctor.html", label: "기통찬 의료진" },
+        { href: "values.html", label: "기통찬 약속" },
         { href: "hours.html", label: "진료시간" },
         { href: "location.html", label: "오시는길" },
       ],

@@ -920,7 +920,7 @@ body[data-page="hours"] .footer-contact {
   align-items: stretch;
   justify-content: safe center;
   overflow-x: auto;
-  gap: 0 24px;
+  gap: 0 clamp(24px, 5vw, 80px);
   margin: 0;
   padding: 0;
 }
@@ -1159,11 +1159,14 @@ body[data-page="hours"] .footer-contact {
 
 .sub-doctor-photo {
   min-height: 640px;
+  height: auto;
+  align-self: start;
   background: transparent;
 }
 
 .sub-doctor-photo img {
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -1209,8 +1212,8 @@ body[data-page="hours"] .footer-contact {
   padding-top: 18px;
   border-bottom: 2px solid var(--sub-line);
   color: var(--sub-muted);
-  font-size: 22px !important;
-  font-weight: 7900;
+  font-size: 29px !important;
+  font-weight: 800 !important;
 }
 
 .sub-values-section {
@@ -2011,7 +2014,7 @@ body[data-page="hours"] .footer-contact {
   .sub-local-nav ul {
     width: 100%;
     overflow-x: auto;
-    gap: 0 20px;
+    gap: 0 28px;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
@@ -2063,6 +2066,10 @@ body[data-page="hours"] .footer-contact {
 
   .sub-doctor-photo {
     min-height: 440px;
+  }
+
+  .sub-profile-note {
+    font-size: 24px !important;
   }
 
   .sub-promise-list li {

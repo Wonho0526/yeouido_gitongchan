@@ -10,9 +10,9 @@
       href: "about.html",
       label: "여의도기통찬 소개",
       children: [
-        { href: "about.html", label: "‘기통찬’뜻 & 미션 비전" },
-        { href: "doctor.html", label: "기통찬 의료진 소개" },
-        { href: "values.html", label: "기통찬의 핵심가치 & 약속" },
+        { href: "about.html", label: "기통찬 스토리" },
+        { href: "doctor.html", label: "기통찬 의료진" },
+        { href: "values.html", label: "기통찬 약속" },
         { href: "hours.html", label: "진료시간" },
         { href: "location.html", label: "오시는길" },
       ],
@@ -20,6 +20,7 @@
     {
       href: "neck-shoulder.html",
       label: "기(氣)를 돌보는 진료",
+      justifyChildren: true,
       children: [
         { href: "neck-shoulder.html", label: "목·어깨" },
         { href: "spine-joint.html", label: "허리·골반" },
@@ -240,7 +241,7 @@
                     "div",
                     {
                       id: `site-sub-nav-${index}`,
-                      className: "sub-nav-panel",
+                      className: item.justifyChildren ? "sub-nav-panel sub-nav-panel--justify" : "sub-nav-panel",
                       hidden: isCompact && openSubmenu !== index,
                     },
                     h(
@@ -256,9 +257,16 @@
                               href: navHref(child),
                               className: currentPage === child.href ? "sub-nav-link is-active" : "sub-nav-link",
                               "aria-current": currentPage === child.href ? "page" : undefined,
+                              "aria-label": item.justifyChildren ? child.label : undefined,
                               onClick: closeMenus,
                             },
-                            child.label
+                            item.justifyChildren
+                              ? h(
+                                  "span",
+                                  { className: "sub-nav-label", "aria-hidden": "true" },
+                                  Array.from(child.label).map((char, charIndex) => h("span", { key: charIndex }, char))
+                                )
+                              : child.label
                           )
                         )
                       )

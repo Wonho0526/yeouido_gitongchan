@@ -21,7 +21,7 @@
   ];
 
   const location = [
-    { term: "주소", desc: "서울특별시 영등포구 국제금융로 72 4층" },
+    { term: "병원주소", desc: "서울특별시 영등포구 국제금융로 72 4층" },
     { term: "주차안내", desc: "호정빌딩 지하주차장 이용" },
   ];
 
@@ -307,6 +307,7 @@
               id: "footer-location-title",
               title: "오시는 길",
               items: location,
+              className: "footer-location",
             }),
             h(
               "div",
@@ -339,7 +340,7 @@
               null,
               "대표자 : 이동현 ",
               h("span", null, "|"),
-              " 사업자등록번호 : 000-00-00000"
+              " 사업자등록번호 : 458-95-01994"
             ),
             h("p", null, "주소 : 서울특별시 영등포구 국제금융로 72 4층(여의도동, 호정빌딩)"),
             h(

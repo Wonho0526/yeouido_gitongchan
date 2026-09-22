@@ -969,7 +969,7 @@ html:not(.aos-enabled) main [data-aos] {
   font-weight: 500;
   line-height: 1;
   text-align: center;
-  transform: rotate(calc(var(--i) * 5.454545deg)) translateY(-156px);
+  transform: rotate(calc(var(--i) * 6.428571deg)) translateY(-156px);
   transform-origin: 0 0;
 }
 
@@ -1510,13 +1510,38 @@ html:not(.aos-enabled) main [data-aos] {
   justify-content: center;
 }
 
-.footer-info-block h2 {
-  margin: 0 0 10px;
+.footer-info-block h3 {
+  margin: 0 0 14px;
   color: #655b51;
   font-family: var(--font-family);
-  font-size: 27px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.25;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-info-block h3::before {
+  width: 0.9em;
+  height: 0.9em;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: var(--footer-icon) center / contain no-repeat;
+  mask: var(--footer-icon) center / contain no-repeat;
+  content: "";
+}
+
+.footer-info-block.clinic-hours {
+  --footer-icon: url("../img/icons/clock.svg");
+}
+
+.footer-info-block.footer-location {
+  --footer-icon: url("../img/icons/map-pin.svg");
+}
+
+.footer-info-block.footer-call {
+  --footer-icon: url("../img/icons/phone.svg");
 }
 
 .footer-info-block dl {
@@ -1606,6 +1631,19 @@ html:not(.aos-enabled) main [data-aos] {
 
 .footer-info-block.clinic-hours dt::after {
   content: none;
+}
+
+.footer-info-block.footer-location dl div {
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.footer-info-block.footer-location dl div + div {
+  margin-top: 14px;
+}
+
+.footer-info-block.footer-location dt::after {
+  content: ":";
 }
 
 .footer-call p {
@@ -1743,6 +1781,11 @@ html:not(.aos-enabled) main [data-aos] {
 
   .footer-logo {
     width: min(230px, 100%);
+  }
+
+  .footer-info-block h3 {
+    justify-content: center;
+    font-size: 27px;
   }
 
   .footer-info-block dl div {
@@ -2085,7 +2128,7 @@ html:not(.aos-enabled) main [data-aos] {
 
   .clinic-badge-text span {
     font-size: 8px;
-    transform: rotate(calc(var(--i) * 5.454545deg)) translateY(-38px);
+    transform: rotate(calc(var(--i) * 6.428571deg)) translateY(-38px);
   }
 
   .clinic-badge-logo {
@@ -2315,7 +2358,7 @@ html:not(.aos-enabled) main [data-aos] {
 
   .clinic-badge-text span {
     font-size: 7px;
-    transform: rotate(calc(var(--i) * 5.454545deg)) translateY(-32px);
+    transform: rotate(calc(var(--i) * 6.428571deg)) translateY(-32px);
   }
 
   .clinic-badge-logo {
