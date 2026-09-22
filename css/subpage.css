@@ -1055,8 +1055,6 @@ body[data-page="hours"] .footer-contact {
 
 .sub-copy-stack p {
   font-size: 22px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  padding-bottom: 10px;
   font-weight: 400;
 }
 
@@ -1937,6 +1935,7 @@ body[data-page="hours"] .footer-contact {
 }
 
 @media (max-width: 1040px) {
+
   .sub-editorial-split,
   .sub-doctor-layout,
   .sub-care-intro-grid,
