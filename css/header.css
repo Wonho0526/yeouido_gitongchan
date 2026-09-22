@@ -10,12 +10,13 @@
   --header-ink: #675f57;
   --header-strong: var(--color-primary-dark);
   position: relative;
-  background: transparent;
+  background: #fff;
 }
 
 .site-header.is-over-dark {
   --header-ink: #fff;
   --header-strong: #fff;
+  background: transparent;
 }
 
 .site-header.is-over-dark .header-logo {

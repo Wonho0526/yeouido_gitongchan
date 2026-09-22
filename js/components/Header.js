@@ -13,7 +13,8 @@
         { href: "about.html", label: "‘기통찬’뜻 & 미션 비전" },
         { href: "doctor.html", label: "기통찬 의료진 소개" },
         { href: "values.html", label: "기통찬의 핵심가치 & 약속" },
-        { href: "location.html", label: "진료시간 & 오시는 길" },
+        { href: "hours.html", label: "진료시간" },
+        { href: "location.html", label: "오시는길" },
       ],
     },
     {
@@ -56,7 +57,7 @@
     const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1440px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openSubmenu, setOpenSubmenu] = React.useState(null);
-    const [isOverDark, setIsOverDark] = React.useState(true);
+    const [isOverDark, setIsOverDark] = React.useState(() => !isSubPage && window.scrollY === 0);
     const headerRef = React.useRef(null);
     const menuButtonRef = React.useRef(null);
     const navRef = React.useRef(null);
@@ -71,18 +72,8 @@
       const updateContrast = () => {
         const bar = headerRef.current?.querySelector(".header-inner");
         if (!bar) return;
-        const sampleY = bar.getBoundingClientRect().height / 2;
-        const coversBar = (element) => {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= sampleY && rect.bottom > sampleY;
-        };
-        const darkSections = document.querySelectorAll(".hero, .sub-hero, .director-section, .night-care-section, .footer-business");
-        const overDark = Array.from(darkSections).some((section) => {
-          if (!coversBar(section)) return false;
-          const photo = section.querySelector(".director-photo");
-          return !(photo && window.matchMedia("(max-width: 920px)").matches && coversBar(photo));
-        });
-        setIsOverDark(overDark);
+        const hero = !isSubPage && document.querySelector("main > .hero");
+        setIsOverDark(Boolean(hero && hero.getBoundingClientRect().bottom > bar.getBoundingClientRect().height));
       };
       const scheduleUpdate = () => {
         window.cancelAnimationFrame(frame);
@@ -258,7 +249,7 @@
                       item.children.map((child) =>
                         h(
                           "li",
-                          { key: child.href },
+                          { key: `${child.href}-${child.label}` },
                           h(
                             "a",
                             {
@@ -280,12 +271,12 @@
         h(
           "a",
           {
-            href: "tel:0200000000",
+            href: "tel:027827070",
             className: "phone-cta",
-            "aria-label": "전화문의 02-000-0000",
+            "aria-label": "전화문의 02-782-7070",
           },
           h("span", null, "전화문의"),
-          h("strong", null, "02-000-0000")
+          h("strong", null, "02-782-7070")
         )
       )
     );

@@ -11,7 +11,7 @@
     { term: "월 화 목 금", desc: "09:00 ~ 20:00", badge: "야간진료", badgeType: "night" },
     { term: "수요일", desc: "09:00 ~ 19:00" },
     { term: "토요일", desc: "09:00 ~ 14:00", badge: "단축진료", badgeType: "short" },
-    { term: "점심시간", desc: "14:00 ~ 15:00" },
+    { term: "점심시간", desc: "13:30 ~ 14:30" },
   ];
 
   const hoursNotes = [
@@ -91,7 +91,7 @@
                 "aria-labelledby": "footer-call-title",
               },
               h("h3", { id: "footer-call-title" }, "진료문의"),
-              h("p", null, "02-123-4567")
+              h("p", null, "02-782-7070")
             )
           )
         )
@@ -121,7 +121,7 @@
             h(
               "p",
               null,
-              "TEL : 02-123-4567 ",
+              "TEL : 02-782-7070 ",
               h("span", null, "|"),
               " FAX : 02-123-4567"
             )
@@ -138,6 +138,54 @@
     );
   }
 
+  // Add the clinic's external URLs here when they are available.
+  const quickLinkUrls = {
+    kakao: "",
+    reservation: "",
+    blog: "",
+  };
+
+  function QuickLinks() {
+    const items = [
+      { id: "top", label: "최상단 이동", icon: "arrow-up" },
+      { id: "phone", label: "전화 문의", icon: "phone", href: "tel:027827070" },
+      { id: "kakao", label: "카카오톡 상담", icon: "message-circle", href: quickLinkUrls.kakao, external: true },
+      { id: "location", label: "오시는길", icon: "map-pin", href: `${rootPrefix}sub/location.html` },
+      { id: "reservation", label: "네이버 예약", icon: "calendar-check", href: quickLinkUrls.reservation, external: true },
+      { id: "blog", label: "네이버 블로그", icon: "notebook-pen", href: quickLinkUrls.blog, external: true },
+    ];
+
+    return h("nav", { className: "quick-links", "aria-label": "빠른 안내" },
+      items.map((item) => {
+        const unavailable = item.id !== "top" && !item.href;
+        const props = {
+          key: item.id,
+          className: `quick-link quick-link--${item.id}`,
+          "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
+          title: unavailable ? `${item.label} (준비 중)` : item.label,
+        };
+        if (item.href) {
+          props.href = item.href;
+          if (item.external) {
+            props.target = "_blank";
+            props.rel = "noopener noreferrer";
+          }
+        } else {
+          props.type = "button";
+          props.disabled = unavailable;
+          if (item.id === "top") {
+            props.onClick = () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+          }
+        }
+        return h(item.href ? "a" : "button", props,
+          h("img", { src: `${rootPrefix}img/icons/${item.icon}.svg`, width: 24, height: 24, alt: "", "aria-hidden": "true" }),
+          h("span", null, item.label)
+        );
+      })
+    );
+  }
+
   window.YgtcComponents = window.YgtcComponents || {};
+  window.YgtcComponents.QuickLinks = QuickLinks;
   window.YgtcComponents.Footer = Footer;
 })();

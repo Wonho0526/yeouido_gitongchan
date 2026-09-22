@@ -818,7 +818,8 @@ body[data-page] {
   --sub-line: #d9d2c6;
 }
 
-body[data-page="location"] .footer-contact {
+body[data-page="location"] .footer-contact,
+body[data-page="hours"] .footer-contact {
   display: none;
 }
 

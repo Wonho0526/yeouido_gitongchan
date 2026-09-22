@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="vendor/aos/aos.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -20,7 +21,7 @@
     <section class="hero">
       <div class="hero-backdrop">
         <div class="inner hero-grid">
-          <div class="hero-copy">
+          <div class="hero-copy" data-aos="fade-up" data-aos-offset="0">
             <h1>
               <span>처음 다짐했던 그 마음 그대로</span>
               <span>정성껏, 그리고 진심을 다해</span>
@@ -36,7 +37,7 @@
     </section>
 
     <section class="brand-intro" id="intro" aria-labelledby="intro-title">
-      <div class="inner brand-intro-inner">
+      <div class="inner brand-intro-inner" data-aos="fade-up">
         <img src="img/logo.png" alt="여의도기통찬의원" class="intro-logo">
         <div class="intro-copy">
           <h2 id="intro-title">여의도기통찬의원의 <span>약속</span></h2>
@@ -54,7 +55,7 @@
 
     <section class="principles-section" id="principles" aria-labelledby="principles-title">
       <div class="inner principles-inner">
-        <div class="principles-heading">
+        <div class="principles-heading" data-aos="fade-up">
           <span class="clinic-kicker">YEOUIDO GITONG CHAN</span>
           <h2 id="principles-title">여의도기통찬의<br>5가지의 <span>진료 원칙</span></h2>
           <p>
@@ -64,7 +65,7 @@
           <p>환자의 입장에서 생각하고, 신뢰와 배려를 바탕으로 진료하겠습니다.</p>
         </div>
 
-        <ol class="principle-chain" aria-label="여의도기통찬의원 5가지 진료 원칙">
+        <ol class="principle-chain" aria-label="여의도기통찬의원 5가지 진료 원칙" data-aos="fade-up">
           <li class="principle-item">
             <div class="principle-circle">
               <span>01</span>
@@ -105,7 +106,7 @@
     <section class="director-section" id="director" aria-labelledby="director-title">
       <div class="director-backdrop">
         <div class="inner director-layout">
-          <div class="director-copy">
+          <div class="director-copy" data-aos="fade-up">
             <h2 id="director-title">
               환자분에게 해가 되지 않는 치료,<br>내 가족에게도 선뜻 제안할 수 있는<br>안전한 치료만을 고집합니다.
             </h2>
@@ -117,9 +118,8 @@
               <a href="sub/doctor.html" class="view-more-btn" aria-label="의료진 소개 자세히 보기">VIEW MORE</a>
             </div>
           </div>
-          <div class="director-photo">
-            <!-- <img src="./img/doctor_profile.png" alt=""> -->
-
+          <div class="director-photo" data-aos="fade">
+            <img src="img/doc_main.jpg" alt="진료 중인 이동현 대표원장" width="4000" height="2668" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -127,13 +127,13 @@
 
     <section class="pain-system-section" id="pain-system" aria-labelledby="pain-system-title">
       <div class="inner">
-        <div class="pain-system-heading">
+        <div class="pain-system-heading" data-aos="fade-up">
           <h2 id="pain-system-title">여의도기통찬의<br><span>3단계 통증관리 시스템</span></h2>
           <p class="pain-system-intro">통증 완화를 넘어<br><strong>다시 아프지 않는 몸을</strong><br>목표로 합니다.</p>
         </div>
 
         <ol class="pain-system-steps" aria-label="3단계 통증관리 과정">
-          <li class="pain-system-step">
+          <li class="pain-system-step" data-aos="fade-up">
             <p class="pain-system-number">STEP <span>01</span></p>
             <svg class="pain-system-icon" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="m18 2 4 4" />
@@ -150,7 +150,7 @@
               <li>통증을 조절하여 보다 효과적인 기능 회복을 돕습니다.</li>
             </ul>
           </li>
-          <li class="pain-system-step">
+          <li class="pain-system-step" data-aos="fade-up" data-aos-delay="100">
             <p class="pain-system-number">STEP <span>02</span></p>
             <svg class="pain-system-icon" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <circle cx="12" cy="5" r="1" />
@@ -165,7 +165,7 @@
               <li>통증이 다시 반복되지 않도록, 무너진 기능까지 바로 잡습니다.</li>
             </ul>
           </li>
-          <li class="pain-system-step">
+          <li class="pain-system-step" data-aos="fade-up" data-aos-delay="200">
             <p class="pain-system-number">STEP <span>03</span></p>
             <svg class="pain-system-icon" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
@@ -185,7 +185,7 @@
     <section class="clinic-section" id="clinics" aria-labelledby="clinic-title">
       <div class="inner">
         <div class="clinic-slider" data-clinic-slider>
-          <div class="clinic-slider-header">
+          <div class="clinic-slider-header" data-aos="fade-up">
             <div class="clinic-heading-copy">
               <span class="clinic-kicker">Focused Clinic</span>
               <div class="clinic-title-row">
@@ -266,16 +266,11 @@
           </div>
 
           <div class="clinic-slider-body">
-            <figure class="clinic-main-visual">
+            <figure class="clinic-main-visual" data-aos="fade-right">
               <img src="img/editorial/clinic-neck-shoulder-natural-v2.webp" alt="목·어깨 클리닉 대표 이미지" data-clinic-main>
             </figure>
 
             <div class="clinic-slide-info">
-              <span class="clinic-slide-count">
-                <span data-clinic-current>01</span>
-                <span>/</span>
-                <span data-clinic-total>06</span>
-              </span>
               <h3 data-clinic-title>목·어깨 클리닉</h3>
               <strong data-clinic-subtitle>일상의 긴장을 풀어내는 섬세한 케어</strong>
               <p data-clinic-desc>
@@ -294,7 +289,7 @@
               </div>
             </div>
 
-            <div class="clinic-preview-window">
+            <div class="clinic-preview-window" data-aos="fade-left">
               <div class="clinic-preview-list" aria-label="중점진료 목록" data-clinic-track>
                 <button type="button" class="clinic-preview is-active" aria-pressed="true" data-clinic-slide
                   data-index="0" data-number="01" data-title="목·어깨 클리닉" data-subtitle="일상의 긴장을 풀어내는 섬세한 케어"
@@ -302,7 +297,6 @@
                   data-image="img/editorial/clinic-neck-shoulder-natural-v2.webp" data-alt="목·어깨 클리닉 대표 이미지"
                   data-href="sub/neck-shoulder.html">
                   <img src="img/editorial/clinic-neck-shoulder-natural-v2.webp" alt="">
-                  <span>01</span>
                   <strong>목·어깨</strong>
                 </button>
 
@@ -312,7 +306,6 @@
                   data-image="img/editorial/clinic-spine-joint-natural-v2.webp" data-alt="허리·골반 클리닉 대표 이미지"
                   data-href="sub/spine-joint.html">
                   <img src="img/editorial/clinic-spine-joint-natural-v2.webp" alt="">
-                  <span>02</span>
                   <strong>허리·골반</strong>
                 </button>
 
@@ -322,7 +315,6 @@
                   data-image="img/editorial/clinic-hand-wrist-natural-v2.webp" data-alt="팔꿈치·손 클리닉 대표 이미지"
                   data-href="sub/hand-wrist.html">
                   <img src="img/editorial/clinic-hand-wrist-natural-v2.webp" alt="">
-                  <span>03</span>
                   <strong>팔꿈치·손</strong>
                 </button>
 
@@ -331,7 +323,6 @@
                   data-desc="계단을 오르내리거나 걸을 때의 무릎 통증과 붓기, 움직임의 변화를 함께 확인합니다. 관절 상태와 평소 활동량을 고려해 치료 방향을 안내합니다."
                   data-image="img/heroes/knee-natural-v1.webp" data-alt="무릎 클리닉 대표 이미지" data-href="sub/knee.html">
                   <img src="img/heroes/knee-natural-v1.webp" alt="">
-                  <span>04</span>
                   <strong>무릎</strong>
                 </button>
 
@@ -341,7 +332,6 @@
                   data-image="img/editorial/clinic-foot-heel-natural-v2.webp" data-alt="발·발목 클리닉 대표 이미지"
                   data-href="sub/foot-heel.html">
                   <img src="img/editorial/clinic-foot-heel-natural-v2.webp" alt="">
-                  <span>05</span>
                   <strong>발·발목</strong>
                 </button>
 
@@ -351,7 +341,6 @@
                   data-image="img/heroes/neuralgia-natural-v1.webp" data-alt="두통·신경통 클리닉 대표 이미지"
                   data-href="sub/neuralgia.html">
                   <img src="img/heroes/neuralgia-natural-v1.webp" alt="">
-                  <span>06</span>
                   <strong>두통·신경통</strong>
                 </button>
               </div>
@@ -364,7 +353,7 @@
     <section class="night-care-section" aria-labelledby="night-care-title">
       <img class="night-care-background" src="img/editorial/night-care-city-natural-v1.webp" alt=""
         width="2172" height="724" loading="lazy" decoding="async">
-      <div class="inner night-care-inner">
+      <div class="inner night-care-inner" data-aos="fade-up">
         <p class="night-care-kicker">Night Care System</p>
         <h2 id="night-care-title"><span>월 · 화 · 목 · 금</span> 평일에도 야간진료</h2>
         <p class="night-care-wednesday">수요일은 저녁 7시까지 진료</p>
@@ -376,7 +365,7 @@
     <section class="equipment-section" id="equipment" aria-labelledby="equipment-title">
       <div class="inner-fluid equipment-inner">
         <div class="equipment-panel">
-          <div class="equipment-copy">
+          <div class="equipment-copy" data-aos="fade-up">
             <span class="clinic-kicker">YEOUIDO GITONG CHAN</span>
             <h2 id="equipment-title">
               세심한 진찰에 정밀한 장비를 더해,<br>
@@ -388,14 +377,14 @@
             </div>
           </div>
 
-          <div class="equipment-showcase" aria-label="첨단의료장비 이미지">
+          <div class="equipment-showcase" aria-label="첨단의료장비 이미지" data-aos="fade">
           </div>
         </div>
       </div>
     </section>
 
     <section class="facility-section" aria-labelledby="facility-title">
-      <div class="inner facility-message">
+      <div class="inner facility-message" data-aos="fade-up">
         <span class="clinic-kicker">YEOUIDO GITONG CHAN</span>
         <h2 id="facility-title">여의도기통찬의원 <span>둘러보기</span></h2>
         <p>
@@ -407,25 +396,25 @@
         <p><span>머무는 순간까지 편안할 수 있도록,<br>작은 부분까지 세심하게 준비했습니다.</span></p>
       </div>
 
-      <div class="inner facility-gallery" aria-label="여의도기통찬의원 시설 이미지">
+      <div class="inner facility-gallery" aria-label="여의도기통찬의원 시설 이미지" data-aos="fade-up">
         <div class="facility-controls" hidden>
           <button type="button" class="facility-arrow" data-facility-prev aria-label="이전 시설 사진" title="이전 시설 사진" aria-controls="facility-track">&#8592;</button>
           <i aria-hidden="true"></i>
           <button type="button" class="facility-arrow" data-facility-next aria-label="다음 시설 사진" title="다음 시설 사진" aria-controls="facility-track">&#8594;</button>
         </div>
 
-        <div class="facility-track" id="facility-track" tabindex="0" role="region" aria-label="시설 사진">
-          <figure class="facility-slide">
-            <img src="img/editorial/facility-carm-room-natural-v2.webp" alt="영상 장비와 치료 베드가 있는 진료 공간" loading="lazy">
+        <div class="facility-track" id="facility-track" tabindex="0" role="region" aria-roledescription="캐러셀" aria-label="시설 사진">
+          <figure class="facility-slide" role="group" aria-label="시설 사진 1 / 4">
+            <img src="img/editorial/facility-carm-room-natural-v2.webp" alt="영상 장비와 치료 베드가 있는 진료 공간" loading="lazy" draggable="false">
           </figure>
-          <figure class="facility-slide">
-            <img src="img/editorial/facility-xray-room-natural-v2.webp" alt="검사 장비가 배치된 진단 공간" loading="lazy">
+          <figure class="facility-slide" role="group" aria-label="시설 사진 2 / 4">
+            <img src="img/editorial/facility-xray-room-natural-v2.webp" alt="검사 장비가 배치된 진단 공간" loading="lazy" draggable="false">
           </figure>
-          <figure class="facility-slide">
-            <img src="img/editorial/facility-therapy-bed-natural-v2.webp" alt="편안한 치료 베드가 있는 공간" loading="lazy">
+          <figure class="facility-slide" role="group" aria-label="시설 사진 3 / 4">
+            <img src="img/editorial/facility-therapy-bed-natural-v2.webp" alt="편안한 치료 베드가 있는 공간" loading="lazy" draggable="false">
           </figure>
-          <figure class="facility-slide">
-            <img src="img/editorial/facility-treatment-room-natural-v2.webp" alt="여러 치료 베드가 정돈된 치료실" loading="lazy">
+          <figure class="facility-slide" role="group" aria-label="시설 사진 4 / 4">
+            <img src="img/editorial/facility-treatment-room-natural-v2.webp" alt="여러 치료 베드가 정돈된 치료실" loading="lazy" draggable="false">
           </figure>
         </div>
       </div>
@@ -440,6 +429,7 @@
   <script src="js/components/Header.js"></script>
   <script src="js/components/Footer.js"></script>
   <script src="js/layout.js"></script>
+  <script src="vendor/aos/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 

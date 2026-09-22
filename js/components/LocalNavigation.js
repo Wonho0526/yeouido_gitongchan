@@ -11,7 +11,8 @@
         { href: "about.html", label: "기통찬 뜻 & 비전" },
         { href: "doctor.html", label: "기통찬 의료진 소개" },
         { href: "values.html", label: "핵심가치 & 약속" },
-        { href: "location.html", label: "진료시간 & 오시는길" },
+        { href: "hours.html", label: "진료시간" },
+        { href: "location.html", label: "오시는길" },
       ],
     },
     treatment: {
@@ -57,7 +58,7 @@
           navigation.items.map((item) =>
             h(
               "li",
-              { key: item.href },
+              { key: `${item.href}-${item.label}` },
               h(
                 "a",
                 {
