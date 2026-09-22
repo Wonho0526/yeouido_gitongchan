@@ -48,7 +48,46 @@
     "⑦ 환자는 병원의 규칙 및 규정에 따를 책임이 있다.",
   ];
 
-  function PatientRightsModal({ onClose }) {
+  // SAMPLE DATA — placeholder until the clinic supplies its real fee schedule.
+  // Replace the groups below (and remove nonCoveredIsSample) once real figures arrive.
+  const nonCoveredIsSample = true;
+  const nonCoveredBaseDate = "2026. 09. 22";
+  const nonCoveredGroups = [
+    {
+      title: "치료",
+      items: [
+        { name: "도수치료 (30분)", price: 100000, note: "1회 기준" },
+        { name: "도수치료 (50분)", price: 150000, note: "1회 기준" },
+        { name: "체외충격파 (일반)", price: 80000, note: "1회 기준" },
+        { name: "체외충격파 (고강도 집속형)", price: 120000, note: "1회 기준" },
+        { name: "크라이오 냉각치료", price: 50000, note: "1회 기준" },
+        { name: "페인케어 (무통증 신호치료)", price: 60000, note: "1회 기준" },
+      ],
+    },
+    {
+      title: "주사 · 수액",
+      items: [
+        { name: "프롤로 주사", price: 70000, note: "1부위 기준" },
+        { name: "영양수액 (기본)", price: 50000 },
+        { name: "비타민 수액", price: 80000 },
+        { name: "회복수액 (고함량)", price: 120000 },
+      ],
+    },
+    {
+      title: "제증명 수수료",
+      items: [
+        { name: "일반진단서", price: 20000 },
+        { name: "상해진단서 (3주 미만)", price: 100000 },
+        { name: "진료확인서", price: 3000 },
+        { name: "진료기록 사본", price: 1000, note: "1~5매, 1매당" },
+      ],
+    },
+  ];
+
+  const formatWon = (value) => `${value.toLocaleString("ko-KR")}원`;
+
+  // Shared shell for the footer's policy dialogs: focus handling, Escape, backdrop, scroll lock.
+  function PolicyModal({ titleId, title, onClose, wide = false, children }) {
     const dialogRef = React.useRef(null);
 
     React.useEffect(() => {
@@ -85,10 +124,10 @@
       h(
         "div",
         {
-          className: "modal-dialog",
+          className: wide ? "modal-dialog modal-dialog--wide" : "modal-dialog",
           role: "dialog",
           "aria-modal": "true",
-          "aria-labelledby": "patient-rights-title",
+          "aria-labelledby": titleId,
           tabIndex: -1,
           ref: dialogRef,
         },
@@ -97,36 +136,105 @@
           { type: "button", className: "modal-close", "aria-label": "닫기", onClick: onClose },
           "×"
         ),
-        h("h2", { id: "patient-rights-title", className: "modal-title" }, "환자 권리장전"),
+        h("h2", { id: titleId, className: "modal-title" }, title),
+        children
+      )
+    );
+  }
+
+  function PatientRightsModal({ onClose }) {
+    return h(
+      PolicyModal,
+      { titleId: "patient-rights-title", title: "환자 권리장전", onClose },
+      h(
+        "p",
+        { className: "modal-lead" },
+        "모든 환자는 인간으로서 존엄과 가치를 지니고, 건강한 삶을 영위하기 위해 다음과 같은 권리를 가지며 이에 따른 책임과 의무를 가진다."
+      ),
+      h(
+        "div",
+        { className: "modal-body" },
         h(
-          "p",
-          { className: "modal-lead" },
-          "모든 환자는 인간으로서 존엄과 가치를 지니고, 건강한 삶을 영위하기 위해 다음과 같은 권리를 가지며 이에 따른 책임과 의무를 가진다."
+          "div",
+          { className: "modal-section" },
+          h("h3", null, "환자의 권리"),
+          h(
+            "ul",
+            { className: "modal-list" },
+            patientRights.map((item) => h("li", { key: item }, item))
+          )
         ),
         h(
           "div",
-          { className: "modal-body" },
+          { className: "modal-section" },
+          h("h3", null, "환자의 책임"),
+          h(
+            "ul",
+            { className: "modal-list" },
+            patientResponsibilities.map((item) => h("li", { key: item }, item))
+          )
+        )
+      )
+    );
+  }
+
+  function NonCoveredModal({ onClose }) {
+    return h(
+      PolicyModal,
+      { titleId: "non-covered-title", title: "비급여 진료비용 안내", onClose, wide: true },
+      nonCoveredIsSample &&
+        h(
+          "p",
+          { className: "modal-sample-notice", role: "note" },
+          "아래 금액은 화면 구성을 위한 예시이며, 실제 진료비와 다릅니다."
+        ),
+      h(
+        "p",
+        { className: "modal-lead" },
+        "의료법 제45조에 따라 비급여 진료비용을 안내해 드립니다. 환자분의 상태와 치료 내용에 따라 비용이 달라질 수 있으니 자세한 사항은 진료 시 문의해 주세요."
+      ),
+      h(
+        "div",
+        { className: "modal-body" },
+        nonCoveredGroups.map((group) =>
           h(
             "div",
-            { className: "modal-section" },
-            h("h3", null, "환자의 권리"),
+            { className: "modal-section", key: group.title },
+            h("h3", null, group.title),
             h(
-              "ul",
-              { className: "modal-list" },
-              patientRights.map((item) => h("li", { key: item }, item))
-            )
-          ),
-          h(
-            "div",
-            { className: "modal-section" },
-            h("h3", null, "환자의 책임"),
-            h(
-              "ul",
-              { className: "modal-list" },
-              patientResponsibilities.map((item) => h("li", { key: item }, item))
+              "table",
+              { className: "modal-table" },
+              h("caption", { className: "modal-sr-only" }, `${group.title} 비급여 비용`),
+              h(
+                "thead",
+                null,
+                h("tr", null, h("th", { scope: "col" }, "항목"), h("th", { scope: "col" }, "금액"))
+              ),
+              h(
+                "tbody",
+                null,
+                group.items.map((item) =>
+                  h(
+                    "tr",
+                    { key: item.name },
+                    h(
+                      "th",
+                      { scope: "row" },
+                      item.name,
+                      item.note && h("span", { className: "modal-table-note" }, item.note)
+                    ),
+                    h("td", null, formatWon(item.price))
+                  )
+                )
+              )
             )
           )
         )
+      ),
+      h(
+        "p",
+        { className: "modal-footnote" },
+        `기준일 ${nonCoveredBaseDate}${nonCoveredIsSample ? " (예시)" : ""}`
       )
     );
   }
@@ -164,7 +272,9 @@
   }
 
   function Footer() {
-    const [isRightsModalOpen, setRightsModalOpen] = React.useState(false);
+    const [openModal, setOpenModal] = React.useState(null);
+    // Stable so the dialog's focus/Escape effect doesn't re-run on every Footer render.
+    const closeModal = React.useCallback(() => setOpenModal(null), []);
 
     return h(
       "footer",
@@ -237,11 +347,15 @@
           h(
             "div",
             { className: "footer-policy-links" },
-            h("a", { href: "#" }, "비급여항목"),
+            h(
+              "button",
+              { type: "button", className: "footer-policy-link", onClick: () => setOpenModal("nonCovered") },
+              "비급여항목"
+            ),
             h("span", null, "|"),
             h(
               "button",
-              { type: "button", className: "footer-policy-link", onClick: () => setRightsModalOpen(true) },
+              { type: "button", className: "footer-policy-link", onClick: () => setOpenModal("rights") },
               "환자권리장전"
             ),
             h("span", null, "|"),
@@ -249,7 +363,8 @@
           )
         )
       ),
-      isRightsModalOpen && h(PatientRightsModal, { onClose: () => setRightsModalOpen(false) })
+      openModal === "rights" && h(PatientRightsModal, { onClose: closeModal }),
+      openModal === "nonCovered" && h(NonCoveredModal, { onClose: closeModal })
     );
   }
 

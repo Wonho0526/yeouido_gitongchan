@@ -84,6 +84,38 @@ await dialog.waitFor({ state: "visible" });
 await page.screenshot({ path: path.join(SHOT_DIR, "04-modal-mobile.png") });
 const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
 check("no horizontal overflow on a 390px viewport", !overflows);
+await page.keyboard.press("Escape");
+await dialog.waitFor({ state: "detached" });
+
+// Non-covered fee schedule modal.
+await page.setViewportSize({ width: 1440, height: 900 });
+const feeTrigger = page.getByRole("button", { name: "비급여항목" });
+await feeTrigger.scrollIntoViewIfNeeded();
+await feeTrigger.click();
+await dialog.waitFor({ state: "visible" });
+check("fee modal title reads 비급여 진료비용 안내", (await dialog.getByRole("heading", { level: 2 }).textContent()) === "비급여 진료비용 안내");
+check("fee modal flags its sample data", await dialog.locator(".modal-sample-notice").isVisible());
+check("fee modal groups prices into 3 tables", (await dialog.locator(".modal-table").count()) === 3);
+check("fee modal lists 14 items", (await dialog.locator(".modal-table tbody tr").count()) === 14);
+check("prices are formatted in won", /^\d{1,3}(,\d{3})*원$/.test((await dialog.locator(".modal-table td").first().textContent()).trim()));
+check("only one dialog is open at a time", (await page.getByRole("dialog").count()) === 1);
+await page.screenshot({ path: path.join(SHOT_DIR, "05-fee-modal.png") });
+await page.keyboard.press("Escape");
+await dialog.waitFor({ state: "detached" });
+check("fee modal closes via Escape", (await dialog.count()) === 0);
+check("focus returns to the 비급여항목 trigger", await feeTrigger.evaluate((el) => el === document.activeElement));
+
+await page.setViewportSize({ width: 390, height: 844 });
+await feeTrigger.scrollIntoViewIfNeeded();
+await feeTrigger.click();
+await dialog.waitFor({ state: "visible" });
+await dialog.locator(".modal-table").first().scrollIntoViewIfNeeded();
+await page.screenshot({ path: path.join(SHOT_DIR, "06-fee-modal-mobile.png") });
+check(
+  "fee tables fit a 390px viewport",
+  await dialog.locator(".modal-table").first().evaluate((t) => t.scrollWidth <= t.parentElement.clientWidth)
+);
+check("no horizontal page overflow with the fee modal open", !(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth)));
 
 check(`no page errors (${pageErrors.join(" | ") || "none"})`, pageErrors.length === 0);
 
