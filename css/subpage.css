@@ -925,6 +925,11 @@ body[data-page="hours"] .footer-contact {
   padding: 0;
 }
 
+.sub-local-nav--intro ul,
+.sub-local-nav--treatment ul {
+  gap: 0 clamp(48px, 11vw, 180px);
+}
+
 .sub-local-nav li {
   flex: 0 0 auto;
 }
@@ -1182,6 +1187,11 @@ body[data-page="hours"] .footer-contact {
 
 .sub-doctor-copy p {
   margin-top: 4px !important;
+}
+
+.sub-doctor-copy p.is-strong {
+  color: var(--sub-ink);
+  font-weight: 700;
 }
 
 .sub-large-text {

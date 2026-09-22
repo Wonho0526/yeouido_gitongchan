@@ -48,7 +48,7 @@
 
     return h(
       "nav",
-      { className: "sub-local-nav", "aria-label": `${navigation.label} 세부 메뉴` },
+      { className: `sub-local-nav sub-local-nav--${group}`, "aria-label": `${navigation.label} 세부 메뉴` },
       h(
         "div",
         { className: "inner sub-local-nav-inner" },
