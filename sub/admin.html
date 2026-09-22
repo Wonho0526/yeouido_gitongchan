@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>관리자 | 여의도기통찬의원</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" href="../img/favicon/apple-touch-icon.png">
+  <link rel="preload" href="../fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/subpage.css">
+</head>
+
+<body data-page="admin">
+  <div id="site-header-root"></div>
+  <main id="main-content" class="subpage-main">
+    <section class="admin-gateway" aria-live="polite">
+      <div class="inner admin-gateway-inner" data-admin-gateway>
+        <p class="admin-gateway-checking">관리자 페이지로 이동하고 있습니다…</p>
+        <div class="admin-gateway-message" hidden>
+          <p class="admin-gateway-kicker">ADMIN</p>
+          <h1>준비 중입니다.</h1>
+          <p>관리자 페이지는 현재 준비 중입니다.<br>빠른 시일 내에 이용하실 수 있도록 하겠습니다.</p>
+          <a href="../index.html" class="view-more-btn">홈으로</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer-root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="../js/components/Header.js"></script>
+  <script src="../js/components/Footer.js"></script>
+  <script src="../js/layout.js"></script>
+  <script>
+    // The admin only works where PHP runs (Cafe24). Static hosts — GitHub Pages, local static
+    // servers — would hand login.php over as a file download, so ask the admin first.
+    (() => {
+      const gateway = document.querySelector("[data-admin-gateway]");
+      const showPreparing = () => {
+        gateway.querySelector(".admin-gateway-checking").hidden = true;
+        gateway.querySelector(".admin-gateway-message").hidden = false;
+      };
+
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 5000);
+
+      fetch("../admin/api/public/status.php", { cache: "no-store", signal: controller.signal })
+        .then((response) => (response.ok ? response.json() : null))
+        .then((body) => {
+          if (body && body.admin === true) {
+            window.location.replace("../admin/login.php");
+          } else {
+            showPreparing();
+          }
+        })
+        .catch(showPreparing)
+        .finally(() => window.clearTimeout(timeout));
+    })();
+  </script>
+</body>
+
+</html>

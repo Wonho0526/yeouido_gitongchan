@@ -243,7 +243,9 @@
               "button",
               { type: "button", className: "footer-policy-link", onClick: () => setRightsModalOpen(true) },
               "환자권리장전"
-            )
+            ),
+            h("span", null, "|"),
+            h("a", { href: `${rootPrefix}sub/admin.html`, rel: "nofollow" }, "관리자")
           )
         )
       ),
