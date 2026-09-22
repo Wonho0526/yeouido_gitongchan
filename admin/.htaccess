@@ -1,0 +1,8 @@
+# Block direct HTTP access to sensitive server-side files.
+<FilesMatch "^(config\.php|schema\.sql|config\.php\.example)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+</IfModule>

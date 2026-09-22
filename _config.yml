@@ -1,0 +1,10 @@
+# GitHub Pages publishes this repository as a static site. The admin system needs PHP
+# and MySQL, which Pages does not run, so it stays off the published site entirely;
+# the pages that call it (popup, community board) fall back gracefully without it.
+# Do not exclude vendor/ — the AOS scroll-animation library is served from there.
+exclude:
+  - admin
+  - scripts
+  - package.json
+  - package-lock.json
+  - node_modules

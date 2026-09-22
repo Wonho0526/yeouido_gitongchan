@@ -1,0 +1,226 @@
+/* Homepage popup (managed via the admin system). Built on the tokens in css/common.css. */
+
+.site-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+/* Visibility flips instantly on open: mid-transition it is still "hidden", which would
+   make the close button unfocusable at the moment focus is moved into the dialog. */
+.site-popup.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.18s ease, visibility 0s;
+}
+
+.site-popup__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 34, 31, 0.6);
+}
+
+.site-popup__dialog {
+  position: relative;
+  width: min(92%, 420px);
+  max-height: min(80vh, 720px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 20px 48px rgba(39, 34, 31, 0.22);
+}
+
+.site-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(39, 34, 31, 0.18);
+}
+
+.site-popup__close::before,
+.site-popup__close::after {
+  position: absolute;
+  top: 17px;
+  left: 9px;
+  width: 18px;
+  height: 2px;
+  background: var(--color-ink);
+  content: "";
+}
+
+.site-popup__close::before {
+  transform: rotate(45deg);
+}
+
+.site-popup__close::after {
+  transform: rotate(-45deg);
+}
+
+.site-popup__close:focus-visible,
+.site-popup__nav:focus-visible,
+.site-popup__dot:focus-visible,
+.site-popup__dismiss:focus-visible {
+  outline: 3px solid #143766;
+  outline-offset: 2px;
+}
+
+.site-popup__slides {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.site-popup__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.site-popup__slide.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-popup__slide-link,
+.site-popup__slide-static {
+  display: block;
+  width: 100%;
+}
+
+.site-popup__slide img {
+  display: block;
+  width: 100%;
+  max-height: min(70vh, 560px);
+  object-fit: contain;
+}
+
+.site-popup__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(39, 34, 31, 0.18);
+  color: var(--color-primary-dark);
+  font-size: 18px;
+}
+
+.site-popup__nav--prev {
+  left: 10px;
+}
+
+.site-popup__nav--next {
+  right: 10px;
+}
+
+.site-popup__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.site-popup__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 1px rgba(39, 34, 31, 0.14);
+}
+
+.site-popup__dot.is-active {
+  background: #143766;
+}
+
+.site-popup__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-line);
+  background: #fff;
+}
+
+.site-popup__hide-today {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+  font-family: var(--font-family);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.site-popup__hide-today input {
+  width: 15px;
+  height: 15px;
+  accent-color: #143766;
+}
+
+.site-popup__dismiss {
+  flex-shrink: 0;
+  padding: 7px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.site-popup__dismiss:hover {
+  background: var(--color-bg);
+}
+
+@media (max-width: 480px) {
+  .site-popup__dialog {
+    width: 94%;
+  }
+
+  .site-popup__footer {
+    padding: 10px 12px;
+  }
+
+  .site-popup__hide-today {
+    font-size: 12px;
+  }
+}

@@ -42,7 +42,7 @@
     },
     { href: "equipment.html", label: "찬(燦)찬히 짚어내는 장비" },
     { href: "#", label: "기통찬 진료예약", external: true },
-    { href: "#", label: "기가 통하는 커뮤니티", external: true },
+    { href: "community.html", label: "기가 통하는 커뮤니티" },
   ];
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";

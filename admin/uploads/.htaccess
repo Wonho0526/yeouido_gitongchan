@@ -1,0 +1,8 @@
+# Uploaded files must never be executed as scripts, even though uploads are
+# validated by magic bytes to be images only (defense in depth).
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<FilesMatch "\.(php|php\d|phtml|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>

@@ -1,0 +1,29 @@
+<?php
+// Copy this file to config.php on the server and fill in real values.
+// config.php is git-ignored and blocked from direct HTTP access by .htaccess.
+
+return [
+    'db' => [
+        'host' => 'localhost',
+        'name' => 'your_database_name',
+        'user' => 'your_database_user',
+        'pass' => 'your_database_password',
+        'charset' => 'utf8mb4',
+    ],
+    'app_env' => 'production', // 'production' | 'development'
+
+    // 기능 켜고 끄기. false면 관리자 메뉴에서 숨겨지고 해당 페이지/공개 API는 404를 반환합니다.
+    // 코드는 그대로 남아 있으니, 나중에 쓰려면 true로 바꾸기만 하면 됩니다.
+    'features' => [
+        'consultations' => false, // 상담 신청 관리 (캘린더) + 공개 상담신청 API
+        'kakao' => false,         // 카카오톡 알림 (상담신청 접수 시 관리자에게 발송)
+    ],
+
+    // 카카오톡 "나에게 보내기" 알림. features.kakao를 true로 켤 때만 필요합니다.
+    // 카카오 디벨로퍼스(https://developers.kakao.com)에서 앱 생성 후 REST API 키를 입력하세요.
+    // client_secret은 앱에서 "Client Secret" 사용을 켠 경우에만 필요합니다 (안 켰으면 빈 문자열로 둡니다).
+    'kakao' => [
+        'rest_api_key' => '',
+        'client_secret' => '',
+    ],
+];

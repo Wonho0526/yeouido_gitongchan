@@ -1,0 +1,12 @@
+config.php
+
+# uploaded images (keep the folders, ignore contents)
+/uploads/popups/*
+!/uploads/popups/.gitkeep
+/uploads/community/*
+!/uploads/community/.gitkeep
+
+# Kakao OAuth tokens (keep the folder + its access-blocking .htaccess, ignore actual token data)
+/storage/*
+!/storage/.gitkeep
+!/storage/.htaccess
