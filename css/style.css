@@ -53,8 +53,8 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 /* Sized so an <img> today and a <video> later behave identically. */
-.hero-media > img,
-.hero-media > video {
+.hero-media>img,
+.hero-media>video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -85,7 +85,7 @@ html:not(.aos-enabled) main [data-aos] {
   color: #fff8ea;
 }
 
-.hero h1,
+.hero p,
 .hero-copy .hero-headline {
   margin: 0;
   max-width: 700px;
@@ -97,7 +97,7 @@ html:not(.aos-enabled) main [data-aos] {
   word-break: keep-all;
 }
 
-.hero h1 span,
+.hero p span,
 .hero-headline span,
 .hero-message strong {
   display: block;
@@ -131,6 +131,7 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .hero-copy .hero-message {
+  margin-top: 30px;
   font-size: 23px;
   font-weight: 300;
   line-height: 1.75;
@@ -277,7 +278,7 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .principles-inner {
-  padding: 50px 20px 40px;
+  padding: 150px 20px;
   text-align: center;
 }
 
@@ -505,297 +506,198 @@ html:not(.aos-enabled) main [data-aos] {
 
 
 .pain-system-section {
-  --pain-system-bg: #fff;
   height: auto;
-  padding: 120px 0 128px;
-  background: var(--pain-system-bg);
+  padding: 100px 0;
+  color: #fff8ea;
+  background: linear-gradient(110deg, rgba(47, 41, 36, .91), rgba(93, 81, 71, .84)), url("../img/doctor.jpg") center / cover no-repeat;
 }
 
 .pain-system-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  align-items: end;
-  gap: 24px 64px;
-  margin-bottom: 76px;
+  margin-bottom: 64px;
+  text-align: center;
 }
 
-.pain-system-kicker {
-  grid-column: 1 / -1;
-  margin: 0 0 18px;
-  color: var(--color-accent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  text-transform: uppercase;
+main .pain-system-heading .pain-system-kicker {
+  justify-content: center;
+  color: #ead4b8;
 }
 
 .pain-system-heading h2 {
-  margin: 0;
-  font-size: 46px;
-  line-height: 1.34;
-  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.45;
   word-break: keep-all;
-  overflow-wrap: anywhere;
+}
+
+.pain-system-heading h2 span {
+  color: #fff8ea;
 }
 
 .pain-system-intro {
-  margin: 0 0 6px;
-  padding-left: 26px;
-  border-left: 2px solid var(--color-accent);
-  color: var(--color-muted);
+  margin: 0;
+  color: #eee4d7;
   font-size: 20px;
   line-height: 1.8;
   word-break: keep-all;
 }
 
 .pain-system-intro strong {
-  color: var(--color-primary-dark);
+  color: #fff8ea;
   font-weight: 600;
 }
 
-/* The rail behind the step numbers is what makes the three columns read as one sequence. */
 .pain-system-steps {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px;
+  gap: 0;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   list-style: none;
 }
 
-/* 22px lines the rail up with the optical centre of the numerals, not their line box. */
-.pain-system-steps::before {
-  position: absolute;
-  top: 22px;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: linear-gradient(to right, var(--color-line) 86%, transparent 100%);
-  content: "";
-}
-
-/* Drawn only once AOS is running; without it the rail stays put rather than never appearing. */
-.pain-system-steps.aos-init::before {
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-
-/* Transition lives on the entering state only, so initialising does not animate the rail away. */
-.pain-system-steps.aos-animate::before {
-  transform: scaleX(1);
-  transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s;
-}
-
 .pain-system-step {
-  --step-accent: #143766;
-  --step-tint: rgba(20, 55, 102, 0.08);
-  position: relative;
   min-width: 0;
 }
 
-.pain-system-step:nth-child(2) {
-  --step-accent: var(--color-primary);
-  --step-tint: rgba(93, 81, 71, 0.09);
-}
-
-.pain-system-step:nth-child(3) {
-  --step-accent: var(--color-accent);
-  --step-tint: rgba(165, 133, 98, 0.14);
+.pain-system-circle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  aspect-ratio: 1;
+  padding: 32px;
+  border: 1px solid rgba(255, 248, 234, .65);
+  border-radius: 50%;
+  text-align: center;
 }
 
 .pain-system-number {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  margin: 0 0 30px;
-  padding-right: 18px;
-  background: var(--pain-system-bg);
-  color: var(--step-accent);
+  margin: 0 0 20px;
+  color: #ead4b8;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  line-height: 1;
+  font-weight: 400;
+  letter-spacing: .18em;
 }
 
 .pain-system-number span {
-  font-size: 40px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  margin-left: 6px;
+  font-size: 15px;
 }
 
 .pain-system-icon {
-  width: 30px;
-  height: 30px;
   display: block;
-  margin-bottom: 26px;
-  padding: 17px;
-  border-radius: 50%;
-  background: var(--step-tint);
-  box-shadow: inset 0 0 0 1px var(--step-tint);
-  box-sizing: content-box;
-  color: var(--step-accent);
-  stroke-width: 1.7;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .pain-system-icon {
-    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease;
-  }
-
-  .pain-system-step:hover .pain-system-icon {
-    transform: translateY(-3px);
-    box-shadow: inset 0 0 0 1px var(--step-accent);
-  }
+  width: clamp(80px, 8vw, 116px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin-bottom: 22px;
 }
 
 .pain-system-step h3 {
-  margin: 0 0 22px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.45;
+  margin: 0;
+  font-size: clamp(20px, 1.9vw, 28px);
+  line-height: 1.5;
   word-break: keep-all;
 }
 
-.pain-system-treatment {
+.pain-system-treatment,
+.pain-system-caption {
   display: block;
-  color: var(--color-primary-dark);
 }
 
 .pain-system-caption {
-  display: block;
   margin-top: 8px;
-  color: var(--step-accent);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  color: #ead4b8;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .pain-system-details {
   display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 24px 0 0;
-  border-top: 1px solid var(--color-line);
-  color: #5e5954;
-  font-size: 17px;
-  line-height: 1.75;
+  gap: 10px;
+  margin: 30px 0 0;
+  padding: 0 26px;
+  color: #eee4d7;
+  font-size: 16px;
+  line-height: 1.8;
   list-style: none;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .pain-system-details li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 12px;
 }
 
 .pain-system-details li::before {
+  content: "·";
   position: absolute;
-  top: 0.86em;
   left: 0;
-  width: 8px;
-  height: 1px;
-  background: var(--step-accent);
-  content: "";
-}
-
-@media (max-width: 1100px) {
-  .pain-system-steps {
-    gap: 32px;
-  }
-
-  .pain-system-heading h2 {
-    font-size: 38px;
-  }
-
-  .pain-system-step h3 {
-    font-size: 22px;
-  }
+  color: #ead4b8;
 }
 
 @media (max-width: 920px) {
   .pain-system-section {
-    padding: 84px 0;
+    padding: 72px 0;
   }
 
   .pain-system-heading {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 26px;
-    margin-bottom: 52px;
+    margin-bottom: 40px;
   }
 
   .pain-system-steps {
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 40px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
   }
 
-  /* One column reads top-to-bottom, so the horizontal rail no longer describes the sequence. */
-  .pain-system-steps::before,
-  .pain-system-steps.aos-init::before {
-    display: none;
-  }
-
-  .pain-system-number {
-    padding-right: 0;
-    margin-bottom: 22px;
-  }
-}
-
-@media (max-width: 640px) {
-  .pain-system-section {
-    padding: 68px 0;
-  }
-
-  .pain-system-heading h2 {
-    font-size: 30px;
-  }
-
-  .pain-system-intro {
-    padding-left: 20px;
-    font-size: 18px;
-  }
-
-  .pain-system-number span {
-    font-size: 34px;
+  .pain-system-circle {
+    width: 100%;
+    margin-left: 0;
+    padding: 26px;
   }
 
   .pain-system-icon {
-    width: 26px;
-    height: 26px;
-    padding: 15px;
-    margin-bottom: 22px;
+    width: 100px;
+  }
+
+  .pain-system-step h3 {
+    font-size: 24px;
+  }
+
+  .pain-system-details {
+    margin-top: 24px;
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pain-system-intro {
+    font-size: 17px;
+  }
+
+  .pain-system-number {
+    margin-bottom: 12px;
+  }
+
+  .pain-system-icon {
+    width: 76px;
+    margin-bottom: 14px;
   }
 
   .pain-system-step h3 {
     font-size: 21px;
   }
 
-  .pain-system-details {
-    font-size: 16px;
+  .pain-system-caption {
+    font-size: 15px;
   }
-}
-
-/* The global reduced-motion rule targets [data-aos] elements, not this pseudo-element. */
-@media (prefers-reduced-motion: reduce) {
-  .pain-system-steps.aos-init::before,
-  .pain-system-steps.aos-animate::before {
-    transform: none;
-    transition: none;
-  }
-}
-
-.clinic-section {
-  position: relative;
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding: 110px 0 120px;
-  background: transparent;
 }
 
 .night-care-section {
@@ -910,6 +812,11 @@ html:not(.aos-enabled) main [data-aos] {
   }
 }
 
+.clinic-section {
+  height: auto;
+  padding: 100px 0;
+}
+
 .clinic-slider {
   --clinic-preview-gap: 18px;
   width: 100%;
@@ -928,12 +835,59 @@ html:not(.aos-enabled) main [data-aos] {
   font-weight: 600;
 }
 
+main :is(.clinic-kicker, .pain-system-kicker, .night-care-kicker, .equipment-kicker),
+.footer-kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+  color: #78634e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+main :is(.intro-copy, .principles-heading, .director-copy, .equipment-copy, .facility-message) .clinic-kicker,
+main .night-care-kicker,
+.footer-kicker {
+  justify-content: center;
+  text-align: center;
+}
+
+main .director-copy .clinic-kicker,
+main .night-care-kicker {
+  color: #ead4b8;
+}
+
+@media (max-width: 640px) {
+
+  main :is(.clinic-kicker, .pain-system-kicker, .night-care-kicker, .equipment-kicker),
+  .footer-kicker {
+    gap: 10px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+}
+
 .clinic-title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 0;
+}
+
+.clinic-title-copy {
+  min-width: 0;
+}
+
+main .clinic-title-copy .clinic-kicker {
+  height: auto;
+  margin: 0 0 10px;
 }
 
 .clinic-title {
@@ -975,15 +929,13 @@ html:not(.aos-enabled) main [data-aos] {
 
 .clinic-badge-logo {
   /* The background crop is tied to this size, so resizing the badge logo only needs this value. */
-  --badge-logo-size: 230px;
+  --badge-logo-size: 180px;
   position: relative;
   z-index: 1;
   display: block;
   width: var(--badge-logo-size);
   height: var(--badge-logo-size);
-  background: url("../img/logo.png")
-    center calc(var(--badge-logo-size) * 0.0333) /
-    calc(var(--badge-logo-size) * 2.4333) auto no-repeat;
+  background: url("../img/logo.png") center calc(var(--badge-logo-size) * 0.0333) / calc(var(--badge-logo-size) * 2.4333) auto no-repeat;
 }
 
 @keyframes clinic-badge-spin {
@@ -1331,6 +1283,8 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .facility-gallery {
+  width: 100%;
+  max-width: none;
   padding: 38px 18px 32px;
 }
 
@@ -1342,6 +1296,7 @@ html:not(.aos-enabled) main [data-aos] {
   color: #9a9188;
   font-size: 20px;
   line-height: 1;
+  justify-content: center;
 }
 
 .facility-controls i {
@@ -1383,8 +1338,8 @@ html:not(.aos-enabled) main [data-aos] {
   position: relative;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 36px) / 3);
-  gap: 18px;
+  grid-auto-columns: calc((100% - 200px) / 3);
+  gap: 100px;
   overflow-x: auto;
   padding-bottom: 4px;
   scroll-snap-type: x mandatory;
@@ -1412,6 +1367,7 @@ html:not(.aos-enabled) main [data-aos] {
   min-width: 0;
   margin: 0;
   overflow: hidden;
+  border-radius: 20px;
   background: #ebe7df;
   scroll-snap-align: start;
 }
@@ -1419,7 +1375,7 @@ html:not(.aos-enabled) main [data-aos] {
 @media (min-width: 921px) {
   .facility-track {
     display: flex;
-    gap: 4%;
+    gap: 100px;
     padding-top: 48px;
     padding-bottom: 48px;
   }
@@ -1428,7 +1384,7 @@ html:not(.aos-enabled) main [data-aos] {
   .facility-track::before,
   .facility-track::after {
     content: "";
-    flex: 0 0 29%;
+    flex: 0 0 max(0px, calc(33% - 100px));
   }
 
   .facility-slide {
@@ -1455,6 +1411,7 @@ html:not(.aos-enabled) main [data-aos] {
 
 .facility-slide img {
   width: 100%;
+  border-radius: 20px;
   aspect-ratio: 3 / 2;
   height: auto;
   object-fit: cover;
@@ -1464,6 +1421,123 @@ html:not(.aos-enabled) main [data-aos] {
 .site-footer {
   color: var(--color-ink);
   background: var(--color-surface);
+}
+
+.footer-key-points {
+  display: block;
+  height: auto;
+  padding: 100px 0;
+  background: #f7f6f4;
+}
+
+.footer-key-points h2 {
+  margin: 0 0 52px;
+  text-align: center;
+}
+
+.footer-key-points-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.footer-key-point {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 460px;
+  padding: 36px 26px;
+  border-radius: 28px;
+  background: #8a7057;
+  color: #fff8ea;
+  text-align: left;
+}
+
+.footer-key-point:nth-child(2) {
+  background: #7d7065;
+}
+
+.footer-key-point:nth-child(3) {
+  background: var(--color-primary);
+}
+
+.footer-key-point:nth-child(4) {
+  background: #3f3d39;
+}
+
+.footer-key-point-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 88px;
+  height: 88px;
+  margin: 0 0 28px;
+  object-fit: contain;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.footer-key-point-label {
+  margin: 0 0 14px;
+  color: #f0dfc8;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+}
+
+.footer-key-point h3 {
+  margin: 0 0 22px;
+  min-height: 2.8em;
+  color: inherit;
+  font-size: clamp(21px, 1.7vw, 25px);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.footer-key-point-text {
+  margin: 0;
+  max-width: 100%;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.85;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 920px) {
+  .footer-key-points {
+    padding: 64px 0;
+  }
+
+  .footer-key-points h2 {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+
+  .footer-key-points-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-key-point {
+    min-height: 0;
+    padding: 36px 28px;
+    border-radius: 32px;
+  }
+
+  .footer-key-point h3 {
+    font-size: 24px;
+    min-height: 0;
+  }
+
+  .footer-key-point-text {
+    font-size: 16px;
+    max-width: 100%;
+    white-space: normal;
+  }
 }
 
 .footer-contact {
@@ -1505,13 +1579,15 @@ html:not(.aos-enabled) main [data-aos] {
 .footer-info-grid {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1.14fr 0.86fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.14fr) minmax(180px, 0.55fr);
   gap: 58px;
   justify-content: center;
+  align-items: start;
+  text-align: left;
 }
 
 .footer-info-block h3 {
-  margin: 0 0 14px;
+  margin: 0 0 20px;
   color: #655b51;
   font-family: var(--font-family);
   font-size: 32px;
@@ -1522,31 +1598,18 @@ html:not(.aos-enabled) main [data-aos] {
   gap: 10px;
 }
 
-.footer-info-block h3::before {
-  width: 0.9em;
-  height: 0.9em;
-  flex: none;
-  background-color: currentColor;
-  -webkit-mask: var(--footer-icon) center / contain no-repeat;
-  mask: var(--footer-icon) center / contain no-repeat;
-  content: "";
-}
-
-.footer-info-block.clinic-hours {
-  --footer-icon: url("../img/icons/clock.svg");
-}
-
-.footer-info-block.footer-location {
-  --footer-icon: url("../img/icons/map-pin.svg");
-}
-
-.footer-info-block.footer-call {
-  --footer-icon: url("../img/icons/phone.svg");
+.footer-info-icon {
+  display: block;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  color: inherit;
 }
 
 .footer-info-block dl {
   margin: 0;
 }
+
 
 .footer-info-block dl div {
   display: grid;
@@ -1576,7 +1639,7 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .clinic-hours dt,
-.clinic-hours dd > span {
+.clinic-hours dd>span {
   white-space: nowrap;
 }
 
@@ -1614,7 +1677,7 @@ html:not(.aos-enabled) main [data-aos] {
   overflow-wrap: anywhere;
 }
 
-.clinic-hours-notes li + li {
+.clinic-hours-notes li+li {
   margin-top: 4px;
 }
 
@@ -1623,7 +1686,7 @@ html:not(.aos-enabled) main [data-aos] {
   margin-right: 6px;
 }
 
-.footer-info-block.clinic-hours dl > div {
+.footer-info-block.clinic-hours dl>div {
   grid-template-columns: 96px minmax(0, 1fr);
   align-items: start;
   padding: 6px 0;
@@ -1634,11 +1697,12 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .footer-info-block.footer-location dl div {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2px;
+  text-align: left;
 }
 
-.footer-info-block.footer-location dl div + div {
+.footer-info-block.footer-location dl div+div {
   margin-top: 14px;
 }
 
@@ -1784,8 +1848,12 @@ html:not(.aos-enabled) main [data-aos] {
   }
 
   .footer-info-block h3 {
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 27px;
+  }
+
+  .footer-info-block.clinic-hours dl {
+    max-width: none;
   }
 
   .footer-info-block dl div {
@@ -1793,7 +1861,6 @@ html:not(.aos-enabled) main [data-aos] {
     gap: 2px;
   }
 
-  .footer-info-block.clinic-hours dl,
   .sub-guide-card.clinic-hours dl {
     width: 100%;
     max-width: 360px;
@@ -1801,8 +1868,8 @@ html:not(.aos-enabled) main [data-aos] {
     margin-left: auto;
   }
 
-  .footer-info-block.clinic-hours dl > div,
-  .sub-guide-card.clinic-hours dl > div {
+  .footer-info-block.clinic-hours dl>div,
+  .sub-guide-card.clinic-hours dl>div {
     grid-template-columns: 100px minmax(0, 1fr);
     align-items: center;
     gap: 8px;
@@ -1818,7 +1885,6 @@ html:not(.aos-enabled) main [data-aos] {
     gap: 4px;
   }
 
-  .footer-info-block.clinic-hours dt::after,
   .sub-guide-card.clinic-hours dt::after {
     content: ":";
   }
@@ -1890,7 +1956,7 @@ html:not(.aos-enabled) main [data-aos] {
     line-height: 1.8;
   }
 
-  .director-copy > strong {
+  .director-copy>strong {
     margin-top: 28px;
     font-size: 26px;
   }
@@ -1988,7 +2054,11 @@ html:not(.aos-enabled) main [data-aos] {
   }
 
   .facility-track {
-    grid-auto-columns: calc((100% - 18px) / 2);
+    grid-auto-columns: 100%;
+  }
+
+  .facility-slide img {
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -2278,7 +2348,7 @@ html:not(.aos-enabled) main [data-aos] {
 
   .facility-track {
     grid-auto-columns: 100%;
-    gap: 14px;
+    gap: 100px;
   }
 
   .footer-contact {
@@ -2315,8 +2385,9 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 @media (max-width: 360px) {
-  .footer-info-block.clinic-hours dl > div,
-  .sub-guide-card.clinic-hours dl > div {
+
+  .footer-info-block.clinic-hours dl>div,
+  .sub-guide-card.clinic-hours dl>div {
     grid-template-columns: 88px minmax(0, 1fr);
     gap: 6px;
     font-size: 16px;

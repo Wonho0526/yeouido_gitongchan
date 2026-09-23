@@ -356,15 +356,32 @@
     return;
   }
 
-  const slides = Array.from(track.querySelectorAll(".facility-slide"));
-  if (!slides.length) {
+  const originals = Array.from(track.querySelectorAll(".facility-slide"));
+  if (!originals.length) {
     return;
   }
+  const count = originals.length;
+  // Repeat the photos on either side so dragging and buttons can cross both ends.
+  const cloneSlide = (slide) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.removeAttribute("aria-current");
+    clone.inert = true;
+    return clone;
+  };
+  if (count > 1) {
+    track.prepend(...originals.map(cloneSlide));
+    track.append(...originals.map(cloneSlide));
+  }
+  const slides = Array.from(track.querySelectorAll(".facility-slide"));
+  const start = count > 1 ? count : 0;
+  const logicalIndex = (index) => ((index - start) % count + count) % count;
   const desktop = window.matchMedia("(min-width: 921px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let activeIndex = desktop.matches ? Math.min(1, slides.length - 1) : 0;
+  let activeIndex = start + (desktop.matches ? Math.min(1, count - 1) : 0);
   let drag = null;
   let resizeFrame = 0;
+  let settleTimer = 0;
 
   const slidePosition = (index) => {
     const slide = slides[index];
@@ -379,13 +396,13 @@
 
   const syncControls = () => {
     const maxScroll = track.scrollWidth - track.clientWidth;
-    controls.hidden = maxScroll <= 1;
-    prev.disabled = track.scrollLeft <= 1;
-    next.disabled = track.scrollLeft >= maxScroll - 1;
+    controls.hidden = count <= 1 || maxScroll <= 1;
+    prev.disabled = count <= 1;
+    next.disabled = count <= 1;
     activeIndex = nearestIndex();
     slides.forEach((slide, index) => {
       slide.classList.toggle("is-active", index === activeIndex);
-      if (index === activeIndex) {
+      if (index === start + logicalIndex(activeIndex)) {
         slide.setAttribute("aria-current", "true");
       } else {
         slide.removeAttribute("aria-current");
@@ -401,7 +418,24 @@
     });
   };
 
-  const move = (direction) => goTo(activeIndex + direction);
+  const normalizeLoop = () => {
+    if (drag || count <= 1) return;
+    const index = nearestIndex();
+    const target = start + logicalIndex(index);
+    if (index !== target) {
+      // Preserve the exact visual offset while moving back to the middle copy.
+      track.scrollTo({
+        left: track.scrollLeft + slidePosition(target) - slidePosition(index),
+        behavior: "instant",
+      });
+    }
+    syncControls();
+  };
+
+  const move = (direction) => {
+    normalizeLoop();
+    goTo(activeIndex + direction);
+  };
 
   prev.addEventListener("click", () => move(-1));
   next.addEventListener("click", () => move(1));
@@ -414,7 +448,7 @@
       move(event.key === "ArrowLeft" ? -1 : 1);
     } else if (event.key === "Home" || event.key === "End") {
       event.preventDefault();
-      goTo(event.key === "Home" ? 0 : slides.length - 1, true);
+      goTo(start + (event.key === "Home" ? 0 : count - 1), true);
     }
   });
 
@@ -455,9 +489,14 @@
   track.addEventListener("pointerup", finishDrag);
   track.addEventListener("pointercancel", finishDrag);
   track.addEventListener("lostpointercapture", finishDrag);
-  track.addEventListener("scroll", syncControls, { passive: true });
+  track.addEventListener("scroll", () => {
+    syncControls();
+    window.clearTimeout(settleTimer);
+    settleTimer = window.setTimeout(normalizeLoop, 180);
+  }, { passive: true });
+  track.addEventListener("scrollend", normalizeLoop);
   window.addEventListener("resize", () => {
-    const index = activeIndex;
+    const index = start + logicalIndex(activeIndex);
     window.cancelAnimationFrame(resizeFrame);
     resizeFrame = window.requestAnimationFrame(() => {
       goTo(index, true);

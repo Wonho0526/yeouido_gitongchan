@@ -31,10 +31,10 @@
   width: 100%;
   max-width: none;
   height: var(--header-height);
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr) 240px;
+  grid-template-columns: 320px minmax(0, 1fr) 240px;
   align-items: center;
   gap: 22px;
 }
@@ -48,7 +48,7 @@
 }
 
 .header-logo {
-  width: 240px;
+  width: 100%;
   height: auto;
 }
 
@@ -101,7 +101,7 @@
   transition: color 0.2s ease;
 }
 
-.main-nav-item.has-children > .main-nav-link::after {
+.main-nav-item.has-children>.main-nav-link::after {
   width: 6px;
   height: 6px;
   flex: 0 0 6px;
@@ -114,13 +114,13 @@
   transition: transform 0.2s ease;
 }
 
-.main-nav-item.is-active > .main-nav-link,
-.main-nav-item.is-submenu-open > .main-nav-link,
+.main-nav-item.is-active>.main-nav-link,
+.main-nav-item.is-submenu-open>.main-nav-link,
 .main-nav-link:hover {
   color: var(--header-strong);
 }
 
-.main-nav-item.is-submenu-open > .main-nav-link::after {
+.main-nav-item.is-submenu-open>.main-nav-link::after {
   transform: rotate(225deg) translate(-1px, -1px);
 }
 
@@ -157,7 +157,7 @@
   content: "";
 }
 
-.main-nav-item.is-submenu-open > .sub-nav-panel {
+.main-nav-item.is-submenu-open>.sub-nav-panel {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0);
@@ -189,7 +189,7 @@
   grid-template-columns: 1fr max-content 1fr;
 }
 
-.sub-nav-panel--justify .sub-nav-list > li,
+.sub-nav-panel--justify .sub-nav-list>li,
 .sub-nav-panel--justify .sub-nav-link {
   grid-column: 1 / -1;
   display: grid;
@@ -239,6 +239,10 @@
 
 /* Keep this breakpoint in sync with Header.js. */
 @media (max-width: 1440px) {
+  :root {
+    --header-height: 100px;
+  }
+
   .site-header,
   .site-header.is-over-dark {
     --header-ink: #675f57;
@@ -349,7 +353,7 @@
     word-break: keep-all;
   }
 
-  .main-nav-item.has-children > .main-nav-link::after {
+  .main-nav-item.has-children>.main-nav-link::after {
     position: absolute;
     right: 12px;
     margin-left: 0;
@@ -360,7 +364,7 @@
   }
 
   .sub-nav-panel,
-  .main-nav-item.is-submenu-open > .sub-nav-panel {
+  .main-nav-item.is-submenu-open>.sub-nav-panel {
     position: static;
     min-width: 0;
     max-width: none;
@@ -391,7 +395,7 @@
     grid-template-columns: none;
   }
 
-  .sub-nav-panel--justify .sub-nav-list > li {
+  .sub-nav-panel--justify .sub-nav-list>li {
     display: block;
   }
 
@@ -405,6 +409,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .site-header *,
   .site-header *::after {
     transition: none;

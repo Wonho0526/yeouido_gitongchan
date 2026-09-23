@@ -183,11 +183,11 @@
       PolicyModal,
       { titleId: "non-covered-title", title: "비급여 진료비용 안내", onClose, wide: true },
       nonCoveredIsSample &&
-        h(
-          "p",
-          { className: "modal-sample-notice", role: "note" },
-          "아래 금액은 화면 구성을 위한 예시이며, 실제 진료비와 다릅니다."
-        ),
+      h(
+        "p",
+        { className: "modal-sample-notice", role: "note" },
+        "아래 금액은 화면 구성을 위한 예시이며, 실제 진료비와 다릅니다."
+      ),
       h(
         "p",
         { className: "modal-lead" },
@@ -254,19 +254,94 @@
       )
     );
 
-  function FooterInfoBlock({ id, title, items, className = "", notes = [] }) {
+  function FooterIcon({ name }) {
+    const shapes = {
+      clock: [
+        h("circle", { key: "circle", cx: 12, cy: 12, r: 10 }),
+        h("path", { key: "hands", d: "M12 6v6l4 2" }),
+      ],
+      location: [
+        h("path", { key: "pin", d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" }),
+        h("circle", { key: "center", cx: 12, cy: 10, r: 3 }),
+      ],
+      phone: h("path", { d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" }),
+    };
+    return h("svg", {
+      className: "footer-info-icon", width: 35, height: 35, viewBox: "0 0 24 24",
+      fill: "none", stroke: "currentColor", strokeWidth: 1.8,
+      strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true", focusable: "false",
+    }, shapes[name]);
+  }
+
+  function FooterInfoBlock({ id, title, items, icon, className = "", notes = [] }) {
     return h(
       "div",
       {
         className: ["footer-info-block", className].filter(Boolean).join(" "),
         "aria-labelledby": id,
       },
-      h("h3", { id }, title),
+      h("h3", { id }, h(FooterIcon, { name: icon }), title),
       h("dl", null, h(DefinitionRows, { items })),
       notes.length > 0 && h(
         "ul",
         { className: "clinic-hours-notes", "aria-label": "진료 안내" },
         notes.map((note) => h("li", { key: note }, note))
+      )
+    );
+  }
+
+  const keyPoints = [
+    {
+      title: "주력 진료분야",
+      text: "여의도기통찬은 척추, 관절, 근육, 힘줄 등\n근골격계 통증의 비수술적 치료와\n만성통증 및 자율신경 치료를 주력으로 하고 있습니다.",
+    },
+    {
+      title: "타협하지 않는 원칙",
+      text: "아무리 바쁘고 어려운 상황에 직면하더라도,\n환자를 위한 치료의 원칙만큼은 타협하지 않고\n초심을 유지하겠습니다.",
+    },
+    {
+      title: "해가 되지 않는 치료",
+      text: "몸에 해가 되지 않고, 이로운 치료를 추구합니다.\n단순히 겉으로 드러난 증상만을 바라보기보다,\n근본적인 원인을 찾아 치료를 하겠습니다.",
+    },
+    {
+      title: "가족을 대하는 마음",
+      text: "‘이 환자가 내 가족이라면 어떻게 치료할까?’라는 고민에서 치료 계획을 시작합니다.\n나와 내 가족도 안심하고 받을 수 있는 치료를 한다는 마음으로\n성심성의껏 정직하게 진료하겠습니다.",
+    },
+  ];
+
+  function KeyPointIcon({ index }) {
+    const images = [
+      "treatment-v2.png", "principles-v2.png", "healing-v2.png", "family-v2.png",
+    ];
+    return h("img", {
+      className: "footer-key-point-icon",
+      src: `${rootPrefix}img/keypoints/${images[index]}`,
+      width: 1254, height: 1254, alt: "", "aria-hidden": "true",
+      loading: "lazy", decoding: "async",
+    });
+  }
+
+  function FooterKeyPoints() {
+    return h(
+      "section",
+      { className: "footer-key-points", "aria-labelledby": "footer-key-points-title" },
+      h(
+        "div",
+        { className: "inner" },
+        !isSubPage && h("span", { className: "clinic-kicker footer-kicker" }, "YEOUIDO GITONGCHAN"),
+        h("h2", { id: "footer-key-points-title" }, "여의도기통찬의", h("br"), h("span", null, "4가지 key point")),
+        h(
+          "div",
+          { className: "footer-key-points-grid" },
+          keyPoints.map((point, index) => h(
+            "article",
+            { className: "footer-key-point", key: point.title },
+            h(KeyPointIcon, { index }),
+            h("p", { className: "footer-key-point-label" }, `KEY POINT ${index + 1}`),
+            h("h3", null, point.title),
+            h("p", { className: "footer-key-point-text" }, point.text)
+          ))
+        )
       )
     );
   }
@@ -279,12 +354,14 @@
     return h(
       "footer",
       { className: "site-footer" },
+      h(FooterKeyPoints),
       h(
         "div",
         { className: "footer-contact", id: "hours" },
         h(
           "div",
           { className: "inner-fluid footer-contact-inner" },
+          !isSubPage && h("span", { className: "clinic-kicker footer-kicker" }, "YEOUIDO GITONGCHAN"),
           h("h2", null, "여의도기통찬의원", h("br"), h("span", null, "진료시간 및 오시는 길")),
           h(
             "p",
@@ -298,6 +375,7 @@
             { className: "inner footer-info-grid" },
             h(FooterInfoBlock, {
               id: "footer-hours-title",
+              icon: "clock",
               title: "진료시간",
               items: hours,
               className: "clinic-hours",
@@ -305,6 +383,7 @@
             }),
             h(FooterInfoBlock, {
               id: "footer-location-title",
+              icon: "location",
               title: "오시는 길",
               items: location,
               className: "footer-location",
@@ -315,7 +394,7 @@
                 className: "footer-info-block footer-call",
                 "aria-labelledby": "footer-call-title",
               },
-              h("h3", { id: "footer-call-title" }, "진료문의"),
+              h("h3", { id: "footer-call-title" }, h(FooterIcon, { name: "phone" }), "진료문의"),
               h("p", null, "02-782-7070")
             )
           )
@@ -348,7 +427,7 @@
               null,
               "TEL : 02-782-7070 ",
               h("span", null, "|"),
-              " FAX : 02-123-4567"
+              " FAX : 02-782-7070"
             )
           ),
           h(
@@ -383,6 +462,38 @@
   };
 
   function QuickLinks() {
+    const compactQuery = "(max-width: 920px), (max-height: 600px)";
+    const [compact, setCompact] = React.useState(() => window.matchMedia(compactQuery).matches);
+    const [open, setOpen] = React.useState(false);
+    const navRef = React.useRef(null);
+    const toggleRef = React.useRef(null);
+
+    React.useEffect(() => {
+      const media = window.matchMedia(compactQuery);
+      const update = () => { setCompact(media.matches); setOpen(false); };
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }, []);
+
+    React.useEffect(() => {
+      if (!compact || !open) return;
+      const dismiss = (event) => {
+        if (navRef.current && !navRef.current.contains(event.target)) setOpen(false);
+      };
+      const escape = (event) => {
+        if (event.key === "Escape") {
+          setOpen(false);
+          toggleRef.current?.focus();
+        }
+      };
+      document.addEventListener("pointerdown", dismiss);
+      document.addEventListener("keydown", escape);
+      return () => {
+        document.removeEventListener("pointerdown", dismiss);
+        document.removeEventListener("keydown", escape);
+      };
+    }, [compact, open]);
+
     const items = [
       { id: "top", label: "최상단 이동", icon: "arrow-up" },
       { id: "phone", label: "전화 문의", icon: "phone", href: "tel:027827070" },
@@ -392,7 +503,12 @@
       { id: "blog", label: "네이버 블로그", icon: "notebook-pen", href: quickLinkUrls.blog, external: true },
     ];
 
-    return h("nav", { className: "quick-links", "aria-label": "빠른 안내" },
+    return h("nav", { className: `quick-links${open ? " is-open" : ""}`, "aria-label": "빠른 안내", ref: navRef },
+      h("div", {
+        className: "quick-links-panel", id: "quick-links-panel",
+        "aria-hidden": compact && !open ? "true" : undefined,
+        inert: compact && !open ? "" : undefined,
+      },
       items.map((item) => {
         const unavailable = item.id !== "top" && !item.href;
         const props = {
@@ -400,6 +516,7 @@
           className: `quick-link quick-link--${item.id}`,
           "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
           title: unavailable ? `${item.label} (준비 중)` : item.label,
+          tabIndex: compact && !open ? -1 : undefined,
         };
         if (item.href) {
           props.href = item.href;
@@ -416,9 +533,15 @@
         }
         return h(item.href ? "a" : "button", props,
           h("img", { src: `${rootPrefix}img/icons/${item.icon}.svg`, width: 24, height: 24, alt: "", "aria-hidden": "true" }),
-          h("span", null, item.label)
+          item.id !== "top" && h("span", null, item.label)
         );
-      })
+      })),
+      h("button", {
+        type: "button", className: "quick-links-toggle", ref: toggleRef,
+        "aria-label": open ? "빠른 안내 메뉴 닫기" : "빠른 안내 메뉴 열기",
+        "aria-expanded": open, "aria-controls": "quick-links-panel",
+        onClick: () => setOpen((value) => !value),
+      }, h("img", { src: `${rootPrefix}img/logo_back.png`, alt: "", width: 40, height: 40 }))
     );
   }
 
