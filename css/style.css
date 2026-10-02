@@ -397,7 +397,7 @@ html:not(.aos-enabled) main [data-aos] {
 .director-section {
   display: block;
   height: auto;
-  min-height: 760px;
+  min-height: 90vh;
   background: var(--color-bg);
   overflow: hidden;
 }
@@ -491,9 +491,8 @@ html:not(.aos-enabled) main [data-aos] {
 }
 
 .director-copy p {
-  margin: 48px 0 0;
   font-weight: 500;
-  line-height: 1.28;
+  line-height: 1.5;
 }
 
 .director-copy>strong {
@@ -847,6 +846,7 @@ main :is(.clinic-kicker, .pain-system-kicker, .night-care-kicker, .equipment-kic
   line-height: 1.6;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  justify-content: center;
 }
 
 main :is(.intro-copy, .principles-heading, .director-copy, .equipment-copy, .facility-message) .clinic-kicker,

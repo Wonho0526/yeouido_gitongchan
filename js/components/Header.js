@@ -11,15 +11,15 @@
       label: "여의도기통찬 소개",
       children: [
         { href: "about.html", label: "기통찬 스토리" },
+        { href: "special.html", label: "기통찬 특별함" },
         { href: "doctor.html", label: "기통찬 의료진" },
         { href: "values.html", label: "기통찬 약속" },
-        { href: "hours.html", label: "진료시간" },
-        { href: "location.html", label: "오시는길" },
       ],
     },
     {
       href: "neck-shoulder.html",
-      label: "기(氣)를 돌보는 진료",
+      label: "기능까지 살피는 진료",
+      brandLetter: true,
       justifyChildren: true,
       children: [
         { href: "neck-shoulder.html", label: "목·어깨" },
@@ -32,18 +32,27 @@
     },
     {
       href: "injection.html",
-      label: "통(通)쾌하게 이끄는 치료",
+      label: "통증을 회복으로 이끄는 치료",
+      brandLetter: true,
       children: [
-        { href: "injection.html", label: "원인을 살피는 정밀 주사치료" },
-        { href: "shockwave.html", label: "조직 회복을 돕는 체외충격파" },
-        { href: "manual-therapy.html", label: "기능 회복을 돕는 도수치료" },
-        { href: "autonomic.html", label: "균형을 되찾는 자율신경 주사치료" },
-        { href: "recovery-iv.html", label: "개인의 상태에 맞춘 회복수액" },
+        { href: "injection.html", label: "주사치료" },
+        { href: "shockwave.html", label: "체외충격파" },
+        { href: "manual-therapy.html", label: "도수치료" },
+        { href: "autonomic.html", label: "자율신경 주사치료" },
+        { href: "recovery-iv.html", label: "기능회복 수액" },
       ],
     },
-    { href: "equipment.html", label: "찬(燦)찬히 짚어내는 장비" },
-    { href: "#", label: "기통찬 진료예약", external: true },
-    { href: "community.html", label: "기가 통하는 커뮤니티" },
+    {
+      href: "c-arm.html", label: "찬란한 일상을 위한 진료환경", brandLetter: true,
+      children: [
+        { href: "c-arm.html", label: "C-arm" },
+        { href: "ultrasound.html", label: "초음파" },
+        { href: "spaces.html", label: "공간 둘러보기" },
+      ],
+    },
+    { href: "location.html", label: "진료 안내 & 오시는 길" },
+    // 네이버 예약: href만 실제 병원 예약 URL로 교체합니다.
+    { href: "#", label: "예약 바로가기", external: true, reservation: true },
   ];
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -227,7 +236,8 @@
                     id: `site-nav-trigger-${index}`,
                     type: isCompact && item.children ? "button" : undefined,
                     href: isCompact && item.children ? undefined : navHref(item),
-                    className: "main-nav-link",
+                    className: item.reservation ? "main-nav-link reservation-link" : "main-nav-link",
+                    "data-naver-reservation": item.reservation ? "" : undefined,
                     "aria-controls": item.children ? `site-sub-nav-${index}` : undefined,
                     "aria-expanded": item.children ? openSubmenu === index : undefined,
                     "aria-current": !item.children && currentPage === item.href ? "page" : undefined,
@@ -235,7 +245,9 @@
                       ? () => setOpenSubmenu((open) => open === index ? null : index)
                       : closeMenus,
                   },
-                  item.label
+                  item.brandLetter
+                    ? h("span", null, h("span", { className: "nav-brand-letter" }, item.label[0]), item.label.slice(1))
+                    : item.label
                 ),
                 item.children &&
                   h(

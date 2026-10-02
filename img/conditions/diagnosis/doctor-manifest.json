@@ -1,0 +1,26 @@
+[
+  {
+    "id": "xray",
+    "prompt": "Create a photorealistic natural medical editorial photo, landscape 4:3. Male Korean physician in white coat holding up a large dark radiograph film showing a single frontal lumbar spine X-ray with white bones, explaining with other hand. Close medium framing chest and hands with film filling most of frame, face cropped above mouth. Calm bright consultation room softly blurred. Accurate hands, exactly two arms. The held diagnostic images must be clearly visible, believable, crisp. Neutral warm tones. No readable patient data, letters, logos, watermark, collage or glowing graphics. Generic fictional doctor, not a real clinic staff portrait.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-ba5f04a5-1b2f-440e-b6fd-fd06838088ef.png",
+    "file": "xray-doctor-v1.webp"
+  },
+  {
+    "id": "ultrasound",
+    "prompt": "Create a photorealistic natural medical editorial photo, landscape 4:3. Female Korean physician in white coat holding a printed sheet of two grayscale musculoskeletal ultrasound sonograms, rectangular speckled soft tissue ultrasound images with superficial tendon layers, pointing to the sheet. Close medium framing chest and hands with film filling most of frame, face cropped above mouth. Calm bright consultation room softly blurred. Accurate hands, exactly two arms. The held diagnostic images must be clearly visible, believable, crisp. Neutral warm tones. No readable patient data, letters, logos, watermark, collage or glowing graphics. Generic fictional doctor, not a real clinic staff portrait.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-cf5daace-69d5-44a6-a818-64125f7e9dee.png",
+    "file": "ultrasound-doctor-v1.webp"
+  },
+  {
+    "id": "ct",
+    "prompt": "Create a photorealistic natural medical editorial photo, landscape 4:3. Korean physician in white coat holding a large dark CT film sheet showing a grid of axial cross-sectional body slices with bright white cortical bone, angled toward viewer. Close medium framing chest and hands with film filling most of frame, face cropped above mouth. Calm bright consultation room softly blurred. Accurate hands, exactly two arms. The held diagnostic images must be clearly visible, believable, crisp. Neutral warm tones. No readable patient data, letters, logos, watermark, collage or glowing graphics. Generic fictional doctor, not a real clinic staff portrait.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-bd0a0de1-df1a-4a30-9618-f9c1530e8306.png",
+    "file": "ct-doctor-v1.webp"
+  },
+  {
+    "id": "mri",
+    "prompt": "Create a photorealistic natural medical editorial photo, landscape 4:3. Korean physician in white coat holding large dark MRI film showing sagittal lumbar spine soft tissue images, bright spinal fluid and dark vertebral cortex, explaining the film. Close medium framing chest and hands with film filling most of frame, face cropped above mouth. Calm bright consultation room softly blurred. Accurate hands, exactly two arms. The held diagnostic images must be clearly visible, believable, crisp. Neutral warm tones. No readable patient data, letters, logos, watermark, collage or glowing graphics. Generic fictional doctor, not a real clinic staff portrait.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-21291e75-c17b-4ef3-a538-df175c089c94.png",
+    "file": "mri-doctor-v1.webp"
+  }
+]

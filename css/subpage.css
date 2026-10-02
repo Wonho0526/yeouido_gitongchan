@@ -1058,6 +1058,7 @@ body[data-page="hours"] .footer-contact {
   line-height: 1.85;
 }
 
+
 .sub-copy-stack p {
   font-size: 22px;
   font-weight: 400;
@@ -1700,10 +1701,11 @@ body[data-page="hours"] .footer-contact {
 
 .sub-feature-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  margin: 0;
-  border-top: 1px solid var(--sub-line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  border: 0;
 }
 
 .sub-feature-list .sub-section-heading {
@@ -1712,13 +1714,13 @@ body[data-page="hours"] .footer-contact {
 
 .sub-feature-card {
   min-height: 0;
-  display: grid;
-  grid-template-columns: 64px minmax(220px, 0.85fr) minmax(0, 1.15fr);
-  gap: 28px;
-  align-items: start;
-  padding: 30px 0;
-  border: 0;
-  border-bottom: 1px solid var(--sub-line);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 36px;
+  border: 1px solid var(--sub-line);
   border-radius: 0;
   background: #fff;
 }
@@ -1728,7 +1730,7 @@ body[data-page="hours"] .footer-contact {
   margin: 5px 0 0;
   color: var(--sub-gold);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -1737,13 +1739,107 @@ body[data-page="hours"] .footer-contact {
   margin: 0;
   color: var(--sub-ink);
   font-family: var(--font-family);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.45;
+  min-height: 2.9em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .sub-feature-card p {
   margin: 0;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.sub-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+  margin: 2px 0 4px;
+  border-radius: 50%;
+  background: #f6f3ed;
+  color: var(--sub-gold);
+}
+
+.sub-feature-icon svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.sub-feature-card > .asset-placeholder {
+  width: 100%;
+}
+
+.sub-feature-card.is-keypoint {
+  min-height: 440px;
+  padding: 40px 36px;
+  gap: 16px;
+  border: 0;
+  border-radius: 28px;
+  background: #876f56;
+  color: #fff;
+}
+
+.sub-feature-card.is-keypoint:nth-child(2n) {
+  background: #5c5147;
+}
+
+.sub-feature-card.is-keypoint .sub-feature-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 0 18px;
+  border-radius: 0;
+  background: transparent;
+  color: #f5ecd9;
+}
+
+.sub-feature-card.is-keypoint .sub-feature-icon svg {
+  width: 72px;
+  height: 72px;
+}
+
+.sub-feature-card.is-keypoint > .sub-feature-label {
+  margin: 0;
+  color: #f5ecd9;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .12em;
+}
+
+.sub-feature-card.is-keypoint h3 {
+  margin: 0 0 28px;
+  color: #fff;
+  min-height: 2.9em;
+}
+
+.sub-feature-card.is-keypoint p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+@media (max-width: 720px) {
+  .sub-feature-card.is-keypoint {
+    min-height: 0;
+    padding: 32px 26px;
+    border-radius: 24px;
+  }
+  .sub-feature-card.is-keypoint h3 {
+    min-height: 0;
+    margin-bottom: 16px;
+  }
+  .sub-feature-card.is-keypoint p {
+    font-size: 16px;
+  }
 }
 
 .sub-disease-section {
@@ -1982,8 +2078,8 @@ body[data-page="hours"] .footer-contact {
   }
 
   .sub-feature-card {
-    grid-template-columns: 52px minmax(0, 1fr);
-    gap: 12px 24px;
+    padding: 28px;
+    gap: 16px;
   }
 
   .sub-feature-card p {
@@ -2127,9 +2223,8 @@ body[data-page="hours"] .footer-contact {
   }
 
   .sub-feature-card {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 12px;
-    padding: 24px 0;
+    gap: 16px;
+    padding: 24px;
   }
 
   .sub-feature-card>span {
@@ -2138,6 +2233,7 @@ body[data-page="hours"] .footer-contact {
 
   .sub-feature-card h3 {
     font-size: 22px;
+    min-height: 0;
   }
 
   .sub-feature-card p {
@@ -2264,4 +2360,141 @@ body[data-page="hours"] .footer-contact {
   .admin-gateway-message p:not(.admin-gateway-kicker) {
     font-size: 16px;
   }
+}
+
+/* Treatment key points: numbered editorial rows. */
+.sub-feature-list .sub-feature-grid {
+  display: block;
+  max-width: none;
+  border-top: 1px solid var(--sub-line);
+}
+.sub-feature-list .sub-feature-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+  padding: 36px 0;
+  border: 0;
+  border-bottom: 1px solid var(--sub-line);
+  border-radius: 0;
+  background: transparent;
+}
+.sub-feature-list .sub-feature-card > span {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.5;
+}
+.sub-feature-list .sub-feature-card h3 {
+  min-height: 0;
+  font-size: 30px;
+  line-height: 1.5;
+}
+.sub-feature-copy { min-width: 0; }
+.sub-feature-copy p + p { margin-top: 12px; }
+@media (max-width: 1100px) {
+  .sub-feature-list .sub-feature-card {
+    grid-template-columns: 48px minmax(0, 0.9fr) minmax(0, 1.2fr);
+    gap: 22px;
+  }
+  .sub-feature-list .sub-feature-card h3 { font-size: 26px; }
+}
+@media (max-width: 720px) {
+  .sub-feature-list .sub-feature-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px 16px;
+    padding: 28px 0;
+  }
+  .sub-feature-list .sub-feature-card > span { font-size: 24px; }
+  .sub-feature-list .sub-feature-card h3 { font-size: 24px; }
+  .sub-feature-list .sub-feature-copy { grid-column: 2; }
+}
+
+/* Injection programs retain their warm overlays over treatment photos. */
+.sub-feature-card.is-keypoint.injection-program-card {
+  background-image: linear-gradient(rgba(135, 111, 86, .84), rgba(105, 83, 61, .93)), url('../img/heroes/injection-natural-v1.webp');
+  background-position: center;
+  background-size: cover;
+}
+.sub-feature-card.is-keypoint.injection-program-card:nth-child(2n) {
+  background-image: linear-gradient(rgba(92, 81, 71, .82), rgba(67, 58, 49, .94)), url('../img/editorial/facility-carm-room-natural-v2.webp');
+}
+
+.sub-feature-card.is-keypoint.injection-program-card h3 {
+  min-height: 0;
+  margin-bottom: 0;
+}
+.sub-feature-card.is-keypoint.injection-program-card .injection-program-badge {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 20px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 242, 215, .55);
+  border-radius: 12px;
+  background: rgba(255, 245, 224, .13);
+  color: #fff2d7;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+@media (max-width: 720px) {
+  .sub-feature-card.is-keypoint.injection-program-card .injection-program-badge {
+    padding: 9px 14px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+.injection-program-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.injection-program-badges > span {
+  padding: 10px 16px;
+  border: 1px solid #f5e6cc;
+  border-radius: 12px;
+  background: #f5e6cc;
+  color: #493b2d;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.65;
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .injection-program-badges { margin-bottom: 12px; }
+  .injection-program-badges > span { padding: 9px 14px; font-size: 16px; }
+}
+
+/* Disease and symptom labels at the end of each indication card. */
+.sub-disease-slide-copy .sub-disease-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: auto 0 0;
+  padding: 24px 0 0;
+  list-style: none;
+}
+.sub-disease-badges > li {
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e0d3bf;
+  border-radius: 10px;
+  background: #f5e6cc;
+  color: #493b2d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.sub-copy-stack .sub-copy-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
 }

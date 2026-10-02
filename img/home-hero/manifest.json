@@ -1,0 +1,30 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "메인 히어로용 연출 이미지. 실제 의료진·환자·병원 시설 사진이 아님.",
+  "assets": [
+    {
+      "name": "care",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-5135e49c-e9ed-4958-9607-1081b4ac4230.png",
+      "file": "care-v1.webp",
+      "prompt": "Use case: photorealistic-natural. Generate a premium Korean pain clinic homepage hero background, wide landscape 16:9 composition. Close-up editorial photograph of a calm consultation: a doctor's hands in white coat gently explaining a neutral blank paper to an adult patient's hands across a pale wood desk; subjects on the RIGHT half, no faces visible, natural realistic hands. Soft daylight, warm beige consultation setting blurred in background. Keep LEFT 55 percent visually quiet with soft out-of-focus warm taupe and ivory surfaces for a large text overlay. Sophisticated muted beige, warm gray, understated navy accents, natural photographic realism, subtle cinematic depth of field. Full bleed no border, no collage. No writing, no signage, no logo, no watermark, no medical needles, no patient records, no identifying hospital branding. Conceptual stock-style scene, not a depiction of a real named hospital or doctor."
+    },
+    {
+      "name": "assessment",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-6c0fd5f6-f579-457f-a521-18ecc968cd01.png",
+      "file": "assessment-v1.webp",
+      "prompt": "Use case: photorealistic-natural. Generate a premium Korean pain clinic homepage hero background, wide landscape 16:9 composition. Editorial photograph of a realistic ivory anatomical spine and pelvis teaching model with a clinician's hand indicating the lumbar area, on the RIGHT half. Soft-focus warm modern consultation room, no faces, accurate anatomy, thoughtful diagnostic care mood. Keep LEFT 55 percent visually quiet with soft out-of-focus warm taupe and ivory surfaces for a large text overlay. Sophisticated muted beige, warm gray, understated navy accents, natural photographic realism, subtle cinematic depth of field. Full bleed no border, no collage. No writing, no signage, no logo, no watermark, no medical needles, no patient records, no identifying hospital branding. Conceptual stock-style scene, not a depiction of a real named hospital or doctor."
+    },
+    {
+      "name": "movement",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-7140407e-3743-423a-a3f0-f5bc9b730f16.png",
+      "file": "movement-v1.webp",
+      "prompt": "Use case: photorealistic-natural. Generate a premium Korean pain clinic homepage hero background, wide landscape 16:9 composition. Editorial photograph of a physical therapist in navy scrubs gently guiding a seated adult woman's shoulder and arm mobility, all people on the RIGHT half, natural hands, fully clothed modest sportswear, soft daylight and warm cream minimalist studio. Faces turned away or cropped. Calm nonsurgical rehabilitation atmosphere. Keep LEFT 55 percent visually quiet with soft out-of-focus warm taupe and ivory surfaces for a large text overlay. Sophisticated muted beige, warm gray, understated navy accents, natural photographic realism, subtle cinematic depth of field. Full bleed no border, no collage. No writing, no signage, no logo, no watermark, no medical needles, no patient records, no identifying hospital branding. Conceptual stock-style scene, not a depiction of a real named hospital or doctor."
+    },
+    {
+      "name": "everyday",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-df744266-f7b9-4cc0-8f9e-159c6c82af97.png",
+      "file": "everyday-v1.webp",
+      "prompt": "Use case: photorealistic-natural. Generate a premium Korean pain clinic homepage hero background, wide landscape 16:9 composition. Editorial lifestyle photograph of an adult East Asian couple walking comfortably along a sunlit riverside path with soft trees and distant water, people on the RIGHT half, elegant natural neutral casual clothes, photographed from behind, warm soft morning light, calm hopeful ordinary daily life. Keep LEFT 55 percent visually quiet with soft out-of-focus warm taupe and ivory surfaces for a large text overlay. Sophisticated muted beige, warm gray, understated navy accents, natural photographic realism, subtle cinematic depth of field. Full bleed no border, no collage. No writing, no signage, no logo, no watermark, no medical needles, no patient records, no identifying hospital branding. Conceptual stock-style scene, not a depiction of a real named hospital or doctor."
+    }
+  ]
+}

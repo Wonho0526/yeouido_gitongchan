@@ -1,0 +1,42 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "대표증상 영역 전체 배경용 부위 일러스트",
+  "assets": [
+    {
+      "name": "neck-shoulder",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-b94ee6cb-46a5-4af2-a115-6e7a679401f8.png",
+      "file": "neck-shoulder-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: side three-quarter view of human head, neck and shoulder, cervical vertebrae visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    },
+    {
+      "name": "spine-joint",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-732e8160-851f-4c47-9cea-4a633c1b81ce.png",
+      "file": "spine-joint-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: rear three-quarter view of human lower torso and pelvis, lumbar spine and hip joints visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    },
+    {
+      "name": "hand-wrist",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-3b923bd7-ca66-47a8-a367-1586707765af.png",
+      "file": "hand-wrist-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: human forearm and relaxed hand with five fingers, wrist bones visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    },
+    {
+      "name": "knee",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-fbe28e65-f55d-4f8c-bde2-80fb9a20372c.png",
+      "file": "knee-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: human knee joint and adjoining upper and lower leg, patella and joint visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    },
+    {
+      "name": "foot-heel",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-15bd5e8f-e4d4-481c-8122-c5d8a9abbc7d.png",
+      "file": "foot-heel-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: human ankle and foot in lateral view, heel and ankle bones visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    },
+    {
+      "name": "neuralgia",
+      "source": "C:/Users/USER/.codex/generated_images/01a0eae8-3311-7103-bd62-ae6e78dd4af7/exec-be946899-5b0a-42c0-b3fd-7b9c8ba5de45.png",
+      "file": "neuralgia-v1.webp",
+      "prompt": "Create a premium full bleed medical website background illustration, wide landscape 3:2 format. Subject: rear view of human upper torso, spinal cord and branching peripheral nerves subtly visible through translucent tissue. Large close-up anatomy occupies LEFT HALF of canvas from top to bottom, right half is calm empty deep navy #183b65 for overlaid HTML text. No dividing edge: anatomy and soft atmospheric blue light fade naturally into the navy background. Sophisticated realistic 3D medical rendering, translucent slate blue tissue, softly luminous ivory and restrained warm gold anatomy accents. Entire canvas deep navy, no white areas, no frame, no card, no panel. General regional educational illustration, no specific disease lesion, no text, no labels, no logo, no blood. Anatomy must be coherent. Rich restrained hospital editorial look."
+    }
+  ]
+}

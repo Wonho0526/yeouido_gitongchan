@@ -1,0 +1,42 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "설명용 AI 부위 일러스트. 실제 환자 영상이나 질환별 병변을 표시한 진단 자료가 아닙니다.",
+  "assets": [
+    {
+      "name": "neck-shoulder",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-14046fae-14fc-4e94-b4e8-12819d97639e.png",
+      "file": "neck-shoulder-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. Side and rear three-quarter view of an adult human neck and shoulder girdle, translucent soft tissue with cervical vertebrae and upper shoulder muscles visible. Accurate general regional anatomy. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    },
+    {
+      "name": "spine-joint",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-3672fe68-ad9b-4e41-924a-b1bd7fb73c7c.png",
+      "file": "spine-joint-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. Rear three-quarter view of adult lower back and pelvis, lumbar vertebrae, sacrum and hip bones visible under translucent skin. Accurate general regional anatomy. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    },
+    {
+      "name": "hand-wrist",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-7cac5bd4-a371-43c4-bcb9-77ebb591d722.png",
+      "file": "hand-wrist-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. An adult forearm from elbow to hand with five natural fingers, anatomically coherent radius ulna wrist and hand bones visible under translucent tissue, relaxed pose. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    },
+    {
+      "name": "knee",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-f421de08-e90f-4038-93f0-0e83ac8c43a0.png",
+      "file": "knee-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. An anatomically coherent adult knee joint in three-quarter view, lower femur, patella and upper tibia fibula, subtle cartilage, translucent tissue. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    },
+    {
+      "name": "foot-heel",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-8389ed5e-3cd3-4748-8149-9e7cb8bd6ed2.png",
+      "file": "foot-heel-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. An adult ankle and foot in a natural lateral view, heel and ankle joint, coherent tarsal and metatarsal anatomy with five toes, translucent tissue. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    },
+    {
+      "name": "neuralgia",
+      "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-ab5fadc0-8f94-4a4f-9730-a9eb86790cd8.png",
+      "file": "neuralgia-v1.webp",
+      "prompt": "Use case: scientific-educational. Create one premium medical editorial illustration for a Korean nonsurgical pain clinic website. Side profile of adult human head and neck, subtle translucent silhouette showing brain and cervical spine, restrained fine peripheral nerve pathways. General conceptual nervous-system illustration, not diagnostic mapping. No specific lesion. Landscape 4:3. Single centered subject occupying 70% of frame with generous negative space. Matte ivory anatomical structures, translucent desaturated slate blue tissue, very subtle warm gold accents. Clean warm white #faf9f6 background. Soft realistic 3D rendering, elegant restrained hospital brochure aesthetic. Clear anatomy but no labels, no text, no letters, no logo, no watermark, no panels, no blood, no surgical scene, no red pain glow. This is an illustrative regional overview, not a diagnostic scan. Save the generated asset for incorporation into the local website."
+    }
+  ]
+}

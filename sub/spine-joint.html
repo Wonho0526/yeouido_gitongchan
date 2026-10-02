@@ -16,144 +16,676 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/subpage.css">
+  <link rel="stylesheet" href="../css/revision.css">
+  <link rel="stylesheet" href="../css/conditions.css">
 </head>
 
-<body data-page="spineJoint" data-layout="conditions">
+<body data-page="spineJoint" data-layout="conditions" class="condition-editorial-page">
   <div id="site-header-root"></div>
   <main id="main-content" class="subpage-main">
     <section class="sub-hero">
-      <img class="sub-hero-background" src="../img/heroes/spine-joint-natural-v1.webp" width="1536" height="1024" alt="" aria-hidden="true" fetchpriority="high">
+      <img class="sub-hero-background" src="../img/conditions/heroes/spine-joint-natural-v1.webp" width="1536"
+        height="1024" alt="" aria-hidden="true" fetchpriority="high">
       <div class="inner sub-hero-inner">
         <p class="sub-hero-eyebrow">YEOUIDO GITONGCHAN CLINIC</p>
-        <p class="sub-hero-series" aria-label="기(氣)를 돌보는 진료"><span class="tone-1">기(氣)를</span><span class="tone-2">돌보는</span><span class="tone-3">진료</span></p>
+        <p class="sub-hero-series" aria-label="기능까지 살피는 진료"><span><span class="tone-1">기</span><span class="tone-3">능까지
+              살피는 진료</span></span></p>
         <h1>허리·골반</h1>
-        <p class="sub-hero-desc">허리와 골반, 다리로 이어지는 통증의 원인을 정밀하게 살핍니다.</p>
+        <p class="sub-hero-desc">“허리와 골반의 통증, 다리로 이어지는 증상과 원인까지 함께 살펴봅니다.”</p>
       </div>
     </section>
     <div id="site-local-nav-root" data-nav-group="treatment"></div>
     <div class="subpage-content subpage-content--conditions">
-      <section class="sub-section sub-condition-overview">
-        <div class="inner sub-condition-overview-grid">
-          <figure class="sub-image-frame sub-condition-lead-image"><img src="../img/editorial/clinic-spine-joint-natural-v2.webp" alt="허리·골반 진료 이미지" loading="lazy"></figure>
-          <div class="sub-condition-overview-copy">
-            <span class="sub-section-kicker">YEOUIDO GITONGCHAN CLINIC</span>
-            <h2>허리·골반</h2>
-            <p>허리와 골반 주변 통증은 근육과 인대, 디스크, 관절 등 다양한 부위에서 시작될 수 있습니다. 다리로 퍼지는 통증과 저림, 걷거나 앉을 때의 변화를 함께 확인합니다. 진찰 결과와 일상에서의 불편 정도를 살펴 상태에 맞는 관리와 치료 방향을 안내합니다.</p>
-            <p class="sub-condition-overview-note">통증의 위치와 움직임, 생활 습관을 함께 살핀 뒤 필요한 치료 방향을 안내합니다.</p>
+      <section class="condition-introduction">
+        <div class="inner">
+          <p class="condition-eyebrow">통증의 원인을 더 깊이 찾아가는 진료</p>
+          <p>“허리와 골반 주변 통증은 근육과 인대, 디스크, 관절 등 다양한 부위에서 시작될 수 있습니다.<br>통증의 위치만 보지 않고, 자세와 보행, 신경 증상까지 세심하게 살펴 필요한 검사와 치료
+            방향을 안내합니다.”</p>
+        </div>
+      </section>
+      <div class="condition-explorer" data-condition-explorer>
+        <div class="condition-selector inner">
+          <p class="condition-eyebrow">질환별 안내</p>
+          <div class="condition-tabs" role="tablist" aria-label="허리·골반 질환 선택">
+            <a href="#condition-1" id="tab-condition-1" class="condition-tab" role="tab" aria-controls="condition-1"
+              aria-selected="false">허리디스크</a>
+            <a href="#condition-2" id="tab-condition-2" class="condition-tab" role="tab" aria-controls="condition-2"
+              aria-selected="false">척추관 협착증</a>
+            <a href="#condition-3" id="tab-condition-3" class="condition-tab" role="tab" aria-controls="condition-3"
+              aria-selected="false">급·만성 요통 및 요추 염좌</a>
+            <a href="#condition-4" id="tab-condition-4" class="condition-tab" role="tab" aria-controls="condition-4"
+              aria-selected="false">척추후관절 증후군</a>
+            <a href="#condition-5" id="tab-condition-5" class="condition-tab" role="tab" aria-controls="condition-5"
+              aria-selected="false">좌골신경통</a>
+          </div>
+        </div>
+        <article class="condition-panel" id="condition-1" role="tabpanel" aria-labelledby="tab-condition-1"
+          tabindex="0">
+          <section class="condition-definition">
+            <div class="inner">
+              <p class="condition-eyebrow" lang="en">ABOUT THE CONDITION</p>
+              <h2>허리디스크(요추 추간판 탈출증)</h2>
+              <p class="condition-definition-copy">허리뼈 사이의 디스크가 밀려나 주변 신경을 자극하거나 압박하는 질환입니다.</p>
+              <figure class="condition-anatomy">
+                <img src="../img/conditions/individual/lumbar-disc-red-v1.webp"
+                  alt="허리디스크(요추 추간판 탈출증) 관련 부위를 빨간색으로 강조한 이미지" loading="lazy" decoding="async" width="1448"
+                  height="1086">
+              </figure>
+            </div>
+          </section>
+          <section class="condition-context">
+            <div class="inner">
+              <h2><span>허리디스크의</span> 원인</h2>
+              <p class="condition-section-lead">오래 앉아 있는 자세와 무거운 물건을 드는 동작은 허리에 부담을 줄 수 있습니다.<br>노화에 따른 변화나 외상도 디스크 손상과
+                관련됩니다.</p>
+              <div class="condition-context-grid">
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/laptop-sofa-v1.webp"
+                      alt="의자에 장시간 구부정하게 앉아있는 습관 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">01</span>
+                    <p>의자에 장시간 구부정하게 앉아있는 습관</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/lifting-v1.webp"
+                      alt="무거운 물건을 허리 힘으로 갑자기 들어 올리는 동작 관련 일상 장면" loading="lazy" decoding="async" width="600"
+                      height="600"></figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">02</span>
+                    <p>무거운 물건을 허리 힘으로 갑자기 들어 올리는 동작</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/reading-v1.webp"
+                      alt="허리 주변 근육 및 인대의 퇴행성 약화 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">03</span>
+                    <p>허리 주변 근육 및 인대의 퇴행성 약화</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/minor-fall-v1.webp"
+                      alt="낙상, 교통사고 등 외부 충격으로 인한 디스크 손상 관련 일상 장면" loading="lazy" decoding="async" width="600"
+                      height="600"></figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">04</span>
+                    <p>낙상, 교통사고 등 외부 충격으로 인한 디스크 손상</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="condition-symptoms">
+            <div class="inner condition-symptoms-grid">
+              <figure class="condition-symptoms-visual">
+                <img class="" src="../img/conditions/symptoms/spine-joint-v1.webp" alt="허리·골반 부위 설명용 일러스트"
+                  loading="lazy" decoding="async" width="1536" height="1024">
+              </figure>
+              <div class="condition-symptoms-copy">
+                <p class="condition-eyebrow" lang="en">SYMPTOMS</p>
+                <h2>
+                  <span>허리디스크</span> 대표 증상
+                </h2>
+                <ol>
+                  <li><span>01</span>
+                    <p>허리 통증과 함께 엉덩이, 다리, 발가락까지 찌릿하게 저림 (방사통)</p>
+                  </li>
+                  <li><span>02</span>
+                    <p>허리를 앞으로 숙이거나 의자에 앉아있을 때 통증 심화</p>
+                  </li>
+                  <li><span>03</span>
+                    <p>기침이나 재채기, 배변 시 허리와 다리에 강한 통증 발생</p>
+                  </li>
+                  <li><span>04</span>
+                    <p>누워서 한쪽 다리를 들어 올리기 어려움</p>
+                  </li>
+                  <li><span>05</span>
+                    <p>심한 경우 발가락이나 발목에 힘이 들어가지 않음</p>
+                  </li>
+                </ol>
+                <p class="condition-symptom-note">새로 생긴 대소변 조절 이상이나 회음부 감각 저하가 동반되면 즉시 응급 진료를 받아야 합니다.</p>
+              </div>
+            </div>
+          </section>
+          <section class="condition-assessment">
+            <div class="inner">
+              <h2><span>허리디스크의</span> <strong>진단</strong></h2>
+              <p class="condition-section-lead">허리 통증과 함께 엉덩이·다리로 뻗치는 통증이나 저림이 있는지 확인합니다.<br>감각·근력 등 신경 증상과 진찰 결과를 바탕으로
+                필요한
+                검사를 판단합니다.</p>
+              <div class="condition-assessment-grid" data-columns="2">
+                <figure><img src="../img/conditions/diagnosis/consultation.webp" alt="문진·신체검진 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>문진·신체검진</h3>
+                    <p>통증이 시작된 시점과 양상, 병력과 생활 습관을 확인합니다. 압통과 움직임, 근력·감각 등을 함께 살펴 진단의 방향을 정합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/conditions/diagnosis/xray-doctor-v1.webp" alt="X-ray 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>X-ray</h3>
+                    <p>뼈의 정렬과 관절 간격, 퇴행성 변화 등을 확인하는 검사입니다. 진찰 결과에 따라 촬영하여 골절이나 다른 뼈·관절 문제를 살펴봅니다.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <p class="condition-diagnosis-note">검사는 증상과 진찰 결과에 따라 필요한 항목을 선택합니다.</p>
+            </div>
+          </section>
+        </article>
+        <article class="condition-panel" id="condition-2" role="tabpanel" aria-labelledby="tab-condition-2"
+          tabindex="0">
+          <section class="condition-definition">
+            <div class="inner">
+              <p class="condition-eyebrow" lang="en">ABOUT THE CONDITION</p>
+              <h2>척추관 협착증</h2>
+              <p class="condition-definition-copy">척추 안에서 신경이 지나는 통로가 좁아져 신경이 눌리는 질환입니다.</p>
+              <figure class="condition-anatomy">
+                <img src="../img/conditions/individual/spinal-stenosis-red-v1.webp" alt="척추관 협착증 관련 부위를 빨간색으로 강조한 이미지"
+                  loading="lazy" decoding="async" width="1448" height="1086">
+              </figure>
+            </div>
+          </section>
+          <section class="condition-context">
+            <div class="inner">
+              <h2><span>척추관 협착증의</span> 원인</h2>
+              <p class="condition-section-lead">나이가 들면서 척추 관절·인대에 변화가 생기면 신경이 지나는 공간이 좁아질 수 있습니다.<br>뼈돌기나 척추의 구조적 문제도
+                영향을
+                줍니다.</p>
+              <div class="condition-context-grid">
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/walking-v1.webp"
+                      alt="노화로 인한 척추 관절과 인대의 두꺼워짐 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">01</span>
+                    <p>노화로 인한 척추 관절과 인대의 두꺼워짐</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/consultation-v1.webp"
+                      alt="척추뼈 주변에 형성되는 골극(뼈돌기) 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">02</span>
+                    <p>척추뼈 주변에 형성되는 골극(뼈돌기)</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/senior-home-v1.webp"
+                      alt="오랜 시간 진행되는 척추의 퇴행성 변화 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">03</span>
+                    <p>오랜 시간 진행되는 척추의 퇴행성 변화</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/balance-v1.webp"
+                      alt="척추전방전위증 등 구조적 불안정성 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">04</span>
+                    <p>척추전방전위증 등 구조적 불안정성</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="condition-symptoms">
+            <div class="inner condition-symptoms-grid">
+              <figure class="condition-symptoms-visual">
+                <img class="" src="../img/conditions/symptoms/spine-joint-v1.webp" alt="허리·골반 부위 설명용 일러스트"
+                  loading="lazy" decoding="async" width="1536" height="1024">
+              </figure>
+              <div class="condition-symptoms-copy">
+                <p class="condition-eyebrow" lang="en">SYMPTOMS</p>
+                <h2>
+                  <span>척추관 협착증</span> 대표 증상
+                </h2>
+                <ol>
+                  <li><span>01</span>
+                    <p>조금만 걸어도 다리가 터질 듯이 아파 자주 쉬어가야 함</p>
+                  </li>
+                  <li><span>02</span>
+                    <p>허리를 뒤로 젖힐 때 통증이 심해지고, 숙이면 통증이 줄어듦</p>
+                  </li>
+                  <li><span>03</span>
+                    <p>엉덩이부터 종아리, 발바닥까지 찌릿하고 차가운 느낌</p>
+                  </li>
+                  <li><span>04</span>
+                    <p>밤에 다리에 쥐가 자주 나고 보행이 불편함</p>
+                  </li>
+                  <li><span>05</span>
+                    <p>평지보다 언덕이나 계단을 오를 때 오히려 편함</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+          <section class="condition-assessment">
+            <div class="inner">
+              <h2><span>척추관 협착증의</span> <strong>진단</strong></h2>
+              <p class="condition-section-lead">걷거나 서 있을 때 심해지고 앉거나 허리를 굽히면 줄어드는 증상을 확인합니다.<br>신경학적 진찰과 필요한 영상검사를 통해 원인을
+                살펴봅니다.</p>
+              <div class="condition-assessment-grid" data-columns="2">
+                <figure><img src="../img/conditions/diagnosis/consultation.webp" alt="문진·신체검진 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>문진·신체검진</h3>
+                    <p>통증이 시작된 시점과 양상, 병력과 생활 습관을 확인합니다. 압통과 움직임, 근력·감각 등을 함께 살펴 진단의 방향을 정합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/conditions/diagnosis/xray-doctor-v1.webp" alt="X-ray 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>X-ray</h3>
+                    <p>뼈의 정렬과 관절 간격, 퇴행성 변화 등을 확인하는 검사입니다. 진찰 결과에 따라 촬영하여 골절이나 다른 뼈·관절 문제를 살펴봅니다.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <p class="condition-diagnosis-note">검사는 증상과 진찰 결과에 따라 필요한 항목을 선택합니다.</p>
+            </div>
+          </section>
+        </article>
+        <article class="condition-panel" id="condition-3" role="tabpanel" aria-labelledby="tab-condition-3"
+          tabindex="0">
+          <section class="condition-definition">
+            <div class="inner">
+              <p class="condition-eyebrow" lang="en">ABOUT THE CONDITION</p>
+              <h2>급·만성 요통 및 요추 염좌</h2>
+              <p class="condition-definition-copy">요통은 허리 주변의 통증을 뜻하며 원인이 항상 한 가지로 확인되는 것은 아닙니다.</p>
+              <figure class="condition-anatomy">
+                <img src="../img/conditions/individual/lumbar-strain-red-v1.webp"
+                  alt="급·만성 요통 및 요추 염좌 관련 부위를 빨간색으로 강조한 이미지" loading="lazy" decoding="async" width="1448" height="1086">
+              </figure>
+            </div>
+          </section>
+          <section class="condition-context">
+            <div class="inner">
+              <h2><span>급·만성 요통 및 요추 염좌의</span> 원인</h2>
+              <p class="condition-section-lead">갑작스러운 움직임이나 무리한 작업으로 허리 근육과 인대에 부담이 생길 수 있습니다.<br>오래 유지하는 자세와 근력 저하도 함께
+                살펴봅니다.</p>
+              <div class="condition-context-grid">
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/twisting-v1.webp"
+                      alt="준비 없이 갑자기 허리를 비틀거나 숙이는 동작 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">01</span>
+                    <p>준비 없이 갑자기 허리를 비틀거나 숙이는 동작</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/groceries-v1.webp"
+                      alt="무거운 물건을 들다가 허리에 담이 들린 경우 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">02</span>
+                    <p>무거운 물건을 들다가 허리에 담이 들린 경우</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/driving-v1.webp"
+                      alt="장시간 무너진 자세로 일하거나 운전하는 습관 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">03</span>
+                    <p>장시간 무너진 자세로 일하거나 운전하는 습관</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/weights-v1.webp"
+                      alt="코어 근육 약화로 인한 허리 지지력 감소 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">04</span>
+                    <p>코어 근육 약화로 인한 허리 지지력 감소</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="condition-symptoms">
+            <div class="inner condition-symptoms-grid">
+              <figure class="condition-symptoms-visual">
+                <img class="" src="../img/conditions/symptoms/spine-joint-v1.webp" alt="허리·골반 부위 설명용 일러스트"
+                  loading="lazy" decoding="async" width="1536" height="1024">
+              </figure>
+              <div class="condition-symptoms-copy">
+                <p class="condition-eyebrow" lang="en">SYMPTOMS</p>
+                <h2>
+                  <span>급·만성 요통 및 요추 염좌</span> 대표 증상
+                </h2>
+                <ol>
+                  <li><span>01</span>
+                    <p>허리를 숙이거나 펼 때 묵직하고 찌르는 듯한 통증</p>
+                  </li>
+                  <li><span>02</span>
+                    <p>허리 주변 근육이 딱딱하게 굳어 움직이기 힘듦</p>
+                  </li>
+                  <li><span>03</span>
+                    <p>침대에서 일어나거나 양말을 신기 어려움</p>
+                  </li>
+                  <li><span>04</span>
+                    <p>통증으로 인해 몸이 한쪽으로 기울어지는 증상</p>
+                  </li>
+                  <li><span>05</span>
+                    <p>특정 동작을 할 때 삐끗하는 느낌과 함께 뚜렷한 통증</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+          <section class="condition-assessment">
+            <div class="inner">
+              <h2><span>급·만성 요통 및 요추 염좌의</span> <strong>진단</strong></h2>
+              <p class="condition-section-lead">통증이 시작된 동작과 허리 근육의 압통, 움직임 제한을 확인합니다.<br>신경 증상이나 외상 소견이 있는지 살펴 추가 검사
+                필요성을
+                판단합니다.</p>
+              <div class="condition-assessment-grid" data-columns="3">
+                <figure><img src="../img/conditions/diagnosis/consultation.webp" alt="문진·신체검진 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>문진·신체검진</h3>
+                    <p>통증이 시작된 시점과 양상, 병력과 생활 습관을 확인합니다. 압통과 움직임, 근력·감각 등을 함께 살펴 진단의 방향을 정합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/conditions/diagnosis/examination.webp" alt="움직임·기능 평가 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>움직임·기능 평가</h3>
+                    <p>아픈 부위를 누르거나 움직일 때의 반응을 확인합니다. 관절의 움직임 범위와 근력, 일상 동작에서 나타나는 불편함을 함께 평가합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/heroes/hand-wrist-natural-v1.webp" alt="신경학적 진찰 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>신경학적 진찰</h3>
+                    <p>통증이 퍼지는 범위와 감각·근력·반사 등을 살펴봅니다. 신경 자극이나 다른 신경계 문제를 의심할 소견이 있는지 확인합니다.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <p class="condition-diagnosis-note">검사는 증상과 진찰 결과에 따라 필요한 항목을 선택합니다.</p>
+            </div>
+          </section>
+        </article>
+        <article class="condition-panel" id="condition-4" role="tabpanel" aria-labelledby="tab-condition-4"
+          tabindex="0">
+          <section class="condition-definition">
+            <div class="inner">
+              <p class="condition-eyebrow" lang="en">ABOUT THE CONDITION</p>
+              <h2>척추후관절 증후군</h2>
+              <p class="condition-definition-copy">척추 뒤쪽에서 움직임과 안정성을 돕는 후관절이 통증의 원인이 되는 상태입니다.</p>
+              <figure class="condition-anatomy">
+                <img src="../img/conditions/individual/facet-joint-red-v1.webp" alt="척추후관절 증후군 관련 부위를 빨간색으로 강조한 이미지"
+                  loading="lazy" decoding="async" width="1448" height="1086">
+              </figure>
+            </div>
+          </section>
+          <section class="condition-context">
+            <div class="inner">
+              <h2><span>척추후관절 증후군의</span> 원인</h2>
+              <p class="condition-section-lead">척추 뒤쪽의 작은 관절에 퇴행성 변화나 손상이 생기면 허리 통증이 나타날 수 있습니다.<br>허리를 젖히거나 비트는 동작은 관절에
+                부담을 더할 수 있습니다.</p>
+              <div class="condition-context-grid">
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/senior-walk-v1.webp"
+                      alt="나이가 들며 진행되는 척추 관절의 퇴행성 변화 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">01</span>
+                    <p>나이가 들며 진행되는 척추 관절의 퇴행성 변화</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/overhead-v1.webp"
+                      alt="허리를 반복해서 뒤로 젖히는 동작 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">02</span>
+                    <p>허리를 반복해서 뒤로 젖히는 동작</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/golf-v1.webp"
+                      alt="허리를 비틀거나 무리하게 사용하는 활동 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">03</span>
+                    <p>허리를 비틀거나 무리하게 사용하는 활동</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/minor-fall-v1.webp"
+                      alt="넘어지거나 부딪힌 뒤 생긴 관절 손상 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">04</span>
+                    <p>넘어지거나 부딪힌 뒤 생긴 관절 손상</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="condition-symptoms">
+            <div class="inner condition-symptoms-grid">
+              <figure class="condition-symptoms-visual">
+                <img class="" src="../img/conditions/symptoms/spine-joint-v1.webp" alt="허리·골반 부위 설명용 일러스트"
+                  loading="lazy" decoding="async" width="1536" height="1024">
+              </figure>
+              <div class="condition-symptoms-copy">
+                <p class="condition-eyebrow" lang="en">SYMPTOMS</p>
+                <h2>
+                  <span>척추후관절 증후군</span> 대표 증상
+                </h2>
+                <ol>
+                  <li><span>01</span>
+                    <p>허리 한쪽 또는 양쪽에 느껴지는 묵직한 통증</p>
+                  </li>
+                  <li><span>02</span>
+                    <p>허리를 뒤로 젖히거나 몸통을 돌릴 때 심해지는 통증</p>
+                  </li>
+                  <li><span>03</span>
+                    <p>엉덩이와 허벅지 위쪽으로 퍼지는 불편감</p>
+                  </li>
+                  <li><span>04</span>
+                    <p>오래 서 있거나 움직이기 시작할 때 느껴지는 뻣뻣함</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+          <section class="condition-assessment">
+            <div class="inner">
+              <h2><span>척추후관절 증후군의</span> <strong>진단</strong></h2>
+              <p class="condition-section-lead">허리를 젖히거나 돌릴 때 통증이 달라지는지 확인합니다.<br>압통과 신경 증상을 함께 살피며, 영상 소견만으로 원인을 단정하지
+                않고
+                종합적으로 평가합니다.</p>
+              <div class="condition-assessment-grid" data-columns="2">
+                <figure><img src="../img/conditions/diagnosis/consultation.webp" alt="문진·신체검진 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>문진·신체검진</h3>
+                    <p>통증이 시작된 시점과 양상, 병력과 생활 습관을 확인합니다. 압통과 움직임, 근력·감각 등을 함께 살펴 진단의 방향을 정합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/conditions/diagnosis/xray-doctor-v1.webp" alt="X-ray 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>X-ray</h3>
+                    <p>뼈의 정렬과 관절 간격, 퇴행성 변화 등을 확인하는 검사입니다. 진찰 결과에 따라 촬영하여 골절이나 다른 뼈·관절 문제를 살펴봅니다.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <p class="condition-diagnosis-note">검사는 증상과 진찰 결과에 따라 필요한 항목을 선택합니다.</p>
+            </div>
+          </section>
+        </article>
+        <article class="condition-panel" id="condition-5" role="tabpanel" aria-labelledby="tab-condition-5"
+          tabindex="0">
+          <section class="condition-definition">
+            <div class="inner">
+              <p class="condition-eyebrow" lang="en">ABOUT THE CONDITION</p>
+              <h2>좌골신경통</h2>
+              <p class="condition-definition-copy">허리에서 다리로 이어지는 신경이 자극되면서 생기는 방사통을 말합니다.</p>
+              <figure class="condition-anatomy">
+                <img src="../img/conditions/individual/sciatica-red-v1.webp" alt="좌골신경통 관련 부위를 빨간색으로 강조한 이미지"
+                  loading="lazy" decoding="async" width="1448" height="1086">
+              </figure>
+            </div>
+          </section>
+          <section class="condition-context">
+            <div class="inner">
+              <h2><span>좌골신경통의</span> 원인</h2>
+              <p class="condition-section-lead">허리에서 다리로 이어지는 신경이 눌리거나 자극받아 통증과 저림이 나타나는 증상입니다.<br>디스크·협착증 등 신경을 자극하는
+                원인을
+                확인하는 것이 중요합니다.</p>
+              <div class="condition-context-grid">
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/consultation-v1.webp"
+                      alt="허리디스크로 인한 신경 압박 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600"></figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">01</span>
+                    <p>허리디스크로 인한 신경 압박</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/reading-v1.webp"
+                      alt="척추관이 좁아지며 생기는 신경 자극 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">02</span>
+                    <p>척추관이 좁아지며 생기는 신경 자극</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/laptop-sofa-v1.webp"
+                      alt="척추뼈가 앞쪽으로 밀리는 전방전위증 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600">
+                  </figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">03</span>
+                    <p>척추뼈가 앞쪽으로 밀리는 전방전위증</p>
+                  </div>
+                </div>
+                <div class="condition-context-item">
+                  <figure class="condition-context-photo"><img src="../img/conditions/causes/side-pain-v1.webp"
+                      alt="허리나 골반 주변의 손상 관련 일상 장면" loading="lazy" decoding="async" width="600" height="600"></figure>
+                  <div class="condition-context-caption"><span class="condition-context-number">04</span>
+                    <p>허리나 골반 주변의 손상</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="condition-symptoms">
+            <div class="inner condition-symptoms-grid">
+              <figure class="condition-symptoms-visual">
+                <img class="" src="../img/conditions/symptoms/spine-joint-v1.webp" alt="허리·골반 부위 설명용 일러스트"
+                  loading="lazy" decoding="async" width="1536" height="1024">
+              </figure>
+              <div class="condition-symptoms-copy">
+                <p class="condition-eyebrow" lang="en">SYMPTOMS</p>
+                <h2>
+                  <span>좌골신경통</span> 대표 증상
+                </h2>
+                <ol>
+                  <li><span>01</span>
+                    <p>엉덩이에서 한쪽 다리 뒤로 이어지는 날카롭거나 화끈한 통증</p>
+                  </li>
+                  <li><span>02</span>
+                    <p>다리와 발, 발가락에 느껴지는 저림</p>
+                  </li>
+                  <li><span>03</span>
+                    <p>다리 일부의 감각이 무뎌지거나 둔해짐</p>
+                  </li>
+                  <li><span>04</span>
+                    <p>다리에 힘이 빠지거나 움직임이 불편함</p>
+                  </li>
+                  <li><span>05</span>
+                    <p>기침·재채기 또는 움직임에 따라 심해지는 통증</p>
+                  </li>
+                </ol>
+                <p class="condition-symptom-note">양쪽 다리의 심한 마비나 대소변 조절 이상이 생기면 즉시 응급 진료가 필요합니다.</p>
+              </div>
+            </div>
+          </section>
+          <section class="condition-assessment">
+            <div class="inner">
+              <h2><span>좌골신경통의</span> <strong>진단</strong></h2>
+              <p class="condition-section-lead">엉덩이에서 다리로 이어지는 통증의 범위와 저림·근력 변화를 확인합니다.<br>신경학적 진찰을 통해 허리나 주변 구조의 문제를 함께
+                살펴봅니다.</p>
+              <div class="condition-assessment-grid" data-columns="2">
+                <figure><img src="../img/conditions/diagnosis/consultation.webp" alt="문진·신체검진 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>문진·신체검진</h3>
+                    <p>통증이 시작된 시점과 양상, 병력과 생활 습관을 확인합니다. 압통과 움직임, 근력·감각 등을 함께 살펴 진단의 방향을 정합니다.</p>
+                  </figcaption>
+                </figure>
+                <figure><img src="../img/conditions/diagnosis/xray-doctor-v1.webp" alt="X-ray 설명용 이미지" loading="lazy"
+                    decoding="async" width="800" height="600">
+                  <figcaption>
+                    <h3>X-ray</h3>
+                    <p>뼈의 정렬과 관절 간격, 퇴행성 변화 등을 확인하는 검사입니다. 진찰 결과에 따라 촬영하여 골절이나 다른 뼈·관절 문제를 살펴봅니다.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <p class="condition-diagnosis-note">검사는 증상과 진찰 결과에 따라 필요한 항목을 선택합니다.</p>
+            </div>
+          </section>
+        </article>
+      </div>
+      <section class="condition-treatment">
+        <div class="inner">
+          <p class="condition-eyebrow" lang="en">TREATMENT</p>
+          <h2>회복을 위한 <strong>치료 프로그램</strong>
+          </h2>
+          <p class="condition-section-lead">환자의 상태에 따라 필요한 치료를 판단합니다.</p>
+          <div class="condition-treatment-grid">
+            <a class="condition-treatment-card" href="injection.html">
+              <div class="condition-treatment-heading">
+                <span>01</span>
+                <h3>주사치료</h3>
+              </div>
+              <div class="condition-treatment-body">
+                <p>통증의 원인까지 찾아가는 정밀 주사치료</p>
+                <span class="condition-text-link">자세히 보기 <b aria-hidden="true">→</b>
+                </span>
+              </div>
+            </a>
+            <a class="condition-treatment-card" href="manual-therapy.html">
+              <div class="condition-treatment-heading">
+                <span>02</span>
+                <h3>도수치료</h3>
+              </div>
+              <div class="condition-treatment-body">
+                <p>근육·관절과 신경의 문제를 살피는 맞춤 치료</p>
+                <span class="condition-text-link">자세히 보기 <b aria-hidden="true">→</b>
+                </span>
+              </div>
+            </a>
+            <a class="condition-treatment-card" href="shockwave.html">
+              <div class="condition-treatment-heading">
+                <span>03</span>
+                <h3>체외충격파</h3>
+              </div>
+              <div class="condition-treatment-body">
+                <p>손상된 조직의 재생과 회복을 돕는 치료</p>
+                <span class="condition-text-link">자세히 보기 <b aria-hidden="true">→</b>
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
-      <section class="sub-section sub-condition-section">
+      <section class="condition-philosophy">
         <div class="inner">
-          <header class="sub-section-heading">
-            <p class="sub-section-kicker">CONDITIONS</p>
-            <h2>허리·골반 주요 질환</h2>
-          </header>
-          <div class="sub-condition-list">
-            <article class="sub-condition-card">
-              <div class="sub-condition-main">
-                <div class="sub-condition-detail-grid">
-                  <figure class="sub-condition-photo">
-                    <img src="../img/conditions/lumbar-disc-natural-v1.webp" width="1200" height="800" alt="허리 아래쪽에 손을 얹고 선 성인" loading="lazy" decoding="async">
-                  </figure>
-                  <div class="sub-condition-story">
-                    <span class="sub-count">01</span>
-                    <h3>허리디스크(요추 추간판 탈출증)</h3>
-                    <p>허리뼈 사이의 디스크가 밀려나 주변 신경을 자극하거나 압박하는 질환입니다. 나이에 따른 퇴행성 변화, 반복되는 허리 부담이나 외상 등이 관련될 수 있습니다. 허리 통증의 강도뿐 아니라 다리의 감각과 근력, 보행 상태를 함께 평가합니다.</p>
-                    <div class="sub-symptom-box">
-                      <strong>대표 증상</strong>
-                      <p>허리에서 엉덩이와 다리로 뻗치는 통증, 발의 저림이나 감각 저하가 나타날 수 있습니다. 다리나 발에 힘이 빠지는 경우도 있습니다. 새로 생긴 대소변 조절 이상이나 회음부 감각 저하가 동반되면 즉시 응급 진료를 받아야 합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="sub-condition-card">
-              <div class="sub-condition-main">
-                <div class="sub-condition-detail-grid">
-                  <figure class="sub-condition-photo">
-                    <img src="../img/conditions/spinal-stenosis-natural-v1.webp" width="1200" height="800" alt="잠시 앉아 쉬는 중장년 성인의 모습" loading="lazy" decoding="async">
-                  </figure>
-                  <div class="sub-condition-story">
-                    <span class="sub-count">02</span>
-                    <h3>척추관 협착증</h3>
-                    <p>척추 안에서 신경이 지나는 통로가 좁아져 신경이 눌리는 질환입니다. 관절과 디스크의 퇴행성 변화, 주변 인대가 두꺼워지는 현상 등이 관련될 수 있습니다. 영상 소견만이 아니라 걸을 수 있는 거리와 자세에 따른 증상 변화를 함께 살핍니다.</p>
-                    <div class="sub-symptom-box">
-                      <strong>대표 증상</strong>
-                      <p>서 있거나 걸을 때 엉덩이와 다리가 아프거나 저려 쉬어 가게 될 수 있습니다. 앉거나 허리를 약간 앞으로 숙이면 불편이 줄어드는 경우가 있습니다. 다리의 감각이 둔해지거나 힘이 떨어져 보행에 지장을 주기도 합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="sub-condition-card">
-              <div class="sub-condition-main">
-                <div class="sub-condition-detail-grid">
-                  <figure class="sub-condition-photo">
-                    <img src="../img/conditions/lumbar-strain-natural-v1.webp" width="1200" height="800" alt="오랜 작업 후 허리 주변을 가볍게 짚는 성인" loading="lazy" decoding="async">
-                  </figure>
-                  <div class="sub-condition-story">
-                    <span class="sub-count">03</span>
-                    <h3>급·만성 요통 및 요추 염좌</h3>
-                    <p>요통은 허리 주변의 통증을 뜻하며 원인이 항상 한 가지로 확인되는 것은 아닙니다. 요추 염좌는 갑작스러운 동작이나 부담으로 근육과 인대가 손상된 상태입니다. 통증의 기간과 유발 동작, 신경 증상 여부를 살펴 다른 원인과 구분합니다.</p>
-                    <div class="sub-symptom-box">
-                      <strong>대표 증상</strong>
-                      <p>허리를 숙이거나 펼 때 묵직하게 아프고 근육이 뻣뻣하게 굳을 수 있습니다. 자세를 바꾸거나 오래 같은 자세를 유지할 때 불편해지기도 합니다. 발열이 동반되거나 쉬어도 통증이 지속되면 다른 원인이 있는지 진료가 필요합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="sub-condition-card">
-              <div class="sub-condition-main">
-                <div class="sub-condition-detail-grid">
-                  <figure class="sub-condition-photo">
-                    <img src="../img/conditions/facet-joint-natural-v1.webp" width="1200" height="800" alt="허리 주변의 압통 위치를 살펴보는 진료 장면" loading="lazy" decoding="async">
-                  </figure>
-                  <div class="sub-condition-story">
-                    <span class="sub-count">04</span>
-                    <h3>척추후관절 증후군</h3>
-                    <p>척추 뒤쪽에서 움직임과 안정성을 돕는 후관절이 통증의 원인이 되는 상태입니다. 퇴행성 변화나 외상 등이 관련되며 주변 근육의 긴장이 동반될 수 있습니다. 다른 요통과 증상이 비슷하므로 특정 동작이나 영상만으로 확정하기는 어렵습니다.</p>
-                    <div class="sub-symptom-box">
-                      <strong>대표 증상</strong>
-                      <p>허리 한쪽이나 양쪽이 뻐근하고 통증이 엉덩이와 허벅지로 퍼질 수 있습니다. 허리를 뒤로 젖히거나 비틀 때 불편을 느끼기도 합니다. 이런 양상은 다른 질환에서도 나타나므로 통증 부위와 신경 증상을 함께 확인해야 합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="sub-condition-card">
-              <div class="sub-condition-main">
-                <div class="sub-condition-detail-grid">
-                  <figure class="sub-condition-photo">
-                    <img src="../img/conditions/sciatica-natural-v1.webp" width="1200" height="800" alt="허벅지 뒤쪽을 가볍게 받치며 앉아 있는 성인" loading="lazy" decoding="async">
-                  </figure>
-                  <div class="sub-condition-story">
-                    <span class="sub-count">05</span>
-                    <h3>좌골신경통</h3>
-                    <p>허리에서 다리로 이어지는 신경이 자극되면서 생기는 방사통을 말합니다. 하나의 병명이라기보다 디스크 탈출이나 척추관 협착 등에서 나타날 수 있는 증상입니다. 통증이 퍼지는 경로와 감각·근력 변화를 살펴 원인이 되는 질환을 구분합니다.</p>
-                    <div class="sub-symptom-box">
-                      <strong>대표 증상</strong>
-                      <p>주로 한쪽 엉덩이에서 다리 뒤쪽과 발까지 당기거나 화끈거리는 통증이 이어집니다. 저림과 감각 저하가 동반되며 기침이나 움직임에 심해지기도 합니다. 양쪽 다리의 심한 마비나 대소변 조절 이상이 생기면 즉시 응급 진료가 필요합니다.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+          <p class="condition-eyebrow" lang="en">YEOUIDO GITONGCHAN</p>
+          <h2>아픈 곳이 아니라,<br>
+            <strong>아픈 이유를 봅니다.</strong>
+          </h2>
+          <p>내 가족에게도 권할 수 있는 치료를 원칙으로,<br>환자에게 꼭 필요한 치료를 고민합니다.</p>
+          <a href="special.html#cause">기통찬의 진료철학 <span aria-hidden="true">→</span>
+          </a>
         </div>
       </section>
     </div>
   </main>
   <div id="site-footer-root"></div>
 
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="../vendor/react/react.production.min.js"></script>
+  <script src="../vendor/react/react-dom.production.min.js"></script>
   <script src="../js/components/Header.js"></script>
   <script src="../js/components/Footer.js"></script>
   <script src="../js/components/LocalNavigation.js"></script>
   <script src="../js/layout.js"></script>
   <script src="../js/subpage.js"></script>
+  <script src="../js/conditions.js"></script>
 </body>
 
 </html>

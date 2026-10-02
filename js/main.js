@@ -26,6 +26,7 @@
       const isActive = index === activeIndex;
       slide.classList.toggle("is-active", isActive);
       slide.setAttribute("aria-hidden", String(!isActive));
+      slide.inert = !isActive;
     });
 
     dots.forEach((dot, index) => {
@@ -78,6 +79,25 @@
     goTo(activeIndex + 1);
     start();
   });
+
+  let touchStart = null;
+  slider.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) { touchStart = null; return; }
+    touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    stop();
+  }, { passive: true });
+  slider.addEventListener("touchend", (event) => {
+    if (touchStart && event.changedTouches.length) {
+      const dx = event.changedTouches[0].clientX - touchStart.x;
+      const dy = event.changedTouches[0].clientY - touchStart.y;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+        goTo(activeIndex + (dx < 0 ? 1 : -1));
+      }
+    }
+    touchStart = null;
+    start();
+  }, { passive: true });
+  slider.addEventListener("touchcancel", () => { touchStart = null; start(); }, { passive: true });
 
   slider.addEventListener("mouseenter", () => {
     hovered = true;

@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "forward-head",
+    "prompt": "Edit this medical illustration to completely eliminate the visible face. Change camera to REAR THREE-QUARTER view showing back of head, nape, upper back and shoulders only. Head slightly forward to convey forward-head posture. NO eyes, nose, mouth, cheeks, jaw profile, facial bones or face anywhere. Preserve pale ivory bone, translucent slate blue muscles, warm white background, clean premium 3D medical illustration style and landscape 4:3 composition. Maintain a clear localized RED highlight in posterior neck and upper trapezius muscles. No text, labels, arrows or borders. Anatomically coherent natural neck and shoulder structure. Back of head should occupy only upper quarter; neck and upper shoulder muscles are the main subject.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-0882c149-3304-46c4-a50c-f5a51c713c51.png",
+    "file": "forward-head-red-noface-v1.webp",
+    "page": "neck-shoulder",
+    "id": "condition-2",
+    "title": "거북목·일자목 증후군",
+    "width": 1448,
+    "height": 1086,
+    "generator": "Built-in image_gen",
+    "purpose": "질환 이해를 돕는 설명용 일러스트",
+    "previousFile": "forward-head-red-v1.webp"
+  },
+  {
+    "slug": "tension-headache",
+    "prompt": "Edit this tension-headache medical illustration so NO FACE is visible anywhere. Change to a high POSTERIOR view of the back and crown of head with small upper neck. Show only smooth rear scalp, crown and back of neck; eyes, nose, mouth, cheeks, jaw and frontal facial anatomy must all be entirely hidden by the rear view. Preserve a broad RED translucent pressure band wrapping the sides of the scalp around temple level toward the back, conveying tension headache rather than focal nerve pain. Preserve ivory/slate muted anatomy, warm white background and elegant 3D illustration, landscape 4:3. Not a brain lesion, no exposed brain, no nerve branches, no facial features, no text, no arrows or borders.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-4a848a19-addb-4868-89ce-12a63cba02e2.png",
+    "file": "tension-headache-red-noface-v1.webp",
+    "page": "neuralgia",
+    "id": "condition-1",
+    "title": "긴장성 두통",
+    "width": 1448,
+    "height": 1086,
+    "generator": "Built-in image_gen",
+    "purpose": "질환 이해를 돕는 설명용 일러스트",
+    "previousFile": "tension-headache-red-v1.webp"
+  }
+]

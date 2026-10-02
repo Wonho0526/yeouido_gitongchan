@@ -21,8 +21,8 @@
   ];
 
   const location = [
-    { term: "병원주소", desc: "서울특별시 영등포구 국제금융로 72 4층" },
-    { term: "주차안내", desc: "호정빌딩 지하주차장 이용" },
+    { term: "병원주소", desc: "서울특별시 영등포구 국제금융로 72, 호정빌딩 4층", emphasis: "KB국민은행 동여의도점 건물 4층" },
+    { term: "주차안내", desc: "자차 이용 시 : 본원 주차 또는 인근 주차장 안내·지원" },
   ];
 
   const patientRights = [
@@ -249,6 +249,7 @@
           "dd",
           null,
           h("span", null, item.desc),
+          item.emphasis && h("strong", { className: "footer-location-emphasis" }, item.emphasis),
           item.badge && h("span", { className: `clinic-hours-badge clinic-hours-badge--${item.badgeType}` }, item.badge)
         )
       )
@@ -354,8 +355,8 @@
     return h(
       "footer",
       { className: "site-footer" },
-      h(FooterKeyPoints),
-      h(
+      !isSubPage && h(FooterKeyPoints),
+      !isSubPage && h(
         "div",
         { className: "footer-contact", id: "hours" },
         h(
@@ -367,9 +368,9 @@
             "p",
             { className: "footer-contact-desc" },
             h("span", null, "오시는 길부터 부담 없도록, 지하철과 버스로 닿기 쉬운 여의도 중심에 자리했습니다."),
-            h("span", null, "차로 오시는 분들도 건물 내 주차장을 편하게 이용하실 수 있습니다.")
+            h("span", null, "자차 이용 시 : 본원 주차 또는 인근 주차장 안내·지원")
           ),
-          h("div", { className: "footer-map", "aria-label": "네이버 지도 영역" }),
+          h("div", { className: "footer-map asset-placeholder", "aria-label": "네이버 지도 영역" }, h("span", null, "네이버 지도 영역")),
           h(
             "div",
             { className: "inner footer-info-grid" },
@@ -397,7 +398,10 @@
               h("h3", { id: "footer-call-title" }, h(FooterIcon, { name: "phone" }), "진료문의"),
               h("p", null, "02-782-7070")
             )
-          )
+          ),
+          h("div", { className: "section-more" },
+            // href만 실제 네이버 예약 주소로 교체하세요.
+            h("a", { href: "#", className: "view-more-btn", "data-naver-reservation": "" }, "예약 바로가기"))
         )
       ),
       h(
@@ -457,7 +461,6 @@
   // Add the clinic's external URLs here when they are available.
   const quickLinkUrls = {
     kakao: "",
-    reservation: "",
     blog: "",
   };
 
@@ -499,7 +502,8 @@
       { id: "phone", label: "전화 문의", icon: "phone", href: "tel:027827070" },
       { id: "kakao", label: "카카오톡 상담", icon: "message-circle", href: quickLinkUrls.kakao, external: true },
       { id: "location", label: "오시는길", icon: "map-pin", href: `${rootPrefix}sub/location.html` },
-      { id: "reservation", label: "네이버 예약", icon: "calendar-check", href: quickLinkUrls.reservation, external: true },
+      // href만 실제 네이버 예약 주소로 교체하세요.
+      { id: "reservation", label: "네이버 예약", icon: "calendar-check", href: "#", external: true },
       { id: "blog", label: "네이버 블로그", icon: "notebook-pen", href: quickLinkUrls.blog, external: true },
     ];
 
@@ -513,6 +517,7 @@
         const unavailable = item.id !== "top" && !item.href;
         const props = {
           key: item.id,
+          "data-naver-reservation": item.id === "reservation" ? "" : undefined,
           className: `quick-link quick-link--${item.id}`,
           "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
           title: unavailable ? `${item.label} (준비 중)` : item.label,
@@ -520,7 +525,7 @@
         };
         if (item.href) {
           props.href = item.href;
-          if (item.external) {
+          if (item.external && item.href !== "#") {
             props.target = "_blank";
             props.rel = "noopener noreferrer";
           }

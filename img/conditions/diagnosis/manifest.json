@@ -1,0 +1,12 @@
+[
+  {
+    "id": "mri",
+    "prompt": "Photorealistic editorial healthcare photograph, landscape 4:3. A modern unbranded MRI scanner with deep long cylindrical bore and sliding patient table in a calm bright medical imaging room, no people. Natural neutral light, accurate equipment proportions, clean believable interior. No logos, readable text, watermark, collage or decorative graphics. Generic illustrative equipment, not a specific clinic.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-9a87f19e-e4c5-4883-b696-9f8df39462a8.png"
+  },
+  {
+    "id": "ct",
+    "prompt": "Photorealistic editorial healthcare photograph, landscape 4:3. A modern unbranded CT scanner with short thin doughnut gantry and sliding patient table in bright clinical imaging room, distinguish clearly from long MRI bore, no people. Natural neutral light, accurate equipment proportions, clean believable interior. No logos, readable text, watermark, collage or decorative graphics. Generic illustrative equipment, not a specific clinic.",
+    "source": "C:\\Users\\USER\\.codex\\generated_images\\01a0eae8-3311-7103-bd62-ae6e78dd4af7\\exec-96ed1ef2-305a-4d10-9d64-43a8734bce40.png"
+  }
+]
