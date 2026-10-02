@@ -338,7 +338,7 @@ dd {
 }
 
 .related-links a[href^="special.html#cause"] {
-  --related-image: url('../img/heroes/manual-therapy-natural-v1.webp');
+  --related-image: url('../img/heroes/spine-joint-natural-v1.webp');
 }
 
 .related-links a[href^="special.html#autonomic"] {
@@ -829,3 +829,42 @@ dd {
     right: 10px;
   }
 }
+.related-links a[href="manual-therapy.html"] {
+  --related-image: url('../img/heroes/manual-therapy-natural-v1.webp');
+}
+.related-links a[href="shockwave.html"] {
+  --related-image: url('../img/heroes/shockwave-natural-v1.webp');
+}
+.related-links a[href="autonomic.html"] {
+  --related-image: url('../img/heroes/autonomic-natural-v1.webp');
+}
+
+.related-links.related-links-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: none;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 18px;
+}
+.related-links.related-links-slider > a {
+  flex: 0 0 calc((100% - 72px) / 3.5);
+  width: auto;
+  scroll-snap-align: start;
+}
+.related-slider-controls { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+.related-slider-controls button { width: 48px; height: 48px; border: 1px solid #d9d2c6; border-radius: 50%; background: #fff; color: #293f70; font-size: 24px; cursor: pointer; }
+.related-slider-controls button:disabled { opacity: .35; cursor: default; }
+.related-slider-controls button:focus-visible { outline: 2px solid #293f70; outline-offset: 3px; }
+@media (max-width: 900px) {
+  .related-links.related-links-slider { gap: 18px; }
+  .related-links.related-links-slider > a { flex-basis: calc((100% - 36px) / 2.5); }
+}
+@media (max-width: 600px) {
+  .related-links.related-links-slider { gap: 16px; }
+  .related-links.related-links-slider > a { flex-basis: calc((100% - 16px) / 1.2); }
+}
+
+.related-links.related-links-slider::-webkit-scrollbar { display: none; }

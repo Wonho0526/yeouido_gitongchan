@@ -46,3 +46,36 @@
     });
   });
 })();
+
+(() => {
+  document.querySelectorAll('[data-related-slider]').forEach(slider => {
+    const controls = document.createElement('div');
+    controls.className = 'related-slider-controls';
+    const buttons = [-1, 1].map(direction => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = direction < 0 ? '←' : '→';
+      button.setAttribute('aria-label', direction < 0 ? '이전 카드' : '다음 카드');
+      button.addEventListener('click', () => move(direction));
+      controls.append(button);
+      return button;
+    });
+    function move(direction) {
+      const step = slider.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(slider).gap);
+      slider.scrollBy({left: step * direction, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    }
+    function update() {
+      buttons[0].disabled = slider.scrollLeft <= 1;
+      buttons[1].disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1;
+    }
+    slider.after(controls);
+    slider.addEventListener('scroll', update, {passive: true});
+    slider.addEventListener('keydown', event => {
+      if (event.target !== slider || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      move(event.key === 'ArrowLeft' ? -1 : 1);
+    });
+    new ResizeObserver(update).observe(slider);
+    update();
+  });
+})();
