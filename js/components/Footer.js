@@ -244,7 +244,11 @@
       h(
         "div",
         { key: item.term },
-        h("dt", null, item.term),
+        items === hours
+          ? h("dt", { className: "footer-hours-label", "aria-label": item.term },
+              [...item.term.replace(/\s/g, "")].map((letter, index) =>
+                h("span", { key: index, "aria-hidden": "true" }, letter)))
+          : h("dt", null, item.term),
         h(
           "dd",
           null,

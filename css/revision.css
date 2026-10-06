@@ -994,3 +994,20 @@ body[data-page="location"] .clinic-hours .clinic-hours-badge { font-size: 16px; 
   border-color: rgb(189, 176, 146);
   color: #fff;
 }
+
+body[data-page="location"] .clinic-hours .location-hours-label {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+  gap: 0;
+}
+@media (max-width: 600px) {
+  body[data-page="location"] .clinic-hours .location-hours-label { width: 88px; }
+}
+
+.footer-info-block.clinic-hours .footer-hours-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0;
+}
