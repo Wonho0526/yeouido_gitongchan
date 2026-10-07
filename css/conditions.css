@@ -281,7 +281,8 @@
 }
 
 .condition-editorial-page .condition-symptoms h2 {
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
     color: #fff;
     font-size: 40px;
 }

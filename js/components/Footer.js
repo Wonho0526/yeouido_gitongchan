@@ -371,8 +371,7 @@
           h(
             "p",
             { className: "footer-contact-desc" },
-            h("span", null, "오시는 길부터 부담 없도록, 지하철과 버스로 닿기 쉬운 여의도 중심에 자리했습니다."),
-            h("span", null, "자차 이용 시 : 본원 주차 또는 인근 주차장 안내·지원")
+            h("span", null, "오시는 길부터 부담 없도록, 지하철과 버스로 닿기 쉬운 여의도 중심에 자리했습니다.")
           ),
           h("div", { className: "footer-map asset-placeholder", "aria-label": "네이버 지도 영역" }, h("span", null, "네이버 지도 영역")),
           h(

@@ -2498,3 +2498,16 @@ body[data-page="hours"] .footer-contact {
   padding: 0;
   list-style: none;
 }
+
+.sub-disease-badges > li.has-disease-link { padding: 0; }
+.sub-disease-badges > li > a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 9px;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #b79e77;
+  text-underline-offset: 3px;
+}
+.sub-disease-badges > li > a:hover { background: #e9d5b5; color: #293f70; }
+.sub-disease-badges > li > a:focus-visible { outline: 2px solid #293f70; outline-offset: 2px; }

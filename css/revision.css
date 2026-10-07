@@ -25,7 +25,7 @@ dd {
   display: grid;
   place-items: center;
   width: 100%;
-  min-height: 240px;
+  min-height: 440px;
   height: 100%;
   padding: 32px;
   border: 1px dashed #b4a086;
@@ -829,12 +829,15 @@ dd {
     right: 10px;
   }
 }
+
 .related-links a[href="manual-therapy.html"] {
   --related-image: url('../img/heroes/manual-therapy-natural-v1.webp');
 }
+
 .related-links a[href="shockwave.html"] {
   --related-image: url('../img/heroes/shockwave-natural-v1.webp');
 }
+
 .related-links a[href="autonomic.html"] {
   --related-image: url('../img/heroes/autonomic-natural-v1.webp');
 }
@@ -849,34 +852,89 @@ dd {
   scrollbar-width: none;
   padding-bottom: 18px;
 }
-.related-links.related-links-slider > a {
+
+.related-links.related-links-slider>a {
   flex: 0 0 calc((100% - 72px) / 3.5);
   width: auto;
   scroll-snap-align: start;
 }
-.related-slider-controls { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
-.related-slider-controls button { width: 48px; height: 48px; border: 1px solid #d9d2c6; border-radius: 50%; background: #fff; color: #293f70; font-size: 24px; cursor: pointer; }
-.related-slider-controls button:disabled { opacity: .35; cursor: default; }
-.related-slider-controls button:focus-visible { outline: 2px solid #293f70; outline-offset: 3px; }
-@media (max-width: 900px) {
-  .related-links.related-links-slider { gap: 18px; }
-  .related-links.related-links-slider > a { flex-basis: calc((100% - 36px) / 2.5); }
-}
-@media (max-width: 600px) {
-  .related-links.related-links-slider { gap: 16px; }
-  .related-links.related-links-slider > a { flex-basis: calc((100% - 16px) / 1.2); }
+
+.related-slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.related-links.related-links-slider::-webkit-scrollbar { display: none; }
+.related-slider-controls button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d9d2c6;
+  border-radius: 50%;
+  background: #fff;
+  color: #293f70;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.related-slider-controls button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.related-slider-controls button:focus-visible {
+  outline: 2px solid #293f70;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .related-links.related-links-slider {
+    gap: 18px;
+  }
+
+  .related-links.related-links-slider>a {
+    flex-basis: calc((100% - 36px) / 2.5);
+  }
+}
+
+@media (max-width: 600px) {
+  .related-links.related-links-slider {
+    gap: 16px;
+  }
+
+  .related-links.related-links-slider>a {
+    flex-basis: calc((100% - 16px) / 1.2);
+  }
+}
+
+.related-links.related-links-slider::-webkit-scrollbar {
+  display: none;
+}
 
 /* Visit guide: generous hours and a single contact / reservation card. */
-body[data-page="location"] .visit-guide-flow > .clinic-hours {
+body[data-page="location"] .visit-guide-flow>.clinic-hours {
   padding: 44px 48px;
 }
-body[data-page="location"] .clinic-hours h2 { margin: 0 0 28px; font-size: 36px; }
-.location-hours-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: stretch; }
-body[data-page="location"] .clinic-hours .location-hours-layout dl { max-width: none; width: 100%; margin: 0; }
-body[data-page="location"] .clinic-hours .location-hours-layout dl > div {
+
+body[data-page="location"] .clinic-hours h2 {
+  margin: 0 0 28px;
+  font-size: 36px;
+}
+
+.location-hours-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+body[data-page="location"] .clinic-hours .location-hours-layout dl {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
+body[data-page="location"] .clinic-hours .location-hours-layout dl>div {
   grid-template-columns: 140px minmax(0, 1fr);
   gap: 24px;
   align-items: center;
@@ -884,43 +942,166 @@ body[data-page="location"] .clinic-hours .location-hours-layout dl > div {
   border-bottom: 1px solid #e6dfd5;
   font-size: 24px;
 }
-body[data-page="location"] .clinic-hours .location-hours-layout dt::after { content: none; }
-body[data-page="location"] .clinic-hours .location-hours-layout dd { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
-body[data-page="location"] .clinic-hours .location-hours-layout dd > span:first-child { font-size: 30px; font-weight: 700; color: #293f70; }
-body[data-page="location"] .clinic-hours .clinic-hours-badge { font-size: 16px; }
+
+body[data-page="location"] .clinic-hours .location-hours-layout dt::after {
+  content: none;
+}
+
+body[data-page="location"] .clinic-hours .location-hours-layout dd {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+body[data-page="location"] .clinic-hours .location-hours-layout dd>span:first-child {
+  font-size: 30px;
+  font-weight: 700;
+  color: #293f70;
+}
+
+body[data-page="location"] .clinic-hours .clinic-hours-badge {
+  font-size: 16px;
+}
+
 .location-hours-layout .clinic-hours-notes {
-  display: flex; flex-direction: column; justify-content: center; gap: 22px;
-  margin: 0; padding: 32px; border: 0; border-radius: 16px;
-  background: #f7f4ef; font-size: 20px; line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  margin: 0;
+  padding: 32px;
+  border: 0;
+  border-radius: 16px;
+  background: #f7f4ef;
+  font-size: 20px;
+  line-height: 1.7;
 }
-.location-hours-layout .clinic-hours-notes li + li { margin: 0; }
-.location-contact-card { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; padding: 44px 48px; }
-.location-contact-card h2 { margin: 0 0 20px; font-size: 32px; }
-.location-phone { color: #293f70; font-size: 42px; font-weight: 700; white-space: nowrap; }
-.location-contact-info .sub-action-row { display: flex; }
-.location-contact-info .sub-action-row a { padding: 12px 24px; }
-.location-reservation { display: flex; justify-content: center; align-items: center; align-self: stretch; border-left: 1px solid #e6dfd5; padding-left: 48px; }
-.location-reservation .view-more-btn { display: flex; justify-content: space-between; align-items: center; gap: 24px; width: 100%; max-width: 360px; min-height: 88px; padding: 24px 32px; background: #293f70; color: #fff; font-size: 24px; }
+
+.location-hours-layout .clinic-hours-notes li+li {
+  margin: 0;
+}
+
+.location-contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 44px 48px;
+}
+
+.location-contact-card h2 {
+  margin: 0 0 20px;
+  font-size: 32px;
+}
+
+.location-phone {
+  color: #293f70;
+  font-size: 42px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.location-contact-info .sub-action-row {
+  display: flex;
+}
+
+.location-contact-info .sub-action-row a {
+  padding: 12px 24px;
+}
+
+.location-reservation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-left: 1px solid #e6dfd5;
+  padding-left: 48px;
+}
+
+.location-reservation .view-more-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 360px;
+  min-height: 88px;
+  padding: 24px 32px;
+  background: #293f70;
+  color: #fff;
+  font-size: 24px;
+}
+
 @media (max-width: 1100px) {
-  .location-hours-layout { grid-template-columns: 1fr; gap: 28px; }
-  .location-hours-layout .clinic-hours-notes { gap: 10px; }
+  .location-hours-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .location-hours-layout .clinic-hours-notes {
+    gap: 10px;
+  }
 }
+
 @media (max-width: 600px) {
-  body[data-page="location"] .visit-guide-flow > .clinic-hours, .location-contact-card { padding: 28px 20px; }
-  body[data-page="location"] .clinic-hours h2 { font-size: 30px; }
-  body[data-page="location"] .clinic-hours .location-hours-layout dl > div { grid-template-columns: 100px minmax(0, 1fr); gap: 8px; font-size: 18px; padding: 16px 0; }
-  body[data-page="location"] .clinic-hours .location-hours-layout dd > span:first-child { font-size: 21px; }
-  .location-hours-layout .clinic-hours-notes { padding: 20px; font-size: 16px; }
-  .location-contact-card { grid-template-columns: 1fr; gap: 28px; }
-  .location-phone { font-size: 32px; }
-  .location-reservation { padding: 24px 0 0; border-left: 0; border-top: 1px solid #e6dfd5; }
-  .location-reservation .view-more-btn { max-width: none; font-size: 22px; min-height: 72px; }
+
+  body[data-page="location"] .visit-guide-flow>.clinic-hours,
+  .location-contact-card {
+    padding: 28px 20px;
+  }
+
+  body[data-page="location"] .clinic-hours h2 {
+    font-size: 30px;
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-layout dl>div {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 8px;
+    font-size: 18px;
+    padding: 16px 0;
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-layout dd>span:first-child {
+    font-size: 21px;
+  }
+
+  .location-hours-layout .clinic-hours-notes {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .location-contact-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .location-phone {
+    font-size: 32px;
+  }
+
+  .location-reservation {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid #e6dfd5;
+  }
+
+  .location-reservation .view-more-btn {
+    max-width: none;
+    font-size: 22px;
+    min-height: 72px;
+  }
 }
 
-.location-reservation .view-more-btn::after { content: none; }
+.location-reservation .view-more-btn::after {
+  content: none;
+}
 
-.location-reservation { gap: 14px; }
-.location-reservation > a {
+.location-reservation {
+  gap: 14px;
+}
+
+.location-reservation>a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -933,16 +1114,44 @@ body[data-page="location"] .clinic-hours .clinic-hours-badge { font-size: 16px; 
   line-height: 1.5;
   border-radius: 4px;
 }
-.location-reservation .location-kakao-btn { background: #fee500; color: #30251d; }
-.location-reservation .view-more-btn { min-width: 0; padding: 20px; font-size: 20px; gap: 12px; }
-@media (min-width: 601px) and (max-width: 1100px) {
-  .location-contact-card { grid-template-columns: .9fr 1.1fr; gap: 24px; }
-  .location-reservation { padding-left: 24px; flex-direction: column; }
-  .location-reservation > a { width: 100%; flex: auto; min-height: 64px; }
+
+.location-reservation .location-kakao-btn {
+  background: #fee500;
+  color: #30251d;
 }
+
+.location-reservation .view-more-btn {
+  min-width: 0;
+  padding: 20px;
+  font-size: 20px;
+  gap: 12px;
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .location-contact-card {
+    grid-template-columns: .9fr 1.1fr;
+    gap: 24px;
+  }
+
+  .location-reservation {
+    padding-left: 24px;
+    flex-direction: column;
+  }
+
+  .location-reservation>a {
+    width: 100%;
+    flex: auto;
+    min-height: 64px;
+  }
+}
+
 @media (max-width: 600px) {
-  .location-reservation { gap: 10px; }
-  .location-reservation > a, .location-reservation .view-more-btn {
+  .location-reservation {
+    gap: 10px;
+  }
+
+  .location-reservation>a,
+  .location-reservation .view-more-btn {
     padding: 14px 12px;
     min-height: 72px;
     font-size: 16px;
@@ -956,7 +1165,11 @@ body[data-page="location"] .clinic-hours .clinic-hours-badge { font-size: 16px; 
   gap: 48px;
   padding: 44px 48px;
 }
-.location-directions-card h2 { margin-top: 0; }
+
+.location-directions-card h2 {
+  margin-top: 0;
+}
+
 .location-transit-copy {
   display: flex;
   flex-direction: column;
@@ -965,12 +1178,32 @@ body[data-page="location"] .clinic-hours .clinic-hours-badge { font-size: 16px; 
   border-left: 1px solid #e6dfd5;
   padding-left: 48px;
 }
-.location-directions-card strong { color: #293f70; font-size: 24px; }
-.location-transit-copy strong { margin-top: 0; }
+
+.location-directions-card strong {
+  color: #293f70;
+  font-size: 24px;
+}
+
+.location-transit-copy strong {
+  margin-top: 0;
+}
+
 @media (max-width: 600px) {
-  .location-directions-card { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
-  .location-transit-copy { border-left: 0; border-top: 1px solid #e6dfd5; padding: 24px 0 0; }
-  .location-directions-card strong { font-size: 22px; }
+  .location-directions-card {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 28px;
+  }
+
+  .location-transit-copy {
+    border-left: 0;
+    border-top: 1px solid #e6dfd5;
+    padding: 24px 0 0;
+  }
+
+  .location-directions-card strong {
+    font-size: 22px;
+  }
 }
 
 .location-transit-badge {
@@ -1001,8 +1234,11 @@ body[data-page="location"] .clinic-hours .location-hours-label {
   width: 112px;
   gap: 0;
 }
+
 @media (max-width: 600px) {
-  body[data-page="location"] .clinic-hours .location-hours-label { width: 88px; }
+  body[data-page="location"] .clinic-hours .location-hours-label {
+    width: 88px;
+  }
 }
 
 .footer-info-block.clinic-hours .footer-hours-label {
@@ -1010,4 +1246,128 @@ body[data-page="location"] .clinic-hours .location-hours-label {
   justify-content: space-between;
   width: 100%;
   gap: 0;
+}
+
+/* Keep visit-guide copy and hours readable at the same phrase boundaries. */
+body[data-page="location"] .sub-hero-desc,
+body[data-page="location"] .sub-section-desc,
+.location-address-copy p,
+.location-transit-copy p {
+  word-break: keep-all;
+}
+
+@media (max-width: 600px) {
+  body[data-page="location"] .clinic-hours .location-hours-layout dl>div {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-layout dd {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-layout dd>span:first-child {
+    font-size: 20px;
+  }
+
+  body[data-page="location"] .clinic-hours .clinic-hours-badge {
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  body[data-page="location"] .clinic-hours .location-hours-layout dl>div {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-label {
+    width: 76px;
+  }
+
+  body[data-page="location"] .clinic-hours .location-hours-layout dd>span:first-child {
+    font-size: 18px;
+  }
+
+  .location-address-copy p,
+  .location-transit-copy p {
+    font-size: 16px;
+  }
+}
+
+/* Consistent phrase wrapping across desktop and mobile without shrinking copy. */
+main :is(h1, h2, h3),
+.site-footer :is(h2, h3) {
+  text-wrap: balance;
+}
+
+main :is(p, li),
+.site-footer :is(p, dd) {
+  text-wrap: pretty;
+}
+
+.condition-context-item p,
+.condition-treatment-body p,
+.condition-eyebrow,
+.sub-feature-card p,
+.sub-disease-slide-copy>p,
+.sub-hero-desc,
+.sub-section-desc {
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  .iv-recommendations ul {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+    font-size: 20px;
+    text-wrap: pretty;
+  }
+
+  .pain-system-details li,
+  .condition-symptoms-copy li p,
+  .sub-profile-copy p,
+  .footer-location dd {
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 768px) {
+  .pain-system-section :is(h1, h2, h3, p, li) {
+    text-wrap: wrap;
+  }
+}
+
+/* Mobile body copy: preserve heading, eyebrow, number and callout sizes. */
+@media (max-width: 768px) {
+
+  main p:not(:is(.hero-headline, .sub-hero-series, .sub-hero-eyebrow,
+      .sub-section-kicker, .condition-eyebrow, .pain-system-kicker,
+      .night-care-kicker, .admin-gateway-kicker, .pain-system-number,
+      .sub-disease-slide-count, .sub-profile-note, .night-care-hours,
+      .night-care-wednesday, .location-landmark, .is-lead, .is-strong,
+      .director-principle, .sub-care-quote)),
+  main li,
+  .pain-system-caption,
+  .clinic-slide-info,
+  .footer-key-point-text,
+  .footer-contact-desc,
+  .footer-company-text p,
+  .footer-location dd,
+  .clinic-hours-notes {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-intro::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info-grid {
+    gap: 60px;
+  }
 }
