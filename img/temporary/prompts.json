@@ -1,0 +1,91 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "Temporary illustrative assets; not photographs of the actual clinic, staff, or specific equipment models.",
+  "images": [
+    {
+      "id": "waiting-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty welcoming clinic waiting area with curved beige chairs, light oak reception counter, a small plant, clean cream wall and generous circulation space. Wide architectural photograph, calm balanced composition.",
+      "file": "img/temporary/waiting-room-v1.webp"
+    },
+    {
+      "id": "consultation-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty doctor's consultation room with light oak desk, two guest chairs, doctor chair, computer screen turned away, small spine model on desk, shelves and examination couch in background. Wide architectural photograph.",
+      "file": "img/temporary/consultation-room-v1.webp"
+    },
+    {
+      "id": "ultrasound-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty musculoskeletal ultrasound examination room with one examination bed neatly dressed in light cream linen and one realistic generic cart ultrasound machine with blank dark screen and probes docked. Architectural wide shot. No brand/model marks.",
+      "file": "img/temporary/ultrasound-room-v1.webp"
+    },
+    {
+      "id": "iv-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty private IV recovery room, two comfortable beige recliner chairs each beside a stainless IV stand, separated by linen privacy curtains, small light oak side tables, soft window light. Architectural photograph, no people.",
+      "file": "img/temporary/iv-room-v1.webp"
+    },
+    {
+      "id": "physical-therapy-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty practical physical therapy room in an outpatient clinic, two navy padded therapy beds with clean folded cream towels, neatly parked small physical therapy equipment carts and linen privacy curtains, warm light oak floor. Architectural photo.",
+      "file": "img/temporary/physical-therapy-room-v1.webp"
+    },
+    {
+      "id": "manual-therapy-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty private manual therapy room, a professional adjustable navy treatment table centered, small exercise mat and subtle rehab balance tools neatly on a shelf, pale wood and cream walls. Architectural photo, peaceful and realistic.",
+      "file": "img/temporary/manual-therapy-room-v1.webp"
+    },
+    {
+      "id": "consultation-care",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Close editorial view of a white-coated physician attentively listening to an adult patient across a pale oak desk, gesturing naturally toward a simple small joint model. Both faces outside frame, chest-down crop, calm authentic encounter, natural hands. No readable documents.",
+      "file": "img/temporary/consultation-care-v1.webp"
+    },
+    {
+      "id": "ultrasound-exam",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Close side view of a physician in white coat using a linear ultrasound probe directly on an adult patient's bare shoulder, patient wearing modest sleeveless navy top, ultrasound machine softly out of focus behind. Crop faces outside frame. Correct natural hand holding probe flat on skin, small gel sheen, noninvasive examination.",
+      "file": "img/temporary/ultrasound-exam-v1.webp"
+    },
+    {
+      "id": "c-arm-room",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An empty clean outpatient fluoroscopy room with a single realistic mobile C-arm X-ray system curved around a narrow treatment table, separate monitor cart with blank screen. Wide three-quarter architectural photo, cream and muted blue, no brand markings.",
+      "file": "img/temporary/c-arm-room-v1.webp"
+    },
+    {
+      "id": "precision-care",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Close editorial photograph of a gloved physician preparing a small syringe beside an adult patient's shoulder before a pain-clinic treatment. Needle safely capped and away from skin; NO puncture, blood or procedure instruction. Face outside frame, white coat, patient modestly dressed, calm atmosphere. A generic mobile C-arm is blurred in the background. Natural anatomically correct hands.",
+      "file": "img/temporary/precision-care-v1.webp"
+    },
+    {
+      "id": "team-learning",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Three clinicians collaborating around an anatomical spine model on a pale oak table, one white coat physician pointing to model while two navy scrub therapists listen and take notes. Crop all faces outside frame at shoulder level, focus on hands, model and teamwork. No readable text. Candid education and care planning scene.",
+      "file": "img/temporary/team-learning-v1.webp"
+    },
+    {
+      "id": "ultrasound-equipment",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Single generic modern ultrasound diagnostic cart in a clean clinic corner, close three-quarter product photograph of the whole device, dark screen, realistic control console and neatly docked linear probe. No visible logos or model names. Soft natural light, beige wall and oak floor.",
+      "file": "img/temporary/ultrasound-equipment-v1.webp"
+    },
+    {
+      "id": "daily-recovery",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. An adult couple seen from behind walking comfortably on a leafy riverside pedestrian path in a Korean city, natural relaxed stride, full bodies and shoes entirely in frame with generous margins. Soft morning sun, cream cardigan and muted navy casual clothing. Everyday recovery and independence, no dramatic celebration, no visible faces.",
+      "file": "img/temporary/daily-recovery-v1.webp"
+    },
+    {
+      "id": "city-access",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Natural street-level photograph of a broad welcoming tree-lined pedestrian walkway among modern mid-rise office buildings in a Korean business district, a few distant adults walking, soft morning light, subtle greenery, beige stone facades. No named landmarks, no signs, no readable text. Everyday proximity to work and home, NOT a specific clinic building.",
+      "file": "img/temporary/city-access-v1.webp"
+    },
+    {
+      "id": "daily-fatigue",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Candid waist-up photo of a clothed adult seated by a home window after work, one hand resting lightly at the temple and the other holding an ordinary ceramic mug, slightly tired posture without dramatic suffering, beige sweater, soft navy cushion, warm cream interior. Face outside frame cropped just below the eyes, natural correct hands.",
+      "file": "img/temporary/daily-fatigue-v1.webp"
+    },
+    {
+      "id": "knee-care",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Close clinical photograph of a therapist in navy scrubs gently examining an adult patient's knee, patient seated on treatment couch in modest knee-length shorts, two natural hands supporting the knee from either side. Frame waist down, knee and lower thigh central, no face, no painful grimace, respectful realistic musculoskeletal care.",
+      "file": "img/temporary/knee-care-v1.webp"
+    },
+    {
+      "id": "foot-care",
+      "prompt": "Use case: photorealistic-natural. Generate ONE landscape 3:2 editorial photograph for a Korean pain clinic website temporary asset. Consistent understated cream walls, pale oak, warm beige upholstery, subtle navy details, soft natural daylight, realistic clean modest clinic not luxury hotel. No text, brand logos, signage, watermarks, collage or borders. Close clinical photograph of a therapist in navy scrubs supporting and gently examining an adult patient's ankle and heel on a treatment couch. BOTH the full foot including all five toes and entire heel visible with generous space around the foot, natural proportions, no cropped toes, no duplicate toes, hands supporting ankle. Frame lower legs only, professional noninvasive assessment.",
+      "file": "img/temporary/foot-care-v1.webp"
+    }
+  ]
+}

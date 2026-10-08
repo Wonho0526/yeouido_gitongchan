@@ -1,0 +1,157 @@
+[
+  {
+    "page": "index.html",
+    "originalSlot": "대기 공간 실제 사진 영역",
+    "image": "img/temporary/waiting-room-v1.webp"
+  },
+  {
+    "page": "index.html",
+    "originalSlot": "진료실 실제 사진 영역",
+    "image": "img/temporary/consultation-room-v1.webp"
+  },
+  {
+    "page": "index.html",
+    "originalSlot": "초음파실 실제 사진 영역",
+    "image": "img/temporary/ultrasound-room-v1.webp"
+  },
+  {
+    "page": "index.html",
+    "originalSlot": "수액실 실제 사진 영역",
+    "image": "img/temporary/iv-room-v1.webp"
+  },
+  {
+    "page": "sub/autonomic.html",
+    "originalSlot": "자율신경 회복주사 시술 사진 영역",
+    "image": "img/temporary/precision-care-v1.webp"
+  },
+  {
+    "page": "sub/autonomic.html",
+    "originalSlot": "자율신경 실조증 · 원인 모를 전신 증상 관련 사진 영역",
+    "image": "img/temporary/daily-fatigue-v1.webp"
+  },
+  {
+    "page": "sub/c-arm.html",
+    "originalSlot": "실제 C-arm 장비 사진 영역",
+    "image": "img/temporary/c-arm-room-v1.webp"
+  },
+  {
+    "page": "sub/c-arm.html",
+    "originalSlot": "C-arm을 활용한 실제 시술 사진 영역",
+    "image": "img/temporary/precision-care-v1.webp"
+  },
+  {
+    "page": "sub/doctor.html",
+    "originalSlot": "대표원장 진료 사진 영역",
+    "image": "img/temporary/consultation-care-v1.webp"
+  },
+  {
+    "page": "sub/doctor.html",
+    "originalSlot": "환자 일상 회복 관련 사진 영역",
+    "image": "img/temporary/daily-recovery-v1.webp"
+  },
+  {
+    "page": "sub/doctor.html",
+    "originalSlot": "대표원장 교육·강의 사진 영역",
+    "image": "img/temporary/team-learning-v1.webp"
+  },
+  {
+    "page": "sub/recovery-iv.html",
+    "originalSlot": "실제 수액실 사진 · 프라이빗한 좌석과 휴식 공간 영역",
+    "image": "img/temporary/iv-room-v1.webp"
+  },
+  {
+    "page": "sub/shockwave.html",
+    "originalSlot": "고관절·무릎 관련 사진 영역",
+    "image": "img/temporary/knee-care-v1.webp"
+  },
+  {
+    "page": "sub/shockwave.html",
+    "originalSlot": "발목·발 관련 사진 영역",
+    "image": "img/temporary/foot-care-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "대기 공간 실제 사진 영역",
+    "image": "img/temporary/waiting-room-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "진료실 실제 사진 영역",
+    "image": "img/temporary/consultation-room-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "초음파실 실제 사진 영역",
+    "image": "img/temporary/ultrasound-room-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "수액실 실제 사진 영역",
+    "image": "img/temporary/iv-room-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "물리치료실 실제 사진 영역",
+    "image": "img/temporary/physical-therapy-room-v1.webp"
+  },
+  {
+    "page": "sub/spaces.html",
+    "originalSlot": "특수치료실 실제 사진 영역",
+    "image": "img/temporary/manual-therapy-room-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "스테로이드 제로, 걱정까지 덜어낸 치료 관련 사진 영역",
+    "image": "img/temporary/precision-care-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "증상이 아닌, 원인 중심 치료 관련 사진 영역",
+    "image": "img/temporary/ultrasound-exam-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "몸이 보내는 신호, 자율신경까지 살피다 관련 사진 영역",
+    "image": "img/temporary/daily-fatigue-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "환자의 언어로 전하는 설명 관련 사진 영역",
+    "image": "img/temporary/consultation-care-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "의사와 치료사, 하나의 팀 관련 사진 영역",
+    "image": "img/temporary/team-learning-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "온전히 나를 위한 회복의 공간 관련 사진 영역",
+    "image": "img/temporary/iv-room-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "일상과 더 가까운 병원 관련 사진 영역",
+    "image": "img/temporary/city-access-v1.webp"
+  },
+  {
+    "page": "sub/special.html",
+    "originalSlot": "치료의 마침표를 그리는 계획 관련 사진 영역",
+    "image": "img/temporary/daily-recovery-v1.webp"
+  },
+  {
+    "page": "sub/ultrasound.html",
+    "originalSlot": "V5 실제 장비 사진 영역",
+    "image": "img/temporary/ultrasound-equipment-v1.webp"
+  },
+  {
+    "page": "sub/ultrasound.html",
+    "originalSlot": "HS50 실제 장비 사진 영역",
+    "image": "img/temporary/ultrasound-room-v1.webp"
+  },
+  {
+    "page": "sub/ultrasound.html",
+    "originalSlot": "초음파를 활용한 실제 진료·시술 사진 영역",
+    "image": "img/temporary/ultrasound-exam-v1.webp"
+  }
+]

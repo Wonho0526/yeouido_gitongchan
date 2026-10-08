@@ -359,7 +359,6 @@
     return h(
       "footer",
       { className: "site-footer" },
-      !isSubPage && h(FooterKeyPoints),
       !isSubPage && h(
         "div",
         { className: "footer-contact", id: "hours" },

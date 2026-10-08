@@ -38,7 +38,7 @@
         { href: "injection.html", label: "주사치료" },
         { href: "shockwave.html", label: "체외충격파" },
         { href: "manual-therapy.html", label: "도수치료" },
-        { href: "autonomic.html", label: "자율신경 주사치료" },
+        { href: "autonomic.html", label: "자율신경 주사치료(SNEPI)" },
         { href: "recovery-iv.html", label: "기능회복 수액" },
       ],
     },

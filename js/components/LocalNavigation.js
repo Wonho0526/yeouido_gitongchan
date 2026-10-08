@@ -31,7 +31,7 @@
         { href: "injection.html", label: "원인을 찾아가는 주사치료" },
         { href: "shockwave.html", label: "조직 회복을 돕는 체외충격파" },
         { href: "manual-therapy.html", label: "움직임을 회복하는 도수치료" },
-        { href: "autonomic.html", label: "균형을 되찾는 자율신경 주사치료" },
+        { href: "autonomic.html", label: "균형을 되찾는 자율신경 주사치료(SNEPI)" },
         { href: "recovery-iv.html", label: "몸의 회복을 돕는 기능회복 수액" },
       ],
     },
