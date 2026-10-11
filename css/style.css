@@ -2436,3 +2436,12 @@ main .clinic-title-copy .clinic-kicker {
     --badge-logo-size: 42px;
   }
 }
+/* Place mobile hours badges directly after the time. */
+@media (max-width: 768px) {
+  .footer-info-block.clinic-hours dd,
+  .sub-guide-card.clinic-hours dd {
+    grid-template-columns: max-content max-content;
+    justify-content: start;
+    column-gap: 6px;
+  }
+}

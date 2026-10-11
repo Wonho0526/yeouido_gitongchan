@@ -449,3 +449,10 @@ body.modal-open {
     font-size: 21px;
   }
 }
+
+/* Keep the opening section clear of the fixed header on mobile. */
+@media (max-width: 768px) {
+  main > section:first-child {
+    margin-top: 80px;
+  }
+}

@@ -22,7 +22,7 @@
 
   const location = [
     { term: "병원주소", desc: "서울특별시 영등포구 국제금융로 72, 호정빌딩 4층", emphasis: "KB국민은행 동여의도점 건물 4층" },
-    { term: "주차안내", desc: "자차 이용 시 : 본원 주차 또는 인근 주차장 안내·지원" },
+    { term: "주차안내", desc: "본원 주차 또는 인근 주차장 안내·지원" },
   ];
 
   const patientRights = [
