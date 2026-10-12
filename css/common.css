@@ -11,6 +11,8 @@
   --color-accent: #a58562;
   --header-height: 150px;
   --container: 1440px;
+  --h2-size: 34px;
+  --mobile-h2-size: 28px;
 }
 
 section {
@@ -43,13 +45,17 @@ section {
 
 h2 {
   margin: 0 0 30px;
-  font-size: 34px;
+  font-size: var(--h2-size) !important;
   font-weight: 700;
   line-height: 1.5;
 }
 
 h2 span {
   color: #143766;
+}
+
+h2 * {
+  font-size: inherit !important;
 }
 
 .btn {
@@ -452,6 +458,10 @@ body.modal-open {
 
 /* Keep the opening section clear of the fixed header on mobile. */
 @media (max-width: 768px) {
+  h2 {
+    font-size: var(--mobile-h2-size) !important;
+  }
+
   main > section:first-child {
     margin-top: 80px;
   }

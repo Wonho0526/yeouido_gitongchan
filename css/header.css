@@ -40,11 +40,19 @@
 }
 
 .site-header .brand {
+  margin: 0;
+  font-size: 0;
   display: inline-flex;
   width: fit-content;
   max-width: 100%;
   min-width: 0;
   align-items: center;
+}
+
+.site-header .brand a {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .header-logo {

@@ -160,13 +160,18 @@
         "div",
         { className: "inner header-inner" },
         h(
-          "a",
-          { href: `${rootPrefix}index.html`, className: "brand", "aria-label": "여의도기통찬의원 홈" },
-          h("img", {
-            src: `${rootPrefix}img/logo_wide.png`,
-            alt: "여의도기통찬의원",
-            className: "header-logo",
-          })
+          "h1",
+          { className: "brand" },
+          "여의도기통찬의원",
+          h(
+            "a",
+            { href: `${rootPrefix}index.html`, "aria-label": "여의도기통찬의원 홈" },
+            h("img", {
+              src: `${rootPrefix}img/logo_wide.png`,
+              alt: "여의도기통찬의원",
+              className: "header-logo",
+            })
+          )
         ),
         h(
           "button",

@@ -462,8 +462,8 @@
 
   // Add the clinic's external URLs here when they are available.
   const quickLinkUrls = {
-    kakao: "",
-    blog: "",
+    kakao: "#",
+    blog: "#",
   };
 
   function QuickLinks() {

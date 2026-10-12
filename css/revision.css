@@ -1394,3 +1394,21 @@ main :is(p, li),
     gap: 60px;
   }
 }
+
+@media (max-width: 768px) {
+  .director-photo {
+    display: none;
+  }
+
+  .director-copy {
+    width: 100%;
+    padding: 48px 20px 56px;
+    background: linear-gradient(rgba(47, 41, 36, 0.78), rgba(47, 41, 36, 0.78)),
+      url("../img/doctor_main02.png") center 30% / cover no-repeat;
+  }
+
+  .pain-system-section {
+    background: linear-gradient(110deg, #2f2924, #5d5147);
+    opacity: 1;
+  }
+}
