@@ -2567,6 +2567,12 @@ body[data-page="hours"] .footer-contact {
   min-width: 0;
 }
 
+@media (min-width: 1041px) {
+  .about-mission-copy {
+    margin-top: 100px;
+  }
+}
+
 .sub-about-mission .sub-editorial-split {
   align-items: start;
 }
@@ -2577,13 +2583,13 @@ body[data-page="hours"] .footer-contact {
 }
 
 .about-mission-copy .about-philosophy-card {
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
   padding: 28px 24px;
 }
 
 .about-mission-copy .about-philosophy-number {
-  font-size: 40px;
+  font-size: 22px;
 }
 
 .about-philosophy {
@@ -2607,7 +2613,7 @@ body[data-page="hours"] .footer-contact {
 
 .about-philosophy-list {
   display: grid;
-  gap: 28px;
+  gap: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2615,68 +2621,72 @@ body[data-page="hours"] .footer-contact {
 
 .about-philosophy-card {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
-  gap: 36px;
-  padding: 44px 48px;
-  border: 1px solid #e3d5bf;
-  border-radius: 20px;
-  background: #efe6d8;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 28px 32px;
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 8px;
+  background: #fff;
 }
 
 .about-philosophy-number {
   display: flex;
-  flex-direction: column;
+  width: 44px;
+  height: 44px;
   align-items: center;
-  gap: 18px;
-  color: #bd9b6b;
-  font: italic 54px/1.1 Georgia, serif;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f5efe5;
+  color: var(--color-accent);
+  font: 700 22px/1 var(--font-family);
+  font-variant-numeric: tabular-nums;
 }
 
 .about-philosophy-number::after {
-  content: "";
-  width: 1px;
-  min-height: 52px;
-  flex: 1;
-  background: #bd9b6b;
+  content: none;
 }
 
 .about-philosophy-card h3 {
-  margin: 0 0 12px;
-  color: #9e7950;
-  font-size: 32px;
+  margin: 0 0 8px;
+  color: #293f70;
+  font-size: 26px;
   line-height: 1.4;
 }
 
 .about-philosophy-card strong {
   display: block;
-  font-size: 26px;
+  color: var(--color-primary-dark);
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.5;
 }
 
 .about-philosophy-card p {
   margin: 12px 0 0;
-  font-size: 20px;
-  line-height: 1.85;
+  color: #625a53;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 @media (max-width: 640px) {
-  .about-philosophy-card {
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 16px;
-    padding: 28px 20px;
-    border-radius: 16px;
+  .about-philosophy-card,
+  .about-mission-copy .about-philosophy-card {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 14px;
+    padding: 24px 18px;
   }
 
-  .about-philosophy-number {
-    font-size: 34px;
+  .about-philosophy-number,
+  .about-mission-copy .about-philosophy-number {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
 
   .about-philosophy-card h3 {
-    font-size: 26px;
-  }
-
-  .about-philosophy-card strong {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .about-philosophy-card p {

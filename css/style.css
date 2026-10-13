@@ -425,15 +425,15 @@ html:not(.aos-enabled) main [data-aos] {
   display: flex;
   align-items: center;
   position: relative;
-  background: none;
+  background: #352a24;
 }
 
 .director-backdrop::after {
   content: "";
   width: 50%;
   height: 100%;
-  background: var(--color-primary);
-  opacity: 0.7;
+  background: inherit;
+  opacity: 1;
   position: absolute;
   left: 0;
   top: 0;
@@ -1817,7 +1817,6 @@ main .clinic-title-copy .clinic-kicker {
 
   .director-backdrop {
     height: auto;
-    background: none;
   }
 
   .director-backdrop::after {
