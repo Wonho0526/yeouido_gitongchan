@@ -51,6 +51,7 @@
       ],
     },
     { href: "location.html", label: "진료 안내 & 오시는 길" },
+    { href: "community.html", label: "건강정보" },
     // 네이버 예약: href만 실제 병원 예약 URL로 교체합니다.
     { href: "#", label: "예약 바로가기", external: true, reservation: true },
   ];

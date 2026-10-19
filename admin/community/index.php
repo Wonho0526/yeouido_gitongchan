@@ -45,9 +45,9 @@ $filterQuery = ['q' => $q, 'status' => $status];
 $queryString = http_build_query($filterQuery + ['page' => $page]);
 $today = date('Y-m-d');
 
-layout_header('커뮤니티 관리', $admin);
+layout_header('건강정보 관리', $admin);
 ?>
-<p class="hint" style="margin:-8px 0 16px;">홈페이지 ‘기가 통하는 커뮤니티’에 노출되는 게시글입니다.</p>
+<p class="hint" style="margin:-8px 0 16px;">홈페이지 ‘건강정보’ 페이지에 노출되는 게시글입니다.</p>
 <div class="toolbar">
   <form method="get">
     <input type="text" name="q" placeholder="제목 검색" value="<?= h($q) ?>">

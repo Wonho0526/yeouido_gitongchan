@@ -21,7 +21,7 @@ function layout_header(string $title, ?array $admin): void
 <header class="admin-nav">
     <div class="admin-nav__brand"><a href="<?= h(admin_url('index.php')) ?>"><?= h(ADMIN_BRAND) ?></a></div>
     <nav>
-        <a href="<?= h(admin_url('community/index.php')) ?>">커뮤니티 관리</a>
+        <a href="<?= h(admin_url('community/index.php')) ?>">건강정보 관리</a>
         <a href="<?= h(admin_url('popups/index.php')) ?>">팝업 관리</a>
         <?php if (feature_enabled('consultations')): ?>
         <a href="<?= h(admin_url('consultations/index.php')) ?>">상담 신청 관리</a>

@@ -1,6 +1,6 @@
 <?php
 
-// Public endpoint for the '기가 통하는 커뮤니티' board on the static site.
+// Public endpoint for the '건강정보' board on the static site.
 //   GET ?page=N       -> pinned notices + one page of regular posts (list view)
 //   GET ?id=N         -> one post with its neighbours, and counts the view
 // Only published posts whose publish date has arrived are ever returned.

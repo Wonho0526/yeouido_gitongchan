@@ -193,7 +193,7 @@
     const result = await request(isDetail ? `id=${postId}` : `page=${listPage}`);
 
     if (result.kind === "unavailable") {
-      showStatus("커뮤니티 게시판을 준비하고 있습니다. 곧 새로운 소식으로 찾아뵙겠습니다.");
+      showStatus("건강정보를 준비하고 있습니다. 곧 새로운 소식으로 찾아뵙겠습니다.");
       return;
     }
     if (result.kind === "not-found") {
