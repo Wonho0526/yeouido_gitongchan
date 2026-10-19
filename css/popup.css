@@ -30,7 +30,12 @@
 
 .site-popup__dialog {
   position: relative;
-  width: min(92%, 420px);
+  /* fit-content lets the dialog take the width the image actually needs. With a fixed
+     width a portrait image is letterboxed inside its box and the leftover shows as bands
+     down both sides of the popup. */
+  width: fit-content;
+  max-width: min(92%, 420px);
+  min-width: min(92%, 280px);
   max-height: min(80vh, 720px);
   display: flex;
   flex-direction: column;
@@ -113,9 +118,12 @@
 
 .site-popup__slide img {
   display: block;
-  width: 100%;
+  /* Sized by its own ratio inside the two limits, so no axis is ever padded out. */
+  width: auto;
+  height: auto;
+  max-width: 100%;
   max-height: min(70vh, 560px);
-  object-fit: contain;
+  margin: 0 auto;
 }
 
 .site-popup__nav {
