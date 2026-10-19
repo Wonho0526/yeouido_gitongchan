@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "Decorative equipment page hero backgrounds; conceptual generated visuals, not actual patient scans or clinic photographs.",
+  "assets": [
+    {
+      "file": "ultrasound-imaging-v1.png",
+      "page": "sub/ultrasound.html",
+      "prompt": "Original premium Korean pain clinic website hero, wide composition. Grayscale musculoskeletal ultrasound panels on the left, translucent shoulder joint and tendons on the right, subtle ultrasound console. Muted charcoal navy, warm deep brown and ivory highlights. Calm center for website heading; no people, text, logos or watermark. Decorative conceptual visualization."
+    },
+    {
+      "file": "c-arm-imaging-v1.png",
+      "page": "sub/c-arm.html",
+      "prompt": "Original premium Korean pain clinic website hero, wide composition. C-shaped fluoroscopy scanner at left, grayscale lumbar spine and pelvis imaging panels, translucent lumbar spine at right. Muted charcoal navy, warm deep brown and ivory highlights. Calm center for website heading; no people, needles, wounds, text, logos or watermark. Decorative conceptual visualization."
+    }
+  ]
+}
