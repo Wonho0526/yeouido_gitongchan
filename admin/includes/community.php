@@ -1,14 +1,18 @@
 <?php
 
+require_once __DIR__ . '/sanitize_html.php';
+
 const COMMUNITY_TITLE_MAX = 200;
+// Counted on the visible text, not the markup, so formatting never eats an author's budget.
 const COMMUNITY_CONTENT_MAX = 20000;
 
 function community_values_from_post(): array
 {
     return [
         'title' => post('title'),
-        // Not post(): trimming would also eat intentional leading indentation on the first line.
-        'content' => rtrim(str_replace("\r\n", "\n", (string) ($_POST['content'] ?? ''))),
+        // The body is rendered as HTML on the public page, so it is reduced to the allowlist
+        // here, at the point it enters the system. What is stored is what will be served.
+        'content' => sanitize_post_html(str_replace("\r\n", "\n", (string) ($_POST['content'] ?? ''))),
         'published_at' => post('published_at'),
         'is_pinned' => isset($_POST['is_pinned']),
         'is_published' => isset($_POST['is_published']),
@@ -23,9 +27,10 @@ function community_validate(array $values): array
     if ($titleLength < 1 || $titleLength > COMMUNITY_TITLE_MAX) {
         $errors[] = '제목은 1~' . COMMUNITY_TITLE_MAX . '자여야 합니다.';
     }
-    $contentLength = mb_strlen(trim($values['content']));
-    if ($contentLength < 1 || mb_strlen($values['content']) > COMMUNITY_CONTENT_MAX) {
-        $errors[] = '본문은 1~' . number_format(COMMUNITY_CONTENT_MAX) . '자여야 합니다.';
+    if (post_html_is_empty($values['content'])) {
+        $errors[] = '본문을 입력해주세요.';
+    } elseif (post_html_text_length($values['content']) > COMMUNITY_CONTENT_MAX) {
+        $errors[] = '본문은 ' . number_format(COMMUNITY_CONTENT_MAX) . '자 이하여야 합니다.';
     }
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $values['published_at'])
         || !checkdate((int) substr($values['published_at'], 5, 2), (int) substr($values['published_at'], 8, 2), (int) substr($values['published_at'], 0, 4))) {
@@ -45,7 +50,15 @@ function community_render_form(array $values, ?array $post, string $submitLabel)
   </div>
   <div class="form-row">
     <label for="content">본문</label>
-    <textarea id="content" name="content" rows="16" maxlength="<?= COMMUNITY_CONTENT_MAX ?>" required><?= h($values['content']) ?></textarea>
+    <div class="editor" data-editor data-upload-url="<?= h(admin_url('community/upload-image.php')) ?>">
+      <div class="editor-toolbar" data-editor-toolbar></div>
+      <div class="editor-area" data-editor-area contenteditable="true" role="textbox" aria-multiline="true" aria-label="본문"></div>
+      <p class="editor-notice" data-editor-notice aria-live="polite"></p>
+      <input type="file" data-editor-file accept="image/jpeg,image/png,image/webp" hidden>
+    </div>
+    <!-- The editor mirrors itself into this field, which is what the server reads. Without
+         JavaScript it stays a plain textarea and the post is saved as typed. -->
+    <textarea id="content" name="content" rows="16" class="editor-source"><?= h($values['content']) ?></textarea>
     <p class="hint">줄바꿈은 그대로 표시됩니다. HTML 태그는 글자 그대로 보입니다.</p>
   </div>
   <div class="form-row">
@@ -78,5 +91,6 @@ function community_render_form(array $values, ?array $post, string $submitLabel)
     <a href="<?= h(admin_url('community/index.php')) ?>" class="btn">취소</a>
   </div>
 </form>
+<script src="<?= h(admin_url('assets/editor.js')) ?>" defer></script>
 <?php
 }

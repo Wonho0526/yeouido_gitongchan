@@ -35,6 +35,8 @@ function summarize(array $row): array
         'publishedAt' => substr($row['published_at'], 0, 10),
         'viewCount' => (int) $row['view_count'],
         'hasImage' => $row['cover_image_path'] !== null,
+        // The carousel on the 건강정보 page shows cover images, so list rows carry the URL too.
+        'imageUrl' => image_url($row['cover_image_path']),
     ];
 }
 

@@ -126,3 +126,106 @@ tr:last-child td { border-bottom: none; }
 
     .calendar td { height: 72px; }
 }
+
+/* ---- 건강정보 본문 에디터 ---- */
+
+.editor {
+  border: 1px solid #d4d8de;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: #f7f8fa;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+.editor-btn {
+  min-width: 32px;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 1;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d4d8de;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor-btn:hover { background: #eef1f5; }
+.editor-btn:active { background: #e2e6ec; }
+
+.editor-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: #d4d8de;
+}
+
+.editor-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.editor-select select {
+  height: 30px;
+  padding: 0 4px;
+  font-size: 13px;
+  border: 1px solid #d4d8de;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.editor-area {
+  min-height: 320px;
+  padding: 16px 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #222;
+  overflow-wrap: anywhere;
+}
+
+.editor-area:focus { outline: 2px solid #1b4b8f; outline-offset: -2px; }
+.editor-area p { margin: 0 0 12px; }
+.editor-area h2 { margin: 20px 0 10px; font-size: 20px; font-weight: 700; }
+.editor-area h3 { margin: 16px 0 8px; font-size: 17px; font-weight: 700; }
+.editor-area ul, .editor-area ol { margin: 0 0 12px; padding-left: 22px; }
+.editor-area li { margin-bottom: 4px; }
+.editor-area ul { list-style: disc; }
+.editor-area ol { list-style: decimal; }
+.editor-area a { color: #1b4b8f; text-decoration: underline; }
+.editor-area img { max-width: 100%; height: auto; border-radius: 4px; margin: 8px 0; }
+.editor-area blockquote {
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border-left: 3px solid #cfd5dd;
+  color: #555;
+}
+
+.editor-notice {
+  margin: 0;
+  padding: 6px 12px;
+  min-height: 28px;
+  font-size: 13px;
+  color: #15803d;
+  background: #fafbfc;
+  border-top: 1px solid #eef0f3;
+}
+
+.editor-notice.is-error { color: #c8102e; }
+
+/* Progressive enhancement: the editor stays hidden until editor.js marks it ready, so a
+   browser that never runs the script shows the plain textarea and the form still works. */
+.editor { display: none; }
+.editor.is-ready { display: block; }
+.editor.is-ready + .editor-source { display: none; }

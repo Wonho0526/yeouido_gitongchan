@@ -108,6 +108,98 @@
     return nav;
   };
 
+  const CAROUSEL_MAX = 8;
+
+  const renderCard = (post) => {
+    const card = el("a", "community-card");
+    card.href = postHref(post.id);
+
+    const thumb = el("div", "community-card-thumb");
+    if (post.imageUrl) {
+      const img = el("img");
+      img.src = post.imageUrl;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      thumb.append(img);
+    } else {
+      thumb.classList.add("is-empty");
+      thumb.append(el("span", "community-card-thumb-mark", "여의도기통찬"));
+    }
+    card.append(thumb);
+
+    const text = el("div", "community-card-text");
+    if (post.isPinned) text.append(el("span", "community-badge", "공지"));
+    text.append(el("p", "community-card-title", post.title));
+    const date = el("time", "community-card-date", formatDate(post.publishedAt));
+    date.dateTime = post.publishedAt;
+    text.append(date);
+    card.append(text);
+
+    return card;
+  };
+
+  // Same scroll-snap + buttons pattern as the related-treatment sliders on disease pages,
+  // so the carousel behaves the way the rest of the site already does.
+  const renderCarousel = (posts) => {
+    const section = el("div", "community-carousel");
+    section.append(el("h2", "community-carousel-title", "새로 올라온 건강정보"));
+
+    const track = el("div", "community-carousel-track");
+    track.tabIndex = 0;
+    track.setAttribute("role", "list");
+    track.setAttribute("aria-label", "새로 올라온 건강정보");
+    posts.forEach((post) => {
+      const cell = el("div", "community-carousel-cell");
+      cell.setAttribute("role", "listitem");
+      cell.append(renderCard(post));
+      track.append(cell);
+    });
+    section.append(track);
+
+    const controls = el("div", "community-carousel-controls");
+    const buttons = [-1, 1].map((direction) => {
+      const b = el("button", "", direction < 0 ? "←" : "→");
+      b.type = "button";
+      b.setAttribute("aria-label", direction < 0 ? "이전 글" : "다음 글");
+      b.addEventListener("click", () => move(direction));
+      controls.append(b);
+      return b;
+    });
+    section.append(controls);
+
+    const move = (direction) => {
+      const first = track.firstElementChild;
+      if (!first) return;
+      const step = first.getBoundingClientRect().width
+        + parseFloat(getComputedStyle(track).gap || "0");
+      track.scrollBy({
+        left: step * direction,
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      });
+    };
+
+    const update = () => {
+      const atStart = track.scrollLeft <= 1;
+      const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+      buttons[0].disabled = atStart;
+      buttons[1].disabled = atEnd;
+      // Nothing to scroll means nothing to control.
+      controls.hidden = atStart && atEnd;
+    };
+
+    track.addEventListener("scroll", update, { passive: true });
+    track.addEventListener("keydown", (event) => {
+      if (event.target !== track || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    });
+    new ResizeObserver(update).observe(track);
+    update();
+
+    return section;
+  };
+
   const renderList = (data) => {
     if (!data.pinned.length && !data.items.length) {
       showStatus("아직 등록된 게시글이 없습니다.");
@@ -122,7 +214,19 @@
     data.pinned.forEach((post) => list.append(renderRow(post)));
     data.items.forEach((post, index) => list.append(renderRow(post, data.firstNumber - index)));
 
-    const children = [el("p", "community-count", `전체 ${data.total.toLocaleString("ko-KR")}건`), head, list];
+    const children = [];
+    // The carousel is a shortcut to the newest posts, so it only belongs on page 1 —
+    // on later pages it would repeat what the reader has already scrolled past.
+    if (data.page === 1) {
+      const featured = data.pinned.concat(data.items).slice(0, CAROUSEL_MAX);
+      if (featured.length) children.push(renderCarousel(featured));
+    }
+
+    children.push(
+      el("p", "community-count", `전체 ${data.total.toLocaleString("ko-KR")}건`),
+      head,
+      list
+    );
     if (data.totalPages > 1) children.push(renderPagination(data.page, data.totalPages));
     board.replaceChildren(...children);
   };
@@ -161,9 +265,20 @@
       article.append(figure);
     }
 
-    // Plain text by design: rendered via textContent with pre-wrap, so line breaks survive
-    // and nothing in a post can ever be interpreted as markup.
-    article.append(el("div", "community-post-body", post.content));
+    // The body is rich text. It is reduced to an allowlist of tags, attributes and style
+    // values by admin/includes/sanitize_html.php before it is ever stored, so what arrives
+    // here has already been through the filter — this is not the place that makes it safe.
+    //
+    // Posts written before the editor existed are plain text with real newlines. Rendering
+    // those as HTML would collapse the line breaks, so they keep the old treatment.
+    const body = el("div", "community-post-body");
+    if (/<[a-z][^>]*>/i.test(post.content)) {
+      body.innerHTML = post.content;
+    } else {
+      body.classList.add("is-plain");
+      body.textContent = post.content;
+    }
+    article.append(body);
 
     const neighbours = el("nav", "community-neighbours");
     neighbours.setAttribute("aria-label", "이전 글, 다음 글");
