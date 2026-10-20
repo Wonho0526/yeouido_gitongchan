@@ -499,6 +499,33 @@ dd {
   margin-inline: auto;
 }
 
+.related-section--wide > .inner {
+  width: 100%;
+  max-width: none;
+}
+
+.related-section--wide .related-links {
+  max-width: none;
+  gap: 32px;
+}
+
+.related-section--wide .related-links a {
+  height: 460px;
+  min-height: 460px;
+  padding: 17px 28px;
+  border-radius: 24px;
+}
+
+@media (min-width: 601px) {
+  .related-section--wide .related-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .related-section--wide .related-links a {
+    padding: 24px clamp(24px, 3vw, 64px);
+  }
+}
+
 .related-links:has(> a:last-child:nth-child(2)) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 740px;
@@ -570,7 +597,8 @@ dd {
   --related-image: url('../img/heroes/values-natural-v1.webp');
 }
 
-.related-links a[href="c-arm.html"] {
+.related-links a[href="c-arm.html"],
+.related-links a[href="equipment.html#c-arm"] {
   --related-image: url('../img/editorial/facility-carm-room-natural-v2.webp');
 }
 
@@ -716,17 +744,13 @@ dd {
 
 @media (min-width: 1441px) {
   .site-header .header-inner {
-    grid-template-columns: 240px minmax(0, 1fr) 240px;
+    grid-template-columns: 240px minmax(0, 1fr);
     gap: 14px;
   }
 
-  .site-header .phone-cta strong {
-    white-space: nowrap;
-  }
-
   .main-nav-link {
-    font-size: clamp(12px, .85vw, 17px);
-    padding-inline: 9px;
+    font-size: 21px;
+    padding-inline: 4px;
   }
 }
 
@@ -1594,11 +1618,39 @@ main :is(p, li),
     width: 100%;
     padding: 48px 20px 56px;
     background: linear-gradient(rgba(47, 41, 36, 0.78), rgba(47, 41, 36, 0.78)),
-      url("../img/doctor_main02.png") center 30% / cover no-repeat;
+      url("../img/doctor-main02-no-logo-v1.png") center 30% / cover no-repeat;
   }
 
   .pain-system-section {
     background: linear-gradient(110deg, #2f2924, #5d5147);
     opacity: 1;
   }
+}
+
+/* Locally hosted Korean handwriting for the doctor's signature. */
+@font-face {
+  font-family: "NohHaeChan";
+  src: url("../fonts/noh-hae-chan/ROEHOE-CHAN.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+body[data-page="doctor"] .sub-doctor-main > p {
+  max-width: 1120px;
+  margin: 16px auto 0;
+  padding: 0 24px;
+  font-size: 32px !important;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+body[data-page="doctor"] .sub-doctor-signature {
+  margin-top: 24px;
+  padding-right: 0;
+  color: #5d4938;
+  font-family: "NohHaeChan", cursive;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: .06em;
+  text-align: center;
 }

@@ -1,0 +1,65 @@
+/* Fixed hero, with category cards selecting the detail sections below. */
+.equipment-content-panel[hidden], [data-equipment-controls][hidden] { display: none !important; }
+.equipment-gallery { --card-width: min(760px, calc(100vw - 64px)); padding: 72px 0 0; scroll-margin-top: calc(var(--header-height, 150px) + 70px); touch-action: pan-y pinch-zoom; }
+.equipment-gallery:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -4px; }
+.equipment-card-window { overflow: hidden; padding: 16px 0 30px; }
+.equipment-card-track { position: relative; display: flex; align-items: stretch; gap: 32px; padding-left: calc((100% - var(--card-width)) / 2); transition: transform 500ms cubic-bezier(.22,.68,.22,1); }
+.equipment-card { flex: 0 0 var(--card-width); min-width: 0; display: flex; flex-direction: column; align-items: center; padding: 32px 36px 28px; border: 1px solid #e8e2da; border-radius: 24px; background: #fff; box-shadow: 0 12px 28px rgba(62,46,30,.06); color: var(--sub-navy); opacity: .5; transform: scale(.94); transition: transform 500ms ease, opacity 500ms ease, border-color 500ms ease; cursor: pointer; }
+.equipment-card.is-active { opacity: 1; transform: scale(1); border-color: #aa9172; }
+.equipment-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -5px; }
+.equipment-card-visual { display: flex; width: 100%; height: 360px; align-items: center; justify-content: center; }
+.equipment-card-visual > img { width: 100%; height: 100%; object-fit: contain; }
+.equipment-card-visual--pair { gap: 20px; }
+.equipment-card-visual--pair > span { display: flex; flex-direction: column; align-items: center; width: 50%; height: 100%; min-width: 0; }
+.equipment-card-visual--pair img { width: 100%; height: calc(100% - 36px); object-fit: cover; }
+.equipment-card-visual--pair img.equipment-v5 { transform: scale(1.11); }
+.equipment-card-visual--pair > span > span { position: relative; margin-top: 12px; font-size: 16px; line-height: 24px; }
+.equipment-card-category { margin-top: 28px; color: #927857; font-size: 12px; letter-spacing: .16em; }
+.equipment-card-title { margin-top: 10px; font-size: 30px; font-weight: 700; line-height: 1.4; }
+.equipment-slider-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin: 4px 0 0; color: var(--sub-navy); }
+.equipment-arrow { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid #c6b8a7; border-radius: 50%; background: #fff; color: inherit; font-size: 22px; cursor: pointer; }
+.equipment-arrow:hover { background: #f4f0eb; }
+.equipment-arrow:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.equipment-content-panel:not([hidden]) { animation: equipment-content-enter 320ms ease-out both; }
+.equipment-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@keyframes equipment-content-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) {
+  .sub-hero--equipment { --hero-image-position: 18% 50%; }
+  .equipment-gallery { padding-top: 32px; --card-width: calc(100vw - 72px); }
+  .equipment-card-track { gap: 16px; }
+  .equipment-card { padding: 24px 16px; border-radius: 20px; }
+  .equipment-card-visual { height: 280px; }
+  .equipment-card-visual--pair { gap: 8px; }
+  .equipment-card-visual--pair > span > span { font-size: 12px; }
+  .equipment-card-category { margin-top: 20px; font-size: 10px; }
+  .equipment-card-title { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .equipment-card-track, .equipment-card { transition: none; } .equipment-content-panel:not([hidden]) { animation: none; } }
+
+.equipment-card-track.is-repositioning,
+.equipment-card-track.is-repositioning .equipment-card { transition: none; }
+.equipment-card[data-equipment-clone] { pointer-events: none; }
+.equipment-device-intro .equipment-intro-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; }
+.equipment-intro-photo { margin: 0; overflow: hidden; border-radius: 24px; aspect-ratio: 4 / 3; background: #f4f0eb; }
+.equipment-intro-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.equipment-device-intro .ultrasound-intro-copy p br { display: none; }
+.equipment-features-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 40px; align-items: stretch; }
+.equipment-treatment-photo { position: relative; margin: 0; min-height: 560px; overflow: hidden; border-radius: 24px; background: #f4f0eb; }
+.equipment-treatment-photo img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.equipment-device-features { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.equipment-device-feature { padding: 24px 28px; border: 1px solid #e8e2da; border-radius: 20px; background: #faf8f5; }
+.equipment-device-feature > span { display: block; margin-bottom: 12px; color: #927857; font-size: 14px; letter-spacing: .12em; }
+.equipment-device-feature h3 { margin: 0 0 12px; color: var(--sub-navy); font-size: 23px; line-height: 1.5; }
+.equipment-device-feature p { margin: 0; color: var(--sub-muted); font-size: 18px; line-height: 1.85; }
+.equipment-treatment-link { display: inline-block; margin-top: 32px; padding-bottom: 6px; border-bottom: 1px solid #ac9170; color: var(--sub-navy); font-size: 18px; font-weight: 600; }
+@media (max-width: 900px) {
+  .equipment-device-intro .equipment-intro-layout { grid-template-columns: 1fr; gap: 32px; }
+  .equipment-intro-photo { border-radius: 20px; }
+  .equipment-features-layout { grid-template-columns: 1fr; gap: 28px; }
+  .equipment-treatment-photo { min-height: 0; height: clamp(320px, 105vw, 480px); }
+  .equipment-device-features { grid-template-columns: 1fr; gap: 16px; }
+  .equipment-device-feature { padding: 28px 24px; }
+  .equipment-device-feature > span { margin-bottom: 16px; }
+  .equipment-device-feature h3 { font-size: 21px; }
+  .equipment-device-feature p { font-size: 17px; }
+}

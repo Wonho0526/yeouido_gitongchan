@@ -1,0 +1,15 @@
+/* Subtle one-time reveals; hero, navigation and internal slide transforms are untouched. */
+.subpage-main [data-subpage-reveal][data-aos="fade-up"] {
+  transform: translate3d(0, 14px, 0);
+}
+.subpage-main [data-subpage-reveal][data-aos="fade-up"].aos-animate {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .subpage-main [data-subpage-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    pointer-events: auto !important;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-20",
+  "criteria": "No filename or path reference found in HTML, CSS, JavaScript, PHP, or runtime JSON under index/sub/css/js/admin. Favicons and branding/icon assets are retained. Generation manifests, docs, and old scripts are not runtime references.",
+  "count": 6,
+  "bytes": 15806172,
+  "workspace": "C:\\xampp\\htdocs\\Ygitongchan\\yeouido_gitongchan",
+  "items": [
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876.jpg",
+      "bytes": 2339655,
+      "sha256": "3217fb55146b4571fea433d80cf7f4ab31e77b0639463e6ea294e27d6e9b856d"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_01.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_01.jpg",
+      "bytes": 2605192,
+      "sha256": "11347e7537b580926ea1cf5b253e99ce3369a6a237c312b5fbd47f356f8f7c80"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_02.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_02.jpg",
+      "bytes": 3010826,
+      "sha256": "489e49f5b08a680e3ff94228068873a6e0c67c28091135a370204a993ac600c0"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_03.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_03.jpg",
+      "bytes": 2727139,
+      "sha256": "0d66c1f87f43cc1cacc0f5d433342a5b5e6420c4166b8a749423dbca513f29a7"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_04.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_04.jpg",
+      "bytes": 2420914,
+      "sha256": "8a824a9505a232455fad3b2d7069714f46cfea57d964e31bb0f7287c21aae4ec"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_05.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_05.jpg",
+      "bytes": 2702446,
+      "sha256": "6ca2099d3a39835f85adf61b2e94504a380408c9181219feb626030e2d99c2a6"
+    }
+  ],
+  "status": "Only user-protected KakaoTalk photos remain; 113 confirmed unused files deleted. See deletion-log.json."
+}

@@ -508,7 +508,7 @@ html:not(.aos-enabled) main [data-aos] {
   height: auto;
   padding: 100px 0;
   color: #fff8ea;
-  background: linear-gradient(110deg, rgba(47, 41, 36, .91), rgba(93, 81, 71, .84)), url("../img/doctor.jpg") center / cover no-repeat;
+  background: linear-gradient(110deg, rgba(47, 41, 36, .91), rgba(93, 81, 71, .84)), url("../img/doctor-no-logo-v1.png") center / cover no-repeat;
 }
 
 .pain-system-heading {

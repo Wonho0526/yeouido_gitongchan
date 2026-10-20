@@ -170,7 +170,7 @@ h2 * {
 }
 
 .quick-link:last-child { border-bottom: 0; }
-.quick-link img { width: 24px; height: 24px; flex-shrink: 0; }
+.quick-link img { width: 24px; height: 24px; flex-shrink: 0; object-fit: contain; }
 .quick-link--top { background: var(--color-primary); color: #fff; }
 .quick-link--top img { filter: brightness(0) invert(1); }
 .quick-link:disabled { cursor: default; color: #686868; }
@@ -180,13 +180,13 @@ h2 * {
 
 /* The fixed desktop panel (right 20px + 94px wide) sits over the footer's right edge until
    the centred container is narrow enough to clear it; reserve that overlap plus a gap. */
-@media (min-width: 921px) and (min-height: 601px) {
+@media (min-width: 921px) and (min-height: 761px) {
   body.has-quick-links .footer-business-inner {
     padding-right: max(0px, calc(130px - (100vw - min(100vw - 40px, var(--container))) / 2));
   }
 }
 
-@media (max-width: 920px), (max-height: 600px) {
+@media (max-width: 920px), (max-height: 760px) {
   .quick-links {
     right: max(8px, env(safe-area-inset-right));
     bottom: max(16px, env(safe-area-inset-bottom));
@@ -331,6 +331,23 @@ body.modal-open {
   color: var(--color-primary-dark);
   font-size: 17px;
   font-weight: 700;
+}
+
+.privacy-policy-content {
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.privacy-policy-content h3 {
+  margin: 30px 0 12px;
+  color: var(--color-primary-dark);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.privacy-policy-content p {
+  margin: 0 0 16px;
+  white-space: pre-line;
 }
 
 .modal-list {

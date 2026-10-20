@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "AI-generated illustrative treatment and examination scenes; not photographs of actual clinic staff or patients.",
+  "assets": [
+    {
+      "file": "cryo-intro-v2.png",
+      "reference": "cryo-jet.png",
+      "prompt": "Photorealistic staged editorial photograph for a premium Korean pain clinic website, landscape 4:3 composition. Soft natural daylight, warm ivory walls and upholstery, light oak, muted navy and deep brown details, clean uncluttered contemporary clinic. Adult East Asian patient, modest neutral clothing, clinician wearing navy scrubs and appropriate protective clothing. Respectful clinically plausible scene, anatomically accurate hands and limbs. Not an identifiable actual clinic or actual patient. No text, watermarks, diagram overlays, special effects, exposed private body parts, blood or wounds. Wide side view across a treatment bed, clearly different from a tight knee close-up: seated patient rests their forearm on a clean support, clinician gently directs the black cold-air nozzle a few centimeters above the outside of the elbow without touching. Show clinician torso, patient's clothed upper body cropped below the face, the supported arm, and the complete silver Cryo-Jet machine in the room. Product reference guides only the machine shape and black hose. No dramatic mist, frost or skin discoloration.",
+      "edit_prompt": "Remove the extra parked nozzle and short curved hose from the machine; preserve only the working nozzle held over the elbow, its connected hose, the empty silver support arm and all other details."
+    },
+    {
+      "file": "eswt-intro-v1.png",
+      "reference": "ESWT.png",
+      "prompt": "Photorealistic staged editorial photograph for a premium Korean pain clinic website, landscape 4:3 composition. Soft natural daylight, warm ivory walls and upholstery, light oak, muted navy and deep brown details, clean uncluttered contemporary clinic. Adult East Asian patient, modest neutral clothing, clinician wearing navy scrubs and appropriate protective clothing. Respectful clinically plausible scene, anatomically accurate hands and limbs. Not an identifiable actual clinic or actual patient. No text, watermarks, diagram overlays, special effects, exposed private body parts, blood or wounds. Wide three-quarter view at treatment-bed height, clearly different from an Achilles close-up: a seated patient has one knee supported on a bolster, with trouser leg rolled modestly above the knee. Clinician holds a round shockwave applicator in contact with gel on the lateral knee/patellar tendon area; no needles. Show treatment interaction, both torsos cropped below faces, bed and softly defocused blue and white ESWT device matching product reference. Relaxed calm posture."
+    },
+    {
+      "file": "carm-intro-v1.png",
+      "reference": "equipment-carm.png",
+      "prompt": "Photorealistic staged editorial photograph for a premium Korean pain clinic website, landscape 4:3 composition. Soft natural daylight, warm ivory walls and upholstery, light oak, muted navy and deep brown details, clean uncluttered contemporary clinic. Adult East Asian patient, modest neutral clothing, clinician wearing navy scrubs and appropriate protective clothing. Respectful clinically plausible scene, anatomically accurate hands and limbs. Not an identifiable actual clinic or actual patient. No text, watermarks, diagram overlays, special effects, exposed private body parts, blood or wounds. Wide three-quarter clinical view of C-arm fluoroscopy positioning for lumbar pain care before a procedure. An adult patient lies prone, fully draped in an ivory blanket except a small area of intact lower back. A clinician wearing a navy lead protective apron over scrubs positions a realistic white C-shaped fluoroscopy scanner around the treatment table. Scanner upper detector above the draped lumbar region, lower source beneath the radiolucent table, clear physical separation, no impossible overlap. Reference guides scanner body only. Include a monitor with a subtle realistic grayscale lumbar spine view without readable data. No needle or active injection. Faces cropped or turned away. Calm reassuring clinical setting."
+    },
+    {
+      "file": "ultrasound-intro-v1.png",
+      "reference": "equipment-v5-cutout.png",
+      "prompt": "Photorealistic staged editorial photograph for a premium Korean pain clinic website, landscape 4:3 composition. Soft natural daylight, warm ivory walls and upholstery, light oak, muted navy and deep brown details, clean uncluttered contemporary clinic. Adult East Asian patient, modest neutral clothing, clinician wearing navy scrubs and appropriate protective clothing. Respectful clinically plausible scene, anatomically accurate hands and limbs. Not an identifiable actual clinic or actual patient. No text, watermarks, diagram overlays, special effects, exposed private body parts, blood or wounds. Medium-wide over-the-clinician-shoulder view of a musculoskeletal ultrasound examination of a seated patient's shoulder. Patient wears a modest neutral sleeveless top, clinician's gloved hand holds a realistic small linear ultrasound probe with clear gel against the lateral upper shoulder. Show patient torso, clinician shoulder and hands, and a white ultrasound console matching the reference with a softly visible grayscale ultrasound monitor. Probe cable physically connected to the machine. Faces outside the crop. No injection, no MRI or CT imagery. Warm calm respectful treatment room."
+    }
+  ]
+}

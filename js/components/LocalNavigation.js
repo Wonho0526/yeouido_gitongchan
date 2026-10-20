@@ -8,10 +8,10 @@
     intro: {
       label: "여의도기통찬 소개",
       items: [
-        { href: "about.html", label: "기통찬 스토리" },
-        { href: "special.html", label: "기통찬 특별함" },
-        { href: "doctor.html", label: "기통찬 의료진" },
-        { href: "values.html", label: "기통찬 약속" },
+        { href: "about.html", label: "여의도기통찬 스토리" },
+        { href: "special.html", label: "여의도기통찬 특별함" },
+        { href: "doctor.html", label: "여의도기통찬 의료진" },
+        { href: "values.html", label: "여의도기통찬 약속" },
       ],
     },
     treatment: {
@@ -38,8 +38,10 @@
     environment: {
       label: "찬란한 일상을 위한 진료환경",
       items: [
-        { href: "c-arm.html", label: "C-arm" },
-        { href: "ultrasound.html", label: "초음파" },
+        { href: "equipment.html#c-arm", label: "C-arm" },
+        { href: "equipment.html#ultrasound", label: "초음파" },
+        { href: "equipment.html#cryo-jet", label: "Cryo-Jet" },
+        { href: "equipment.html#eswt", label: "체외충격파" },
         { href: "spaces.html", label: "공간 둘러보기" },
       ],
     },
@@ -48,14 +50,24 @@
   function LocalNavigation({ group }) {
     const navigation = navigationGroups[group];
     const currentPage = window.location.pathname.split("/").pop();
+    const [currentHash, setCurrentHash] = React.useState(() => window.location.hash || "#c-arm");
+    const isCurrent = (href) => {
+      const [page, hash] = href.split("#");
+      return page === currentPage && (!hash || `#${hash}` === currentHash);
+    };
     const listRef = React.useRef(null);
+    React.useEffect(() => {
+      const syncHash = () => setCurrentHash(window.location.hash || "#c-arm");
+      window.addEventListener("hashchange", syncHash);
+      return () => window.removeEventListener("hashchange", syncHash);
+    }, []);
     React.useEffect(() => {
       const list = listRef.current;
       const active = list?.querySelector('[aria-current="page"]');
       if (list && active) {
         list.scrollLeft = Math.max(0, active.offsetLeft - list.offsetLeft - (list.clientWidth - active.clientWidth) / 2);
       }
-    }, [group, currentPage]);
+    }, [group, currentPage, currentHash]);
 
     if (!navigation) {
       return null;
@@ -70,7 +82,7 @@
         h(
           "ul",
           { ref: listRef },
-          navigation.items.map((item) =>
+          navigation.items.filter(item => currentPage !== "equipment.html" || item.href !== "spaces.html").map((item) =>
             h(
               "li",
               { key: `${item.href}-${item.label}` },
@@ -78,8 +90,8 @@
                 "a",
                 {
                   href: item.href,
-                  className: item.href === currentPage ? "is-active" : "",
-                  "aria-current": item.href === currentPage ? "page" : undefined,
+                  className: isCurrent(item.href) ? "is-active" : "",
+                  "aria-current": isCurrent(item.href) ? "page" : undefined,
                 },
                 item.label
               )

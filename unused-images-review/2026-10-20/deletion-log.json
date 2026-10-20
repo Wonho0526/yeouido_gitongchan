@@ -1,0 +1,726 @@
+{
+  "date": "2026-10-20",
+  "authorization": "User requested deleting confirmed unused photos except KakaoTalk images.",
+  "runtime_files_checked": 91,
+  "deleted_count": 113,
+  "deleted_bytes": 91707220,
+  "deleted": [
+    {
+      "original_path": "img/arm_cover.png",
+      "review_path": "img/arm_cover.png",
+      "bytes": 405504,
+      "sha256": "c7c1b2a57756d95d695b6f60e5f5d8d2b2fe5927126e4c92d3a2ad21924aad22"
+    },
+    {
+      "original_path": "img/clinic-foot-heel.png",
+      "review_path": "img/clinic-foot-heel.png",
+      "bytes": 1657974,
+      "sha256": "6121b3a1b068e9cb7ac3c0400256bdecd566738cac1442a82274b4c4d085b672"
+    },
+    {
+      "original_path": "img/clinic-hand-wrist.png",
+      "review_path": "img/clinic-hand-wrist.png",
+      "bytes": 1672198,
+      "sha256": "7388a0afbf7d8a8c978853daf65f92f4c08571b7a1d2023673eedc3bbac96b40"
+    },
+    {
+      "original_path": "img/clinic-neck-shoulder.png",
+      "review_path": "img/clinic-neck-shoulder.png",
+      "bytes": 1565443,
+      "sha256": "22cb7fec8bb1fc7d875e670a218a3387a34013e4f223230f55d29fbf217312bb"
+    },
+    {
+      "original_path": "img/clinic-spine-joint.png",
+      "review_path": "img/clinic-spine-joint.png",
+      "bytes": 1633956,
+      "sha256": "11a17c0c56a7c000fe098aa705ff0b1abd2d53b30180d094110971ea0f74c5a4"
+    },
+    {
+      "original_path": "img/cryo-jet.png",
+      "review_path": "img/cryo-jet.png",
+      "bytes": 246045,
+      "sha256": "e53b7047370dc1f25348161077658498219952b977fb370acfa27a66f653f605"
+    },
+    {
+      "original_path": "img/doctor.jpg",
+      "review_path": "img/doctor.jpg",
+      "bytes": 3488659,
+      "sha256": "c6a0b8fde01b420b272f94de5b74b01467edbb38c2ecde04c3523e5193ba519b"
+    },
+    {
+      "original_path": "img/doctor_main02.png",
+      "review_path": "img/doctor_main02.png",
+      "bytes": 1573040,
+      "sha256": "6c5b1bac376d87f7eee5b333f4b72cb41f164551681d72b097c07d33169791ca"
+    },
+    {
+      "original_path": "img/doc_main.jpg",
+      "review_path": "img/doc_main.jpg",
+      "bytes": 4413736,
+      "sha256": "af0d6473ae3a4789b984a5632001f0ff0fe0709c0fac8f4e94aceae96c5d1f07"
+    },
+    {
+      "original_path": "img/equipment-ultrasound.png",
+      "review_path": "img/equipment-ultrasound.png",
+      "bytes": 715462,
+      "sha256": "3ddf5c58b585c344b2e87c11af42671a69dba5fbf9c1b5e749bc9769b48933a2"
+    },
+    {
+      "original_path": "img/equipment-v5.webp",
+      "review_path": "img/equipment-v5.webp",
+      "bytes": 25444,
+      "sha256": "c8f547c4eba16fadae7fd542d0c13d7f4a14fd578a27d5797de7c8145bf41614"
+    },
+    {
+      "original_path": "img/ESWT.png",
+      "review_path": "img/ESWT.png",
+      "bytes": 804813,
+      "sha256": "434299977dff189af9fbbe3307cddb6083b61eab09c7cd3b32c11ca31382405a"
+    },
+    {
+      "original_path": "img/facility-carm-room.png",
+      "review_path": "img/facility-carm-room.png",
+      "bytes": 1783080,
+      "sha256": "86ec735b5a60f61176ad72f7b2671aeb6cb4702c0832e08bec76aabfc821f0dd"
+    },
+    {
+      "original_path": "img/facility-therapy-bed.png",
+      "review_path": "img/facility-therapy-bed.png",
+      "bytes": 1580745,
+      "sha256": "a223600b7eab77e26b8c781c585a94777791da5a9d9e90fc951834ea6d0f8236"
+    },
+    {
+      "original_path": "img/facility-treatment-room.png",
+      "review_path": "img/facility-treatment-room.png",
+      "bytes": 1972170,
+      "sha256": "e56db2fdffab11f3202f8734dd7072a02d6338d3b9d0076cca002cfdeba59332"
+    },
+    {
+      "original_path": "img/facility-xray-room.png",
+      "review_path": "img/facility-xray-room.png",
+      "bytes": 1528807,
+      "sha256": "1726756712ef490ebb96ebb6c96006877293a1a7d3b3bb7c104c1bb020dba0bf"
+    },
+    {
+      "original_path": "img/foot_cover.png",
+      "review_path": "img/foot_cover.png",
+      "bytes": 325093,
+      "sha256": "01ba155d970e094d90c7cdb9fd24f6d12cb57ff8612fc6462bf8a0d6813ddd4c"
+    },
+    {
+      "original_path": "img/shoulder_cover.png",
+      "review_path": "img/shoulder_cover.png",
+      "bytes": 356791,
+      "sha256": "4dc2a993fa7e44be8b1778eda1e3ec76253e7588fdb441897da6e3ecb8caf6e8"
+    },
+    {
+      "original_path": "img/spine_cover.png",
+      "review_path": "img/spine_cover.png",
+      "bytes": 390374,
+      "sha256": "c12dd191bd17d6fca1ff7bfcda4bd79adf6c22754978d189bef7e25f523c1db3"
+    },
+    {
+      "original_path": "img/Untitled-1.png",
+      "review_path": "img/Untitled-1.png",
+      "bytes": 21023,
+      "sha256": "bf05d4f6f87a90470acb598b96a7de2da73ffeda42370b9c24e6c214b962de2b"
+    },
+    {
+      "original_path": "img/Untitled-4.png",
+      "review_path": "img/Untitled-4.png",
+      "bytes": 2745222,
+      "sha256": "a76432832798c95070576308e107d642fe1f8de4984327deccbdc9eeb1d57430"
+    },
+    {
+      "original_path": "img/conditions/achilles-tendinitis-natural-v1.webp",
+      "review_path": "img/conditions/achilles-tendinitis-natural-v1.webp",
+      "bytes": 44024,
+      "sha256": "c0caa7a5a53ddfa3a5526c4fddd67e4e8c90aae446106f36cf7d577d0a23b201"
+    },
+    {
+      "original_path": "img/conditions/ankle-instability-natural-v1.webp",
+      "review_path": "img/conditions/ankle-instability-natural-v1.webp",
+      "bytes": 49162,
+      "sha256": "fdbce0c947fc313b4b9a61990e4d958acb36f1a8e442e8113079e5300817cc31"
+    },
+    {
+      "original_path": "img/conditions/autonomic-dizziness-natural-v1.webp",
+      "review_path": "img/conditions/autonomic-dizziness-natural-v1.webp",
+      "bytes": 65164,
+      "sha256": "414179d9306574435029e584785b081f42a14acd500a95899568c4d91a825569"
+    },
+    {
+      "original_path": "img/conditions/calcific-tendinitis-natural-v1.webp",
+      "review_path": "img/conditions/calcific-tendinitis-natural-v1.webp",
+      "bytes": 57546,
+      "sha256": "68302f3456cc29b515cd3195be7246b358449434388f3ecdddcfd0f0f8d25746"
+    },
+    {
+      "original_path": "img/conditions/carpal-tunnel-natural-v1.webp",
+      "review_path": "img/conditions/carpal-tunnel-natural-v1.webp",
+      "bytes": 28770,
+      "sha256": "7d5b9085613ad5a89d2b29dc120d941406ad523d3fff82604656f1d2267f4ee8"
+    },
+    {
+      "original_path": "img/conditions/cervical-disc-natural-v1.webp",
+      "review_path": "img/conditions/cervical-disc-natural-v1.webp",
+      "bytes": 65030,
+      "sha256": "6464cca28beeeed61390df7d3aed84d2f4350e006b57f02d65bcfe675f99f204"
+    },
+    {
+      "original_path": "img/conditions/de-quervain-natural-v1.webp",
+      "review_path": "img/conditions/de-quervain-natural-v1.webp",
+      "bytes": 73242,
+      "sha256": "7fe2ed39c8246052d3c5e34b964354bd74f13a3254acb247e3aa6baffbaa85c5"
+    },
+    {
+      "original_path": "img/conditions/elbow-tendinopathy-natural-v1.webp",
+      "review_path": "img/conditions/elbow-tendinopathy-natural-v1.webp",
+      "bytes": 42196,
+      "sha256": "266013e3c79a0e6afc8ff54fe82c1a2e3c8e1031803432b5279a8bbee396fe0c"
+    },
+    {
+      "original_path": "img/conditions/facet-joint-natural-v1.webp",
+      "review_path": "img/conditions/facet-joint-natural-v1.webp",
+      "bytes": 35654,
+      "sha256": "ae5c359bc0649305ecdb3efd8b801f537a9d7f09698481062c9942deb2fdef05"
+    },
+    {
+      "original_path": "img/conditions/forward-head-posture-natural-v1.webp",
+      "review_path": "img/conditions/forward-head-posture-natural-v1.webp",
+      "bytes": 44190,
+      "sha256": "81f6cc20bc0ba6eacd1b2373ed49b5b11a86f82bcb18feb8c277b7df3c447bd0"
+    },
+    {
+      "original_path": "img/conditions/frozen-shoulder-natural-v1.webp",
+      "review_path": "img/conditions/frozen-shoulder-natural-v1.webp",
+      "bytes": 42016,
+      "sha256": "efd799d094c1239f04b1de2fd67aea5e7735bb2cc31f75dd918e5e18c901d0a3"
+    },
+    {
+      "original_path": "img/conditions/intercostal-neuralgia-natural-v1.webp",
+      "review_path": "img/conditions/intercostal-neuralgia-natural-v1.webp",
+      "bytes": 36320,
+      "sha256": "5c28e91ae2df313f108488ddb74ddac22aba9cc24f9e2abc47ec9285256b32e0"
+    },
+    {
+      "original_path": "img/conditions/knee-osteoarthritis-natural-v1.webp",
+      "review_path": "img/conditions/knee-osteoarthritis-natural-v1.webp",
+      "bytes": 48698,
+      "sha256": "40ff769f157564b64077f81591d78de1ab717c7ebce56e8af98fd1fffe14ada3"
+    },
+    {
+      "original_path": "img/conditions/lumbar-disc-natural-v1.webp",
+      "review_path": "img/conditions/lumbar-disc-natural-v1.webp",
+      "bytes": 45050,
+      "sha256": "f1ba6c743c28a30d7da493abc5ce0c13632c52d214ecf354f07c10d594714052"
+    },
+    {
+      "original_path": "img/conditions/lumbar-strain-natural-v1.webp",
+      "review_path": "img/conditions/lumbar-strain-natural-v1.webp",
+      "bytes": 50384,
+      "sha256": "85202626cb17408e8a0b4fb6ec7fe1aa175b56034101160669ea5a3d7c0d2665"
+    },
+    {
+      "original_path": "img/conditions/meniscus-natural-v1.webp",
+      "review_path": "img/conditions/meniscus-natural-v1.webp",
+      "bytes": 39188,
+      "sha256": "620abdb59dc98075c7831b4aefb557af3d87fcb1cd2408536f555fc854adca20"
+    },
+    {
+      "original_path": "img/conditions/mortons-neuroma-natural-v1.webp",
+      "review_path": "img/conditions/mortons-neuroma-natural-v1.webp",
+      "bytes": 59354,
+      "sha256": "ce39f43b743f3224dedf9c462cc9d2e3cde0979a931a1cc9d09fccd554731174"
+    },
+    {
+      "original_path": "img/conditions/occipital-neuralgia-natural-v1.webp",
+      "review_path": "img/conditions/occipital-neuralgia-natural-v1.webp",
+      "bytes": 50592,
+      "sha256": "434ada107158338ead69fba7d6e8a10f2840f7c3119de35c3dfb268e0055e176"
+    },
+    {
+      "original_path": "img/conditions/patellar-tendinitis-natural-v1.webp",
+      "review_path": "img/conditions/patellar-tendinitis-natural-v1.webp",
+      "bytes": 43344,
+      "sha256": "c8e47c89a949be3d844c7570d7ea62c7a868603a1895cbe3b73d4124f76651e8"
+    },
+    {
+      "original_path": "img/conditions/patellofemoral-pain-natural-v1.webp",
+      "review_path": "img/conditions/patellofemoral-pain-natural-v1.webp",
+      "bytes": 44074,
+      "sha256": "f08c32ec16a065cbf40c754bd6315e6f14890773795922357afc565530e1cb40"
+    },
+    {
+      "original_path": "img/conditions/plantar-fasciitis-natural-v1.webp",
+      "review_path": "img/conditions/plantar-fasciitis-natural-v1.webp",
+      "bytes": 63288,
+      "sha256": "68ba83a5fecf206c11c58ee38faf99635b673d5850218f6bb648c141cf884dbb"
+    },
+    {
+      "original_path": "img/conditions/rotator-cuff-natural-v1.webp",
+      "review_path": "img/conditions/rotator-cuff-natural-v1.webp",
+      "bytes": 43060,
+      "sha256": "0cbc5e80f0167a1554b0040415d6dbf9a8e0c966f55cbf06f94b910971091c61"
+    },
+    {
+      "original_path": "img/conditions/sciatica-natural-v1.webp",
+      "review_path": "img/conditions/sciatica-natural-v1.webp",
+      "bytes": 37942,
+      "sha256": "555f746362e3649a208a952ed89ad7f325f6bae82d712ecd29f84f395d49ed54"
+    },
+    {
+      "original_path": "img/conditions/shoulder-impingement-natural-v1.webp",
+      "review_path": "img/conditions/shoulder-impingement-natural-v1.webp",
+      "bytes": 32792,
+      "sha256": "153d6e5d964325d1b15e4fc6f36bc14fefc191b8aba47677bfe09f0e4d9e9a75"
+    },
+    {
+      "original_path": "img/conditions/spinal-stenosis-natural-v1.webp",
+      "review_path": "img/conditions/spinal-stenosis-natural-v1.webp",
+      "bytes": 102572,
+      "sha256": "8e93d2cb2b6f7e3076d759f3b9cd4bbf02c22cea9d57715b6e2d2e106e2a3fd7"
+    },
+    {
+      "original_path": "img/conditions/tension-headache-natural-v1.webp",
+      "review_path": "img/conditions/tension-headache-natural-v1.webp",
+      "bytes": 46246,
+      "sha256": "59821dd79a02cda87b31896c61b2d866aa0df4368bf89bfe5828b2fdf34390d2"
+    },
+    {
+      "original_path": "img/conditions/trigger-finger-natural-v1.webp",
+      "review_path": "img/conditions/trigger-finger-natural-v1.webp",
+      "bytes": 65032,
+      "sha256": "4b43c2a13349289742fe3ae2c0ba31acd9e6f1d2b52ecf3f45de12e8c91a2c9c"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/ct-doctor-v1.webp",
+      "review_path": "img/conditions/diagnosis/ct-doctor-v1.webp",
+      "bytes": 87998,
+      "sha256": "130e20d210514614618ca03fe6730a0d180e63a4c77474b4271ca3266829fee4"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/ct-v1.webp",
+      "review_path": "img/conditions/diagnosis/ct-v1.webp",
+      "bytes": 51514,
+      "sha256": "535c6ee6e1b3597b65747ab5398700ca2de60631cd088c9d4f64415f06473561"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/mri-doctor-v1.webp",
+      "review_path": "img/conditions/diagnosis/mri-doctor-v1.webp",
+      "bytes": 75462,
+      "sha256": "dfebf16aca819b6122b2f7f2dabe0f9d620014349fcfafe20f7bd036de64d18b"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/mri-v1.webp",
+      "review_path": "img/conditions/diagnosis/mri-v1.webp",
+      "bytes": 43168,
+      "sha256": "b0c7afb26547db0c7e2e87f50936fbb647c8890b7c1d18e7896348f739dbb905"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/ultrasound-doctor-v1.webp",
+      "review_path": "img/conditions/diagnosis/ultrasound-doctor-v1.webp",
+      "bytes": 55686,
+      "sha256": "a474bd7c2e719aaf6d96c46c39e9e60aeb957f76a2d5b5bf792d5df5a62847a7"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/ultrasound.webp",
+      "review_path": "img/conditions/diagnosis/ultrasound.webp",
+      "bytes": 22608,
+      "sha256": "c75b611666da80e13777c7d40c3c0eefbb04a9491e90482b4b8f4244b9e25588"
+    },
+    {
+      "original_path": "img/conditions/diagnosis/xray.webp",
+      "review_path": "img/conditions/diagnosis/xray.webp",
+      "bytes": 31022,
+      "sha256": "5463eb58c52efc3d01361a8388470c34c6c85185c34aea69d5463b041b469219"
+    },
+    {
+      "original_path": "img/conditions/individual/achilles-tendinitis-v1.webp",
+      "review_path": "img/conditions/individual/achilles-tendinitis-v1.webp",
+      "bytes": 86612,
+      "sha256": "28905eb4966667cf6a859633e52bf42642d4d9c152dd4823a7940ef30836ae27"
+    },
+    {
+      "original_path": "img/conditions/individual/ankle-instability-v1.webp",
+      "review_path": "img/conditions/individual/ankle-instability-v1.webp",
+      "bytes": 130080,
+      "sha256": "2963536b0a19402f25f190e52eaf6fa84c730801dc11617c588a56c5652f6adc"
+    },
+    {
+      "original_path": "img/conditions/individual/autonomic-symptoms-red-v1.webp",
+      "review_path": "img/conditions/individual/autonomic-symptoms-red-v1.webp",
+      "bytes": 178196,
+      "sha256": "776b12db3b4324e5e1716696de3a8d9361f76e7b16980fbd953cfdaa8ff91134"
+    },
+    {
+      "original_path": "img/conditions/individual/autonomic-symptoms-v1.webp",
+      "review_path": "img/conditions/individual/autonomic-symptoms-v1.webp",
+      "bytes": 180222,
+      "sha256": "8cb6051c772a01ac256ecfb03fe0d58ff3c028ffd2e593186bdc7285e67d4386"
+    },
+    {
+      "original_path": "img/conditions/individual/biceps-tendinitis-v1.webp",
+      "review_path": "img/conditions/individual/biceps-tendinitis-v1.webp",
+      "bytes": 137950,
+      "sha256": "3f5e355bb0570533047cdc90c1940e4f607a13afb20f2d94f02b83d72fac45b3"
+    },
+    {
+      "original_path": "img/conditions/individual/calcific-tendinitis-v1.webp",
+      "review_path": "img/conditions/individual/calcific-tendinitis-v1.webp",
+      "bytes": 120144,
+      "sha256": "6d799dc5165472197cd5d532462a6888ec4d2691852fe5994ff586a37332990d"
+    },
+    {
+      "original_path": "img/conditions/individual/carpal-tunnel-v2.webp",
+      "review_path": "img/conditions/individual/carpal-tunnel-v2.webp",
+      "bytes": 254670,
+      "sha256": "1dc1fdadd2ebb5404903cdaa7f37905ab6abe5d13cb2e924cda665ad649979f9"
+    },
+    {
+      "original_path": "img/conditions/individual/cervical-disc-v2.webp",
+      "review_path": "img/conditions/individual/cervical-disc-v2.webp",
+      "bytes": 110622,
+      "sha256": "cc2989be243cfccd0747c6f66653a6c7e934d742d88f17daf0b8bf178f83e1c9"
+    },
+    {
+      "original_path": "img/conditions/individual/de-quervain-v1.webp",
+      "review_path": "img/conditions/individual/de-quervain-v1.webp",
+      "bytes": 111172,
+      "sha256": "16db7910e3abfa39b737f76690f50e3952fd18ba28ba3561c6f91d032a1c2502"
+    },
+    {
+      "original_path": "img/conditions/individual/elbow-tendinopathy-v1.webp",
+      "review_path": "img/conditions/individual/elbow-tendinopathy-v1.webp",
+      "bytes": 112240,
+      "sha256": "ec99a9f2270d530fd44e418414d7e5eb840326754cfaa0ebf07126cdcfcf11cb"
+    },
+    {
+      "original_path": "img/conditions/individual/facet-joint-v1.webp",
+      "review_path": "img/conditions/individual/facet-joint-v1.webp",
+      "bytes": 170696,
+      "sha256": "6f23dc89ea2764b93ee3c8483c03f3f6fefbd651423f0267caaedc757418d634"
+    },
+    {
+      "original_path": "img/conditions/individual/forward-head-red-v1.webp",
+      "review_path": "img/conditions/individual/forward-head-red-v1.webp",
+      "bytes": 90394,
+      "sha256": "fe29a346c92fd8fcc1415c160a60e65b8b3391b4be101068491516f9189040ee"
+    },
+    {
+      "original_path": "img/conditions/individual/forward-head-v1.webp",
+      "review_path": "img/conditions/individual/forward-head-v1.webp",
+      "bytes": 89918,
+      "sha256": "13dccd4722255b1007251723a8e5aa954ebcde4b47d204c374a605d1c27d92e7"
+    },
+    {
+      "original_path": "img/conditions/individual/frozen-shoulder-v1.webp",
+      "review_path": "img/conditions/individual/frozen-shoulder-v1.webp",
+      "bytes": 124318,
+      "sha256": "bfa93d101098ef7959c094a96809203fa41f1480daa94cb9d34975874143cae0"
+    },
+    {
+      "original_path": "img/conditions/individual/intercostal-neuralgia-v1.webp",
+      "review_path": "img/conditions/individual/intercostal-neuralgia-v1.webp",
+      "bytes": 209646,
+      "sha256": "e46df76ed17d20d0e748f104beacce35f6ae4551147cd4819be0949c02cbe834"
+    },
+    {
+      "original_path": "img/conditions/individual/knee-osteoarthritis-v1.webp",
+      "review_path": "img/conditions/individual/knee-osteoarthritis-v1.webp",
+      "bytes": 118000,
+      "sha256": "cd71386e4df07e551adf990554c8cbd039f254b76da65ead6b4860db352a9d08"
+    },
+    {
+      "original_path": "img/conditions/individual/lumbar-disc-v1.webp",
+      "review_path": "img/conditions/individual/lumbar-disc-v1.webp",
+      "bytes": 182904,
+      "sha256": "7963a9677066df7e16c28693f7f4a52a3d93e9e65b5586feca6b372e221459e5"
+    },
+    {
+      "original_path": "img/conditions/individual/lumbar-strain-v1.webp",
+      "review_path": "img/conditions/individual/lumbar-strain-v1.webp",
+      "bytes": 154272,
+      "sha256": "bf1e6898094179684ca03fcbe7fcc2fd0cf689320c542cae803d0e3efd423137"
+    },
+    {
+      "original_path": "img/conditions/individual/meniscus-injury-v1.webp",
+      "review_path": "img/conditions/individual/meniscus-injury-v1.webp",
+      "bytes": 151050,
+      "sha256": "7a958ffb8a8d4ae1e98b9c990bc750826a1ac19b6a9ace40732565c8377ecb58"
+    },
+    {
+      "original_path": "img/conditions/individual/morton-neuroma-red-v2.webp",
+      "review_path": "img/conditions/individual/morton-neuroma-red-v2.webp",
+      "bytes": 252676,
+      "sha256": "60937efdfe24b21490ded7406d7fce3f64294a30495a11f5db79b554246a0117"
+    },
+    {
+      "original_path": "img/conditions/individual/morton-neuroma-v1.webp",
+      "review_path": "img/conditions/individual/morton-neuroma-v1.webp",
+      "bytes": 156810,
+      "sha256": "7b0e9b5b9df0b09e26bbda55363a8ba40a9e1ad2d759a37f8abc7f44e9373ff3"
+    },
+    {
+      "original_path": "img/conditions/individual/occipital-neuralgia-v1.webp",
+      "review_path": "img/conditions/individual/occipital-neuralgia-v1.webp",
+      "bytes": 146268,
+      "sha256": "0e203b523cbb6a0f9cf137266f622480c673762638dcbbbaa58dd00debf08468"
+    },
+    {
+      "original_path": "img/conditions/individual/patellar-tendinitis-v1.webp",
+      "review_path": "img/conditions/individual/patellar-tendinitis-v1.webp",
+      "bytes": 114442,
+      "sha256": "007fe8684bc633899ad3079c283106d2c9a536f9a4bc04865c428239141b403f"
+    },
+    {
+      "original_path": "img/conditions/individual/patellofemoral-pain-v1.webp",
+      "review_path": "img/conditions/individual/patellofemoral-pain-v1.webp",
+      "bytes": 103974,
+      "sha256": "a45e1cc53cd3acf113a77f1c63845139d46586dd4780cd87c9b6062c6cb28ddd"
+    },
+    {
+      "original_path": "img/conditions/individual/plantar-fasciitis-v1.webp",
+      "review_path": "img/conditions/individual/plantar-fasciitis-v1.webp",
+      "bytes": 126788,
+      "sha256": "6a5736fe37071c9be69e1b7f203342a86f0376951a87d0449836685acc6992f9"
+    },
+    {
+      "original_path": "img/conditions/individual/postherpetic-neuralgia-v1.webp",
+      "review_path": "img/conditions/individual/postherpetic-neuralgia-v1.webp",
+      "bytes": 168808,
+      "sha256": "4968e5bcfb27327c3d2c749c1484ad6e46553cf1a31614d73c996c7f69c71af7"
+    },
+    {
+      "original_path": "img/conditions/individual/rotator-cuff-v1.webp",
+      "review_path": "img/conditions/individual/rotator-cuff-v1.webp",
+      "bytes": 158418,
+      "sha256": "640648dfd5a07f9c6da3869c4bb216f71ed46b19f815c2ce310ea7ef27bfc975"
+    },
+    {
+      "original_path": "img/conditions/individual/sciatica-v1.webp",
+      "review_path": "img/conditions/individual/sciatica-v1.webp",
+      "bytes": 63058,
+      "sha256": "2cdfb2bdd20a23f19fab8768970fe49d47e7b268fe4667ec90462ed83cf2b164"
+    },
+    {
+      "original_path": "img/conditions/individual/shoulder-impingement-v1.webp",
+      "review_path": "img/conditions/individual/shoulder-impingement-v1.webp",
+      "bytes": 140186,
+      "sha256": "929336d375850b4c297918197d3be154e907464d2116f77365ec00967ec7a3ce"
+    },
+    {
+      "original_path": "img/conditions/individual/spinal-stenosis-v1.webp",
+      "review_path": "img/conditions/individual/spinal-stenosis-v1.webp",
+      "bytes": 134992,
+      "sha256": "af082f87ff3c53de5510cb717d43537c91614d0051de9efeb8ac9c813739dc4c"
+    },
+    {
+      "original_path": "img/conditions/individual/tension-headache-red-v1.webp",
+      "review_path": "img/conditions/individual/tension-headache-red-v1.webp",
+      "bytes": 116934,
+      "sha256": "f7cd0e9661bbcd8796901aea8e9d5484aaa96af8d260e42691447e30baf4a975"
+    },
+    {
+      "original_path": "img/conditions/individual/tension-headache-v1.webp",
+      "review_path": "img/conditions/individual/tension-headache-v1.webp",
+      "bytes": 127078,
+      "sha256": "cc206ab5374a131a9fc95d870cd4ed65b3633e437720d85b2a9dd3ce306b3aec"
+    },
+    {
+      "original_path": "img/conditions/individual/trigger-finger-v1.webp",
+      "review_path": "img/conditions/individual/trigger-finger-v1.webp",
+      "bytes": 124952,
+      "sha256": "a0cd432e9ad731cc308da8c29b6dde4580c90db1ff43ef14de242bc6991e262f"
+    },
+    {
+      "original_path": "img/doctor-assets/doctor.png",
+      "review_path": "img/doctor-assets/doctor.png",
+      "bytes": 21240162,
+      "sha256": "9e3e312d3831dc712f8e0b2161482955aa8e2c7c184a86c227e3775499c13105"
+    },
+    {
+      "original_path": "img/doc_main-assets/doc_main.png",
+      "review_path": "img/doc_main-assets/doc_main.png",
+      "bytes": 9635465,
+      "sha256": "576729d6765bd967c31c4010d74670711aaff1e8332772498548a6b55b560fdb"
+    },
+    {
+      "original_path": "img/editorial/autonomic-treatment-v1.png",
+      "review_path": "img/editorial/autonomic-treatment-v1.png",
+      "bytes": 1957377,
+      "sha256": "9d7a57c137f584fc5759654c4cb9a05cd9b531a12f76a71e94442a703dd0b0b2"
+    },
+    {
+      "original_path": "img/editorial/carm-intro-v1.png",
+      "review_path": "img/editorial/carm-intro-v1.png",
+      "bytes": 1944247,
+      "sha256": "664c20008d7f3ec295ebc5bf1539d0568021790658f4669117436e9d2ea0454a"
+    },
+    {
+      "original_path": "img/editorial/consultation-treatment-v1.png",
+      "review_path": "img/editorial/consultation-treatment-v1.png",
+      "bytes": 1988814,
+      "sha256": "9b7c0139d9385404e3f83e871fe0f188f4846e2bdb2f3fa8804c421cda5337ae"
+    },
+    {
+      "original_path": "img/editorial/cryo-intro-v2.png",
+      "review_path": "img/editorial/cryo-intro-v2.png",
+      "bytes": 1930438,
+      "sha256": "361d15ac63792f26b3ec91a0b4ab80cdeeb5a4a478779c9770be380ccfb800d4"
+    },
+    {
+      "original_path": "img/editorial/eswt-intro-v1.png",
+      "review_path": "img/editorial/eswt-intro-v1.png",
+      "bytes": 1950013,
+      "sha256": "1181eb11770d47d5f4d42af3b39d8908e5c9440b603f900b8abd1e20dd71b897"
+    },
+    {
+      "original_path": "img/editorial/facility-therapy-bed-natural-v2.webp",
+      "review_path": "img/editorial/facility-therapy-bed-natural-v2.webp",
+      "bytes": 80608,
+      "sha256": "92b86ccdd4623283c8e1d3d7b46caee539f1d71f12112a0e9143f97be52a3368"
+    },
+    {
+      "original_path": "img/editorial/facility-xray-room-natural-v2.webp",
+      "review_path": "img/editorial/facility-xray-room-natural-v2.webp",
+      "bytes": 84486,
+      "sha256": "747cece9db8137dc4d7da7388e6a70f1435eec43823de76d97b84953063a7349"
+    },
+    {
+      "original_path": "img/editorial/iv-treatment-v1.png",
+      "review_path": "img/editorial/iv-treatment-v1.png",
+      "bytes": 2199110,
+      "sha256": "0df85212230a43dba0f768c087eabadaf7d44b493179bfcbb4c48df3318ceac9"
+    },
+    {
+      "original_path": "img/editorial/precision-treatment-v1.png",
+      "review_path": "img/editorial/precision-treatment-v1.png",
+      "bytes": 2051388,
+      "sha256": "68c88ae67f14a54481db684a7598dac6faf45f4a4a026271de224e0dba06af9f"
+    },
+    {
+      "original_path": "img/editorial/recovery-treatment-v1.png",
+      "review_path": "img/editorial/recovery-treatment-v1.png",
+      "bytes": 1898299,
+      "sha256": "a29b3561c39c083bd530869f4dc544187ad075cf849e9221a4490938d531be70"
+    },
+    {
+      "original_path": "img/editorial/team-treatment-v1.png",
+      "review_path": "img/editorial/team-treatment-v1.png",
+      "bytes": 1965071,
+      "sha256": "ee03b41e76e457615857a5ba2ea2c76033b8f1709b9a5c02fccf4d08b9bff42b"
+    },
+    {
+      "original_path": "img/editorial/ultrasound-intro-v1.png",
+      "review_path": "img/editorial/ultrasound-intro-v1.png",
+      "bytes": 1824781,
+      "sha256": "77d0652643e69bb38c75e9bf5db423203d48719e98b4afcbc270ddd953672e25"
+    },
+    {
+      "original_path": "img/heroes/equipment-natural-v1.webp",
+      "review_path": "img/heroes/equipment-natural-v1.webp",
+      "bytes": 91674,
+      "sha256": "052896391433fbf097ba8a7fdfdbb42d95fb9d7ea31e0223b0478aa21153ad81"
+    },
+    {
+      "original_path": "img/heroes/ultrasound-imaging-v1.png",
+      "review_path": "img/heroes/ultrasound-imaging-v1.png",
+      "bytes": 2126362,
+      "sha256": "02742dfb77eb151adc596b74df699bff6bc901721d3b1c8dce26cae2bf99c3a1"
+    },
+    {
+      "original_path": "img/keypoints/family-v1.png",
+      "review_path": "img/keypoints/family-v1.png",
+      "bytes": 940765,
+      "sha256": "d899f5f2db85882c53ee14b33db6cb8fab04988e4fa7c36f81693ccb128df098"
+    },
+    {
+      "original_path": "img/keypoints/healing-v1.png",
+      "review_path": "img/keypoints/healing-v1.png",
+      "bytes": 796956,
+      "sha256": "39a259307a58ec9790a8abed5d8859e9cd34547e71f63afc7ad51cdff245d8a7"
+    },
+    {
+      "original_path": "img/keypoints/principles-v1.png",
+      "review_path": "img/keypoints/principles-v1.png",
+      "bytes": 1107961,
+      "sha256": "3dfd9a78304a8c261f7d8f4a108513d9585579c6c872460560335e6c802d31da"
+    },
+    {
+      "original_path": "img/temporary/c-arm-room-v1.webp",
+      "review_path": "img/temporary/c-arm-room-v1.webp",
+      "bytes": 89786,
+      "sha256": "417dff67739f587fb6ac2911d81c2818932dbfbf684a3b3b575dd9729dc658b7"
+    },
+    {
+      "original_path": "img/temporary/daily-fatigue-v1.webp",
+      "review_path": "img/temporary/daily-fatigue-v1.webp",
+      "bytes": 160866,
+      "sha256": "6a9e27a82a208d566817d5aef38037caf98dc6093e5dd980afaa5ee3f990bc0b"
+    },
+    {
+      "original_path": "img/temporary/foot-care-v1.webp",
+      "review_path": "img/temporary/foot-care-v1.webp",
+      "bytes": 85320,
+      "sha256": "7c939543bb4a75d9fe2b7b09cffe537e04d3b2b079c69f5b5c33d0fa8088e22b"
+    },
+    {
+      "original_path": "img/temporary/knee-care-v1.webp",
+      "review_path": "img/temporary/knee-care-v1.webp",
+      "bytes": 97038,
+      "sha256": "e8266c8931b903868ad6cd919d2921a26a854573547277a34492f1975f7207c7"
+    },
+    {
+      "original_path": "img/temporary/team-learning-v1.webp",
+      "review_path": "img/temporary/team-learning-v1.webp",
+      "bytes": 87978,
+      "sha256": "ee83e069251fe05c662abbadb065b709cec2c65ffd10d19a0d43ed3a715564fc"
+    },
+    {
+      "original_path": "img/temporary/ultrasound-equipment-v1.webp",
+      "review_path": "img/temporary/ultrasound-equipment-v1.webp",
+      "bytes": 95798,
+      "sha256": "d0a8f6340b2302a627c9db6935bfda716373e23a10aba29d963b0eb833facec5"
+    }
+  ],
+  "preserved_count": 6,
+  "preserved": [
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876.jpg",
+      "bytes": 2339655,
+      "sha256": "3217fb55146b4571fea433d80cf7f4ab31e77b0639463e6ea294e27d6e9b856d"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_01.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_01.jpg",
+      "bytes": 2605192,
+      "sha256": "11347e7537b580926ea1cf5b253e99ce3369a6a237c312b5fbd47f356f8f7c80"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_02.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_02.jpg",
+      "bytes": 3010826,
+      "sha256": "489e49f5b08a680e3ff94228068873a6e0c67c28091135a370204a993ac600c0"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_03.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_03.jpg",
+      "bytes": 2727139,
+      "sha256": "0d66c1f87f43cc1cacc0f5d433342a5b5e6420c4166b8a749423dbca513f29a7"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_04.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_04.jpg",
+      "bytes": 2420914,
+      "sha256": "8a824a9505a232455fad3b2d7069714f46cfea57d964e31bb0f7287c21aae4ec"
+    },
+    {
+      "original_path": "img/KakaoTalk_20260921_102345876_05.jpg",
+      "review_path": "img/KakaoTalk_20260921_102345876_05.jpg",
+      "bytes": 2702446,
+      "sha256": "6ca2099d3a39835f85adf61b2e94504a380408c9181219feb626030e2d99c2a6"
+    }
+  ]
+}

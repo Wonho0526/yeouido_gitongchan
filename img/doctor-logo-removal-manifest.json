@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "excluded": "doctor_profile.png",
+  "assets": [
+    {
+      "file": "doc-main-no-logo-v1.png",
+      "source": "doc_main.jpg",
+      "prompt": "Edit the supplied original photograph with extremely minimal local retouching ONLY. Remove the red embroidered brand/logo marks on the doctor's white coat upper sleeve, and remove the red/black commercial brand logo and lettering near the lower chest pocket. Reconstruct plain white coat fabric with the exact existing folds, shading, seams and texture at those locations. Remove any other visible branded emblem on other medical staff clothing if present. Preserve the blue Korean name embroidery 이동현 exactly. Preserve ALL people and their facial identity, face shape, eyes, hair, glasses, mask, hands, poses, patient, clothes, original dark clinical background, lighting, framing and photographic texture unchanged. Do NOT regenerate or beautify the face, do not change skin or mask, do not crop or restyle. This is logo removal only."
+    },
+    {
+      "file": "doctor-no-logo-v1.png",
+      "source": "doctor.jpg",
+      "prompt": "Perform a precise minimal logo-removal edit to this original photograph. Erase the red brand logo on the primary doctor's white coat upper sleeve and the red/white logo on the background clinician's navy scrub sleeve, leaving naturally matching fabric with original folds and light. Also remove any commercial logo text on clothing, but preserve the primary doctor's blue Korean name embroidery. Keep EVERY person's facial identity, glasses, mask, hair, head proportions, posture, hands, patient, equipment, room, lighting, colors and complete original composition exactly unchanged. Do not replace, beautify or redraw faces. No other changes. Photographic restoration of only the small embroidered logo areas."
+    },
+    {
+      "file": "doctor-main02-no-logo-v1.png",
+      "source": "doctor_main02.png",
+      "prompt": "Edit this exact portrait photograph by removing ONLY the red commercial logo on the white coat upper sleeve and the red/black branded emblem and lettering below the chest pocket. Fill just those logo areas with seamless white coat fabric matching the original folds, shadows and texture. Preserve the blue Korean name embroidery 이동현. All facial identity, glasses, eyes, hair, mask, skin, proportions, hands, dark background, lighting and portrait framing must remain exactly as the original. No face regeneration, no beautification, no styling or cropping changes. Minimal local retouch, logo removal only. Keep portrait orientation."
+    }
+  ]
+}

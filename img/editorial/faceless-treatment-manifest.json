@@ -1,0 +1,72 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "Generated clinical scenes reframed to exclude clinicians' heads and faces. Not photographs of actual clinic staff or patients.",
+  "assets": [
+    {
+      "file": "precision-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/precision-treatment-faceless-v3.png",
+      "source": "precision-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "autonomic-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/autonomic-treatment-faceless-v3.png",
+      "source": "autonomic-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "iv-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/iv-treatment-faceless-v3.png",
+      "source": "iv-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "consultation-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/consultation-treatment-faceless-v3.png",
+      "source": "consultation-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "team-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/team-treatment-faceless-v3.png",
+      "source": "team-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "recovery-treatment-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/recovery-treatment-faceless-v3.png",
+      "source": "recovery-treatment-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "cryo-intro-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/cryo-intro-faceless-v3.png",
+      "source": "cryo-intro-v2.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "carm-intro-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/carm-intro-faceless-v3.png",
+      "source": "carm-intro-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "ultrasound-intro-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/ultrasound-intro-faceless-v3.png",
+      "source": "ultrasound-intro-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "eswt-intro-faceless-v3.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/eswt-intro-faceless-v3.png",
+      "source": "eswt-intro-v1.png",
+      "prompt": "Edit this clinical editorial photo by reframing the composition so EVERY clinician's entire head and face is fully outside the image, including chin, mouth, nose, ears and eyes. Only their navy-scrub torso, arms and hands should be visible. Preserve the existing treatment interaction, patient's comfortable pose, device if present, anatomically correct hands, warm ivory/light oak room, soft natural light and photographic realism. Use a closer shoulder-level or hands-and-treatment-area crop/recomposition with no heads of clinicians anywhere in frame. Do not blur faces, cover faces with blocks, add masks as a substitute, invent new equipment or alter the treatment. Landscape 3:2 image. Patient head may also be cropped if needed. No text or watermark."
+    },
+    {
+      "file": "manual-treatment-faceless-v1.png",
+      "path": "C:/xampp/htdocs/Ygitongchan/yeouido_gitongchan/img/editorial/manual-treatment-faceless-v1.png",
+      "source": null,
+      "prompt": "Original photorealistic editorial photo, landscape 3:2, a fully clothed adult East Asian patient lies on their side on an ivory treatment bed receiving gentle manual physiotherapy to the shoulder and upper back from a clinician in navy scrubs. Camera shows ONLY the clinician's torso below shoulders, forearms and hands; clinician entire head, chin and face are completely outside frame. The patient's face is also outside frame. One hand gently supports the shoulder blade through a beige cotton T-shirt, the other supports the upper arm. Natural relaxed side-lying position, careful mild treatment, no extreme twisting or force. Warm ivory and light oak Korean pain clinic room, soft window light, uncluttered setting, accurate anatomy and hands, no words or logos. Clearly shows hands-on treatment with a patient, not an empty bed."
+    }
+  ]
+}

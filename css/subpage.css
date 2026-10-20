@@ -1215,7 +1215,7 @@ body[data-page="hours"] .footer-contact {
   border-left: 3px solid var(--sub-gold);
   color: var(--sub-navy);
   font-family: var(--font-family);
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.65;
 }

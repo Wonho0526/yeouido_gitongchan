@@ -10,10 +10,10 @@
       href: "about.html",
       label: "여의도기통찬 소개",
       children: [
-        { href: "about.html", label: "기통찬 스토리" },
-        { href: "special.html", label: "기통찬 특별함" },
-        { href: "doctor.html", label: "기통찬 의료진" },
-        { href: "values.html", label: "기통찬 약속" },
+        { href: "about.html", label: "여의도기통찬 스토리" },
+        { href: "special.html", label: "여의도기통찬 특별함" },
+        { href: "doctor.html", label: "여의도기통찬 의료진" },
+        { href: "values.html", label: "여의도기통찬 약속" },
       ],
     },
     {
@@ -43,10 +43,12 @@
       ],
     },
     {
-      href: "c-arm.html", label: "찬란한 일상을 위한 진료환경", brandLetter: true,
+      href: "equipment.html#c-arm", label: "찬란한 일상을 위한 진료환경", brandLetter: true,
       children: [
-        { href: "c-arm.html", label: "C-arm" },
-        { href: "ultrasound.html", label: "초음파" },
+        { href: "equipment.html#c-arm", label: "C-arm" },
+        { href: "equipment.html#ultrasound", label: "초음파" },
+        { href: "equipment.html#cryo-jet", label: "Cryo-Jet" },
+        { href: "equipment.html#eswt", label: "체외충격파" },
         { href: "spaces.html", label: "공간 둘러보기" },
       ],
     },
@@ -61,11 +63,16 @@
   const rootPrefix = isSubPage ? "../" : "";
   const subPrefix = isSubPage ? "" : "sub/";
   const itemPages = (item) => [item.href].concat((item.children || []).map((child) => child.href));
-  const isActive = (item) => itemPages(item).includes(currentPage);
+  const isActive = (item) => itemPages(item).some(href => href.split("#")[0] === currentPage);
   const navHref = (item) => item.external ? item.href : `${subPrefix}${item.href}`;
   const findHero = () => document.querySelector("main > .hero, main > .sub-hero");
 
   function Header() {
+    const [currentHash, setCurrentHash] = React.useState(() => window.location.hash || "#c-arm");
+    const isCurrent = (href) => {
+      const [page, hash] = href.split("#");
+      return page === currentPage && (!hash || `#${hash}` === currentHash);
+    };
     const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1440px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openSubmenu, setOpenSubmenu] = React.useState(null);
@@ -78,6 +85,12 @@
       setIsMobileMenuOpen(false);
       setOpenSubmenu(null);
     };
+
+    React.useEffect(() => {
+      const syncHash = () => setCurrentHash(window.location.hash || "#c-arm");
+      window.addEventListener("hashchange", syncHash);
+      return () => window.removeEventListener("hashchange", syncHash);
+    }, []);
 
     React.useEffect(() => {
       let frame = 0;
@@ -246,7 +259,7 @@
                     "data-naver-reservation": item.reservation ? "" : undefined,
                     "aria-controls": item.children ? `site-sub-nav-${index}` : undefined,
                     "aria-expanded": item.children ? openSubmenu === index : undefined,
-                    "aria-current": !item.children && currentPage === item.href ? "page" : undefined,
+                    "aria-current": !item.children && isCurrent(item.href) ? "page" : undefined,
                     onClick: isCompact && item.children
                       ? () => setOpenSubmenu((open) => open === index ? null : index)
                       : closeMenus,
@@ -274,8 +287,8 @@
                             "a",
                             {
                               href: navHref(child),
-                              className: currentPage === child.href ? "sub-nav-link is-active" : "sub-nav-link",
-                              "aria-current": currentPage === child.href ? "page" : undefined,
+                              className: isCurrent(child.href) ? "sub-nav-link is-active" : "sub-nav-link",
+                              "aria-current": isCurrent(child.href) ? "page" : undefined,
                               "aria-label": item.justifyChildren ? child.label : undefined,
                               onClick: closeMenus,
                             },
@@ -294,16 +307,6 @@
               )
             )
           )
-        ),
-        h(
-          "a",
-          {
-            href: "tel:027827070",
-            className: "phone-cta",
-            "aria-label": "전화문의 02-782-7070",
-          },
-          h("span", null, "전화문의"),
-          h("strong", null, "02-782-7070")
         )
       )
     );

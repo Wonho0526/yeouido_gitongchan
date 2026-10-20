@@ -1,0 +1,6 @@
+{
+  "source": "cryo-jet.png",
+  "output": "equipment-cryo-jet-cutout.png",
+  "tool": "built-in image_gen",
+  "prompt": "Remove only the white background, including gaps between the hose, support arm and machine, to genuine alpha transparency. Preserve the device silhouette, hose and metal arm geometry, controls, wheels, printed Cryo-Jet text, snowflake designs, colors and photographic texture. No redesign, added objects, ground shadow or white halo. Keep the entire device in frame with a small transparent margin."
+}

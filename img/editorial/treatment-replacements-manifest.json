@@ -1,0 +1,35 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "Illustrative staged treatment scenes replacing temporary visuals on treatment information pages. These are not actual clinic or patient photographs. Physician biography and facility photos are excluded.",
+  "assets": [
+    {
+      "file": "precision-treatment-v1.png",
+      "prompt": "Photorealistic editorial stock photograph, landscape 3:2, a fully clothed adult East Asian patient seated upright on a clinic examination chair wearing a plain beige cotton T-shirt and long trousers. A clinician in navy scrubs and medical gloves gently checks the patient's shoulder and upper back through the T-shirt with both hands, careful professional attention. Treatment preparation and physical assessment in a contemporary Korean pain clinic, warm ivory and light oak room, natural window light, clean unbranded equipment softly blurred in background. Medium-wide three-quarter side angle, patient and clinician faces mostly outside the crop. Respectful routine healthcare scene, all clothing stays on. Accurate hands and anatomy, no text or watermark."
+    },
+    {
+      "file": "autonomic-treatment-v1.png",
+      "prompt": "Create an original photorealistic staged editorial photograph for a premium Korean pain clinic website. Landscape 3:2 image, natural window light, warm ivory walls and treatment upholstery, light oak, muted navy scrubs and subtle brown accents. Adult East Asian patient and adult clinician, modest clothing and respectful posture. Clean uncluttered contemporary clinic. Realistic hands and anatomy. Composition clearly shows the patient receiving care; no identifiable real clinic or actual patient, no words, logos, watermarks, charts with readable data, wounds or blood. A relaxed adult patient reclines on a treatment bed with an ivory blanket and eyes gently closed. A clinician in navy scrubs sits alongside and carefully palpates the patient's wrist while checking comfort, a discreet unbranded vital-sign monitor softly out of focus. Show direct supportive patient care and quiet rest, no machines strapped to the head or invented therapeutic devices. Slightly elevated side view including clinician torso, hands and patient's upper body. No injection or invasive procedure."
+    },
+    {
+      "file": "iv-treatment-v1.png",
+      "prompt": "Create an original photorealistic staged editorial photograph for a premium Korean pain clinic website. Landscape 3:2 image, natural window light, warm ivory walls and treatment upholstery, light oak, muted navy scrubs and subtle brown accents. Adult East Asian patient and adult clinician, modest clothing and respectful posture. Clean uncluttered contemporary clinic. Realistic hands and anatomy. Composition clearly shows the patient receiving care; no identifiable real clinic or actual patient, no words, logos, watermarks, charts with readable data, wounds or blood. An adult patient receives a normal peripheral intravenous saline infusion while resting in a comfortable ivory recliner, forearm supported on a cushion. A clinician wearing gloves gently checks a transparent dressing securing the already-placed IV cannula on the forearm; clear IV tubing runs to a conventional saline bag on a realistic stand. No visible needle insertion or blood, no impossible tubing connections or elaborate hardware. Frame mainly the supported arm, nurse's hands and resting patient's torso; relaxed reassuring atmosphere."
+    },
+    {
+      "file": "consultation-treatment-v1.png",
+      "prompt": "Create an original photorealistic staged editorial photograph for a premium Korean pain clinic website. Landscape 3:2 image, natural window light, warm ivory walls and treatment upholstery, light oak, muted navy scrubs and subtle brown accents. Adult East Asian patient and adult clinician, modest clothing and respectful posture. Clean uncluttered contemporary clinic. Realistic hands and anatomy. Composition clearly shows the patient receiving care; no identifiable real clinic or actual patient, no words, logos, watermarks, charts with readable data, wounds or blood. An adult patient sits on an examination bed during a shoulder rehabilitation session. A clinician in navy scrubs gently supports the patient's forearm with one hand and demonstrates a comfortable range-of-motion movement, explaining with the other hand; patient is attentive and relaxed. Shoulder remains covered by a modest neutral top, no forced or extreme positions. Medium-wide side angle showing two torsos and careful hand contact, faces only partly visible or cropped. Show active treatment with clear communication."
+    },
+    {
+      "file": "team-treatment-v1.png",
+      "prompt": "Create an original photorealistic staged editorial photograph for a premium Korean pain clinic website. Landscape 3:2 image, natural window light, warm ivory walls and treatment upholstery, light oak, muted navy scrubs and subtle brown accents. Adult East Asian patient and adult clinician, modest clothing and respectful posture. Clean uncluttered contemporary clinic. Realistic hands and anatomy. Composition clearly shows the patient receiving care; no identifiable real clinic or actual patient, no words, logos, watermarks, charts with readable data, wounds or blood. Two clinicians collaborate during gentle manual therapy for a seated patient's shoulder: one navy-clad clinician carefully supports the patient's upper arm while a second clinician observes shoulder movement and gives a calm instruction. Patient in modest beige top seated securely on an ivory treatment bed. Exactly three adult people, anatomically plausible hands, mild comfortable shoulder movement, no extreme manipulation. Medium-wide eye-level view with faces mostly cropped, subtle professional teamwork."
+    },
+    {
+      "file": "recovery-treatment-v1.png",
+      "prompt": "Create an original photorealistic staged editorial photograph for a premium Korean pain clinic website. Landscape 3:2 image, natural window light, warm ivory walls and treatment upholstery, light oak, muted navy scrubs and subtle brown accents. Adult East Asian patient and adult clinician, modest clothing and respectful posture. Clean uncluttered contemporary clinic. Realistic hands and anatomy. Composition clearly shows the patient receiving care; no identifiable real clinic or actual patient, no words, logos, watermarks, charts with readable data, wounds or blood. A clinician guides a patient through a gentle standing rehabilitation movement beside a treatment bed: patient holds a light resistance band at chest height, elbows comfortably bent; clinician supports and cues the upper arm with an open hand. Patient in neutral modest activewear, clinician in navy scrubs, both in a stable natural posture. Medium-wide three-quarter view emphasizing gradual supervised recovery and patient participation, no extreme exercise or gym equipment, no exaggerated pain or athletic strain."
+    }
+  ],
+  "reusedGeneratedAssets": [
+    "ultrasound-intro-v1.png",
+    "eswt-intro-v1.png",
+    "eswt-treatment-v1.png"
+  ]
+}

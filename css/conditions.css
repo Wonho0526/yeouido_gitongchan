@@ -481,7 +481,7 @@
 .condition-editorial-page .condition-philosophy {
     padding: 85px 0;
     text-align: center;
-    background: linear-gradient(90deg, rgba(16, 39, 65, .93), rgba(16, 39, 65, .85)), url('../img/doc_main.jpg') center 35%/cover;
+    background: linear-gradient(90deg, rgba(16, 39, 65, .93), rgba(16, 39, 65, .85)), url('../img/doc-main-no-logo-v1.png') center 35%/cover;
     color: white;
 }
 

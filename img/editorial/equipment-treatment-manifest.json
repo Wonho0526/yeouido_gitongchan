@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "AI-generated illustrative treatment scenes; not photographs of actual clinic staff, patients, or procedures.",
+  "assets": [
+    {
+      "file": "cryo-treatment-v1.png",
+      "page": "sub/equipment.html#cryo-jet",
+      "prompt": "Create a photorealistic editorial treatment scene for a premium Korean pain clinic website, portrait 4:5 composition. The reference image is only a visual guide for the Cryo-Jet cold air machine and its black flexible hose nozzle, not an edit target. An adult East Asian patient sits comfortably on an ivory treatment bed wearing modest neutral clothing, one trouser leg rolled up to expose the knee. A clinician in navy scrubs wearing medical gloves holds the black cold-air nozzle a few centimeters above intact skin beside the knee without contacting the skin. Include a softly defocused Cryo-Jet unit consistent with the reference in the background. Focus on anatomically correct hands, nozzle and knee; faces outside the crop. No needles, blood, wounds, no dramatic frost or steam, no blue glow, no medical diagrams. Soft natural window light, warm ivory walls, light oak, subtle muted brown and deep navy details, uncluttered contemporary treatment room. Realistic, calm, respectful staged stock photograph, not an identifiable real clinic or patient. No typography, watermark, additional logos or caption. Full opaque image."
+    },
+    {
+      "file": "eswt-treatment-v1.png",
+      "page": "sub/equipment.html#eswt",
+      "prompt": "Create a photorealistic editorial treatment scene for a premium Korean pain clinic website, portrait 4:5 composition. Reference image is a visual guide for the blue and white shockwave therapy machine and its round handheld applicator, not an edit target. Close view of an adult East Asian patient's lower calf and heel comfortably supported on an ivory padded treatment bed. A clinician wearing navy scrubs and medical gloves gently positions a round shockwave applicator against the skin near the Achilles tendon above the heel with a subtle clear gel layer, cable leading toward a softly blurred blue and white machine consistent with the reference. Relaxed clinical posture, anatomically correct ankle and hands. Modest neutral patient clothing, no faces in frame. Soft natural window light, warm ivory walls, light oak furnishings, muted deep navy and warm brown accents. Clean uncluttered room. Realistic respectful staged stock photograph, not a real identifiable clinic or patient. No needles, blood, wounds, diagram overlays, energy effects, words or watermarks. Full opaque image."
+    }
+  ]
+}

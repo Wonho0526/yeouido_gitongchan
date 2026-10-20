@@ -19,10 +19,6 @@
   background: transparent;
 }
 
-.site-header.is-over-dark .header-logo {
-  filter: brightness(0) invert(1);
-}
-
 .site-header.is-over-dark .main-nav-link {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
 }
@@ -34,7 +30,7 @@
   padding-right: 20px;
   padding-left: 20px;
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr) 240px;
+  grid-template-columns: 320px minmax(0, 1fr);
   align-items: center;
   gap: 22px;
 }
@@ -70,7 +66,7 @@
   align-items: center;
   justify-content: center;
   color: var(--header-ink);
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -87,7 +83,7 @@
   min-width: 0;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 24px;
 }
 
 .main-nav-item {
@@ -185,7 +181,7 @@
   padding: 0 14px;
   border-radius: 4px;
   color: #625a53;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.35;
   text-align: center;
@@ -216,35 +212,6 @@
   background: var(--color-primary-dark);
 }
 
-.site-header .phone-cta {
-  justify-self: end;
-  width: 240px;
-  max-width: 100%;
-  height: 72px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 16px;
-  color: var(--color-on-dark);
-  border: 1px solid var(--color-primary-dark);
-  border-radius: 8px;
-  background: var(--color-primary-dark);
-  line-height: 1.1;
-}
-
-.site-header .phone-cta span {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.site-header .phone-cta strong {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
 /* Keep this breakpoint in sync with Header.js. */
 @media (max-width: 1440px) {
   :root {
@@ -258,10 +225,6 @@
     background: #fff;
   }
 
-  .site-header.is-over-dark .header-logo {
-    filter: none;
-  }
-
   .site-header .header-inner {
     grid-template-columns: minmax(0, 1fr) 42px;
     gap: 12px;
@@ -272,10 +235,6 @@
   .header-logo {
     width: 200px;
     max-width: 100%;
-  }
-
-  .site-header .phone-cta {
-    display: none;
   }
 
   .mobile-menu-toggle {
@@ -355,7 +314,7 @@
     justify-content: center;
     gap: 12px;
     padding: 12px 30px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     white-space: normal;
     word-break: keep-all;
@@ -392,7 +351,7 @@
   .sub-nav-link {
     min-height: 44px;
     padding: 10px 12px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.5;
     white-space: normal;
     word-break: keep-all;

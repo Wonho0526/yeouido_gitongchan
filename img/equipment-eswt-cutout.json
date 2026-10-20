@@ -1,0 +1,6 @@
+{
+  "source": "ESWT.png",
+  "output": "equipment-eswt-cutout.png",
+  "tool": "built-in image_gen",
+  "prompt": "Extract the complete blue and white uFORCE device with attached handpiece, cables and wheels onto transparent alpha. Remove white and black background and gaps around cables. Preserve machine shape, colors, logo and controls. No redesign, invented attachments, shadow or halo. Center the entire device with a small transparent margin."
+}

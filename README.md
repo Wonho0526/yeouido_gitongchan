@@ -54,6 +54,14 @@
 
 ## 스타일
 
+### 장비 통합 페이지
+
+- `sub/equipment.html`에서 C-arm·초음파·Cryo-Jet·체외충격파를 한 페이지로 안내합니다. 메뉴 카테고리는 유지하며 `#c-arm`, `#ultrasound`, `#cryo-jet`, `#eswt`로 각 장비를 선택합니다. 공간 둘러보기는 `sub/spaces.html`을 유지합니다.
+- 히어로는 고정입니다. 아래 카드형 장비 이미지 슬라이드의 좌우 버튼, 모바일 스와이프, 키보드 방향키로 장비를 바꾸면 하단 설명과 장비 탭이 함께 바뀝니다. 장비 탭에는 C-arm·초음파·Cryo-Jet·체외충격파만 표시하며 공간 둘러보기는 별도 페이지와 헤더 메뉴로 유지합니다. 처음과 마지막 카드도 양방향 무한 루프로 이어집니다. 자동 재생은 하지 않습니다.
+- `js/equipment.js`가 전환과 URL/뒤로가기를 관리하며 `css/equipment.css`가 장비 전환 UI를 담당합니다. JavaScript 없이도 두 장비 상세 내용을 이어서 읽을 수 있습니다.
+- 기존 `sub/c-arm.html`, `sub/ultrasound.html`은 통합 페이지의 해당 장비로 이동합니다.
+- `npm run verify:equipment`로 통합 장비 페이지와 메뉴, 이전 주소, 전환 동작을 검증합니다.
+
 질환 상세페이지 6곳은 첨부 레퍼런스에 맞춰 `css/conditions.css`의 흰 배경, 네이비·골드, 원형 이미지 및 증상 영역을 사용합니다. `js/conditions.js`가 질환 선택, 키보드 이동, URL 해시와 뒤로가기를 관리합니다. 기존 29개 질환의 설명·대표 증상과 부위별 소개·강조 문구를 유지했습니다. JavaScript가 없으면 모든 질환을 이어서 읽을 수 있습니다.
 
 부위별 AI 설명 이미지 6장은 `img/conditions/anatomy/`에 있으며 생성 도구와 전체 프롬프트는 해당 폴더의 `manifest.json`에 기록했습니다. 실제 환자 영상이 아닌 일반적인 부위 이해용 이미지입니다. `npm run verify:conditions`로 질환 탭과 모바일·PC 레이아웃, 파일 직접 열기를 검증합니다.
@@ -73,3 +81,13 @@
 - 글꼴 파일과 SIL Open Font License는 `fonts/pretendard/`에 있습니다.
 - 공식 배포처: https://github.com/orioncactus/pretendard
 - `css/reset.css`에서 글꼴을 불러오고 `css/common.css`의 `--font-family`에서 공통 글꼴을 지정합니다.
+
+- 냉각치료·체외충격파 주요 기능 영역은 PC에서 치료 이미지와 세로 설명 목록을 나란히 표시하고, 900px 이하에서 이미지 위·설명 아래로 배치합니다. 이미지 출처·생성 프롬프트는 `img/editorial/equipment-treatment-manifest.json`에 기록합니다. 실제 병원·환자 촬영 사진이 아닌 AI 연출 이미지입니다.
+
+- 네 장비 모두 소개 문구 왼쪽·소개 이미지 오른쪽, 주요 기능 이미지 왼쪽·세로 목록 오른쪽으로 통일합니다. 900px 이하에서는 각각 위아래로 배치합니다. 추가 소개 이미지의 생성 기록은 `img/editorial/equipment-intro-manifest.json`에 있습니다.
+
+- 자율신경·기능회복 수액·체외충격파·특별함 페이지의 치료 설명용 임시 이미지 12곳을 치료·케어 장면으로 교체했습니다. 새 생성본 6종과 기존 생성 치료 이미지 3종을 사용합니다. 의료진 소개와 시설 사진은 유지하며, 기록은 `img/editorial/treatment-replacements-manifest.json`에 있습니다.
+
+- 생성 치료 사진 중 의료진 얼굴이 보이던 사진을 얼굴이 프레임 밖인 구도로 교체했습니다. 체외충격파 소개의 누락 이미지와 도수치료 소개도 치료 장면으로 교체했습니다. 최종 이미지 경로와 프롬프트는 `img/editorial/faceless-treatment-manifest.json`에 기록합니다.
+
+- 서브페이지는 기존 로컬 AOS 라이브러리와 `js/subpage-motion.js`, `css/subpage-motion.css`로 14px·900ms의 1회 페이드업을 적용하며, 화면 하단에서 120px 들어온 뒤 시작합니다. 히어로·메뉴·슬라이드 내부 카드는 제외하고, 특별함의 스크롤 선 영역은 위치 측정에 영향을 주지 않는 페이드만 사용합니다. 탭 전환·지연 이미지·건강정보 로딩 후 갱신하며, 모션 감소 설정 또는 라이브러리 미로딩 시 콘텐츠를 바로 표시합니다.
