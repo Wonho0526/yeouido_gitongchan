@@ -1,0 +1,17 @@
+# Cafe24 (Apache 2.4 behind an openresty proxy). GitHub Pages ignores this file.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS.
+    #
+    # openresty terminates TLS and forwards to Apache, so the scheme is read from the
+    # header the proxy sets rather than from %{HTTPS}. The condition fires only when the
+    # header explicitly says http: if it is ever missing the request is left alone, which
+    # means a proxy change can stop the redirect but can never cause a redirect loop.
+    #
+    # Without this an admin who types the bare domain logs in over plain HTTP, where the
+    # session cookie is issued without the Secure flag (see includes/bootstrap.php).
+    RewriteCond %{HTTP:X-Forwarded-Proto} =http
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
