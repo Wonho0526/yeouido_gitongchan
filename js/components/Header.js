@@ -71,7 +71,7 @@
       const [page, hash] = href.split("#");
       return page === currentPage && (!hash || `#${hash}` === currentHash);
     };
-    const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1440px)").matches);
+    const [isCompact, setIsCompact] = React.useState(() => window.matchMedia("(max-width: 1000px)").matches);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openSubmenu, setOpenSubmenu] = React.useState(null);
     const [isOverDark, setIsOverDark] = React.useState(() => Boolean(findHero()) && window.scrollY === 0);
@@ -115,7 +115,7 @@
     }, []);
 
     React.useEffect(() => {
-      const media = window.matchMedia("(max-width: 1440px)");
+      const media = window.matchMedia("(max-width: 1000px)");
       const onChange = (event) => {
         setIsCompact(event.matches);
         setIsMobileMenuOpen(false);

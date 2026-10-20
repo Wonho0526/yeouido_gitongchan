@@ -199,12 +199,16 @@ h2 * {
     max-height: 0;
     opacity: 0;
     visibility: hidden;
-    overflow-y: auto;
+    overflow: hidden;
+    scrollbar-width: none;
     transform: translateY(12px);
     transition: max-height .32s ease, opacity .22s ease, transform .32s ease, visibility .32s;
   }
+  .quick-links-panel::-webkit-scrollbar {
+    display: none;
+  }
   .quick-links.is-open .quick-links-panel {
-    max-height: min(324px, calc(100dvh - 92px - env(safe-area-inset-bottom)));
+    max-height: 432px;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -230,7 +234,7 @@ h2 * {
     outline-offset: -4px;
   }
   .quick-link {
-    height: 54px;
+    height: clamp(28px, calc((100dvh - 92px - env(safe-area-inset-bottom)) / 8), 54px);
     gap: 4px;
     padding: 6px 2px;
     font-size: 10px;

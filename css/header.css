@@ -213,7 +213,7 @@
 }
 
 /* Keep this breakpoint in sync with Header.js. */
-@media (max-width: 1440px) {
+@media (max-width: 1000px) {
   :root {
     --header-height: 100px;
   }

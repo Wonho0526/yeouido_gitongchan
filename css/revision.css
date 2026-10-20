@@ -323,7 +323,7 @@ dd {
   font-weight: 800;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1001px) {
 
   .site-header.is-over-dark .nav-brand-letter,
   .site-header.is-over-dark .main-nav-link.reservation-link {
@@ -680,6 +680,52 @@ body:is([data-page="about"], [data-page="special"], [data-page="doctor"], [data-
   line-height: 1.8;
 }
 
+.sub-doctor-heading,
+.sub-doctor-credentials {
+  display: contents;
+}
+
+@media (max-width: 768px) {
+  .sub-doctor-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .sub-doctor-layout .sub-doctor-copy {
+    display: contents;
+  }
+
+  .sub-doctor-heading {
+    display: block;
+    order: 0;
+  }
+
+  .sub-doctor-heading h2 {
+    margin-top: 0;
+  }
+
+  .sub-doctor-layout .sub-doctor-photo {
+    order: 1;
+  }
+
+  .sub-doctor-credentials {
+    display: block;
+    order: 2;
+  }
+}
+
+.foot-intro-mobile-break {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .foot-intro-mobile-break {
+    display: inline;
+  }
+}
+
 body[data-page="values"] .sub-image-frame.sub-wide-photo {
   aspect-ratio: 3 / 4;
 }
@@ -784,15 +830,26 @@ body[data-page="values"] .sub-image-frame.sub-wide-photo {
   margin-top: 24px;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1001px) {
   .site-header .header-inner {
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: clamp(160px, 12.5vw, 240px) minmax(0, 1fr);
+    gap: clamp(10px, 0.73vw, 14px);
+    padding-inline: clamp(12px, 1.04vw, 20px);
+  }
+
+  .main-nav-list {
+    width: 100%;
+    justify-content: space-between;
+    gap: clamp(6px, calc(2vw - 16px), 24px);
   }
 
   .main-nav-link {
-    font-size: 21px;
-    padding-inline: 4px;
+    font-size: clamp(12px, 1.095vw, 21px);
+    padding-inline: clamp(0px, calc(0.5vw - 5px), 4px);
+  }
+
+  .sub-nav-link {
+    font-size: clamp(14px, 1.1vw, 18px);
   }
 }
 
@@ -1187,6 +1244,66 @@ body[data-page="values"] .sub-image-frame.sub-wide-photo {
 
 .related-links.related-links-slider::-webkit-scrollbar {
   display: none;
+}
+
+.related-slider-controls--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .related-section > .inner {
+    width: calc(100% - 40px);
+  }
+
+  .subpage-main .related-section .related-links.related-links-mobile-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: none;
+    gap: 18px;
+    padding-bottom: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .subpage-main .related-section .related-links.related-links-mobile-slider > a {
+    flex: 0 0 calc((100% - 36px) / 2.5);
+    width: auto;
+    height: 390px;
+    min-height: 390px;
+    padding: 32px 24px;
+    font-size: 25px;
+    scroll-snap-align: start;
+  }
+
+  .related-links-mobile-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .related-slider-controls--mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .related-section > .inner {
+    width: calc(100% - 28px);
+  }
+}
+
+@media (max-width: 600px) {
+  .subpage-main .related-section .related-links.related-links-mobile-slider {
+    gap: 16px;
+  }
+
+  .subpage-main .related-section .related-links.related-links-mobile-slider > a {
+    flex-basis: calc((100% - 16px) / 1.2);
+    height: 420px;
+    min-height: 420px;
+    padding: 34px 28px;
+    font-size: 28px;
+  }
 }
 
 /* Visit guide: generous hours and a single contact / reservation card. */

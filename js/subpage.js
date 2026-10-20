@@ -48,9 +48,25 @@
 })();
 
 (() => {
-  document.querySelectorAll('[data-related-slider]').forEach(slider => {
+  document.querySelectorAll('.related-links').forEach(slider => {
+    const mobileOnly = !slider.hasAttribute('data-related-slider');
+    const mobile = matchMedia('(max-width: 768px)');
+    if (mobileOnly) {
+      slider.classList.add('related-links-mobile-slider');
+      slider.setAttribute('role', 'region');
+      slider.setAttribute('aria-label', '함께 살펴보세요 카드');
+      const sync = () => {
+        if (mobile.matches) slider.tabIndex = 0;
+        else {
+          slider.removeAttribute('tabindex');
+          slider.scrollLeft = 0;
+        }
+      };
+      mobile.addEventListener('change', sync);
+      sync();
+    }
     const controls = document.createElement('div');
-    controls.className = 'related-slider-controls';
+    controls.className = `related-slider-controls${mobileOnly ? ' related-slider-controls--mobile' : ''}`;
     const buttons = [-1, 1].map(direction => {
       const button = document.createElement('button');
       button.type = 'button';
@@ -61,6 +77,7 @@
       return button;
     });
     function move(direction) {
+      if (mobileOnly && !mobile.matches) return;
       const step = slider.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(slider).gap);
       slider.scrollBy({left: step * direction, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
     }

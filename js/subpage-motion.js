@@ -6,7 +6,7 @@
   const targets = [
     '.sub-section-heading', '.sub-doctor-main',
     '.sub-editorial-split > *', '.sub-split > *', '.sub-care-intro-grid > *',
-    '.sub-doctor-layout > *', '.equipment-intro-layout > *', '.equipment-features-layout > *',
+    '.sub-doctor-layout', '.equipment-intro-layout > *', '.equipment-features-layout > *',
     '.sub-point-grid', '.sub-feature-grid', '.sub-promise-list', '.related-links',
     '.sub-guide-grid > *', '.space-sliders', '.community-board',
     '.sub-section > .inner > h2', '.sub-section > .inner > p',
