@@ -1569,11 +1569,15 @@ main .clinic-title-copy .clinic-kicker {
 .footer-map {
   min-height: 350px;
   display: grid;
-  place-items: center;
-  color: #fff8ea;
-  font-size: 19px;
-  font-weight: 700;
-  background: url(../img/map_holder.png) no-repeat center / cover;
+  overflow: hidden;
+  background: #e8e5df;
+}
+
+.footer-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .footer-info-grid {
@@ -2362,7 +2366,7 @@ main .clinic-title-copy .clinic-kicker {
   }
 
   .footer-map {
-    min-height: 150px;
+    min-height: 260px;
   }
 
   .footer-info-grid {

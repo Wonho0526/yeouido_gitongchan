@@ -25,6 +25,11 @@
     { term: "주차안내", desc: "본원 주차 또는 인근 주차장 안내·지원" },
   ];
 
+  // 구글 지도 임베드. API 키가 필요 없다.
+  // 건물명을 붙이면 핀이 엉뚱한 건물로 잡히므로 도로명 주소만 넘긴다.
+  const mapQuery = "서울특별시 영등포구 국제금융로 72";
+  const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&hl=ko&z=18&output=embed`;
+
   const patientRights = [
     "① 환자는 인간으로서의 존엄과 가치를 바탕으로 인격을 존중 받을 권리가 있다.",
     "② 환자는 국적, 성별, 연령, 종교, 경제·사회적 지위, 질병의 종류 등 어떤 이유로도 차별 받지 않으며, 평등한 의료 서비스를 받을 권리가 있다.",
@@ -540,7 +545,18 @@
             { className: "footer-contact-desc" },
             h("span", null, "오시는 길부터 부담 없도록, 지하철과 버스로 닿기 쉬운 여의도 중심에 자리했습니다.")
           ),
-          h("div", { className: "footer-map asset-placeholder", "aria-label": "네이버 지도 영역" }, h("span", null, "네이버 지도 영역")),
+          h(
+            "div",
+            { className: "footer-map" },
+            h("iframe", {
+              className: "footer-map-frame",
+              src: mapEmbedSrc,
+              title: "여의도기통찬의원 위치 구글 지도",
+              loading: "lazy",
+              referrerPolicy: "no-referrer-when-downgrade",
+              allowFullScreen: true,
+            })
+          ),
           h(
             "div",
             { className: "inner footer-info-grid" },
