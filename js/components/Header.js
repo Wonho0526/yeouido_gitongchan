@@ -181,7 +181,13 @@
             h("img", {
               src: `${rootPrefix}img/logo_wide.png`,
               alt: "여의도기통찬의원",
-              className: "header-logo",
+              className: "header-logo header-logo--on-light",
+            }),
+            h("img", {
+              src: `${rootPrefix}img/logo_wide_reversed.png`,
+              alt: "",
+              "aria-hidden": "true",
+              className: "header-logo header-logo--on-dark",
             })
           )
         ),

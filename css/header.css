@@ -46,6 +46,7 @@
 }
 
 .site-header .brand a {
+  position: relative;
   display: block;
   max-width: 100%;
   min-width: 0;
@@ -54,6 +55,22 @@
 .header-logo {
   width: 100%;
   height: auto;
+  transition: opacity 0.2s ease;
+}
+
+/* 밝은 배경용과 어두운 배경용을 겹쳐 두고 투명도로만 전환한다. */
+.header-logo--on-dark {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.site-header.is-over-dark .header-logo--on-light {
+  opacity: 0;
+}
+
+.site-header.is-over-dark .header-logo--on-dark {
+  opacity: 1;
 }
 
 .mobile-menu-toggle {
@@ -223,6 +240,15 @@
     --header-ink: #675f57;
     --header-strong: var(--color-primary-dark);
     background: #fff;
+  }
+
+  /* 이 폭에서는 헤더가 항상 흰 배경이므로 반전 로고를 쓰지 않는다. */
+  .site-header.is-over-dark .header-logo--on-light {
+    opacity: 1;
+  }
+
+  .site-header.is-over-dark .header-logo--on-dark {
+    opacity: 0;
   }
 
   .site-header .header-inner {
