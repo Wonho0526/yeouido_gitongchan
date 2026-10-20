@@ -5,6 +5,7 @@
   "description": "여의도기통찬의원 웹사이트",
   "scripts": {
     "serve": "node scripts/serve.mjs",
+    "build:deploy": "node scripts/build-deploy.mjs",
     "verify": "node scripts/verify-ui.mjs",
     "verify:revision": "node scripts/verify-revision.mjs",
     "verify:conditions": "node scripts/verify-conditions.mjs",

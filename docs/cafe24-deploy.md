@@ -128,62 +128,58 @@ www.여의도기통찬.com   →  www.xn--ok0bu9hnyrvkbwwl58i.com
 
 웹 루트(`/www/`)에 올릴 것과 올리지 말 것이 나뉩니다.
 
-**올릴 것** (9개 항목)
+**올릴 것** (10개 항목)
 
 ```
-index.html   favicon.ico   css/   js/   img/   fonts/   sub/   vendor/   admin/
+.htaccess   index.html   favicon.ico   css/   js/   img/   fonts/   sub/   vendor/   admin/
 ```
+
+> 루트 `.htaccess`를 빠뜨리지 마세요. HTTP를 HTTPS로 넘기는 리다이렉트가 이 파일에 들어 있습니다(6단계).
+> 점으로 시작하는 파일은 클라이언트가 기본으로 숨기기 때문에 자주 누락됩니다.
 
 **올리지 말 것** (개발용이라 서버에 필요 없고, 일부는 올리면 안 됩니다)
 
 ```
-.git/   .claude/   .screenshots/   node_modules/   scripts/
+.git/   .claude/   .screenshots/   node_modules/   scripts/   dist/
+unused-images-review/
 package.json   package-lock.json   _config.yml   README.md   docs/   .gitignore
 admin/config.php.example   admin/schema.sql
 ```
 
 `config.php.example`과 `schema.sql`은 `.htaccess`로 HTTP 접근이 막혀 있지만, 애초에 올리지 않는 쪽이 안전합니다.
 
-### 같이 하면 좋은 정리 — 안 쓰는 이미지 56MB
+### 올릴 것만 담긴 폴더를 만들어 주는 명령
 
-현재 `img/` 폴더는 119MB인데, 그중 **34개 파일 56.4MB가 어디에서도 참조되지 않습니다.**
-홈페이지에서 장비 소개 섹션을 뺀 뒤(커밋 `d02c407`) 남은 잔여 파일들입니다. 대표적으로:
-
-| 크기 | 파일 |
-|---|---|
-| 20.3 MB | `img/doctor-assets/doctor.png` |
-| 9.2 MB | `img/doc_main-assets/doc_main.png` |
-| 2.9 MB | `img/KakaoTalk_20260921_102345876_02.jpg` |
-| 2.6 MB | `img/equipment-carm.png` |
-| 2.6 MB | `img/Untitled-4.png` |
-
-올리지 않으면 업로드 시간과 디스크 사용량이 절반으로 줄고, 사이트 동작에는 영향이 없습니다.
-다만 **"지금은 안 쓰지만 나중에 쓸 원본"일 수 있으니 삭제는 하지 말고**, FTP 업로드에서만 제외하는 편이 안전합니다.
-
-### 정리된 업로드 폴더가 이미 준비돼 있습니다
-
-위 항목들을 수동으로 골라낼 필요 없이, **올릴 것만 담긴 폴더**를 따로 만들어 두었습니다.
+위 목록을 손으로 골라낼 필요 없습니다. 저장소에서 아래를 실행하면 `dist/` 폴더가 만들어집니다.
 
 ```
-C:\Users\admin\AppData\Local\Temp\claude\c--Develop-yeouido-gitongchan\df092a7a-ac50-4d3e-aec2-cc290973b077\scratchpad\www-upload
+npm run build:deploy
 ```
 
-이 폴더 **안의 내용 전체**를 서버의 `/www/`에 올리면 됩니다. 349개 파일, 64.1MB입니다.
+`dist/` **안의 내용 전체**가 서버의 `/www/`에 그대로 대응합니다. 폴더 자체가 아니라 **그 안의 것들**을 올리세요.
 
-| 제외된 것 | 내용 |
+| 제외되는 것 | 이유 |
 |---|---|
-| 참조 없는 이미지 34개 (56.4MB) | 목록: `excluded-images.txt` |
-| `img/` 하위 JSON 52개 (415KB) | 이미지 생성 기록. 런타임 미사용 + 프롬프트·로컬경로 노출 방지 |
-| `config.php.example`, `schema.sql`, `.gitignore` | 서버에 둘 이유가 없는 파일 |
+| 참조 없는 이미지 | 어느 HTML·CSS·JS도 가리키지 않는 파일. 목록은 `dist-excluded-images.txt` |
+| `img/` 하위 JSON | 이미지 생성 기록. 런타임 미사용 + 프롬프트·로컬경로 노출 방지 |
+| `config.php.example`, `schema.sql`, `migrate.php` | 서버에 상시로 둘 이유가 없는 파일 |
 | `config.php` | **의도적으로 제외** — 4-3에서 따로 올립니다 |
 
-검증 완료 항목:
+스크립트가 매번 스스로 확인하고, 하나라도 어긋나면 오류로 멈춥니다.
 
-- `.htaccess` 4개 모두 포함 (`admin/`, `admin/includes/`, `admin/storage/`, `admin/uploads/`)
-- `admin/uploads/popups`, `admin/uploads/community`, `admin/storage` 폴더 생성됨
-- HTML·CSS·JS가 참조하는 파일 중 **누락 없음** (669개 참조 전수 확인)
+- HTML·CSS·JS가 참조하는 파일이 **전부 포함**됐는지
+- `.htaccess` 5개가 모두 포함됐는지 (루트, `admin/`, `admin/includes/`, `admin/storage/`, `admin/uploads/`)
+- 제외 대상이 섞여 들어가지 않았는지
+- `admin/uploads/popups`, `admin/uploads/community`, `admin/storage` 폴더 생성
 
-> 이 폴더는 임시 폴더라 시간이 지나면 지워질 수 있습니다. 업로드를 미루실 거면 원하는 위치로 복사해 두세요.
+> `img/icons/`와 `img/keypoints/`는 `Footer.js`가 파일명을 변수로 붙여 쓰기 때문에
+> 코드 안에 완성된 경로가 없습니다. 스크립트가 이 두 폴더는 통째로 포함합니다.
+> 비슷한 패턴을 새로 만들면 `ASSET_DIR_RE`가 잡는 형태(`img/어떤폴더/${변수}`)를 지키세요.
+
+`dist/`는 `.gitignore`에 있어 커밋되지 않습니다. 언제든 다시 만들면 됩니다.
+
+> **왜 저장소를 통째로 올리면 안 되는가** — `scripts/`, `docs/`, `node_modules/`가 딸려 올라가고,
+> 무엇보다 `.git/` 폴더가 웹에서 읽히면 전체 소스와 커밋 이력이 그대로 노출됩니다.
 
 ---
 
@@ -272,11 +268,13 @@ return [
 
 ### 4-1. `config.php`를 뺀 나머지를 먼저 올리기
 
-FileZilla 등으로 접속해 웹 루트(`/www/`)에 1단계의 "올릴 것"을 올립니다. **단, `config.php`는 아직 올리지 않습니다.**
+FileZilla 등으로 접속해 웹 루트(`/www/`)에 1단계에서 만든 `dist/` **안의 내용 전체**를 올립니다.
+`config.php`는 `dist/`에 애초에 들어 있지 않으므로, 그대로 올리면 4-3 순서가 지켜집니다.
 폴더 구조는 저장소와 **동일하게** 유지해야 합니다. 홈페이지가 `admin/api/public/...`을 상대경로로 호출하기 때문입니다.
 
 ```
 /www/
+├── .htaccess
 ├── index.html
 ├── favicon.ico
 ├── css/  js/  img/  fonts/  sub/  vendor/
