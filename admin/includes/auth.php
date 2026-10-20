@@ -150,6 +150,28 @@ function require_role(string ...$roles): array
     return $admin;
 }
 
+/**
+ * require_role()의 JSON 판. 화면이 아니라 api/statistics/* 가 쓴다.
+ * 메뉴를 숨기는 것만으로는 보호되지 않으므로 서버에서 다시 막는다.
+ */
+function require_role_api(string ...$roles): array
+{
+    header('Content-Type: application/json; charset=utf-8');
+
+    $admin = current_admin();
+    if (!$admin) {
+        http_response_code(401);
+        echo json_encode(['error' => ['message' => '로그인이 필요합니다.']], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    if (!in_array($admin['role'], $roles, true)) {
+        http_response_code(403);
+        echo json_encode(['error' => ['message' => '이 기능에 접근할 권한이 없습니다.']], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    return $admin;
+}
+
 function validate_username(string $username): ?string
 {
     if (!preg_match('/^[a-z][a-z0-9_]*$/', $username) || strlen($username) < 3 || strlen($username) > 20) {

@@ -86,3 +86,25 @@ function require_feature(string $name): void
         exit('페이지를 찾을 수 없습니다.');
     }
 }
+
+/**
+ * Parses a textarea of one-domain-per-line into a clean, deduped list of
+ * bare hostnames (lowercased, no protocol/path/port) for site_domains.
+ * Tolerates a pasted full URL by stripping everything but the host.
+ */
+function parse_domains_input(string $raw): array
+{
+    $domains = [];
+    foreach (preg_split('/[\r\n,]+/', $raw) as $line) {
+        $line = trim($line);
+        if ($line === '') {
+            continue;
+        }
+        $host = parse_url(str_contains($line, '://') ? $line : 'https://' . $line, PHP_URL_HOST);
+        $host = $host !== null && $host !== false ? strtolower($host) : '';
+        if ($host !== '' && preg_match('/^[a-z0-9.-]+$/', $host)) {
+            $domains[$host] = true;
+        }
+    }
+    return array_keys($domains);
+}

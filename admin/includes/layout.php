@@ -27,6 +27,8 @@ function layout_header(string $title, ?array $admin): void
         <a href="<?= h(admin_url('consultations/index.php')) ?>">상담 신청 관리</a>
         <?php endif; ?>
         <?php if ($admin['role'] === 'MASTER'): ?>
+        <a href="<?= h(admin_url('statistics/index.php')) ?>">방문통계</a>
+        <a href="<?= h(admin_url('sites/index.php')) ?>">사이트 관리</a>
         <a href="<?= h(admin_url('accounts/index.php')) ?>">계정 관리</a>
         <?php if (feature_enabled('kakao')): ?>
         <a href="<?= h(admin_url('kakao/index.php')) ?>">카카오톡 알림 설정</a>

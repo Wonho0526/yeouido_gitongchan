@@ -261,6 +261,7 @@
                     href: isCompact && item.children ? undefined : navHref(item),
                     className: item.reservation ? "main-nav-link reservation-link" : "main-nav-link",
                     "data-naver-reservation": item.reservation ? "" : undefined,
+                    "data-track-event": item.reservation ? "네이버 예약 클릭" : undefined,
                     "aria-controls": item.children ? `site-sub-nav-${index}` : undefined,
                     "aria-expanded": item.children ? openSubmenu === index : undefined,
                     "aria-current": !item.children && isCurrent(item.href) ? "page" : undefined,

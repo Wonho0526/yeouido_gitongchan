@@ -587,7 +587,7 @@
           ),
           h("div", { className: "section-more" },
             // href만 실제 네이버 예약 주소로 교체하세요.
-            h("a", { href: "#", className: "view-more-btn", "data-naver-reservation": "" }, "예약 바로가기"))
+            h("a", { href: "#", className: "view-more-btn", "data-naver-reservation": "", "data-track-event": "네이버 예약 클릭" }, "예약 바로가기"))
         )
       ),
       h(
@@ -714,6 +714,8 @@
         const props = {
           key: item.id,
           "data-naver-reservation": item.id === "reservation" ? "" : undefined,
+          // 방문통계 전환 이벤트. tracker.js가 data-track-event를 가진 요소의 클릭을 집계한다.
+          "data-track-event": item.id === "reservation" ? "네이버 예약 클릭" : item.id === "kakao" ? "카카오톡 상담 클릭" : undefined,
           className: `quick-link quick-link--${item.id}`,
           "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
           title: unavailable ? `${item.label} (준비 중)` : item.label,
