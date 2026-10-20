@@ -12,13 +12,15 @@
     '.sub-section > .inner > h2', '.sub-section > .inner > p',
     '.condition-lead > .inner', '.condition-panel section > .inner > h2',
     '.condition-panel section > .inner > p', '.condition-panel section > .inner > figure',
-    '.condition-context-grid', '.condition-symptoms-grid', '.condition-assessment-grid',
+    '.condition-context-grid', '.condition-assessment-grid',
     '.condition-treatment-grid', '.sub-vision-grid',
+    '.iv-recommendations > ul',
   ].join(',');
   let frame = 0;
   let stopped = false;
   const register = () => {
     main.querySelectorAll(targets).forEach(element => {
+      if (element.closest('.condition-symptoms')) return;
       if (element.hasAttribute('data-aos') || element.closest('[hidden], [aria-hidden="true"]') || !element.getClientRects().length) return;
       // Reveal a complete slider/list as one block; its interactive children retain their transforms.
       if (element.parentElement.closest('[data-subpage-reveal]')) return;

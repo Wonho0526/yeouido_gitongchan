@@ -676,19 +676,57 @@ dd {
   line-height: 1.8;
 }
 
+body[data-page="values"] .sub-image-frame.sub-wide-photo {
+  aspect-ratio: 3 / 4;
+}
+
 .iv-recommendations {
   margin: 64px 0 40px;
 }
 
 .iv-recommendations ul {
   display: grid;
-  width: 50%;
-  justify-self: center;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  padding-left: 20px;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0 0;
+  padding: 0 0 12px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   line-height: 1.8;
-  font-size: 24px;
+  list-style: none;
+  scroll-snap-type: x proximity;
+}
+
+.iv-recommendations li {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--sub-line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--sub-ink);
+  font-size: 16px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.iv-recommendations li img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.iv-recommendations li span {
+  display: grid;
+  flex: 1;
+  min-height: 110px;
+  padding: 24px 18px;
+  place-items: center;
+  word-break: keep-all;
 }
 
 .snepi-program {
@@ -823,8 +861,7 @@ dd {
     font-size: 14px;
   }
 
-  .space-gallery,
-  .iv-recommendations ul {
+  .space-gallery {
     grid-template-columns: 1fr;
   }
 
@@ -1555,11 +1592,23 @@ main :is(p, li),
 
 @media (max-width: 768px) {
   .iv-recommendations ul {
-    width: 100%;
-    max-width: 560px;
-    margin-inline: auto;
-    font-size: 20px;
-    text-wrap: pretty;
+    grid-template-columns: repeat(4, minmax(230px, 1fr));
+    gap: 12px;
+  }
+
+  .iv-recommendations li {
+    font-size: 14px !important;
+    min-height: 310px;
+    padding: 0;
+  }
+
+  .iv-recommendations li img {
+    height: 210px;
+  }
+
+  .iv-recommendations li span {
+    min-height: 100px;
+    padding: 20px 14px;
   }
 
   .pain-system-details li,
