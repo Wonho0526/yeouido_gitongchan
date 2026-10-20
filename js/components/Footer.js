@@ -230,7 +230,12 @@
       "text": "의원은 서비스 이행을 위해 아래와 같이 개인정보를 위탁하고 있으며, 관계 법령에 따라 위탁계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다. 의원의 개인정보 위탁처리 기관 및 위탁업무 내용은 아래와 같습니다."
     },
     {
-      "text": "수탁업체:(주)엠파트너\n위탁업무내용:홈페이지관리\n위탁개인정보항목:회원가입시 입력한 항목\n보유및이용기간:위탁계약 종료시까지"
+      "details": [
+        { "label": "수탁업체", "value": "(주)엠파트너" },
+        { "label": "위탁업무내용", "value": "홈페이지관리" },
+        { "label": "위탁개인정보항목", "value": "회원가입시 입력한 항목" },
+        { "label": "보유 및 이용기간", "value": "위탁계약 종료시까지" }
+      ]
     },
     {
       "heading": true,
@@ -296,9 +301,11 @@
     return h(PolicyModal,
       { titleId: "privacy-policy-title", title: "개인정보처리방침", onClose, wide: true },
       h("div", { className: "privacy-policy-content" },
-        privacyPolicyBlocks.map((block, index) =>
-          h(block.heading ? "h3" : "p", { key: index }, block.text)
-        )
+        privacyPolicyBlocks.map((block, index) => block.details
+          ? h("dl", { key: index, className: "privacy-policy-details", "aria-label": "개인정보 위탁처리 정보" },
+              block.details.map(item => h("div", { key: item.label },
+                h("dt", null, item.label), h("dd", null, item.value))))
+          : h(block.heading ? "h3" : "p", { key: index }, block.text))
       )
     );
   }
@@ -594,7 +601,7 @@
               null,
               "TEL : 02-782-7070 ",
               h("span", null, "|"),
-              " FAX : 02-782-7070"
+              " FAX : 02-782-7071"
             )
           ),
           h(

@@ -2,7 +2,7 @@
   const slider = document.querySelector('[data-equipment-slider]');
   if (!slider) return;
   const keys = ['c-arm', 'ultrasound', 'cryo-jet', 'eswt'];
-  const names = ['C-arm', '초음파', 'Cryo-Jet', '체외충격파'];
+  const names = ['C-arm', '초음파진단장치', 'Cryo-Jet', '체외충격파'];
   const cards = keys.map(key => slider.querySelector(`[data-equipment-card="${key}"]`));
   const track = slider.querySelector(".equipment-card-track");
   const panels = keys.map(key => document.querySelector(`[data-equipment-panel="${key}"]`));

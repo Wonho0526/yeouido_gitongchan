@@ -291,6 +291,10 @@
     color: #d7e0ec;
 }
 
+.condition-editorial-page .condition-symptoms .condition-symptoms-copy > ol + h2 {
+    margin-top: 48px;
+}
+
 .condition-symptoms ol {
     list-style: none;
     padding: 0;

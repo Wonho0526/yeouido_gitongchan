@@ -61,7 +61,7 @@ try {
   check('condition anchor scroll clears sticky bars', await page.locator('#condition-5').evaluate(el => el.getBoundingClientRect().top >= 130));
   check('region bar stays below header', await page.locator('#site-local-nav-root').evaluate(el => Math.abs(el.getBoundingClientRect().top - 80) < 2));
   await page.locator('.sub-local-nav a[href="neuralgia.html"]').click();
-  check('region navigation shows selected diseases', await page.locator('h1').innerText() === '두통·신경통');
+  check('region navigation shows selected diseases', await page.locator('.sub-hero h2').innerText() === '두통·신경통');
   const reserve=page.locator('[data-naver-reservation]').first();
   await reserve.evaluate(a => a.setAttribute('href', '#reservation-test'));
   await page.getByRole('button', { name: '메뉴 열기', exact: true }).click();

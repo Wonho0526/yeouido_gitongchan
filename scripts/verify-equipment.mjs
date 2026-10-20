@@ -181,7 +181,7 @@ try {
     check(`${key}: legacy address opens the correct equipment`, page.url().endsWith(`equipment.html#${key}`));
   }
   await page.goto(`${origin}/sub/spaces.html`, { waitUntil: 'networkidle' });
-  check('spaces remain a separate page and category', await page.locator('main h1').textContent() === '공간 둘러보기' && await page.locator('.sub-local-nav [aria-current="page"]').getAttribute('href') === 'spaces.html');
+  check('spaces remain a separate page and category', await page.locator('.sub-hero h2').textContent() === '공간 둘러보기' && await page.locator('.sub-local-nav [aria-current="page"]').getAttribute('href') === 'spaces.html');
   await page.goto(`${origin}/index.html`, { waitUntil: 'networkidle' });
   check('header categories point to equipment fragments', await page.locator('.sub-nav-link[href="sub/equipment.html#c-arm"]').count() === 1 && await page.locator('.sub-nav-link[href="sub/equipment.html#ultrasound"]').count() === 1);
   const noJs = await browser.newContext({ javaScriptEnabled: false });

@@ -39,7 +39,7 @@
       label: "찬란한 일상을 위한 진료환경",
       items: [
         { href: "equipment.html#c-arm", label: "C-arm" },
-        { href: "equipment.html#ultrasound", label: "초음파" },
+        { href: "equipment.html#ultrasound", label: "초음파진단장치" },
         { href: "equipment.html#cryo-jet", label: "Cryo-Jet" },
         { href: "equipment.html#eswt", label: "체외충격파" },
         { href: "spaces.html", label: "공간 둘러보기" },
