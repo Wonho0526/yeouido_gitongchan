@@ -63,7 +63,12 @@ foreach ($statements as $statement) {
 }
 
 // Report what the database actually holds now, rather than assuming the run worked.
-$expected = ['admins', 'community_posts', 'consultations', 'login_logs', 'popups'];
+$expected = [
+    // 관리자 시스템 기본
+    'admins', 'community_posts', 'consultations', 'login_logs', 'popups',
+    // 방문통계
+    'sites', 'site_domains', 'visitors', 'sessions', 'page_views', 'events', 'ip_lookups',
+];
 $actual = $pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);
 sort($actual);
 
@@ -80,8 +85,9 @@ if ($missing !== []) {
     exit("스키마가 완전히 적용되지 않았습니다.\n");
 }
 
-echo "\n필요한 테이블 5개가 모두 준비되었습니다.\n\n";
+echo "\n필요한 테이블 " . count($expected) . "개가 모두 준비되었습니다.\n\n";
 echo "다음 순서로 진행하세요.\n";
 echo "  1. 이 파일(migrate.php)과 schema.sql을 서버에서 삭제합니다.\n";
-echo "  2. setup.php?confirm=yes 에 접속해 관리자 계정을 생성합니다.\n";
-echo "  3. setup.php도 삭제합니다.\n";
+echo "  2. 관리자 계정이 아직 없다면(최초 설치) setup.php?confirm=yes 로 생성한 뒤\n";
+echo "     setup.php도 삭제합니다. 이미 쓰고 있다면 건너뜁니다.\n";
+echo "  3. 방문통계를 쓰려면 MASTER로 로그인해 '사이트 관리'에서 사이트를 등록합니다.\n";
