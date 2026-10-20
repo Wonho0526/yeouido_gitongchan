@@ -616,13 +616,13 @@
     }
 
     .condition-symptoms li {
-        grid-template-columns: 30px 1fr;
-        gap: 10px;
+        grid-template-columns: 40px 1fr;
+        gap: 20px;
     }
 
     .condition-symptoms li>span {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .condition-symptoms li p {
