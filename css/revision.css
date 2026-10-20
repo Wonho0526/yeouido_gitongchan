@@ -516,6 +516,10 @@ dd {
   border-radius: 24px;
 }
 
+body:is([data-page="about"], [data-page="special"], [data-page="doctor"], [data-page="values"]) .related-links a {
+  font-size: 48px;
+}
+
 @media (min-width: 601px) {
   .related-section--wide .related-links {
     grid-template-columns: repeat(3, minmax(0, 1fr));
