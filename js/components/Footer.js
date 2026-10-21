@@ -609,15 +609,24 @@
               null,
               "대표자 : 이동현 ",
               h("span", null, "|"),
-              " 사업자등록번호 : 458-95-01994"
+              " ",
+              h("span", { className: "keep-word" }, "사업자등록번호 : 458-95-01994")
             ),
-            h("p", null, "주소 : 서울특별시 영등포구 국제금융로 72 4층(여의도동, 호정빌딩)"),
             h(
               "p",
               null,
-              "TEL : 02-782-7070 ",
+              "주소 : 서울특별시 영등포구 ",
+              h("span", { className: "keep-word" }, "국제금융로 72 4층"),
+              "(여의도동, 호정빌딩)"
+            ),
+            h(
+              "p",
+              null,
+              h("span", { className: "keep-word" }, "TEL : 02-782-7070"),
+              " ",
               h("span", null, "|"),
-              " FAX : 02-782-7071"
+              " ",
+              h("span", { className: "keep-word" }, "FAX : 02-782-7071")
             )
           ),
           h(
