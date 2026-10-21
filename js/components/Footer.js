@@ -701,15 +701,15 @@
     }, [compact, open]);
 
     const items = [
+      // href만 실제 네이버 예약 주소로 교체하세요.
+      { id: "reservation", label: "네이버 예약", icon: "naver_reservation_icon-1.png", href: "#", external: true },
       { id: "top", label: "최상단 이동", icon: "arrow-up.svg" },
-      { id: "phone", label: "전화 문의", icon: "phone.svg", href: "tel:027827070" },
-      { id: "location", label: "오시는길", icon: "map-pin.svg", href: `${rootPrefix}sub/location.html` },
+      { id: "phone", label: "전화 문의", icon: "phone-color.svg", href: "tel:027827070" },
+      { id: "location", label: "오시는길", icon: "map-pin-color.svg", href: `${rootPrefix}sub/location.html` },
       { id: "daangn", label: "당근마켓", icon: "logoImage.png", href: quickLinkUrls.daangn, external: true },
       { id: "instagram", label: "인스타그램", icon: "instargram.png", href: quickLinkUrls.instagram, external: true },
       { id: "kakao", label: "카카오톡 상담", icon: "free-icon-kakao-talk-2111466.png", href: quickLinkUrls.kakao, external: true },
       { id: "blog", label: "네이버 블로그", icon: "blog.png", href: quickLinkUrls.blog, external: true },
-      // href만 실제 네이버 예약 주소로 교체하세요.
-      { id: "reservation", label: "네이버 예약", icon: "naver_reservation_icon-1.png", href: "#", external: true },
     ];
 
     return h("nav", { className: `quick-links${open ? " is-open" : ""}`, "aria-label": "빠른 안내", ref: navRef },
