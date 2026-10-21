@@ -91,7 +91,7 @@
       buttons[0].disabled = slider.scrollLeft <= 1;
       buttons[1].disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1;
     }
-    // 카드가 화면 밖으로 이어지는 슬라이더는 2초마다 한 장씩 넘겨, 뒤쪽 카드도
+    // 카드가 화면 밖으로 이어지는 슬라이더는 1초마다 한 장씩 넘겨, 뒤쪽 카드도
     // 직접 넘기지 않고 보이게 한다. 끝에 닿으면 처음으로 돌아간다.
     function autoPlay() {
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -107,7 +107,7 @@
       };
       const sync = () => {
         const run = !reduceMotion.matches && !Object.values(held).some(Boolean);
-        if (run && !timer) timer = setInterval(advance, 2000);
+        if (run && !timer) timer = setInterval(advance, 1000);
         if (!run && timer) { clearInterval(timer); timer = 0; }
         toggle.textContent = held.byUser ? '▶' : '❚❚';
         toggle.setAttribute('aria-label', held.byUser ? '자동 넘김 시작' : '자동 넘김 멈춤');
