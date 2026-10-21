@@ -671,7 +671,10 @@
     }
 }
 
-/* Keep the region navigation readable at mobile sizes as well. */
-.condition-editorial-page .sub-local-nav a {
-    font-size: 16px;
+
+/* 질환 메뉴는 항목이 6개라, 좁은 화면에서는 본문보다 한 단계 작게 둔다. */
+@media (max-width: 768px) {
+    .condition-editorial-page .sub-local-nav a {
+        font-size: 16px;
+    }
 }

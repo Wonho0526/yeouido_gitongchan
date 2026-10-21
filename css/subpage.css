@@ -920,7 +920,7 @@ body[data-page="hours"] .footer-contact {
   align-items: stretch;
   justify-content: safe center;
   overflow-x: auto;
-  gap: 0 clamp(24px, 5vw, 80px);
+  gap: 0 clamp(20px, 3vw, 56px);
   margin: 0;
   padding: 0;
 }
@@ -942,7 +942,7 @@ body[data-page="hours"] .footer-contact {
   text-align: center;
   border-bottom: 3px solid transparent;
   color: #686965;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -2142,7 +2142,7 @@ body[data-page="hours"] .footer-contact {
 
   .sub-local-nav a {
     min-height: 46px;
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .subpage-content .sub-section {
