@@ -76,6 +76,12 @@
       controls.append(button);
       return button;
     });
+    // 자동 넘김이 있는 슬라이더에서만 쓰므로 기본은 숨겨 둔다.
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'related-slider-toggle';
+    toggle.hidden = true;
+    controls.insertBefore(toggle, buttons[1]);
     function move(direction) {
       if (mobileOnly && !mobile.matches) return;
       const step = slider.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(slider).gap);
@@ -85,7 +91,57 @@
       buttons[0].disabled = slider.scrollLeft <= 1;
       buttons[1].disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1;
     }
+    // 카드가 화면 밖으로 이어지는 슬라이더는 2초마다 한 장씩 넘겨, 뒤쪽 카드도
+    // 직접 넘기지 않고 보이게 한다. 끝에 닿으면 처음으로 돌아간다.
+    function autoPlay() {
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      // 멈출 이유를 각각 따로 기억한다. 한 가지 이유가 풀렸다고 해서 다른
+      // 이유까지 덮어쓰고 다시 움직이면 안 된다.
+      const held = {touched: false, focused: false, hidden: document.hidden, offScreen: true, byUser: false};
+      let timer = 0;
+      let resume = 0;
+      const atEnd = () => slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1;
+      const advance = () => {
+        if (atEnd()) slider.scrollTo({left: 0, behavior: 'smooth'});
+        else move(1);
+      };
+      const sync = () => {
+        const run = !reduceMotion.matches && !Object.values(held).some(Boolean);
+        if (run && !timer) timer = setInterval(advance, 2000);
+        if (!run && timer) { clearInterval(timer); timer = 0; }
+        toggle.textContent = held.byUser ? '▶' : '❚❚';
+        toggle.setAttribute('aria-label', held.byUser ? '자동 넘김 시작' : '자동 넘김 멈춤');
+      };
+      const hold = (key, value) => { held[key] = value; sync(); };
+
+      // 카드와 좌우 버튼 위에서는 멈춘다. 재생 버튼은 뺀다. 눌러서 재생시킨
+      // 직후에도 그 버튼에 포인터나 포커스가 남아 다시 멈춰 버리기 때문이다.
+      // 손을 뗀 직후에는 관성 스크롤이 남아 있어 조금 기다렸다 재개한다.
+      const area = [slider, ...buttons];
+      area.forEach(element => {
+        element.addEventListener('pointerenter', () => { clearTimeout(resume); hold('touched', true); });
+        element.addEventListener('pointerdown', () => { clearTimeout(resume); hold('touched', true); });
+        element.addEventListener('pointerleave', () => {
+          clearTimeout(resume);
+          resume = setTimeout(() => hold('touched', false), 1200);
+        });
+        element.addEventListener('focusin', () => hold('focused', true));
+        element.addEventListener('focusout', event => {
+          if (!area.some(node => node.contains(event.relatedTarget))) hold('focused', false);
+        });
+      });
+      document.addEventListener('visibilitychange', () => hold('hidden', document.hidden));
+      reduceMotion.addEventListener('change', sync);
+      new IntersectionObserver(([entry]) => hold('offScreen', !entry.isIntersecting), {threshold: 0.2}).observe(slider);
+
+      // 자동으로 움직이는 것을 멈출 방법은 눈에 보이게 둔다(WCAG 2.2.2).
+      toggle.addEventListener('click', () => hold('byUser', !held.byUser));
+      toggle.hidden = false;
+      sync();
+    }
+
     slider.after(controls);
+    if (slider.hasAttribute('data-related-slider')) autoPlay();
     slider.addEventListener('scroll', update, {passive: true});
     slider.addEventListener('keydown', event => {
       if (event.target !== slider || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;

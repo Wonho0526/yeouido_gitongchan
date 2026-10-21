@@ -516,12 +516,12 @@ dd {
   margin-inline: auto;
 }
 
-body:is([data-page="equipment"], [data-page="spaces"]) .related-section > .inner {
+body:is([data-page="equipment"], [data-page="spaces"], [data-layout="care"], [data-layout="conditions"]) .related-section > .inner {
   --container: 1600px;
   max-width: 1600px;
 }
 
-body:is([data-page="equipment"], [data-page="spaces"]) .related-section .related-links {
+body:is([data-page="equipment"], [data-page="spaces"], [data-layout="care"], [data-layout="conditions"]) .related-section .related-links {
   max-width: 1600px;
 }
 
@@ -569,6 +569,14 @@ body:is([data-page="about"], [data-page="special"], [data-page="doctor"], [data-
   .related-links:has(> a:last-child:nth-child(4)) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 740px;
+  }
+}
+
+/* 카드 4장짜리 기본값은 1280px에서 멈춘다. 넓게 두는 페이지에서는 위의
+   max-width:1600px과 특정도가 같아 뒤에 온 1280px이 이기므로 되돌린다. */
+@media (min-width: 1101px) {
+  body:is([data-page="equipment"], [data-page="spaces"], [data-layout="care"], [data-layout="conditions"]) .related-section .related-links:has(> a:last-child:nth-child(4)) {
+    max-width: 1600px;
   }
 }
 
@@ -1246,6 +1254,11 @@ body[data-page="values"] .sub-image-frame.sub-wide-photo {
 .related-slider-controls button:disabled {
   opacity: .35;
   cursor: default;
+}
+
+.related-slider-toggle {
+  font-size: 15px;
+  line-height: 1;
 }
 
 .related-slider-controls button:focus-visible {
