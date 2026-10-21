@@ -1828,8 +1828,8 @@ main :is(p, li),
   }
 }
 
-/* 만년필 필기체 느낌: 라틴은 Italianno(동판 인쇄체 계열), 한글은 획이
-   가는 Nanum Pen Script로 맞춰 두 글자체의 굵기를 비슷하게 둔다. */
+/* 만년필로 흘려 쓴 서명 느낌: 라틴은 Italianno(동판 인쇄체 계열), 한글은
+   획이 이어지는 Nanum Brush Script로 맞춰 기울기와 흐름을 비슷하게 둔다. */
 @font-face {
   font-family: "SignatureLatin";
   src: url("../fonts/italianno/doctor-title.woff2") format("woff2");
@@ -1840,7 +1840,7 @@ main :is(p, li),
 
 @font-face {
   font-family: "SignatureHangul";
-  src: url("../fonts/nanum-pen-script/doctor-name.woff2") format("woff2");
+  src: url("../fonts/nanum-brush-script/doctor-name.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -1878,6 +1878,42 @@ body[data-page="doctor"] .sub-doctor-signature .sig-title {
 
 body[data-page="doctor"] .sub-doctor-signature .sig-name {
   font-family: "SignatureHangul", cursive;
+  /* 붓글씨체는 글자가 상자 안에서 작게 앉아 Doctor보다 작아 보인다. */
+  font-size: 1.12em;
+}
+
+/* 서명이 써지는 효과 ------------------------------------------ */
+/* 획을 왼쪽부터 드러내 펜이 지나간 것처럼 보이게 한다. data-sign은
+   doctor-signature.js가 붙이므로, 스크립트가 없거나 사용자가 모션을
+   줄이도록 설정했으면 서명은 그냥 보인 채로 남는다. */
+body[data-page="doctor"] .sub-doctor-signature[data-sign] .sig-title,
+body[data-page="doctor"] .sub-doctor-signature[data-sign] .sig-name {
+  /* 인라인 박스는 잘라내는 기준이 일정하지 않아 블록으로 세운다. */
+  display: inline-block;
+  /* 흘림체는 글자 상자 밖으로 획이 삐져나오므로 위아래를 넉넉히 둔다. */
+  clip-path: inset(-0.3em 100% -0.35em -0.1em);
+}
+
+body[data-page="doctor"] .sub-doctor-signature[data-sign="writing"] .sig-title {
+  animation: signature-write 900ms ease-out forwards;
+}
+
+body[data-page="doctor"] .sub-doctor-signature[data-sign="writing"] .sig-name {
+  animation: signature-write 1000ms ease-out 760ms forwards;
+}
+
+@keyframes signature-write {
+  to {
+    clip-path: inset(-0.3em -0.25em -0.35em -0.1em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="doctor"] .sub-doctor-signature[data-sign] .sig-title,
+  body[data-page="doctor"] .sub-doctor-signature[data-sign] .sig-name {
+    clip-path: none;
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
