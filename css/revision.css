@@ -26,8 +26,9 @@
   display: none;
   position: absolute;
   top: var(--special-line-top);
-  left: max(19px, calc((100% - var(--container)) / 2 - 1px));
+  left: var(--special-line-left);
   width: 4px;
+  transform: translateX(-50%);
   border-radius: 2px;
   height: var(--special-line-height);
   background: #e2dbd1;
@@ -77,12 +78,13 @@
   content: "";
   position: absolute;
   top: 18px;
-  left: -5px;
+  left: 0;
   width: 12px;
   height: 12px;
   border: 2px solid #c9bba8;
   border-radius: 50%;
   background: #fff;
+  transform: translateX(-50%);
 }
 
 .special-scroll-story .sub-editorial-split.is-reached::before {
@@ -1860,6 +1862,10 @@ body[data-page="doctor"] .sub-doctor-signature {
     overflow-wrap: normal;
   }
 
+  body[data-page="about"] .sub-vision-card strong {
+    font-size: 24px;
+  }
+
   main .mobile-flow-copy {
     text-wrap: pretty;
   }
@@ -1868,7 +1874,7 @@ body[data-page="doctor"] .sub-doctor-signature {
     text-wrap: balance;
   }
 
-  main .mobile-flow-copy br:not(.mobile-line-break) {
+  main .mobile-flow-copy br:not(.mobile-line-break):not(.mobile-keep-break) {
     display: none;
   }
 

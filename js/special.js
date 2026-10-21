@@ -21,7 +21,9 @@
     if (!frame) frame = requestAnimationFrame(update);
   };
   const measure = () => {
-    const storyTop = story.getBoundingClientRect().top + scrollY;
+    const storyRect = story.getBoundingClientRect();
+    const storyTop = storyRect.top + scrollY;
+    story.style.setProperty('--special-line-left', `${rows[0].getBoundingClientRect().left - storyRect.left}px`);
     markers = rows.map(row => row.getBoundingClientRect().top + scrollY + 24);
     start = markers[0];
     const end = rows.at(-1).querySelector('.sub-image-frame').getBoundingClientRect().bottom + scrollY;

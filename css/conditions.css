@@ -32,12 +32,13 @@
     margin: 0 0 16px;
     color: var(--condition-gold);
     font-size: 22px;
-    letter-spacing: .18em;
+    letter-spacing: 0;
     font-weight: 600;
 }
 
 .condition-editorial-page .condition-eyebrow[lang="en"] {
     font-size: 14px;
+    letter-spacing: .18em;
 }
 
 .condition-selector {
