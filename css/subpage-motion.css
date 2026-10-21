@@ -1,8 +1,32 @@
-/* Subtle one-time reveals; hero, navigation and internal slide transforms are untouched. */
+/* Shared subtle reveals, with varied stronger motion only on the four introduction pages. */
 .subpage-main [data-subpage-reveal][data-aos="fade-up"] {
   transform: translate3d(0, 14px, 0);
 }
 .subpage-main [data-subpage-reveal][data-aos="fade-up"].aos-animate {
+  transform: none;
+}
+
+.subpage-main [data-subpage-reveal][data-aos-intensity="strong"][data-aos="fade-up"] {
+  transform: translate3d(0, 56px, 0);
+}
+
+body:is([data-page="about"], [data-page="special"], [data-page="doctor"], [data-page="values"]) .subpage-main {
+  overflow-x: clip;
+}
+
+.subpage-main [data-subpage-reveal][data-aos-intensity="strong"][data-aos="fade-right"] {
+  transform: translate3d(-56px, 0, 0);
+}
+
+.subpage-main [data-subpage-reveal][data-aos-intensity="strong"][data-aos="fade-left"] {
+  transform: translate3d(56px, 0, 0);
+}
+
+.subpage-main [data-subpage-reveal][data-aos-intensity="strong"][data-aos="zoom-in"] {
+  transform: scale(.94);
+}
+
+.subpage-main [data-subpage-reveal][data-aos-intensity="strong"][data-aos].aos-animate {
   transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
