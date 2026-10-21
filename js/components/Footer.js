@@ -701,9 +701,9 @@
     }, [compact, open]);
 
     const items = [
+      { id: "top", label: "최상단 이동", icon: "arrow-up.svg" },
       // href만 실제 네이버 예약 주소로 교체하세요.
       { id: "reservation", label: "네이버 예약", icon: "naver_reservation_icon-1.png", href: "#", external: true },
-      { id: "top", label: "최상단 이동", icon: "arrow-up.svg" },
       { id: "phone", label: "전화 문의", icon: "phone-color.svg", href: "tel:027827070" },
       { id: "location", label: "오시는길", icon: "map-pin-color.svg", href: `${rootPrefix}sub/location.html` },
       { id: "daangn", label: "당근마켓", icon: "logoImage.png", href: quickLinkUrls.daangn, external: true },
