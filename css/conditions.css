@@ -678,3 +678,148 @@
         font-size: 16px;
     }
 }
+
+/* ── 본문 가독성 ─────────────────────────────────────────────
+   70대 어르신이 읽는 것을 기준으로 둔다. 본문은 PC 20px / 모바일 18px,
+   줄간격은 1.8 이상, 글자색은 흰 바탕에서 대비 7:1 이상으로 맞춘다.
+   아래 블록이 앞의 개별 규칙들을 덮는다. */
+.condition-editorial-page .condition-introduction p:not(.condition-eyebrow),
+.condition-editorial-page .condition-definition-copy,
+.condition-editorial-page .condition-section-lead,
+.condition-editorial-page .condition-diagnosis-note,
+.condition-editorial-page .condition-context-caption p,
+.condition-editorial-page .condition-treatment-body p,
+.condition-editorial-page .condition-philosophy p:not(.condition-eyebrow),
+.condition-editorial-page .condition-symptoms-copy ol li,
+.condition-editorial-page .condition-symptoms-copy ol li p,
+.condition-editorial-page .condition-assessment-grid figcaption p {
+    font-size: 20px;
+    line-height: 1.85;
+}
+
+.condition-editorial-page :is(.condition-introduction, .condition-definition, .condition-context, .condition-assessment, .condition-treatment) p:not(.condition-eyebrow),
+.condition-editorial-page .condition-context-caption p,
+.condition-editorial-page .condition-assessment-grid figcaption p {
+    color: #4f545b;
+}
+
+.condition-editorial-page .condition-symptoms-copy ol li span {
+    font-size: 18px;
+}
+
+.condition-editorial-page .condition-assessment-grid figcaption {
+    font-size: 19px;
+}
+
+.condition-editorial-page .condition-tab {
+    font-size: 18px;
+}
+
+.condition-editorial-page .condition-text-link,
+.condition-editorial-page .condition-treatment-heading span {
+    font-size: 18px;
+}
+
+/* 영문 라벨은 장식이라 본문만큼 키우지 않되, 읽을 수 있을 만큼은 둔다. */
+.condition-editorial-page .condition-eyebrow[lang="en"],
+.condition-editorial-page .sub-section-kicker {
+    font-size: 16px;
+}
+
+.condition-editorial-page .sub-hero-eyebrow {
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    .condition-editorial-page .condition-introduction p:not(.condition-eyebrow),
+    .condition-editorial-page .condition-definition-copy,
+    .condition-editorial-page .condition-section-lead,
+    .condition-editorial-page .condition-diagnosis-note,
+    .condition-editorial-page .condition-context-caption p,
+    .condition-editorial-page .condition-treatment-body p,
+    .condition-editorial-page .condition-philosophy p:not(.condition-eyebrow),
+    .condition-editorial-page .condition-symptoms-copy ol li,
+    .condition-editorial-page .condition-symptoms-copy ol li p,
+    .condition-editorial-page .condition-assessment-grid figcaption p {
+        /* revision.css가 모바일 본문을 16px !important로 묶어 둬서 맞선다. */
+        font-size: 18px !important;
+        line-height: 1.8;
+    }
+
+    .condition-editorial-page .sub-hero-desc {
+        font-size: 18px !important;
+        line-height: 1.75;
+    }
+
+    .condition-editorial-page .condition-symptoms-copy ol li span,
+    .condition-editorial-page .condition-text-link,
+    .condition-editorial-page .condition-treatment-heading span,
+    .condition-editorial-page .condition-assessment-grid figcaption {
+        font-size: 17px !important;
+    }
+
+    .condition-editorial-page .condition-tab {
+        min-height: 58px;
+        padding: 12px 10px;
+        font-size: 17px;
+    }
+
+    .condition-editorial-page .condition-eyebrow[lang="en"],
+    .condition-editorial-page .sub-section-kicker {
+        font-size: 15px;
+    }
+}
+
+.condition-editorial-page .condition-philosophy a {
+    font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    .condition-editorial-page .condition-philosophy a {
+        font-size: 18px;
+    }
+}
+
+/* 금색 라벨은 흰 바탕에서 대비가 3.2:1뿐이라 눈이 침침하면 읽기 어렵다.
+   어두운 바탕(증상 섹션)에서는 지금 색이 잘 보이므로 그대로 둔다. */
+.condition-editorial-page :is(.condition-introduction, .condition-definition, .condition-treatment, .condition-philosophy, .condition-selector) .condition-eyebrow,
+.condition-editorial-page .related-section .sub-section-kicker {
+    color: #8a6a3c;
+}
+
+/* 모바일에서는 오른쪽에 퀵바가 늘 떠 있어 본문 끝 글자가 그 밑으로 들어간다.
+   글을 읽는 폭을 퀵바 앞에서 끊어 가린 글자가 없게 한다. */
+@media (max-width: 768px) {
+    body.has-quick-links.condition-editorial-page .subpage-main .inner,
+    body.has-quick-links.condition-editorial-page .sub-local-nav-inner {
+        padding-right: 66px;
+    }
+}
+
+/* 금색 대비 보정. 흰 글자를 올리는 금색 바탕과 밝은 바탕 위의 금색 글자는
+   대비가 3:1대라 어두운 금색으로, 남색 바탕 위 금색 라벨은 밝은 금색으로 둔다. */
+.condition-editorial-page .condition-text-link,
+.condition-editorial-page .condition-symptoms li > span {
+    background: #8a6a3c;
+}
+
+.condition-editorial-page .condition-context-number {
+    color: #8a6a3c;
+}
+
+.condition-editorial-page .condition-symptoms .condition-eyebrow {
+    color: #d2b183;
+}
+
+/* 검사 안내 문구도 본문과 같은 크기로 둔다. */
+.condition-editorial-page .condition-symptom-note {
+    font-size: 20px;
+    line-height: 1.85;
+}
+
+@media (max-width: 768px) {
+    .condition-editorial-page .condition-symptom-note {
+        font-size: 18px !important;
+        line-height: 1.8;
+    }
+}

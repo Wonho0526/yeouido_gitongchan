@@ -191,11 +191,11 @@ h2 * {
   .quick-links {
     right: max(8px, env(safe-area-inset-right));
     bottom: max(16px, env(safe-area-inset-bottom));
-    width: 66px;
+    width: 56px;
     grid-template-columns: 1fr;
     /* 행도 남는 높이에 맞춰 줄어들게 해야 max-height가 패널까지 전달된다. */
     grid-template-rows: minmax(0, 1fr);
-    border-radius: 33px;
+    border-radius: 28px;
     overflow: hidden;
     /* 가로로 눕힌 화면처럼 높이가 짧을 때 고정 헤더 아래를 파고들지 않도록
        막는다. 그래도 모자라면 패널 안에서 스크롤된다. */
@@ -218,14 +218,14 @@ h2 * {
     padding: 6px 2px;
     font-size: 10px;
   }
-  .quick-link img { width: 26px; height: 26px; }
+  .quick-link img { width: 24px; height: 24px; }
   .quick-link span { display: none; }
 
   /* 퀵바가 늘 떠 있으므로 가운데 정렬된 푸터 글이 그 밑으로 들어가지 않게
      오른쪽을 비워 둔다. */
   body.has-quick-links .footer-contact-inner,
   body.has-quick-links .footer-business-inner {
-    padding-right: 74px;
+    padding-right: 66px;
   }
 }
 
