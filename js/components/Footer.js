@@ -668,38 +668,6 @@
   };
 
   function QuickLinks() {
-    const compactQuery = "(max-width: 920px), (max-height: 760px)";
-    const [compact, setCompact] = React.useState(() => window.matchMedia(compactQuery).matches);
-    const [open, setOpen] = React.useState(false);
-    const navRef = React.useRef(null);
-    const toggleRef = React.useRef(null);
-
-    React.useEffect(() => {
-      const media = window.matchMedia(compactQuery);
-      const update = () => { setCompact(media.matches); setOpen(false); };
-      media.addEventListener("change", update);
-      return () => media.removeEventListener("change", update);
-    }, []);
-
-    React.useEffect(() => {
-      if (!compact || !open) return;
-      const dismiss = (event) => {
-        if (navRef.current && !navRef.current.contains(event.target)) setOpen(false);
-      };
-      const escape = (event) => {
-        if (event.key === "Escape") {
-          setOpen(false);
-          toggleRef.current?.focus();
-        }
-      };
-      document.addEventListener("pointerdown", dismiss);
-      document.addEventListener("keydown", escape);
-      return () => {
-        document.removeEventListener("pointerdown", dismiss);
-        document.removeEventListener("keydown", escape);
-      };
-    }, [compact, open]);
-
     const items = [
       { id: "top", label: "최상단 이동", icon: "arrow-up.svg" },
       // href만 실제 네이버 예약 주소로 교체하세요.
@@ -712,12 +680,8 @@
       { id: "blog", label: "네이버 블로그", icon: "blog.png", href: quickLinkUrls.blog, external: true },
     ];
 
-    return h("nav", { className: `quick-links${open ? " is-open" : ""}`, "aria-label": "빠른 안내", ref: navRef },
-      h("div", {
-        className: "quick-links-panel", id: "quick-links-panel",
-        "aria-hidden": compact && !open ? "true" : undefined,
-        inert: compact && !open ? "" : undefined,
-      },
+    return h("nav", { className: "quick-links", "aria-label": "빠른 안내" },
+      h("div", { className: "quick-links-panel", id: "quick-links-panel" },
       items.map((item) => {
         const unavailable = item.id !== "top" && !item.href;
         const props = {
@@ -728,7 +692,6 @@
           className: `quick-link quick-link--${item.id}`,
           "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
           title: unavailable ? `${item.label} (준비 중)` : item.label,
-          tabIndex: compact && !open ? -1 : undefined,
         };
         if (item.href) {
           props.href = item.href;
@@ -747,13 +710,7 @@
           h("img", { src: `${rootPrefix}img/icons/${item.icon}`, width: 24, height: 24, alt: "", "aria-hidden": "true" }),
           item.id !== "top" && h("span", null, item.label)
         );
-      })),
-      h("button", {
-        type: "button", className: "quick-links-toggle", ref: toggleRef,
-        "aria-label": open ? "빠른 안내 메뉴 닫기" : "빠른 안내 메뉴 열기",
-        "aria-expanded": open, "aria-controls": "quick-links-panel",
-        onClick: () => setOpen((value) => !value),
-      }, h("img", { src: `${rootPrefix}img/logo_back.png`, alt: "", width: 40, height: 40 }))
+      }))
     );
   }
 

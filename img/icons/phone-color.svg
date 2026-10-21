@@ -1,10 +1,10 @@
-<!-- Lucide "phone" (ISC, see LICENSE-lucide.txt), recoloured for the quick links bar. -->
+<!-- Lucide "phone" (ISC, see LICENSE-lucide.txt), recoloured and filled for the quick links bar. -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"
   viewBox="0 0 24 24"
-  fill="none"
+  fill="#d7a039"
   stroke="#d7a039"
   stroke-width="2"
   stroke-linecap="round"
