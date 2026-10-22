@@ -910,6 +910,67 @@ body[data-page="hours"] .footer-contact {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* 메뉴가 화면보다 넓어 글자가 잘릴 때, 더 있는 쪽을 꺾쇠로 알린다. 스크롤바를
+   숨겨 둔 화면에서는 옆으로 더 있다는 것이 전혀 드러나지 않는다.
+   양쪽 끝의 흰 그라데이션이 잘린 글자를 덮어 글자가 중간에 끊겨 보이지 않게 한다. */
+.sub-local-nav-cue {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 58px;
+  display: none;
+  align-items: center;
+  color: var(--sub-navy);
+  /* 메뉴를 쓸어 넘기는 손가락을 막지 않는다. */
+  pointer-events: none;
+}
+
+.sub-local-nav-inner.has-more-left .sub-local-nav-cue--left,
+.sub-local-nav-inner.has-more-right .sub-local-nav-cue--right {
+  display: flex;
+}
+
+.sub-local-nav-cue--left {
+  left: 0;
+  justify-content: flex-start;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff 46%);
+}
+
+.sub-local-nav-cue--right {
+  right: 0;
+  justify-content: flex-end;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 46%);
+}
+
+/* 가만히 있는 화살표는 눈에 들어오지 않는다. 가리키는 쪽으로 천천히 밀렸다
+   돌아오게 해서, 깜빡이는 것보다 눈이 덜 피로하게 둔다. */
+.sub-local-nav-cue--right svg {
+  animation: sub-local-nav-nudge-right 1.8s ease-in-out infinite;
+}
+
+.sub-local-nav-cue--left svg {
+  animation: sub-local-nav-nudge-left 1.8s ease-in-out infinite;
+}
+
+@keyframes sub-local-nav-nudge-right {
+  0%, 100% { opacity: 0.45; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(5px); }
+}
+
+@keyframes sub-local-nav-nudge-left {
+  0%, 100% { opacity: 0.45; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(-5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sub-local-nav-cue svg {
+    animation: none;
+    opacity: 0.85;
+  }
 }
 
 .sub-local-nav ul {

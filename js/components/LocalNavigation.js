@@ -47,6 +47,17 @@
     },
   };
 
+  // 메뉴가 잘릴 때 더 있는 쪽을 가리키는 꺾쇠. 스크롤바를 숨겨 둔 화면에서는
+  // 옆으로 쓸어 넘길 수 있다는 것이 드러나지 않는다.
+  const chevron = (direction) => h(
+    "svg",
+    {
+      width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor",
+      strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", focusable: "false",
+    },
+    h("path", { d: direction === "left" ? "m15 18-6-6 6-6" : "m9 18 6-6-6-6" })
+  );
+
   function LocalNavigation({ group }) {
     const navigation = navigationGroups[group];
     const currentPage = window.location.pathname.split("/").pop();
@@ -56,6 +67,7 @@
       return page === currentPage && (!hash || `#${hash}` === currentHash);
     };
     const listRef = React.useRef(null);
+    const [more, setMore] = React.useState({ left: false, right: false });
     React.useEffect(() => {
       const syncHash = () => setCurrentHash(window.location.hash || "#c-arm");
       window.addEventListener("hashchange", syncHash);
@@ -69,6 +81,32 @@
       }
     }, [group, currentPage, currentHash]);
 
+    // 가운데 맞추기가 끝난 뒤에 재어야 스크롤 위치가 반영된다.
+    React.useEffect(() => {
+      const list = listRef.current;
+      if (!list) {
+        return undefined;
+      }
+      const measure = () => {
+        const slack = list.scrollWidth - list.clientWidth;
+        setMore(slack <= 1
+          ? { left: false, right: false }
+          : { left: list.scrollLeft > 1, right: list.scrollLeft < slack - 1 });
+      };
+      measure();
+      list.addEventListener("scroll", measure, { passive: true });
+      window.addEventListener("resize", measure);
+      // 글꼴이 늦게 적용되면 글자 폭이 달라져 잘리는 여부도 바뀐다.
+      document.fonts?.ready.then(measure).catch(() => {});
+      const observer = typeof ResizeObserver === "function" ? new ResizeObserver(measure) : null;
+      observer?.observe(list);
+      return () => {
+        list.removeEventListener("scroll", measure);
+        window.removeEventListener("resize", measure);
+        observer?.disconnect();
+      };
+    }, [group, currentPage, currentHash]);
+
     if (!navigation) {
       return null;
     }
@@ -78,7 +116,17 @@
       { className: `sub-local-nav sub-local-nav--${group}`, "aria-label": `${navigation.label} 세부 메뉴` },
       h(
         "div",
-        { className: "inner sub-local-nav-inner" },
+        {
+          className: [
+            "inner sub-local-nav-inner",
+            more.left ? "has-more-left" : "",
+            more.right ? "has-more-right" : "",
+          ].filter(Boolean).join(" "),
+        },
+        h("span", { className: "sub-local-nav-cue sub-local-nav-cue--left", "aria-hidden": "true" },
+          chevron("left")),
+        h("span", { className: "sub-local-nav-cue sub-local-nav-cue--right", "aria-hidden": "true" },
+          chevron("right")),
         h(
           "ul",
           { ref: listRef },
