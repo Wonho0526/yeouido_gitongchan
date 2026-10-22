@@ -2448,3 +2448,22 @@ main .clinic-title-copy .clinic-kicker {
     column-gap: 6px;
   }
 }
+
+/* 퀵바를 펼치면 오른쪽을 덮어 메인 본문 끝 글자와 버튼이 그 밑으로 들어간다.
+   펼친 동안만 본문을 퀵바 앞에서 끊고, 접으면 원래 폭으로 돌린다.
+   이 파일은 서브페이지도 불러오므로 클래스가 없는 메인 <main>으로 한정한다. */
+@media (max-width: 920px), (max-height: 760px) {
+  /* AOS가 붙은 상자는 transition을 덮어쓰면 나타나는 효과가 사라지므로 제외한다. */
+  body.has-quick-links main:not(.subpage-main) .inner:not(.director-layout, .facility-gallery, [data-aos]) {
+    transition: padding-right .32s ease;
+  }
+
+  /* 원장 소개는 사진·배경이 화면 끝까지 차므로 틀 대신 글 상자를 비킨다.
+     시설 사진 줄은 폭이 바뀌면 넘겨 둔 위치가 흔들리므로 그대로 둔다. */
+  body.has-quick-links.quick-links-open main:not(.subpage-main) .inner:not(.director-layout, .facility-gallery) {
+    padding-right: 66px;
+  }
+  body.has-quick-links.quick-links-open main:not(.subpage-main) .director-copy {
+    padding-right: 80px;
+  }
+}
