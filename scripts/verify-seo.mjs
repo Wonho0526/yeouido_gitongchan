@@ -19,6 +19,32 @@ const STUBS = {
 // 사용자가 네이버 서치어드바이저용으로 지정한 문안. 글자 단위로 일치해야 합니다.
 const HOME_TITLE = '여의도정형외과 | 여의도기통찬의원 - 영등포구정형외과, 여의도도수치료, 여의도물리치료, 여의도허리통증, 여의도거북목';
 const HOME_DESC = '작은 통증까지 세심하게 살피는 서울 여의도 주민의 평생 주치의, 여의도기통찬의원, 성정원 통사 아카데미 정강사 출신의 이동현 대표원장이 직접 진료합니다. 여의도정형외과, 영등포구정형외과, 여의도도수치료, 여의도목디스크, 여의도거북목, 여의도허리디스크, 여의도허리통증, 여의도물리치료 척추관절 중점 통증의학과로 KB국민은행 동여의도점 건물 4층 위치.';
+// 메인의 링크 미리보기(카카오톡 등) 굵은 제목 줄. 사용자가 검색용 title 과 따로 지정했습니다.
+const HOME_SHARE_TITLE = '여의도기통찬의원';
+// 페이지별 링크 미리보기 제목(og:title·twitter:title). 사용자가 확정한 표이며 서브페이지는
+// 헤더 메뉴 이름을 따릅니다. 검색용 title 과 다릅니다. 색인 대상 페이지는 전부 여기 있어야 합니다.
+const SHARE_TITLES = {
+  'index.html': HOME_SHARE_TITLE,
+  'sub/about.html': '여의도기통찬의원 | 스토리',
+  'sub/special.html': '여의도기통찬의원 | 특별함',
+  'sub/doctor.html': '여의도기통찬의원 | 의료진',
+  'sub/values.html': '여의도기통찬의원 | 약속',
+  'sub/neck-shoulder.html': '여의도기통찬의원 | 목·어깨',
+  'sub/spine-joint.html': '여의도기통찬의원 | 허리·골반',
+  'sub/hand-wrist.html': '여의도기통찬의원 | 팔꿈치·손',
+  'sub/knee.html': '여의도기통찬의원 | 무릎',
+  'sub/foot-heel.html': '여의도기통찬의원 | 발·발목',
+  'sub/neuralgia.html': '여의도기통찬의원 | 두통·신경통',
+  'sub/injection.html': '여의도기통찬의원 | 주사치료',
+  'sub/shockwave.html': '여의도기통찬의원 | 체외충격파',
+  'sub/manual-therapy.html': '여의도기통찬의원 | 도수치료',
+  'sub/autonomic.html': '여의도기통찬의원 | 자율신경 주사치료(SNEPI)',
+  'sub/recovery-iv.html': '여의도기통찬의원 | 기능회복 수액',
+  'sub/equipment.html': '여의도기통찬의원 | 진료장비 안내',
+  'sub/spaces.html': '여의도기통찬의원 | 공간 둘러보기',
+  'sub/location.html': '여의도기통찬의원 | 진료 안내 & 오시는 길',
+  'sub/community.html': '여의도기통찬의원 | 건강정보',
+};
 
 // 사이트에 근거가 없거나 자체 생성이 금지된 구조화 데이터 키.
 const BANNED_LD_KEYS = ['aggregateRating', 'review', 'medicalSpecialty', 'priceRange'];
@@ -75,10 +101,9 @@ for (const rel of INDEXED) {
   check(`${rel}: OG 7개 + twitter 4개 각 1회`, missing.length === 0, missing.join(', '));
 }
 
-console.log('\n=== C3 OG 값이 title / description / canonical 과 일치 ===');
+console.log('\n=== C3 OG 값이 공유 제목 표 / description / canonical 과 일치 ===');
 for (const rel of INDEXED) {
   const html = read(rel);
-  const title = unescapeHtml((html.match(/<title>(.*?)<\/title>/s) || [, ''])[1].replace(/<[^>]+>/g, '').trim());
   const desc = metaName(html, 'description').value;
   const ogTitle = metaProp(html, 'og:title').value;
   const ogDesc = metaProp(html, 'og:description').value;
@@ -86,10 +111,17 @@ for (const rel of INDEXED) {
   const twTitle = metaName(html, 'twitter:title').value;
   const twDesc = metaName(html, 'twitter:description').value;
   const problems = [];
-  if (ogTitle !== title) problems.push('og:title != <title>');
+  // 공유 제목은 title 과 다르게 사용자가 확정했습니다. 표와 글자 단위로 비교하고,
+  // 표에 없는 페이지는 실패시켜 새 페이지의 누락을 막습니다.
+  const share = SHARE_TITLES[rel];
+  if (share === undefined) {
+    problems.push('SHARE_TITLES 표에 없음');
+  } else {
+    if (ogTitle !== share) problems.push('og:title != SHARE_TITLES');
+    if (twTitle !== share) problems.push('twitter:title != SHARE_TITLES');
+  }
   if (ogDesc !== desc) problems.push('og:description != description');
   if (ogUrl !== canonicalFor(rel)) problems.push('og:url != canonical');
-  if (twTitle !== title) problems.push('twitter:title != <title>');
   if (twDesc !== desc) problems.push('twitter:description != description');
   if (/<[a-z]/i.test((html.match(/<title>(.*?)<\/title>/s) || [, ''])[1])) problems.push('<title> 안에 태그');
   check(`${rel}: OG·twitter 값 일치`, problems.length === 0, problems.join(', '));
