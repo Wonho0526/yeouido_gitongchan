@@ -52,8 +52,7 @@
     },
     { href: "location.html", label: "진료 안내 & 오시는 길" },
     { href: "community.html", label: "건강정보" },
-    // 네이버 예약: href만 실제 병원 예약 URL로 교체합니다.
-    { href: "#", label: "예약 바로가기", external: true, reservation: true },
+    { href: "https://naver.me/GKIgSGFS", label: "예약 바로가기", external: true, reservation: true },
   ];
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -260,6 +259,8 @@
                     type: isCompact && item.children ? "button" : undefined,
                     href: isCompact && item.children ? undefined : navHref(item),
                     className: item.reservation ? "main-nav-link reservation-link" : "main-nav-link",
+                    target: item.external ? "_blank" : undefined,
+                    rel: item.external ? "noopener noreferrer" : undefined,
                     "data-naver-reservation": item.reservation ? "" : undefined,
                     "data-track-event": item.reservation ? "네이버 예약 클릭" : undefined,
                     "aria-controls": item.children ? `site-sub-nav-${index}` : undefined,

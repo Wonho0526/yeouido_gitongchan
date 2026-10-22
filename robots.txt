@@ -1,0 +1,116 @@
+# 여의도기통찬의원 robots.txt
+#
+# 검색엔진과 AI 답변 엔진의 크롤링을 모두 허용한다. 관리자 영역만 막는다.
+# AI 크롤러를 허용하면 AI 답변에 본원 정보가 인용될 수 있고, 동시에 학습 데이터로도
+# 쓰일 수 있다. 학습을 막으려면 GPTBot, ClaudeBot, Google-Extended, Applebot-Extended 의
+# Allow 를 Disallow 로 바꾼다(검색·답변용 크롤러는 허용으로 두는 쪽이 노출에 유리하다).
+
+# 검색엔진 전체
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 네이버
+User-agent: Yeti
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 다음
+User-agent: Daum
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 다음 검색 수집기
+User-agent: Daumoa
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 구글
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 빙
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# ChatGPT 학습
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# ChatGPT 검색
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# ChatGPT 이용자 조회
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# Claude 학습
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# Claude 검색
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# Claude 이용자 조회
+User-agent: Claude-User
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# Perplexity 이용자 조회
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 구글 AI 답변
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 애플
+User-agent: Applebot
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 애플 AI
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+# 메타 AI
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin/
+Disallow: /sub/admin.html
+
+Sitemap: https://xn--ok0bu9hnyrvkbwwl58i.com/sitemap.xml

@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "node scripts/serve.mjs",
     "build:deploy": "node scripts/build-deploy.mjs",
+    "build:sitemap": "node scripts/build-sitemap.mjs",
     "verify": "node scripts/verify-ui.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs",
     "verify:revision": "node scripts/verify-revision.mjs",
     "verify:conditions": "node scripts/verify-conditions.mjs",
     "verify:equipment": "node scripts/verify-equipment.mjs"
