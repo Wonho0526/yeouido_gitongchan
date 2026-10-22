@@ -1841,6 +1841,89 @@ main :is(p, li),
   }
 }
 
+/* Keep the desktop circles; group each program into a compact card on small screens. */
+@media (max-width: 920px) {
+  .pain-system-steps {
+    gap: 24px;
+  }
+
+  .pain-system-step {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 24px;
+    border: 1px solid rgba(234, 212, 184, .24);
+    border-radius: 20px;
+    background: rgba(255, 248, 234, .06);
+  }
+
+  .pain-system-circle {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 6px;
+    align-items: start;
+    justify-content: normal;
+    width: 100%;
+    aspect-ratio: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+  }
+
+  .pain-system-number {
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .pain-system-number span {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .pain-system-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 0;
+    width: 180px;
+    margin: 0;
+    opacity: .25;
+    pointer-events: none;
+  }
+
+  .pain-system-step h3 {
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 21px;
+    line-height: 1.45;
+  }
+
+  .pain-system-caption {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .pain-system-details {
+    position: relative;
+    z-index: 1;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(234, 212, 184, .18);
+    line-height: 1.7;
+  }
+}
+
 /* 만년필로 흘려 쓴 서명 느낌: 라틴은 Italianno(동판 인쇄체 계열), 한글은
    획이 이어지는 Nanum Brush Script로 맞춰 기울기와 흐름을 비슷하게 둔다. */
 @font-face {
