@@ -102,8 +102,11 @@ console.log('\n=== C4 루트 문안이 사용자 확정 문안과 일치 ===');
   check('index.html: title 글자 단위 일치', title === HOME_TITLE, `실제 ${title}`);
   check('index.html: description 글자 단위 일치',
     metaName(html, 'description').value === HOME_DESC);
+  // 소유확인 태그를 지우면 서치콘솔·서치어드바이저에서 소유권이 해제된다.
   check('index.html: naver-site-verification 보존',
     metaName(html, 'naver-site-verification').value === '01ded8e4ae430917089862138d803375c537c84f');
+  check('index.html: google-site-verification 보존',
+    metaName(html, 'google-site-verification').value === 'zMp_dvz0Q3W-ZqIFz-6BQHY6VaNIToWYjpLPPUiJpCk');
   console.log(`       적용 안: A(사용자 요청 원문). title ${title.length}자 / description ${HOME_DESC.length}자`);
 }
 
