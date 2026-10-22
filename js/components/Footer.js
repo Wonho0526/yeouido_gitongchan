@@ -578,7 +578,7 @@
             )
           ),
           h("div", { className: "section-more" },
-            h("a", { href: quickLinkUrls.reservation, className: "view-more-btn", target: "_blank", rel: "noopener noreferrer", "data-naver-reservation": "", "data-track-event": "네이버 예약 클릭" }, "예약 바로가기"))
+            h("a", { href: quickLinkUrls.place, className: "view-more-btn", target: "_blank", rel: "noopener noreferrer", "data-naver-reservation": "", "data-track-event": "네이버 예약 클릭" }, "예약 바로가기"))
         )
       ),
       h(
@@ -651,10 +651,8 @@
   }
 
   const quickLinkUrls = {
-    // 퀵바의 네이버 예약과 오시는길은 네이버 플레이스로 보낸다.
-    // 헤더·푸터·서브페이지의 "예약 바로가기"는 naver.me 단축주소를 그대로 쓴다.
+    // 예약과 오시는길은 모두 네이버 플레이스로 보낸다. 버튼 문구는 그대로 둔다.
     place: "https://m.place.naver.com/hospital/2098208942/home?entry=pll",
-    reservation: "https://naver.me/GKIgSGFS",
     kakao: "http://pf.kakao.com/_BUfmX",
     blog: "https://blog.naver.com/yeouidogtc",
     instagram: "https://www.instagram.com/yeouido_gtc/",

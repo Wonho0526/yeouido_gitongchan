@@ -52,7 +52,7 @@
     },
     { href: "location.html", label: "진료 안내 & 오시는 길" },
     { href: "community.html", label: "건강정보" },
-    { href: "https://naver.me/GKIgSGFS", label: "예약 바로가기", external: true, reservation: true },
+    { href: "https://m.place.naver.com/hospital/2098208942/home?entry=pll", label: "예약 바로가기", external: true, reservation: true },
   ];
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
