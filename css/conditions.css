@@ -787,11 +787,16 @@
     color: #8a6a3c;
 }
 
-/* 모바일에서는 오른쪽에 퀵바가 늘 떠 있어 본문 끝 글자가 그 밑으로 들어간다.
-   글을 읽는 폭을 퀵바 앞에서 끊어 가린 글자가 없게 한다. */
+/* 모바일에서 퀵바를 펼치면 오른쪽을 덮어 본문 끝 글자가 그 밑으로 들어간다.
+   펼친 동안만 글을 읽는 폭을 퀵바 앞에서 끊어 가린 글자가 없게 한다.
+   접으면 토글만 남으므로 본문은 원래 폭으로 돌아온다. */
 @media (max-width: 768px) {
     body.has-quick-links.condition-editorial-page .subpage-main .inner,
     body.has-quick-links.condition-editorial-page .sub-local-nav-inner {
+        transition: padding-right .32s ease;
+    }
+    body.has-quick-links.quick-links-open.condition-editorial-page .subpage-main .inner,
+    body.has-quick-links.quick-links-open.condition-editorial-page .sub-local-nav-inner {
         padding-right: 66px;
     }
 }

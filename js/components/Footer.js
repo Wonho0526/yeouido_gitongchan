@@ -674,6 +674,14 @@
       return () => media.removeEventListener("change", update);
     }, []);
 
+    // 펼쳤을 때만 본문·푸터가 퀵바 앞에서 끊기도록 body에 표시를 남긴다. 퀵바는 푸터보다
+    // 뒤에 붙어서 CSS 선택자로는 앞의 요소에 닿지 못하므로 클래스로 알린다.
+    React.useEffect(() => {
+      const on = compact && open;
+      document.body.classList.toggle("quick-links-open", on);
+      return () => document.body.classList.remove("quick-links-open");
+    }, [compact, open]);
+
     React.useEffect(() => {
       if (!compact || !open) return;
       const dismiss = (event) => {

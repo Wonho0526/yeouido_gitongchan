@@ -257,10 +257,14 @@ h2 * {
   .quick-link img { width: 24px; height: 24px; }
   .quick-link span { display: none; }
 
-  /* 접혀 있어도 토글이 떠 있으므로 가운데 정렬된 푸터 글이 그 밑으로 들어가지
-     않게 오른쪽을 비워 둔다. */
+  /* 퀵바를 펼쳤을 때만 가운데 정렬된 푸터 글이 그 밑으로 들어가지 않게 오른쪽을
+     비워 둔다. 접혀 있으면 토글만 떠 있으므로 글을 원래 폭으로 되돌린다. */
   body.has-quick-links .footer-contact-inner,
   body.has-quick-links .footer-business-inner {
+    transition: padding-right .32s ease;
+  }
+  body.has-quick-links.quick-links-open .footer-contact-inner,
+  body.has-quick-links.quick-links-open .footer-business-inner {
     padding-right: 66px;
   }
 }
