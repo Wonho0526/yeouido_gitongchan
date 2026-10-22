@@ -353,9 +353,13 @@ console.log('\n=== C10 llms.txt ===');
 console.log('\n=== C11 배포 파이프라인 ===');
 {
   const build = read('scripts/build-deploy.mjs');
-  for (const f of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
+  for (const f of ['robots.txt', 'sitemap.xml', 'llms.txt', 'rss.php']) {
     check(`build-deploy INCLUDE 에 ${f}`, new RegExp(`"${f.replace('.', '\\.')}"`).test(build));
   }
+  // rss.php 는 PHP가 없는 GitHub Pages 에서는 원본이 그대로 보인다. 반드시 제외해야 한다.
+  check('_config.yml 이 rss.php 를 Pages 에서 제외', /^\s*-\s*rss\.php\s*$/m.test(read('_config.yml')));
+  check('robots.txt 가 /admin/uploads/ 를 허용',
+    /^Allow:\s*\/admin\/uploads\/\s*$/m.test(read('robots.txt')));
   const pkg = JSON.parse(read('package.json'));
   check('package.json: verify:seo 등록', pkg.scripts['verify:seo'] === 'node scripts/verify-seo.mjs');
   check('package.json: build:sitemap 등록',

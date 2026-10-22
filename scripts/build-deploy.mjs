@@ -19,6 +19,7 @@ const INCLUDE = [
   "robots.txt",
   "sitemap.xml",
   "llms.txt",
+  "rss.php",
   "admin",
   "css",
   "fonts",

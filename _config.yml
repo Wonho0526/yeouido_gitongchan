@@ -4,6 +4,8 @@
 # Do not exclude vendor/ — the AOS scroll-animation library is served from there.
 exclude:
   - admin
+  # PHP가 없는 Pages에서는 원본이 그대로 보인다. 카페24에만 올린다.
+  - rss.php
   - scripts
   - package.json
   - package-lock.json

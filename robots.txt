@@ -8,109 +8,130 @@
 # 검색엔진 전체
 User-agent: *
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 네이버
 User-agent: Yeti
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 다음
 User-agent: Daum
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 다음 검색 수집기
 User-agent: Daumoa
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 구글
 User-agent: Googlebot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 빙
 User-agent: Bingbot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # ChatGPT 학습
 User-agent: GPTBot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # ChatGPT 검색
 User-agent: OAI-SearchBot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # ChatGPT 이용자 조회
 User-agent: ChatGPT-User
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # Claude 학습
 User-agent: ClaudeBot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # Claude 검색
 User-agent: Claude-SearchBot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # Claude 이용자 조회
 User-agent: Claude-User
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # Perplexity
 User-agent: PerplexityBot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # Perplexity 이용자 조회
 User-agent: Perplexity-User
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 구글 AI 답변
 User-agent: Google-Extended
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 애플
 User-agent: Applebot
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 애플 AI
 User-agent: Applebot-Extended
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 # 메타 AI
 User-agent: meta-externalagent
 Allow: /
+Allow: /admin/uploads/
 Disallow: /admin/
 Disallow: /sub/admin.html
 
 Sitemap: https://xn--ok0bu9hnyrvkbwwl58i.com/sitemap.xml
+
+# 건강정보 게시판 RSS (카페24에서만 동작)
+# https://xn--ok0bu9hnyrvkbwwl58i.com/rss.php
