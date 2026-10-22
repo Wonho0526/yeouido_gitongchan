@@ -147,6 +147,8 @@ h2 * {
 }
 
 .quick-links-panel { display: grid; }
+/* 토글은 좁은 화면에서만 쓴다. 데스크톱에서는 퀵바가 늘 펼쳐져 있다. */
+.quick-links-toggle { display: none; }
 
 .quick-link {
   display: flex;
@@ -191,28 +193,62 @@ h2 * {
   .quick-links {
     right: max(8px, env(safe-area-inset-right));
     bottom: max(16px, env(safe-area-inset-bottom));
-    width: 56px;
+    width: 66px;
     grid-template-columns: 1fr;
-    /* 행도 남는 높이에 맞춰 줄어들게 해야 max-height가 패널까지 전달된다. */
-    grid-template-rows: minmax(0, 1fr);
-    border-radius: 28px;
+    /* 위는 접히는 패널, 아래는 토글. 패널 행도 남는 높이에 맞춰 줄어들게 해야
+       퀵바의 max-height가 패널까지 전달된다. */
+    grid-template-rows: minmax(0, 1fr) auto;
+    border-radius: 33px;
     overflow: hidden;
-    /* 가로로 눕힌 화면처럼 높이가 짧을 때 고정 헤더 아래를 파고들지 않도록
-       막는다. 그래도 모자라면 패널 안에서 스크롤된다. */
+    /* 펼쳤을 때 가로로 눕힌 화면처럼 높이가 짧으면 고정 헤더 아래를 파고들지
+       않도록 막는다. 그래도 모자라면 패널 안에서 스크롤된다. */
     max-height: calc(100dvh - var(--quick-links-reserve) - env(safe-area-inset-bottom));
   }
   .quick-links-panel {
     /* 그리드 항목은 기본값이 min-height:auto라 줄어들지 않는다. 0으로 풀어야
        퀵바의 max-height가 먹고 넘치는 만큼 패널 안에서 스크롤된다. */
     min-height: 0;
-    overflow-y: auto;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
     scrollbar-width: none;
+    transform: translateY(12px);
+    transition: max-height .32s ease, opacity .22s ease, transform .32s ease, visibility .32s;
   }
   .quick-links-panel::-webkit-scrollbar {
     display: none;
   }
+  .quick-links.is-open .quick-links-panel {
+    /* 항목 8개가 최대 높이(58px)로 설 때도 잘리지 않을 만큼 둔다. */
+    max-height: 464px;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    transform: translateY(0);
+  }
+  .quick-links-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 62px;
+    padding: 8px;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+  }
+  .quick-links-toggle img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+  }
+  .quick-links-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -4px;
+  }
   .quick-link {
-    /* 접히지 않고 늘 서 있으므로, 항목 8개가 헤더 아래 공간에 들어가야 한다. */
+    /* 펼쳤을 때 항목 8개가 헤더 아래 공간에 들어가야 한다. */
     height: clamp(30px, calc((100dvh - var(--quick-links-reserve) - env(safe-area-inset-bottom)) / 8), 58px);
     gap: 4px;
     padding: 6px 2px;
@@ -221,8 +257,8 @@ h2 * {
   .quick-link img { width: 24px; height: 24px; }
   .quick-link span { display: none; }
 
-  /* 퀵바가 늘 떠 있으므로 가운데 정렬된 푸터 글이 그 밑으로 들어가지 않게
-     오른쪽을 비워 둔다. */
+  /* 접혀 있어도 토글이 떠 있으므로 가운데 정렬된 푸터 글이 그 밑으로 들어가지
+     않게 오른쪽을 비워 둔다. */
   body.has-quick-links .footer-contact-inner,
   body.has-quick-links .footer-business-inner {
     padding-right: 66px;

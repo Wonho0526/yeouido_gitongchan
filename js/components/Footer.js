@@ -578,8 +578,7 @@
             )
           ),
           h("div", { className: "section-more" },
-            // href만 실제 네이버 예약 주소로 교체하세요.
-            h("a", { href: "#", className: "view-more-btn", "data-naver-reservation": "", "data-track-event": "네이버 예약 클릭" }, "예약 바로가기"))
+            h("a", { href: quickLinkUrls.reservation, className: "view-more-btn", target: "_blank", rel: "noopener noreferrer", "data-naver-reservation": "", "data-track-event": "네이버 예약 클릭" }, "예약 바로가기"))
         )
       ),
       h(
@@ -651,29 +650,68 @@
     );
   }
 
-  // Add the clinic's external URLs here when they are available.
   const quickLinkUrls = {
-    kakao: "#",
-    blog: "#",
-    instagram: "#",
-    daangn: "#",
+    // 퀵바의 네이버 예약과 오시는길은 네이버 플레이스로 보낸다.
+    // 헤더·푸터·서브페이지의 "예약 바로가기"는 naver.me 단축주소를 그대로 쓴다.
+    place: "https://m.place.naver.com/hospital/2098208942/home?entry=pll",
+    reservation: "https://naver.me/GKIgSGFS",
+    kakao: "http://pf.kakao.com/_BUfmX",
+    blog: "https://blog.naver.com/yeouidogtc",
+    instagram: "https://www.instagram.com/yeouido_gtc/",
+    daangn: "https://www.daangn.com/kr/local-profile/vask3g92ky22/?referrer=share",
   };
 
   function QuickLinks() {
+    // 좁은 화면과 높이가 짧은 화면에서는 토글 뒤에 접어 둔다. 데스크톱에서는 늘 펼쳐 둔다.
+    const compactQuery = "(max-width: 920px), (max-height: 760px)";
+    const [compact, setCompact] = React.useState(() => window.matchMedia(compactQuery).matches);
+    const [open, setOpen] = React.useState(false);
+    const navRef = React.useRef(null);
+    const toggleRef = React.useRef(null);
+
+    React.useEffect(() => {
+      const media = window.matchMedia(compactQuery);
+      const update = () => { setCompact(media.matches); setOpen(false); };
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }, []);
+
+    React.useEffect(() => {
+      if (!compact || !open) return;
+      const dismiss = (event) => {
+        if (navRef.current && !navRef.current.contains(event.target)) setOpen(false);
+      };
+      const escape = (event) => {
+        if (event.key === "Escape") {
+          setOpen(false);
+          toggleRef.current?.focus();
+        }
+      };
+      document.addEventListener("pointerdown", dismiss);
+      document.addEventListener("keydown", escape);
+      return () => {
+        document.removeEventListener("pointerdown", dismiss);
+        document.removeEventListener("keydown", escape);
+      };
+    }, [compact, open]);
+
     const items = [
       { id: "top", label: "최상단 이동", icon: "arrow-up.svg" },
-      // href만 실제 네이버 예약 주소로 교체하세요.
-      { id: "reservation", label: "네이버 예약", icon: "naver_reservation_icon-1.png", href: "#", external: true },
+      { id: "reservation", label: "네이버 예약", icon: "naver_reservation_icon-1.png", href: quickLinkUrls.place, external: true },
       { id: "phone", label: "전화 문의", icon: "phone-color.svg", href: "tel:027827070" },
-      { id: "location", label: "오시는길", icon: "map-pin-color.svg", href: `${rootPrefix}sub/location.html` },
+      { id: "location", label: "오시는길", icon: "map-pin-color.svg", href: quickLinkUrls.place, external: true },
       { id: "daangn", label: "당근마켓", icon: "logoImage.png", href: quickLinkUrls.daangn, external: true },
       { id: "instagram", label: "인스타그램", icon: "instargram.png", href: quickLinkUrls.instagram, external: true },
       { id: "kakao", label: "카카오톡 상담", icon: "free-icon-kakao-talk-2111466.png", href: quickLinkUrls.kakao, external: true },
       { id: "blog", label: "네이버 블로그", icon: "blog.png", href: quickLinkUrls.blog, external: true },
     ];
 
-    return h("nav", { className: "quick-links", "aria-label": "빠른 안내" },
-      h("div", { className: "quick-links-panel", id: "quick-links-panel" },
+    return h("nav", { className: `quick-links${open ? " is-open" : ""}`, "aria-label": "빠른 안내", ref: navRef },
+      h("div", {
+        className: "quick-links-panel", id: "quick-links-panel",
+        "aria-hidden": compact && !open ? "true" : undefined,
+        inert: compact && !open ? "" : undefined,
+      },
       items.map((item) => {
         const unavailable = item.id !== "top" && !item.href;
         const props = {
@@ -684,6 +722,8 @@
           className: `quick-link quick-link--${item.id}`,
           "aria-label": unavailable ? `${item.label} (준비 중)` : item.label,
           title: unavailable ? `${item.label} (준비 중)` : item.label,
+          // 접혀 있을 때는 탭 이동으로도 닿지 않게 한다.
+          tabIndex: compact && !open ? -1 : undefined,
         };
         if (item.href) {
           props.href = item.href;
@@ -702,7 +742,13 @@
           h("img", { src: `${rootPrefix}img/icons/${item.icon}`, width: 24, height: 24, alt: "", "aria-hidden": "true" }),
           item.id !== "top" && h("span", null, item.label)
         );
-      }))
+      })),
+      h("button", {
+        type: "button", className: "quick-links-toggle", ref: toggleRef,
+        "aria-label": open ? "빠른 안내 메뉴 닫기" : "빠른 안내 메뉴 열기",
+        "aria-expanded": open, "aria-controls": "quick-links-panel",
+        onClick: () => setOpen((value) => !value),
+      }, h("img", { src: `${rootPrefix}img/logo_back.png`, alt: "", width: 40, height: 40 }))
     );
   }
 
