@@ -2768,3 +2768,55 @@ body[data-page="hours"] .footer-contact {
   }
 
 }
+
+/* 퀵바를 펼치면 오른쪽을 덮어 서브페이지 본문 끝 글자와 버튼이 그 밑으로 들어간다.
+   메인(style.css 끝 블록)과 같이 펼친 동안만 본문을 퀵바 앞에서 끊고, 접으면 원래 폭으로 돌린다.
+   질환 페이지도 이 규칙을 쓴다(conditions.css 의 768px 전용 규칙을 이리로 옮김). */
+@media (max-width: 920px), (max-height: 760px) {
+  /* AOS가 붙은 상자는 transition을 덮어쓰면 나타나는 효과가 사라지므로 제외한다. */
+  body.has-quick-links .subpage-main .inner:not([data-aos]) {
+    transition: padding-right .32s ease;
+  }
+  body.has-quick-links .subpage-main .sub-local-nav-cue--right {
+    transition: right .32s ease;
+  }
+
+  /* 서브 메뉴(.sub-local-nav-inner)도 .inner 라서 함께 비킨다.
+     배경 사진은 .inner 밖이라 화면 끝까지 그대로 둔다. */
+  body.has-quick-links.quick-links-open .subpage-main .inner {
+    padding-right: 66px;
+  }
+
+  /* 원장 메시지 띠는 .inner 밖에서 화면 폭을 다 쓰므로 따로 비킨다. AOS가 붙어 있어 transition은 두지 않는다. */
+  body.has-quick-links.quick-links-open .subpage-main .sub-doctor-main {
+    padding-right: 66px;
+  }
+
+  /* 오른쪽 꺾쇠는 메뉴 틀 오른쪽 끝에 붙어 있어 여백만 늘리면 퀵바 밑에 남는다. 비운 폭만큼 안으로 옮긴다. */
+  body.has-quick-links.quick-links-open .subpage-main .sub-local-nav-cue--right {
+    right: 66px;
+  }
+
+  /* 오시는 길의 진료시간(시간+배지)과 예약 버튼 두 개는 한 줄로 묶여 있어(revision.css),
+     줄어든 폭에서는 줄 끝이 퀵바 밑으로 밀려나고 카드까지 넓어진다. 펼친 동안만 넘치는 것을 다음 줄로 내린다. */
+  body.has-quick-links.quick-links-open[data-page="location"] .clinic-hours .location-hours-layout dd,
+  body.has-quick-links.quick-links-open[data-page="location"] .location-reservation {
+    flex-wrap: wrap;
+  }
+}
+
+/* 의료진 페이지의 늦게 불러오는 사진 두 장은 HTML에 실제 비율이 없어(teaching.jpg 는 3:2로 적혀 있으나 실제 2296x2240,
+   대표원장 사진은 크기 없음) 받기 전 자리가 작게 잡혔다가 받은 뒤 커지며 아래 본문을 밀어낸다.
+   퀵바를 펼쳐 폭이 바뀔 때 이 로드가 일어나면 접어도 본문이 내려간 채 남으므로, 받기 전 자리를 실제 비율로 잡아 둔다.
+   auto 를 앞에 두어 받은 뒤에는 파일의 실제 비율을 그대로 쓴다(최종 크기는 전과 같음, 파일이 바뀌어도 그 비율을 따름). */
+body[data-page="doctor"] .sub-image-frame img[src$="/teaching.jpg"] {
+  aspect-ratio: auto 2296 / 2240;
+}
+/* 대표원장 사진 틀은 좁은 화면(세로로 쌓이는 배치)에서 align-self:start 라 사진 폭을 따라가므로,
+   받기 전에도 받은 뒤와 같은 줄 폭을 쓰게 한다. */
+body[data-page="doctor"] .sub-doctor-photo {
+  width: 100%;
+}
+body[data-page="doctor"] .sub-doctor-photo img[src$="/doctor_profile.png"] {
+  aspect-ratio: auto 3398 / 4757;
+}
