@@ -1330,6 +1330,17 @@ body[data-page="values"] .sub-image-frame.sub-wide-photo {
   }
 }
 
+/* 주요 적용 질환 카드 조작부(js/subpage.js). 카드가 가로로 넘기는 줄이 되는 720px 이하(subpage.css)에서만 보인다. */
+.related-slider-controls--narrow {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .related-slider-controls--narrow {
+    display: flex;
+  }
+}
+
 @media (max-width: 640px) {
   .related-section > .inner {
     width: calc(100% - 28px);
