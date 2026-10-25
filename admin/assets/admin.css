@@ -127,108 +127,527 @@ tr:last-child td { border-bottom: none; }
     .calendar td { height: 72px; }
 }
 
-/* ---- 건강정보 본문 에디터 ---- */
+/* ---- 건강정보 글쓰기 화면 (community_render_form) ----
+   The body text itself is styled by css/community.css (.community-post-body), which the form
+   links, so the editor and the public post share one set of values. Only the frame around it
+   (title, toolbar, status bar, settings panel, pop-ups) lives here. */
 
-.editor {
-  border: 1px solid #d4d8de;
-  border-radius: 6px;
-  background: #fff;
-  overflow: hidden;
+/* The public site loads this face from css/reset.css; the admin does not, so the writing
+   surface links the same file. Other admin screens keep their own font. */
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("../../fonts/pretendard/PretendardVariable.woff2") format("woff2");
 }
 
-.editor-toolbar {
+/* Only the writing screen gets the wider page; layout.php is shared, so :has() picks it out.
+   Browsers without :has() keep 1080px and the text column is just narrower. */
+@media (min-width: 1024px) {
+  .admin-main:has(> .write-form) { max-width: 1490px; }
+}
+
+.write-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.write-draft {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
-  padding: 8px;
-  background: #f7f8fa;
+  gap: 8px 16px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid #bfd3f6;
+  border-radius: 8px;
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 14px;
+}
+.write-draft[hidden] { display: none; }
+.write-draft__text { flex: 1 1 320px; min-width: 0; margin: 0; line-height: 1.5; }
+.write-draft__text strong { display: block; font-weight: 600; }
+.write-draft__actions { display: flex; gap: 8px; }
+
+.write-layout > * { min-width: 0; }
+
+/* The "paper": the public page's colours and column. --write-pad is the side padding that keeps
+   the text column at most 1080px wide, the width of the public post body. */
+.write-paper {
+  --write-pad: 24px;
+  min-width: 0;
+  background: #fffefd;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+}
+
+.write-title {
+  padding: 28px var(--write-pad) 16px;
+  border-bottom: 1px solid #e3e6ea;
+}
+.write-title:focus-within { border-bottom: 2px solid #1b4b8f; padding-bottom: 15px; }
+
+.write-title__input,
+.editor-area {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+.write-title__input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #27221f;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.4;
+  outline: none;
+  word-break: keep-all;
+}
+.write-title__input::placeholder { color: #6b7280; opacity: 1; }
+
+.write-body { min-width: 0; }
+
+/* No overflow on .editor or any ancestor: it would stop the sticky toolbar and status bar. */
+.editor { position: relative; min-width: 0; }
+
+.editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
   border-bottom: 1px solid #e3e6ea;
 }
 
-.editor-btn {
-  min-width: 32px;
-  height: 30px;
-  padding: 0 8px;
-  font-size: 13px;
-  line-height: 1;
-  color: #333;
-  background: #fff;
-  border: 1px solid #d4d8de;
-  border-radius: 4px;
-  cursor: pointer;
+.editor-toolbar__insert {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 48px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e3e6ea;
 }
 
+.editor-toolbar__format-wrap { position: relative; }
+.editor-toolbar__format {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  min-height: 44px;
+  padding: 4px 12px;
+}
+
+.editor-btn {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
 .editor-btn:hover { background: #eef1f5; }
 .editor-btn:active { background: #e2e6ec; }
+.editor-btn[aria-pressed="true"],
+.editor-btn[aria-expanded="true"] { background: #e2e6ec; color: #143766; }
+.editor-btn:disabled { opacity: .4; cursor: default; background: transparent; }
+.editor-btn:focus-visible { outline: 2px solid #1b4b8f; outline-offset: 2px; }
+.editor-btn svg { flex: none; width: 20px; height: 20px; }
+.editor-btn--icon { width: 36px; padding: 0; }
+.editor-btn--menu { gap: 2px; padding: 0 6px 0 10px; }
+.editor-btn__text { display: inline-flex; align-items: center; gap: 2px; min-width: 0; }
+.editor-btn .editor-btn__text svg { width: 14px; height: 14px; color: #6b7280; }
+.editor-btn--block { width: 96px; }
+.editor-btn--block .editor-btn__text { justify-content: space-between; width: 100%; }
+.editor-btn--block .editor-btn__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Upper row: insert actions with a label, undo/redo pushed to the right. */
+.editor-btn--insert { height: 40px; padding: 0 12px; gap: 6px; font-size: 13px; }
+.editor-btn--history { width: 40px; height: 40px; padding: 0; }
+.editor-toolbar__history { display: flex; gap: 2px; margin-left: auto; }
 
 .editor-divider {
+  flex: none;
   width: 1px;
   height: 20px;
-  margin: 0 4px;
+  margin: 0 6px;
   background: #d4d8de;
 }
 
-.editor-select {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: #666;
+.editor-area.community-post-body {
+  position: relative;
+  min-height: 480px;
+  padding: 32px var(--write-pad) 48px;
 }
-
-.editor-select select {
-  height: 30px;
-  padding: 0 4px;
-  font-size: 13px;
-  border: 1px solid #d4d8de;
-  border-radius: 4px;
-  background: #fff;
-}
-
-.editor-area {
-  min-height: 320px;
-  padding: 16px 18px;
-  font-size: 15px;
-  line-height: 1.75;
-  color: #222;
-  overflow-wrap: anywhere;
-}
-
 .editor-area:focus { outline: 2px solid #1b4b8f; outline-offset: -2px; }
-.editor-area p { margin: 0 0 12px; }
-.editor-area h2 { margin: 20px 0 10px; font-size: 20px; font-weight: 700; }
-.editor-area h3 { margin: 16px 0 8px; font-size: 17px; font-weight: 700; }
-.editor-area ul, .editor-area ol { margin: 0 0 12px; padding-left: 22px; }
-.editor-area li { margin-bottom: 4px; }
-.editor-area ul { list-style: disc; }
-.editor-area ol { list-style: decimal; }
-.editor-area a { color: #1b4b8f; text-decoration: underline; }
-.editor-area img { max-width: 100%; height: auto; border-radius: 4px; margin: 8px 0; }
-.editor-area blockquote {
-  margin: 0 0 12px;
-  padding: 8px 14px;
-  border-left: 3px solid #cfd5dd;
-  color: #555;
+/* Shown on the area's own class, not as content; absolute with no top keeps it on the first line. */
+.editor-area.is-empty > :first-child::before {
+  content: "본문을 입력하세요. 사진은 끌어다 놓거나 붙여넣어도 됩니다.";
+  position: absolute;
+  left: var(--write-pad);
+  right: var(--write-pad);
+  color: #6b7280;
+  pointer-events: none;
+}
+.editor-area figure img { cursor: pointer; }
+.editor-area figcaption { min-height: 1.6em; outline: none; }
+.editor-area figcaption:empty::before { content: "사진 설명을 입력하세요"; color: #6b7280; }
+.editor-area hr { cursor: pointer; }
+
+.editor-statusbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  background: #fff;
+  border-top: 1px solid #e3e6ea;
+  border-radius: 0 0 8px 8px;
+}
+.editor-statusbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 13px;
 }
 
 .editor-notice {
+  flex: 1 1 auto;
+  min-width: 0;
   margin: 0;
-  padding: 6px 12px;
-  min-height: 28px;
-  font-size: 13px;
+  overflow: hidden;
   color: #15803d;
-  background: #fafbfc;
-  border-top: 1px solid #eef0f3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.editor-notice.is-error { color: #b91c1c; }
+.editor-notice.is-muted { color: #6b7280; }
+
+.editor-count {
+  flex: none;
+  margin: 0;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}
+.editor-count.is-warn { color: #b45309; }
+.editor-count.is-over { color: #b91c1c; font-weight: 700; }
+
+.editor-uploads {
+  max-height: 140px;
+  overflow-y: auto;
+  padding: 6px 16px;
+  border-bottom: 1px solid #e3e6ea;
+  font-size: 13px;
+}
+.editor-uploads[hidden] { display: none; }
+.editor-uploads__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 28px;
+}
+.editor-uploads__summary p { margin: 0; }
+.editor-uploads__bar { height: 3px; margin: 2px 0 4px; background: #e3e6ea; }
+.editor-uploads__bar span { display: block; height: 100%; background: #1b4b8f; }
+.editor-uploads__list { margin: 0; padding: 0; list-style: none; }
+.editor-uploads__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 28px;
+}
+.editor-uploads__name { max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.editor-uploads__state { color: #6b7280; text-align: right; }
+.editor-uploads__item.is-done .editor-uploads__state { color: #15803d; }
+.editor-uploads__item.is-error .editor-uploads__state { color: #b91c1c; }
+
+/* Pop-ups (menus, link box, photo bar, outlines) sit in a layer beside the text, never in it,
+   so nothing shown for editing can end up in the saved body or the undo history. */
+.editor-layer { position: absolute; inset: 0 auto auto 0; width: 0; height: 0; z-index: 30; }
+.editor-layer [hidden] { display: none !important; }
+
+.editor-menu,
+.editor-linkbox {
+  position: absolute;
+  z-index: 30;
+  max-width: calc(100vw - 32px);
+  background: #fff;
+  border: 1px solid #d4d8de;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(16, 24, 40, .08);
+}
+.editor-menu { min-width: 168px; padding: 4px; }
+.editor-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: #1f2328;
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.editor-menu__item:hover,
+.editor-menu__item:focus-visible { background: #eef1f5; outline: none; }
+.editor-menu__swatch {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 3px;
+}
+.editor-menu__swatch.is-none {
+  background: repeating-linear-gradient(135deg, #fff 0 3px, #c4c9d0 3px 4px);
+}
+.editor-menu__item .editor-menu__preview-hr { flex: none; width: 40px; border-top: 1px solid #d8cfc2; }
+.editor-menu__item .editor-menu__preview-hr.is-short { width: 20px; border-top: 2px solid #1b4b8f; }
+
+.editor-linkbox { width: 320px; padding: 12px; }
+.editor-linkbox label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; }
+.editor-linkbox input {
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #d4d8de;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.editor-linkbox input:focus { outline: 2px solid #1b4b8f; outline-offset: 0; border-color: #1b4b8f; }
+.editor-linkbox__error { margin: 6px 0 0; color: #b91c1c; font-size: 13px; line-height: 1.5; }
+.editor-linkbox__error[hidden] { display: none; }
+.editor-linkbox__actions { display: flex; gap: 8px; margin-top: 10px; }
+
+.editor-photobar {
+  position: absolute;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 6px;
+  background: #111827;
+  box-shadow: 0 6px 16px rgba(16, 24, 40, .08);
+}
+.editor-photobar button {
+  height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.editor-photobar button:hover { background: #374151; }
+.editor-photobar button[aria-pressed="true"] { background: #1b4b8f; }
+.editor-photobar button:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+.editor-photobar__sep { flex: none; width: 1px; height: 18px; margin: 0 4px; background: #4b5563; }
+
+.editor-outline {
+  position: absolute;
+  z-index: 24;
+  border: 2px solid #1b4b8f;
+  border-radius: 4px;
+  pointer-events: none;
 }
 
-.editor-notice.is-error { color: #c8102e; }
+.editor-drop {
+  position: absolute;
+  z-index: 26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 2px dashed #1b4b8f;
+  border-radius: 8px;
+  background: rgba(27, 75, 143, .06);
+  color: #143766;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+}
 
 /* Progressive enhancement: the editor stays hidden until editor.js marks it ready, so a
    browser that never runs the script shows the plain textarea and the form still works. */
 .editor { display: none; }
 .editor.is-ready { display: block; }
 .editor.is-ready + .editor-source { display: none; }
+
+.editor-source {
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  padding: 24px var(--write-pad) 32px;
+  border: 0;
+  border-radius: 0 0 8px 8px;
+  background: transparent;
+  color: #1f2328;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+}
+.editor-source:focus { outline: 2px solid #1b4b8f; outline-offset: -2px; }
+
+.write-body > .hint { margin: 0; padding: 8px var(--write-pad) 12px; border-top: 1px solid #e3e6ea; }
+.write-hint--editor { display: none; }
+.editor.is-ready ~ .write-hint--editor { display: block; }
+.editor.is-ready ~ .write-hint--plain { display: none; }
+
+.write-panel {
+  margin-top: 24px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+}
+.write-panel__title { margin: 0 0 16px; color: #1f2328; font-size: 15px; font-weight: 600; }
+.write-panel .form-row { margin-bottom: 12px; }
+.write-panel .checkbox-row { min-height: 32px; margin-bottom: 4px; }
+.write-panel .checkbox-row label { display: inline; margin: 0; font-weight: 400; }
+.write-panel input[type=file] { width: 100%; font-size: 13px; }
+.write-panel__preview {
+  display: block;
+  max-width: 100%;
+  max-height: 180px;
+  margin-bottom: 6px;
+  object-fit: contain;
+}
+.write-panel__remove { margin: 6px 0; }
+.write-panel__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.write-panel__actions .form-error { flex: 1 0 100%; margin: 0; }
+.write-panel__actions .form-error[hidden] { display: none; }
+.write-panel__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  text-align: center;
+}
+.write-panel__actions .btn--primary { min-width: 160px; }
+.write-panel__actions .btn:not(.btn--primary) { min-width: 96px; }
+
+@media (min-width: 1024px) {
+  .write-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 288px;
+    column-gap: 24px;
+    align-items: start;
+  }
+  .write-paper { --write-pad: max(24px, calc((100% - 1080px) / 2)); }
+  .write-title { padding: 32px var(--write-pad) 20px; }
+  .write-title:focus-within { padding-bottom: 19px; }
+  .write-title__input { font-size: 32px; }
+  .editor-toolbar__insert { height: 64px; }
+  .editor-btn--insert {
+    flex-direction: column;
+    gap: 4px;
+    width: 64px;
+    height: 56px;
+    padding: 0;
+    font-size: 12px;
+  }
+  .editor-btn--insert svg { width: 22px; height: 22px; }
+  .editor-area.community-post-body { min-height: 560px; padding: 40px var(--write-pad) 64px; }
+  .write-panel {
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    margin-top: 0;
+  }
+  .write-panel__preview { width: 100%; max-height: 160px; }
+  .write-panel__actions { flex-direction: column; }
+  .write-panel__actions .btn { width: 100%; min-width: 0; }
+  .write-panel__actions .btn:not(.btn--primary) { height: 40px; min-width: 0; }
+}
+
+@media (min-width: 721px) and (max-width: 1023px) {
+  .write-panel__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .write-paper { --write-pad: 16px; }
+  .write-title { padding: 20px var(--write-pad) 12px; }
+  .write-title:focus-within { padding-bottom: 11px; }
+  .write-title__input { font-size: 23px; }
+  .write-draft__actions { flex: 1 0 100%; }
+
+  .editor-toolbar__insert { height: 56px; padding: 0 8px; gap: 0; }
+  .editor-btn--insert {
+    flex-direction: column;
+    gap: 3px;
+    width: 52px;
+    height: 48px;
+    padding: 0;
+    font-size: 12px;
+  }
+  .editor-toolbar__format {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 4px 8px;
+    scrollbar-width: thin;
+  }
+  /* A soft edge on the right says the row scrolls; hidden once the end is reached. */
+  .editor-toolbar__format-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+    pointer-events: none;
+  }
+  .editor-toolbar__format-wrap.is-end::after { display: none; }
+
+  .editor-area.community-post-body { min-height: 360px; padding: 24px var(--write-pad) 40px; }
+  .editor-statusbar__row { padding: 0 12px; }
+  .editor-uploads { padding: 6px 12px; }
+  .editor-photobar { flex-wrap: wrap; }
+
+  .write-panel { margin-top: 16px; padding: 16px; }
+  .write-panel .form-row { margin-bottom: 16px; }
+  .write-panel .checkbox-row { min-height: 44px; margin-bottom: 0; }
+  .write-panel__preview { max-height: 200px; }
+  .write-panel__actions { flex-wrap: nowrap; }
+  .write-panel__actions .form-error { display: none; }
+  .write-panel__actions .btn { height: 48px; min-width: 0; }
+  .write-panel__actions .btn--primary { flex: 2; }
+  .write-panel__actions .btn:not(.btn--primary) { flex: 1; }
+}
 
 /* ================================================================
  * 방문통계 대시보드

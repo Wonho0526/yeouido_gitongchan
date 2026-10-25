@@ -126,5 +126,8 @@ layout_header('건강정보 관리', $admin);
   <?php endfor; ?>
 </nav>
 <?php endif; ?>
+<!-- Arriving here with "등록/수정되었습니다" is the one sign a save went through; the editor
+     script then drops that post's browser draft. It does nothing else on this page. -->
+<script src="<?= h(admin_url('assets/editor.js')) ?>" defer></script>
 <?php
 layout_footer();

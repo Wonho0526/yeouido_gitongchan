@@ -1,13 +1,16 @@
 <?php
 
 // Inline image upload for the 건강정보 editor. The editor posts one file and gets back the
-// stored path, which it drops into the body as an <img src>. Logged-in admins only, and
-// the file goes through the same magic-byte check as cover images.
+// address it drops into the body as an <img src>. Logged-in admins only, and the file goes
+// through the same magic-byte check as cover images.
 //
-// The path returned here is also what sanitize_html.php will accept later: anything the
-// editor sends with a different shape is stripped from the body on save.
+// Files are stored under admin/uploads/, so the address is made with admin_url() (as cover
+// images are), e.g. /admin/uploads/community/<hash>-inline.webp. It is checked against
+// SANITIZE_IMG_SRC before it is returned: the body is saved through that same pattern, so an
+// address it would strip (say, an admin installed under another folder) fails here instead.
 
 require __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/sanitize_html.php';
 
 require_login();
 
@@ -42,4 +45,10 @@ if ($path === null) {
     upload_fail(400, '이미지를 선택해주세요.');
 }
 
-echo json_encode(['path' => $path], JSON_UNESCAPED_UNICODE);
+$url = admin_url(ltrim($path, '/'));
+if (!preg_match(SANITIZE_IMG_SRC, $url)) {
+    // The stored file stays behind; the body could not keep this address anyway.
+    upload_fail(500, '사진 주소가 본문에 저장할 수 있는 형식이 아닙니다. 관리자에게 문의해주세요.');
+}
+
+echo json_encode(['path' => $url], JSON_UNESCAPED_UNICODE);

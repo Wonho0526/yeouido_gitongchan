@@ -403,7 +403,6 @@ a.community-neighbour:focus-visible .community-neighbour-title {
 
   .community-post-body {
     padding: 32px 0 48px;
-    font-size: 16px;
   }
 
   .community-neighbour {
@@ -558,12 +557,19 @@ a.community-neighbour:focus-visible .community-neighbour-title {
 
 /* ---- 서식 있는 본문 ---- */
 
-.community-post-body { white-space: normal; }
+/* The admin editor (admin/includes/community.php) puts this same class on its editing surface
+   and links this file, so these rules are what the author sees while writing. The public page
+   also carries global h2/blockquote/p rules (common.css, subpage.css, revision.css); every value
+   they would leak in is stated here explicitly so both screens end up the same. */
+.community-post-body { white-space: normal; word-break: keep-all; }
 .community-post-body > :first-child { margin-top: 0; }
 .community-post-body > :last-child { margin-bottom: 0; }
 .community-post-body p { margin: 0 0 16px; line-height: 1.85; }
-.community-post-body h2 { margin: 36px 0 14px; font-size: 22px; font-weight: 700; line-height: 1.45; }
-.community-post-body h3 { margin: 28px 0 12px; font-size: 18px; font-weight: 700; line-height: 1.5; }
+/* common.css sets h2 { font-size: var(--h2-size) !important }, so only !important wins here. */
+.community-post-body h2 { margin: 36px 0 14px; font-size: 24px !important; font-weight: 700; line-height: 1.45; }
+.community-post-body h2 * { font-size: inherit !important; }
+.community-post-body h2 span { color: inherit; }
+.community-post-body h3 { margin: 28px 0 12px; font-size: 20px; font-weight: 700; line-height: 1.5; }
 .community-post-body ul,
 .community-post-body ol { margin: 0 0 16px; padding-left: 24px; }
 .community-post-body ul { list-style: disc; }
@@ -581,20 +587,92 @@ a.community-neighbour:focus-visible .community-neighbour-title {
   border-radius: 8px;
 }
 
+/* subpage.css has a global blockquote at 24px/600/1.55, so size, weight and leading are all set. */
 .community-post-body blockquote {
-  margin: 0 0 16px;
+  margin: 24px 0;
   padding: 12px 18px;
   border-left: 3px solid #cfd5dd;
   background: #f8fafc;
   color: #4a5568;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
 }
+.community-post-body blockquote p { margin: 0 0 8px; }
+.community-post-body blockquote p:last-child { margin-bottom: 0; }
 
 .community-post-body figure { margin: 24px 0; }
+.community-post-body figure img { margin: 0 auto; }
 .community-post-body figcaption {
   margin-top: 8px;
-  font-size: 13px;
-  color: #8a93a2;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #746c63;
   text-align: center;
+}
+
+/* Photo size and alignment, quote styles and the divider. These class names are the only ones
+   admin/includes/sanitize_html.php lets through (SANITIZE_CLASS_TOKENS). */
+.community-post-body figure.post-img-small  { width: min(100%, 360px); }
+.community-post-body figure.post-img-medium { width: min(100%, 640px); }
+.community-post-body figure.post-img-full   { width: 100%; }
+.community-post-body figure.post-img-small img,
+.community-post-body figure.post-img-medium img,
+.community-post-body figure.post-img-full img { width: 100%; }
+.community-post-body figure.post-img-left   { margin-left: 0; margin-right: auto; }
+.community-post-body figure.post-img-center { margin-left: auto; margin-right: auto; }
+.community-post-body figure.post-img-left figcaption { text-align: left; }
+
+.community-post-body blockquote.post-quote-mark {
+  margin: 32px 0;
+  padding: 0 24px;
+  border: 0;
+  background: none;
+  color: #27221f;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  text-align: center;
+}
+.community-post-body blockquote.post-quote-mark::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 4px;
+  color: #1b4b8f;
+  font-size: 44px;
+  line-height: 1;
+}
+.community-post-body blockquote.post-quote-box {
+  padding: 20px 24px;
+  border: 1px solid rgba(27, 75, 143, .22);
+  border-radius: 8px;
+  background: rgba(27, 75, 143, .05);
+  color: #3f3a35;
+}
+
+.community-post-body hr {
+  height: 0;
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #d8cfc2;
+}
+.community-post-body hr.post-hr-short {
+  width: 64px;
+  margin: 40px auto;
+  border-top: 2px solid #1b4b8f;
+}
+
+/* The body steps down at 768px, where revision.css already forces main p/li to 16px. */
+@media (max-width: 768px) {
+  .community-post-body { font-size: 16px; }
+  .community-post-body h2 { font-size: 21px !important; }
+  .community-post-body h3 { font-size: 18px; }
+  .community-post-body blockquote { font-size: 16px; }
+  .community-post-body blockquote.post-quote-mark { padding: 0 8px; font-size: 18px; }
+  .community-post-body blockquote.post-quote-mark::before { font-size: 36px; }
+  .community-post-body blockquote.post-quote-box { padding: 16px 18px; }
+  .community-post-body hr { margin: 32px 0; }
+  .community-post-body hr.post-hr-short { margin: 32px auto; }
 }
 
 /* Posts written before the rich-text editor are plain text with real newlines. */

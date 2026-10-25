@@ -18,10 +18,22 @@ const SANITIZE_ELEMENTS = [
     'span' => ['style'],
     'h2' => [], 'h3' => [],
     'ul' => [], 'ol' => [], 'li' => [],
-    'blockquote' => [],
+    'blockquote' => ['class'],
     'a' => ['href'],
     'img' => ['src', 'alt', 'width', 'height'],
-    'figure' => [], 'figcaption' => [],
+    'figure' => ['class'], 'figcaption' => [],
+    'hr' => ['class'],
+];
+
+/**
+ * The only class values a post may carry, per element, in the order they are written back:
+ * the editor's photo size and alignment, quote styles and the short divider. css/community.css
+ * styles exactly these. Any other word in a class attribute is dropped.
+ */
+const SANITIZE_CLASS_TOKENS = [
+    'figure' => ['post-img-small', 'post-img-medium', 'post-img-full', 'post-img-left', 'post-img-center'],
+    'blockquote' => ['post-quote-mark', 'post-quote-box'],
+    'hr' => ['post-hr-short'],
 ];
 
 /** Dropped with everything inside them. These can execute, load, or capture input. */
@@ -31,8 +43,12 @@ const SANITIZE_DROP_SUBTREE = [
     'noscript', 'template', 'frame', 'frameset', 'audio', 'video', 'source', 'track',
 ];
 
-/** Inline images must be files this admin stored itself — see save_uploaded_image(). */
-const SANITIZE_IMG_SRC = '#^/uploads/community/[0-9a-f]{32}-[a-z0-9_-]+\.(?:jpg|png|webp)$#';
+/**
+ * Inline images must be files this admin stored itself — see save_uploaded_image(). The editor
+ * inserts the /admin/uploads/... address that community/upload-image.php returns; the bare
+ * /uploads/... form is still accepted so bodies saved before that change keep their images.
+ */
+const SANITIZE_IMG_SRC = '#^(?:/admin)?/uploads/community/[0-9a-f]{32}-[a-z0-9_-]+\.(?:jpg|png|webp)$#';
 
 const SANITIZE_FONT_SIZE_MIN = 10;
 const SANITIZE_FONT_SIZE_MAX = 48;
@@ -48,25 +64,17 @@ function sanitize_post_html(string $html): string
         return '';
     }
 
-    $doc = new DOMDocument();
     // The meta tag is what makes libxml read the bytes as UTF-8; without it Korean text is
-    // mangled. LIBXML_NOERROR swallows the warnings malformed markup would otherwise raise.
-    $previous = libxml_use_internal_errors(true);
-    $loaded = $doc->loadHTML(
-        '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'
-        . '<div data-sanitize-root="1">' . $html . '</div>',
-        LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOERROR | LIBXML_NOWARNING
-    );
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous);
-
-    if (!$loaded) {
-        return '';
-    }
-
-    $xpath = new DOMXPath($doc);
-    $root = $xpath->query('//div[@data-sanitize-root="1"]')->item(0);
-    if (!$root instanceof DOMElement) {
+    // mangled. Some libxml builds (2.11.9 in the PHP 8.4.27 Windows build) cannot parse that
+    // prefix together with LIBXML_HTML_NOIMPLIED: loadHTML() still returns true, but the parse
+    // stops ("Memory allocation failed") and the marker div never appears. Only in that case is
+    // the body parsed again behind an xml encoding declaration, which those builds handle; where
+    // the first parse works, the result is exactly what it always was. Known limit of the second
+    // parse: a <meta charset> inside the body switches libxml to that charset from there on.
+    [$doc, $root] = sanitize_load_html('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">', $html)
+        ?? sanitize_load_html('<?xml encoding="utf-8"?>', $html)
+        ?? [null, null];
+    if ($root === null) {
         return '';
     }
 
@@ -77,6 +85,32 @@ function sanitize_post_html(string $html): string
         $out .= $doc->saveHTML($child);
     }
     return trim($out);
+}
+
+/**
+ * Parses the body inside the marker div, behind the given encoding prefix. Returns the document
+ * and the marker div, or null when libxml did not get as far as the div (the parse failed).
+ * An input that parses but holds nothing allowed is not a failure; it sanitizes to ''.
+ */
+function sanitize_load_html(string $prefix, string $html): ?array
+{
+    $doc = new DOMDocument();
+    // LIBXML_NOERROR swallows the warnings malformed markup would otherwise raise.
+    $previous = libxml_use_internal_errors(true);
+    $loaded = $doc->loadHTML(
+        $prefix . '<div data-sanitize-root="1">' . $html . '</div>',
+        LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOERROR | LIBXML_NOWARNING
+    );
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous);
+
+    if (!$loaded) {
+        return null;
+    }
+
+    $xpath = new DOMXPath($doc);
+    $root = $xpath->query('//div[@data-sanitize-root="1"]')->item(0);
+    return $root instanceof DOMElement ? [$doc, $root] : null;
 }
 
 /** True when the body carries no visible text and no image — used for "is this empty?". */
@@ -164,6 +198,15 @@ function sanitize_attributes(DOMElement $node, string $tag): void
         }
     }
 
+    if ($node->hasAttribute('class')) {
+        $class = sanitize_class($node->getAttribute('class'), $tag);
+        if ($class === '') {
+            $node->removeAttribute('class');
+        } else {
+            $node->setAttribute('class', $class);
+        }
+    }
+
     if ($tag === 'a') {
         $href = sanitize_href($node->getAttribute('href'));
         if ($href === null) {
@@ -231,6 +274,23 @@ function sanitize_style(string $style, string $tag): string
         }
     }
     return implode(';', $out);
+}
+
+/**
+ * Rebuilds the class attribute from SANITIZE_CLASS_TOKENS: a token survives only on an exact,
+ * case-sensitive match for this element, once, in list order. As with sanitize_style(), the
+ * output is assembled from the list, never copied from the input.
+ */
+function sanitize_class(string $class, string $tag): string
+{
+    $given = preg_split('/[ \t\n\f\r]+/', $class, -1, PREG_SPLIT_NO_EMPTY) ?: [];
+    $kept = [];
+    foreach (SANITIZE_CLASS_TOKENS[$tag] ?? [] as $token) {
+        if (in_array($token, $given, true)) {
+            $kept[] = $token;
+        }
+    }
+    return implode(' ', $kept);
 }
 
 function sanitize_color(string $value): ?string
