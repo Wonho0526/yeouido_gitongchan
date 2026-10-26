@@ -508,7 +508,7 @@ html:not(.aos-enabled) main [data-aos] {
   height: auto;
   padding: 100px 0;
   color: #fff8ea;
-  background: linear-gradient(110deg, rgba(47, 41, 36, .91), rgba(93, 81, 71, .84)), url("../img/doctor-no-logo-v1.png") center / cover no-repeat;
+  background: linear-gradient(110deg, rgba(47, 41, 36, .91), rgba(93, 81, 71, .84)), url("../img/Ygitongchan/4.webp") center / cover no-repeat;
 }
 
 .pain-system-heading {
@@ -2439,8 +2439,10 @@ main .clinic-title-copy .clinic-kicker {
     --badge-logo-size: 42px;
   }
 }
+
 /* Place mobile hours badges directly after the time. */
 @media (max-width: 768px) {
+
   .footer-info-block.clinic-hours dd,
   .sub-guide-card.clinic-hours dd {
     grid-template-columns: max-content max-content;
@@ -2452,7 +2454,9 @@ main .clinic-title-copy .clinic-kicker {
 /* 퀵바를 펼치면 오른쪽을 덮어 메인 본문 끝 글자와 버튼이 그 밑으로 들어간다.
    펼친 동안만 본문을 퀵바 앞에서 끊고, 접으면 원래 폭으로 돌린다.
    이 파일은 서브페이지도 불러오므로 클래스가 없는 메인 <main>으로 한정한다. */
-@media (max-width: 920px), (max-height: 760px) {
+@media (max-width: 920px),
+(max-height: 760px) {
+
   /* AOS가 붙은 상자는 transition을 덮어쓰면 나타나는 효과가 사라지므로 제외한다. */
   body.has-quick-links main:not(.subpage-main) .inner:not(.director-layout, .facility-gallery, [data-aos]) {
     transition: padding-right .32s ease;
@@ -2463,6 +2467,7 @@ main .clinic-title-copy .clinic-kicker {
   body.has-quick-links.quick-links-open main:not(.subpage-main) .inner:not(.director-layout, .facility-gallery) {
     padding-right: 66px;
   }
+
   body.has-quick-links.quick-links-open main:not(.subpage-main) .director-copy {
     padding-right: 80px;
   }

@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "file": "img/editorial/iv-recommendation-fatigue-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: image at top of a Korean clinic website recommendation card. Landscape 4:3 editorial photograph, waist-up medium composition, person centered with face and hands fully inside the central 75 percent of the frame so card cropping preserves them. Premium understated website palette of warm ivory, light beige, natural wood, subtle navy clothing. Soft natural daylight, real skin texture, believable anatomy, serene respectful mood. No clinicians, medical staff, medical equipment, text, logos or watermark. Scene: An exhausted Korean adult woman in her 30s sitting at a desk at home, eyes softly closed, one hand gently massaging her temple, slightly slouched shoulders, conveying ordinary chronic fatigue and low energy, not extreme distress."
+    },
+    {
+      "file": "img/editorial/iv-recommendation-recovery-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: image at top of a Korean clinic website recommendation card. Landscape 4:3 editorial photograph, waist-up medium composition, person centered with face and hands fully inside the central 75 percent of the frame so card cropping preserves them. Premium understated website palette of warm ivory, light beige, natural wood, subtle navy clothing. Soft natural daylight, real skin texture, believable anatomy, serene respectful mood. No clinicians, medical staff, medical equipment, text, logos or watermark. Scene: A tired Korean adult man in his 40s sitting on an ivory sofa at home, leaning back with eyes gently closed, a soft beige blanket across his lap, conveying a need for more recovery and rest."
+    },
+    {
+      "file": "img/editorial/iv-recommendation-rest-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: image at top of a Korean clinic website recommendation card. Landscape 4:3 editorial photograph, waist-up medium composition, person centered with face and hands fully inside the central 75 percent of the frame so card cropping preserves them. Premium understated website palette of warm ivory, light beige, natural wood, subtle navy clothing. Soft natural daylight, real skin texture, believable anatomy, serene respectful mood. No clinicians, medical staff, medical equipment, text, logos or watermark. Scene: A Korean adult woman in her 40s resting quietly on a cream recliner beside a softly lit window, calm eyes gently closed, hands resting naturally in her lap, conveying comfortable peaceful rest."
+    },
+    {
+      "file": "img/editorial/iv-recommendation-busy-v1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: image at top of a Korean clinic website recommendation card. Landscape 4:3 editorial photograph, waist-up medium composition, person centered with face and hands fully inside the central 75 percent of the frame so card cropping preserves them. Premium understated website palette of warm ivory, light beige, natural wood, subtle navy clothing. Soft natural daylight, real skin texture, believable anatomy, serene respectful mood. No clinicians, medical staff, medical equipment, text, logos or watermark. Scene: A fatigued Korean adult man in his 30s pausing while working at a tidy office desk, one hand gently touching the bridge of his nose with eyes closed, laptop blurred in the foreground, conveying tiredness from a busy daily routine."
+    }
+  ]
+}
