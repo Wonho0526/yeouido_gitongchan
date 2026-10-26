@@ -25,10 +25,8 @@
     { term: "주차안내", desc: "본원 주차 또는 인근 주차장 안내·지원" },
   ];
 
-  // 구글 지도 임베드. API 키가 필요 없다.
-  // 건물명을 붙이면 핀이 엉뚱한 건물로 잡히므로 도로명 주소만 넘긴다.
-  const mapQuery = "서울특별시 영등포구 국제금융로 72";
-  const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&hl=ko&z=18&output=embed`;
+  // 구글 지도에 등록된 병원 장소를 직접 연결해 병원명과 정확한 위치를 표시한다.
+  const mapEmbedSrc = "https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357c9fbf73bb54cb%3A0x503dbac6bdc09b7a!2z7Jes7J2Y64-E6riw7Ya17LCs7J2Y7JuQ!5e0!3m2!1sko!2skr!4v1792994113424!5m2!1sko!2skr";
 
   const patientRights = [
     "① 환자는 인간으로서의 존엄과 가치를 바탕으로 인격을 존중 받을 권리가 있다.",
