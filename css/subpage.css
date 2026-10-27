@@ -834,7 +834,7 @@ body[data-page="hours"] .footer-contact {
   align-items: center;
   overflow: hidden;
   padding: calc(var(--header-height) + 16px) 0 96px;
-  background: #252a2c;
+  background: url(../img/Ygitongchan/10.webp) no-repeat center / cover;
 }
 
 .subpage-main .sub-hero-inner {
@@ -957,13 +957,31 @@ body[data-page="hours"] .footer-contact {
 }
 
 @keyframes sub-local-nav-nudge-right {
-  0%, 100% { opacity: 0.45; transform: translateX(0); }
-  50% { opacity: 1; transform: translateX(5px); }
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
 }
 
 @keyframes sub-local-nav-nudge-left {
-  0%, 100% { opacity: 0.45; transform: translateX(0); }
-  50% { opacity: 1; transform: translateX(-5px); }
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-5px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2745,6 +2763,7 @@ body[data-page="hours"] .footer-contact {
 }
 
 @media (max-width: 640px) {
+
   .about-philosophy-card,
   .about-mission-copy .about-philosophy-card {
     grid-template-columns: 36px minmax(0, 1fr);
@@ -2772,11 +2791,14 @@ body[data-page="hours"] .footer-contact {
 /* 퀵바를 펼치면 오른쪽을 덮어 서브페이지 본문 끝 글자와 버튼이 그 밑으로 들어간다.
    메인(style.css 끝 블록)과 같이 펼친 동안만 본문을 퀵바 앞에서 끊고, 접으면 원래 폭으로 돌린다.
    질환 페이지도 이 규칙을 쓴다(conditions.css 의 768px 전용 규칙을 이리로 옮김). */
-@media (max-width: 920px), (max-height: 760px) {
+@media (max-width: 920px),
+(max-height: 760px) {
+
   /* AOS가 붙은 상자는 transition을 덮어쓰면 나타나는 효과가 사라지므로 제외한다. */
   body.has-quick-links .subpage-main .inner:not([data-aos]) {
     transition: padding-right .32s ease;
   }
+
   body.has-quick-links .subpage-main .sub-local-nav-cue--right {
     transition: right .32s ease;
   }
@@ -2812,11 +2834,13 @@ body[data-page="hours"] .footer-contact {
 body[data-page="doctor"] .sub-image-frame img[src$="/teaching.jpg"] {
   aspect-ratio: auto 2296 / 2240;
 }
+
 /* 대표원장 사진 틀은 좁은 화면(세로로 쌓이는 배치)에서 align-self:start 라 사진 폭을 따라가므로,
    받기 전에도 받은 뒤와 같은 줄 폭을 쓰게 한다. */
 body[data-page="doctor"] .sub-doctor-photo {
   width: 100%;
 }
+
 body[data-page="doctor"] .sub-doctor-photo img[src$="/doctor_profile.png"] {
   aspect-ratio: auto 3398 / 4757;
 }
