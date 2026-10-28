@@ -398,7 +398,7 @@
   const logicalIndex = (index) => ((index - start) % count + count) % count;
   const desktop = window.matchMedia("(min-width: 921px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let activeIndex = start + (desktop.matches ? Math.min(1, count - 1) : 0);
+  let activeIndex = start;
   let drag = null;
   let resizeFrame = 0;
   let settleTimer = 0;
