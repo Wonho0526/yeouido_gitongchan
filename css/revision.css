@@ -868,7 +868,9 @@ body[data-page="values"] .sub-image-frame.sub-wide-photo {
 .footer-location .parking-note,
 .location-address-copy .parking-note {
   display: block;
-  margin-top: 12px;
+  margin-top: 16px;
+  font-weight: 800;
+  color: #293f70;
 }
 
 .sub-feature-card .asset-placeholder {

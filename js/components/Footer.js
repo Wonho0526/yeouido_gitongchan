@@ -26,7 +26,7 @@
       term: "주차안내",
       desc: h(React.Fragment, null,
         "홍우빌딩 지상주차장",
-        h("span", { className: "parking-note" }, "※ 하나은행 여의도점 건물과 연결되어 있지 않습니다.")
+        h("strong", { className: "footer-location-emphasis parking-note" }, "※ 하나은행 여의도점 건물과 연결되어 있지 않습니다.")
       ),
     },
   ];
