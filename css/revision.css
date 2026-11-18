@@ -1440,6 +1440,82 @@ body[data-page="location"] .clinic-hours .clinic-hours-badge {
   margin: 0;
 }
 
+.location-videos {
+  min-width: 0;
+  padding: 24px 0;
+}
+
+.location-videos h2 {
+  margin: 0 0 24px;
+  color: var(--sub-ink);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.location-video-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.location-video-tabs button {
+  min-width: 0;
+  min-height: 56px;
+  padding: 16px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #ece8e0;
+  color: var(--sub-ink);
+  font: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  word-break: keep-all;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.location-video-tabs button:hover {
+  background: var(--sub-line);
+}
+
+.location-video-tabs button[aria-selected="true"] {
+  background: var(--sub-navy);
+  color: #fff;
+}
+
+.location-video-tabs button:focus-visible {
+  outline: 3px solid var(--sub-navy);
+  outline-offset: 3px;
+}
+
+.location-video-panels,
+.location-video-panels>[role="tabpanel"] {
+  width: 100%;
+  min-width: 0;
+}
+
+.location-video-panels>[hidden] {
+  display: none;
+}
+
+.location-video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 8px;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 600px) {
+  .location-video-tabs button {
+    padding: 12px 6px;
+    font-size: 14px;
+  }
+}
+
 .location-contact-card {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../vendor/aos/aos.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/subpage.css">
-  <link rel="stylesheet" href="../css/revision.css?v=20261103-parking2">
+  <link rel="stylesheet" href="../css/revision.css?v=20261118-location-video-tabs2">
   <link rel="stylesheet" href="../css/subpage-motion.css">
   <!-- SEO/AEO: 자동 생성 블록 시작 (scripts/verify-seo.mjs 가 검사한다) -->
   <link rel="canonical" href="https://xn--ok0bu9hnyrvkbwwl58i.com/sub/location.html">
@@ -129,6 +129,16 @@
                 </ul>
               </div>
             </article>
+            <article class="sub-guide-card location-contact-card">
+              <div class="location-contact-info">
+                <h2>진료문의</h2>
+                <a class="location-phone" href="tel:027827070">02-782-7070</a>
+              </div>
+              <div class="location-reservation">
+                <a class="location-kakao-btn" href="http://pf.kakao.com/_BUfmX" target="_blank" rel="noopener noreferrer" data-track-event="카카오톡 상담 클릭">카카오톡 상담 <span aria-hidden="true">→</span></a>
+                <a class="view-more-btn" data-naver-reservation data-track-event="네이버 예약 클릭" href="https://m.place.naver.com/hospital/2098208942/home?entry=pll" target="_blank" rel="noopener noreferrer">예약 바로가기 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
             <figure class="sub-image-frame sub-map-frame">
               <iframe class="sub-map-embed"
                 src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357c9fbf73bb54cb%3A0x503dbac6bdc09b7a!2z7Jes7J2Y64-E6riw7Ya17LCs7J2Y7JuQ!5e0!3m2!1sko!2skr!4v1792994113424!5m2!1sko!2skr"
@@ -155,16 +165,32 @@
                 </div>
               </div>
             </article>
-            <article class="sub-guide-card location-contact-card">
-              <div class="location-contact-info">
-                <h2>진료문의</h2>
-                <a class="location-phone" href="tel:027827070">02-782-7070</a>
+            <section class="location-videos" aria-labelledby="location-videos-title" data-video-tabs>
+              <h2 id="location-videos-title">영상 안내</h2>
+              <div class="location-video-tabs" role="tablist" aria-label="안내 영상 선택">
+                <button type="button" id="location-video-tab-directions" role="tab" class="is-active"
+                  aria-controls="location-video-directions" aria-selected="true">하나은행에서 오시는길</button>
+                <button type="button" id="location-video-tab-parking" role="tab" tabindex="-1"
+                  aria-controls="location-video-parking" aria-selected="false">홍우빌딩 주차 후 오시는길</button>
               </div>
-              <div class="location-reservation">
-                <a class="location-kakao-btn" href="http://pf.kakao.com/_BUfmX" target="_blank" rel="noopener noreferrer" data-track-event="카카오톡 상담 클릭">카카오톡 상담 <span aria-hidden="true">→</span></a>
-                <a class="view-more-btn" data-naver-reservation data-track-event="네이버 예약 클릭" href="https://m.place.naver.com/hospital/2098208942/home?entry=pll" target="_blank" rel="noopener noreferrer">예약 바로가기 <span aria-hidden="true">→</span></a>
+              <div class="location-video-panels">
+                <div id="location-video-directions" role="tabpanel" aria-labelledby="location-video-tab-directions">
+                  <iframe class="location-video-player" src="https://www.youtube.com/embed/U-KNg4iFoqY"
+                    data-video-src="https://www.youtube.com/embed/U-KNg4iFoqY"
+                    title="여의도기통찬의원 하나은행에서 오시는 길" width="560" height="315" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
+                <div id="location-video-parking" role="tabpanel" aria-labelledby="location-video-tab-parking" hidden>
+                  <iframe class="location-video-player" data-video-src="https://www.youtube.com/embed/HehgjLC95Kw"
+                    title="여의도기통찬의원 홍우빌딩 주차 후 오시는길" width="315" height="560" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
               </div>
-            </article>
+            </section>
           </div>
         </div>
       </section>
@@ -178,7 +204,7 @@
   <script src="../js/components/Footer.js?v=20261103-parking2"></script>
   <script src="../js/components/LocalNavigation.js"></script>
   <script src="../js/layout.js"></script>
-  <script src="../js/subpage.js"></script>
+  <script src="../js/subpage.js?v=20261118-location-video-tabs"></script>
   <script src="../vendor/aos/aos.js"></script>
   <script src="../js/subpage-motion.js"></script>
   <script src="../admin/tracker.js" data-site-id="SITE_YGTC"></script>

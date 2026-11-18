@@ -1,5 +1,5 @@
 (() => {
-  document.querySelectorAll("[data-treatment-tabs]").forEach((group) => {
+  document.querySelectorAll("[data-treatment-tabs], [data-video-tabs]").forEach((group) => {
     const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
     const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
 
@@ -14,6 +14,17 @@
         tab.setAttribute("aria-selected", String(isActive));
         tab.tabIndex = isActive ? 0 : -1;
         panels[index].hidden = !isActive;
+        if (group.hasAttribute("data-video-tabs")) {
+          const player = panels[index].querySelector("iframe[data-video-src]");
+          if (player) {
+            if (isActive && player.getAttribute("src") !== player.dataset.videoSrc) {
+              player.setAttribute("src", player.dataset.videoSrc);
+            } else if (!isActive && player.hasAttribute("src")) {
+              // Unload the previous video so its audio stops when the tab changes.
+              player.removeAttribute("src");
+            }
+          }
+        }
       });
     };
 
